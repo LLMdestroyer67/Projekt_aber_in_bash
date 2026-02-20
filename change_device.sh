@@ -31,9 +31,11 @@ else
 fi
 
 CHANGING=$(sed -n ''$CHANGENR'p' $DEVICE_DIR/$DEVICE_ID.txt)
-if [ -z "$CHANGING" ]; then
-    echo 'could not find the line to change'
-    exit 1
+if [ -z "$CHANGING" ]; then #leere Zeile --> muss man noch machen
+    echo 'could not find the line to change, adding it anyway'
+    read -p 'neuer Inhalt: ' NEWCHANGE
+    echo "$CHANGE""$NEWCHANGE" >> "$DEVICE_DIR/$DEVICE_ID.txt"
+    exit 0
 fi
 
 read -p 'neuer Inlhalt: ' NEWCHANGE
