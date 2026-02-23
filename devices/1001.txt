@@ -1,3 +1,0 @@
-Beschreibung: Thinkpad
-Location: Technikraum
-Status: ready

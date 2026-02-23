@@ -1,0 +1,4 @@
+Beschreibung=Thinkpad
+Location=Terchnikraum
+Status=kaputt
+

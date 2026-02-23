@@ -1,4 +1,3 @@
-Beschreibung: Thinkpad ist nicht kaka
-Status: 0
-Status: was hä
-Location: im pipikakaland
+Beschreibung=Dell kaka Laptop
+Location=Technikraum
+Status=kaputt
