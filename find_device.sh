@@ -17,39 +17,55 @@ find_by_id() {
 find_by_description() {
     read -p 'Find device by description: ' DEVICE_DESC
     echo 'Beschreibung='$DEVICE_DESC
-    countdevice=$(grep -c "Beschreibung=$DEVICE_DESC" "$DEVICE_DIR"/*.txt)
+    countdevice=$(grep -lEi "Beschreibung=.*$DEVICE_DESC" "$DEVICE_DIR"/*.txt | wc -l)
     if [ "$countdevice" -eq 0 ]; then
         echo 'device with description '$DEVICE_DESC' does not exist'
         exit 1
-    else    
-        echo 'Found device(s) with description: '$DEVICE_DESC
-        echo $(grep 'Beschreibung='$DEVICE_DESC "$DEVICE_DIR"/*.txt)
+    else   
+        for file in $(grep -lEi "Beschreibung=.*$DEVICE_DESC" "$DEVICE_DIR"/*.txt); do
+        echo "----- $file -----"
+        cat -n "$file"
+        done 
+        ###########-------Alt und funktioniert nicht richtig-------#############
+        #echo "Pattern=[Beschreibung=$DEVICE_DESC]"
+        #grep -n "Beschreibung" "$DEVICE_DIR"/*.txt
+        #sed -n 'l' "$DEVICE_DIR"/1001.txt | grep -n "Beschreibung"
+        #while [ "$countdevice" -gt 0 ]; do
+        #    echo 'Found devices with description: '$DEVICE_DESC
+        #    grep -lFi "Beschreibung=$DEVICE_DESC" "$DEVICE_DIR"/*.txt | xargs cat -n
+        #    echo $countdevice
+        #    countdevice=$(($countdevice - 1))
+        #done
     fi
 }
 
 find_by_location() {
     read -p 'Find device by location: ' DEVICE_LOC
-    echo 'Location: '$DEVICE_LOC
-    countdevice=$(grep -c "Location: $DEVICE_LOC" "$DEVICE_DIR"/*.txt)
+    echo 'Location='$DEVICE_LOC
+    countdevice=$(grep -lEi "Location=.*$DEVICE_LOC" "$DEVICE_DIR"/*.txt | wc -l)
     if [ "$countdevice" -eq 0 ]; then
         echo 'device with location '$DEVICE_LOC' does not exist'
         exit 1
-    else    
-        echo 'Found device(s) with location: '$DEVICE_LOC
-        grep -l "Location: $DEVICE_LOC" "$DEVICE_DIR"/*.txt | xargs cat -n
+    else   
+        for file in $(grep -lEi "Location=.*$DEVICE_LOC" "$DEVICE_DIR"/*.txt); do
+        echo "----- $file -----"
+        cat -n "$file"
+        done 
     fi
 }
 
 find_by_status() {
     read -p 'Find device by status: ' DEVICE_STATUS
-    echo 'Status: '$DEVICE_STATUS
-    countdevice=$(grep -c "Status: $DEVICE_STATUS" "$DEVICE_DIR"/*.txt)
+    echo 'Status='$DEVICE_STATUS
+    countdevice=$(grep -lEi "Status=.*$DEVICE_STATUS" "$DEVICE_DIR"/*.txt | wc -l)
     if [ "$countdevice" -eq 0 ]; then
         echo 'device with status '$DEVICE_STATUS' does not exist'
         exit 1
-    else    
-        echo 'Found device(s) with status: '$DEVICE_STATUS
-        grep -l "Status: $DEVICE_STATUS" "$DEVICE_DIR"/*.txt | xargs cat -n
+    else   
+        for file in $(grep -lEi "Status=.*$DEVICE_STATUS" "$DEVICE_DIR"/*.txt); do
+        echo "----- $file -----"
+        cat -n "$file"
+        done 
     fi
 }
 

@@ -10,7 +10,7 @@ read -p 'Enter the device ID: ' DEVICE_ID
 echo 'device ID='$DEVICE_ID
 
 
-countdevice=$(ls "$DEVICE_DIR" | grep -c "$DEVICE_ID.txt")
+countdevice=$(ls "$DEVICE_DIR" | grep -cFx "$DEVICE_ID.txt")
 if [ "$countdevice" -eq 0 ]; then
     echo 'device '$DEVICE_ID' does not exist'
     touch $DEVICE_DIR/$DEVICE_ID.txt
