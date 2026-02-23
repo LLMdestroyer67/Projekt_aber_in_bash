@@ -14,6 +14,7 @@ fi
 echo '------------------------------'
 cat -n $DEVICE_DIR/$DEVICE_ID.txt
 echo '------------------------------'
+
 ### auch wenn er es nicht findet, macht er trotzdem weiter und erstellt das gerät dann mit der änderung
 ##Absicht? eigentlich nicht aber mal schauen dann geht alles weniger kaputt
 read -p 'was wird geädert? ((1)Beschreibung, (2)Location, (3)Status): ' CHANGENR #1,2,3
