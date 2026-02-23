@@ -30,7 +30,9 @@ else
     exit 1
 fi
 
-CHANGING=$(sed -n ''$CHANGENR'p' $DEVICE_DIR/$DEVICE_ID.txt)
+#CHANGING=$(sed -n ''$CHANGENR'p' $DEVICE_DIR/$DEVICE_ID.txt)
+CHANGING=$(grep -m 1 "$CHANGE" $DEVICE_DIR/$DEVICE_ID.txt)
+echo '------->>>>'$CHANGING'<<<-------'
 if [ -z "$CHANGING" ]; then #leere Zeile --> muss man noch machen
     echo 'could not find the line to change, adding it anyway'
     read -p 'neuer Inhalt: ' NEWCHANGE
@@ -46,3 +48,4 @@ echo 'final change: '$FINALCHANGE
 
 sed -i '' "s/$CHANGING/$FINALCHANGE/" "$DEVICE_DIR/$DEVICE_ID.txt"
 
+###docker umgabung starten
