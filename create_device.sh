@@ -50,6 +50,10 @@ complete_more_device() {
     read -p 'Anzahl: ' DEVICE_CT
     echo 'device Count='$DEVICE_CT
     echo 'Anzahl='$DEVICE_CT >> $DEVICE_DIR/$DEVICE_ID.txt
+
+    read -p 'Location: ' DEVICE_LOC
+    echo 'device location='$DEVICE_LOC
+    echo 'Location='$DEVICE_LOC >> $DEVICE_DIR/$DEVICE_ID.txt
 }
 
 if [ "$DEVICE_count" -eq 1 ]; then 

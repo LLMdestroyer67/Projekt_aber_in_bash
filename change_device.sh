@@ -47,13 +47,17 @@ fi
 }
 #anderer Modus
 change_more_device(){
-    read -p 'was wird geädert? ((1)Beschreibung, (2)Anzahl): ' CHANGENR #1,2
+    read -p 'was wird geädert? ((1)Beschreibung, (2)Anzahl, (3)Location): ' CHANGENR #1,2
 if [ "$CHANGENR" -eq 1 ]; then
     echo 'changing description'
     CHANGE='Beschreibung='
 elif [ "$CHANGENR" -eq 2 ]; then
     echo 'changing anzahl'
     CHANGE='Anzahl='
+elif [ "$CHANGENR" -eq 3 ]; then
+    echo 'changing location'
+    CHANGE='Location='
+
 else
     echo 'invalid input'
     exit 1
