@@ -1,0 +1,3 @@
+Beschreibung=Dell Latitude 3440
+Location=IT
+Status=Voll
