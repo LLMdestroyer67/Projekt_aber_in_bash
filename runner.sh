@@ -11,6 +11,7 @@ RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 # Source your modules (these files must NOT auto-run when sourced)
 source "$SCRIPT_DIR/create_device.sh"   # must provide: create_device_main
 source "$SCRIPT_DIR/change_device.sh"   # must provide: change_device_main
+source "$SCRIPT_DIR/find_device.sh" 
 
 log() { printf '[%(%F %T)T] %s\n' -1 "$*"; }
 
@@ -28,7 +29,7 @@ run_once() {
   if [[ -t 0 && -t 1 ]]; then
     # Interactive example: ask what to do
     echo
-    echo "Choose action: (1) create device  (2) change device  (q) quit"
+    echo "Choose action: |(1) create device| |(2) change device| |(3) find device| |(q) quit|"
     read -r -p '> ' choice
 
     case "$choice" in
@@ -45,6 +46,12 @@ run_once() {
           log "change failed (rc=$?)"
         fi
         ;;
+      3)
+        log "Running change_device_main (interactive)..."
+        if ! DEVICE_DIR="$DEVICE_DIR" find_device_main; then
+          log "change failed (rc=$?)"
+        fi
+        ;;  
       q|Q)
         shutdown=1
         ;;
