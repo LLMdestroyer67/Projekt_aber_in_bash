@@ -2,49 +2,79 @@
 
 DEVICE_DIR="${DEVICE_DIR:-devices}"
 
-_select_change_prefix_one_device() {
-  # outputs chosen prefix into the variable name passed as $1
-  local __outvar="$1"
-  local choice
-
-  read -r -p 'was wird geändert? ((1)Beschreibung, (2)Location, (3)Status): ' choice
-  case "$choice" in
-    1) printf -v "$__outvar" '%s' 'Beschreibung=' ;;
-    2) printf -v "$__outvar" '%s' 'Location=' ;;
-    3) printf -v "$__outvar" '%s' 'Status=' ;;
-    *) echo 'invalid input' >&2; return 1 ;;
-  esac
+_is_interactive() {
+  [[ -t 0 && -t 1 ]]
 }
 
-_select_change_prefix_more_device() {
-  local __outvar="$1"
-  local choice
+# Decide mode from ID like you did: numeric => Einzelgerät
+_device_count_from_id() {
+  local id="$1"
+  if [[ "$id" =~ ^[+-]?[0-9]+$ ]]; then
+    printf '%s' 1
+  else
+    printf '%s' 2
+  fi
+}
 
-  read -r -p 'was wird geändert? ((1)Beschreibung, (2)Anzahl, (3)Location): ' choice
-  case "$choice" in
-    1) printf -v "$__outvar" '%s' 'Beschreibung=' ;;
-    2) printf -v "$__outvar" '%s' 'Anzahl=' ;;
-    3) printf -v "$__outvar" '%s' 'Location=' ;;
-    *) echo 'invalid input' >&2; return 1 ;;
-  esac
+# Normalize FIELD (number or name) into a prefix (Beschreibung=/Location=/Status=/Anzahl=)
+# based on device_count (1 or 2).
+_field_to_prefix() {
+  local device_count="$1"
+  local field="$2"
+
+  # lowercase for comparison (bash-specific)
+  local f="${field,,}"
+
+  if [[ "$device_count" -eq 1 ]]; then
+    case "$f" in
+      1|beschreibung|desc|description) printf '%s' 'Beschreibung=' ;;
+      2|location|loc)                 printf '%s' 'Location=' ;;
+      3|status)                       printf '%s' 'Status=' ;;
+      *) return 1 ;;
+    esac
+  elif [[ "$device_count" -eq 2 ]]; then
+    case "$f" in
+      1|beschreibung|desc|description) printf '%s' 'Beschreibung=' ;;
+      2|anzahl|count|qty|quantity)     printf '%s' 'Anzahl=' ;;
+      3|location|loc)                  printf '%s' 'Location=' ;;
+      *) return 1 ;;
+    esac
+  else
+    return 1
+  fi
+}
+
+_prompt_field() {
+  local device_count="$1"
+  local choice=""
+  if [[ "$device_count" -eq 1 ]]; then
+    read -r -p 'was wird geändert? ((1)Beschreibung, (2)Location, (3)Status): ' choice
+  else
+    read -r -p 'was wird geändert? ((1)Beschreibung, (2)Anzahl, (3)Location): ' choice
+  fi
+  printf '%s' "$choice"
 }
 
 change_device_main() {
   local device_id="${1-}"
+  local field="${2-}"
+  local new_value="${3-}"
+
+  # Get device_id (arg or prompt)
   if [[ -z "$device_id" ]]; then
-    read -r -p 'Enter the device ID= ' device_id
+    if _is_interactive; then
+      read -r -p 'Enter the device ID= ' device_id
+    else
+      echo "ERROR: missing DEVICE_ID (non-interactive)" >&2
+      return 2
+    fi
   fi
   echo "device ID=$device_id"
 
-  # sanity: don't allow slashes in filename
+  # Basic safety: avoid creating paths like devices/../x
   if [[ -z "$device_id" || "$device_id" == *"/"* ]]; then
     echo "ERROR: invalid device ID: '$device_id'" >&2
     return 2
-  fi
-
-  if [[ ! -d "$DEVICE_DIR" ]]; then
-    echo "ERROR: device dir '$DEVICE_DIR' does not exist" >&2
-    return 1
   fi
 
   local device_file="$DEVICE_DIR/$device_id.txt"
@@ -54,46 +84,61 @@ change_device_main() {
   fi
   echo "Found device: $device_id - ready to change"
 
-  echo '------------------------------'
-  nl -ba -- "$device_file"
-  echo '------------------------------'
+  if _is_interactive; then
+    echo '------------------------------'
+    nl -ba -- "$device_file"
+    echo '------------------------------'
+  fi
 
-  # decide mode (your original logic: numeric ID => one device)
   local device_count
-  if [[ "$device_id" =~ ^[+-]?[0-9]+$ ]]; then
+  device_count="$(_device_count_from_id "$device_id")"
+  if [[ "$device_count" -eq 1 ]]; then
     echo "->Einzelgerät"
-    device_count=1
   else
     echo "->Sammeleintrag"
-    device_count=2
+  fi
+
+  # Get field (arg or prompt)
+  if [[ -z "$field" ]]; then
+    if _is_interactive; then
+      field="$(_prompt_field "$device_count")"
+    else
+      echo "ERROR: missing FIELD (non-interactive). Provide 1/2/3 or name (Beschreibung/Location/Status/Anzahl)." >&2
+      return 2
+    fi
   fi
 
   local change_prefix=""
-  if [[ "$device_count" -eq 1 ]]; then
-    _select_change_prefix_one_device change_prefix || return 1
-  elif [[ "$device_count" -eq 2 ]]; then
-    _select_change_prefix_more_device change_prefix || return 1
-  else
-    echo 'ERROR' >&2
+  if ! change_prefix="$(_field_to_prefix "$device_count" "$field")"; then
+    echo "ERROR: invalid FIELD '$field' for device_count=$device_count" >&2
     return 1
   fi
 
-  local old_line=""
-  old_line="$(grep -m 1 -F "$change_prefix" "$device_file" || true)"
-  echo "------->>>>$old_line<<<-------"
-
-  local new_value=""
-  read -r -p 'neuer Inhalt= ' new_value
+  # Get new_value (arg or prompt)
+  if [[ -z "$new_value" ]]; then
+    if _is_interactive; then
+      read -r -p 'neuer Inhalt= ' new_value
+    else
+      echo "ERROR: missing NEW_VALUE (non-interactive)" >&2
+      return 2
+    fi
+  fi
 
   local final_line="${change_prefix}${new_value}"
+
+  local old_line=""
+  old_line="$(grep -m 1 -F "$change_prefix" "$device_file" || true)"
   if [[ -z "$old_line" ]]; then
-    echo 'could not find the line to change, adding it anyway'
+    echo "could not find the line to change, adding it anyway"
   else
     echo "ändere \"$old_line\" zu \"$final_line\""
   fi
   echo "final change: $final_line"
 
-  # Rewrite file: replace first line starting with prefix, drop duplicates, or append if missing
+  # Safe rewrite:
+  # - replace the first line starting with prefix
+  # - remove duplicates of that prefix
+  # - if none existed, append at end
   local tmp
   tmp="$(mktemp)" || return 1
   awk -v p="$change_prefix" -v newline="$final_line" '
@@ -105,19 +150,16 @@ change_device_main() {
       }
       print
     }
-    END {
-      if (!done) print newline
-    }
+    END { if (!done) print newline }
   ' "$device_file" >"$tmp" && mv -- "$tmp" "$device_file"
 
-  # Optional: expose to a caller (runner) via globals
+  # Optional outputs for a runner script
   DEVICE_ID="$device_id"
   DEVICE_count="$device_count"
   CHANGE="$change_prefix"
   FINALCHANGE="$final_line"
 }
 
-# run only when executed directly, not when sourced
 if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
   set -euo pipefail
   change_device_main "$@"
