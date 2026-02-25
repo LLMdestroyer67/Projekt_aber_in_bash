@@ -1,2 +1,3 @@
 Beschreibung=Lan_kabel
 Anzahl=21
+Location=Technikraum

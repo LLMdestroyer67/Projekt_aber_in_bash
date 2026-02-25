@@ -25,17 +25,7 @@ find_by_description() {
         for file in $(grep -lEi "Beschreibung=.*$DEVICE_DESC" "$DEVICE_DIR"/*.txt); do
         echo "----- $file -----"
         cat -n "$file"
-        done 
-        ###########-------Alt und funktioniert nicht richtig-------#############
-        #echo "Pattern=[Beschreibung=$DEVICE_DESC]"
-        #grep -n "Beschreibung" "$DEVICE_DIR"/*.txt
-        #sed -n 'l' "$DEVICE_DIR"/1001.txt | grep -n "Beschreibung"
-        #while [ "$countdevice" -gt 0 ]; do
-        #    echo 'Found devices with description: '$DEVICE_DESC
-        #    grep -lFi "Beschreibung=$DEVICE_DESC" "$DEVICE_DIR"/*.txt | xargs cat -n
-        #    echo $countdevice
-        #    countdevice=$(($countdevice - 1))
-        #done
+        done
     fi
 }
 
