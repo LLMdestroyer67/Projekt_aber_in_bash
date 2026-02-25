@@ -1,0 +1,3 @@
+Beschreibung=Intermec bastard drucket
+Location=technikraum
+Status=kaputt
