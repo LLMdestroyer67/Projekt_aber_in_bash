@@ -1,0 +1,3 @@
+Beschreibung=LAN Kabel 2M
+Anzahl=39
+Location=Technikraum

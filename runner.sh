@@ -9,8 +9,8 @@ DEVICE_DIR="${DEVICE_DIR:-$SCRIPT_DIR/devices}"
 RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 
 # Source your modules (these files must NOT auto-run when sourced)
-source "$SCRIPT_DIR/create_device.sh"   # must provide: create_device_main
-source "$SCRIPT_DIR/change_device.sh"   # must provide: change_device_main
+source "$SCRIPT_DIR/create_device.sh"   
+source "$SCRIPT_DIR/change_device.sh"   
 source "$SCRIPT_DIR/find_device.sh" 
 
 log() { printf '[%(%F %T)T] %s\n' -1 "$*"; }
@@ -20,10 +20,7 @@ trap 'shutdown=1' INT TERM
 
 run_once() {
   # ===========================
-  # PUT YOUR LOGIC HERE
-  #
-  # Decide what to do next and in what order.
-  # Examples below show both interactive and non-interactive calling.
+  # LOGIC
   # ===========================
 
   if [[ -t 0 && -t 1 ]]; then
@@ -47,9 +44,9 @@ run_once() {
         fi
         ;;
       3)
-        log "Running change_device_main (interactive)..."
+        log "Running find_device_main (interactive)..."
         if ! DEVICE_DIR="$DEVICE_DIR" find_device_main; then
-          log "change failed (rc=$?)"
+          log "find failed (rc=$?)"
         fi
         ;;  
       q|Q)
