@@ -15,6 +15,7 @@ _normalize_mode() {
     2|description|desc|beschreibung) printf '%s' "description" ;;
     3|location|loc) printf '%s' "location" ;;
     4|status)       printf '%s' "status" ;;
+    5|kategorie|cat) printf '%s' "category" ;;
     *) return 1 ;;
   esac
 }
@@ -105,6 +106,7 @@ _find_by_key_contains() {
 find_by_description() { _find_by_key_contains "Beschreibung=" "${1-}"; }
 find_by_location()    { _find_by_key_contains "Location="     "${1-}"; }
 find_by_status()      { _find_by_key_contains "Status="       "${1-}"; }
+find_by_category()    { _find_by_key_contains "Kategorie="    "${1-}"; }
 
 find_device_main() {
   local mode="${1-}"
@@ -112,9 +114,9 @@ find_device_main() {
 
   if [[ -z "$mode" ]]; then
     if _is_interactive; then
-      read -r -p 'Find device by (1)ID, (2)description, (3)location, (4)status: ' mode
+      read -r -p 'Find device by (1)ID, (2)description, (3)location, (4)status, (5)category: ' mode
     else
-      echo "ERROR: missing mode (non-interactive). Use: id|description|location|status (or 1/2/3/4)" >&2
+      echo "ERROR: missing mode (non-interactive). Use: id|description|location|status|category (or 1/2/3/4/5)" >&2
       return 2
     fi
   fi
@@ -130,6 +132,7 @@ find_device_main() {
     description) find_by_description "$query" ;;
     location)    find_by_location "$query" ;;
     status)      find_by_status "$query" ;;
+    category)    find_by_category "$query" ;;
   esac
 }
 

@@ -5,27 +5,31 @@ DEVICE_DIR="${DEVICE_DIR:-devices}"
 complete_one_device() {
   local device_file="$1"
 
-  local DEVICE_DESC DEVICE_LOC DEVICE_STATUS
+  local DEVICE_DESC DEVICE_LOC DEVICE_STATUS DEVICE_CAT
   read -r -p 'Beschreibung des Geräts: ' DEVICE_DESC
   read -r -p 'Location des Geräts: ' DEVICE_LOC
   read -r -p 'Status des Geräts : ' DEVICE_STATUS
+  read -r -p 'Kategorie des Geräts: ' DEVICE_CAT
 
   printf 'Beschreibung=%s\n' "$DEVICE_DESC" >"$device_file"
   printf 'Location=%s\n'     "$DEVICE_LOC"  >>"$device_file"
   printf 'Status=%s\n'       "$DEVICE_STATUS" >>"$device_file"
+  printf 'Kategorie=%s\n'    "$DEVICE_CAT"    >>"$device_file"
 }
 
 complete_more_device() {
   local device_file="$1"
 
-  local DEVICE_DESC DEVICE_CT DEVICE_LOC
+  local DEVICE_DESC DEVICE_CT DEVICE_LOC DEVICE_CAT
   read -r -p 'Beschreibung des Geräts: ' DEVICE_DESC
   read -r -p 'Anzahl: '                 DEVICE_CT
   read -r -p 'Location: '               DEVICE_LOC
+  read -r -p 'Kategorie: '              DEVICE_CAT
 
   printf 'Beschreibung=%s\n' "$DEVICE_DESC" >"$device_file"
   printf 'Anzahl=%s\n'       "$DEVICE_CT"   >>"$device_file"
   printf 'Location=%s\n'     "$DEVICE_LOC"  >>"$device_file"
+  printf 'Kategorie=%s\n'    "$DEVICE_CAT"    >>"$device_file"
 }
 
 create_device_main() {

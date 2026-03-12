@@ -30,6 +30,7 @@ _field_to_prefix() {
       1|beschreibung|desc|description) printf '%s' 'Beschreibung=' ;;
       2|location|loc)                 printf '%s' 'Location=' ;;
       3|status)                       printf '%s' 'Status=' ;;
+      4|kategorie|cat)                printf '%s' 'Kategorie=' ;;
       *) return 1 ;;
     esac
   elif [[ "$device_count" -eq 2 ]]; then
@@ -37,6 +38,7 @@ _field_to_prefix() {
       1|beschreibung|desc|description) printf '%s' 'Beschreibung=' ;;
       2|anzahl|count|qty|quantity)     printf '%s' 'Anzahl=' ;;
       3|location|loc)                  printf '%s' 'Location=' ;;
+      4|kategorie|cat)                printf '%s' 'Kategorie=' ;;
       *) return 1 ;;
     esac
   else
@@ -48,9 +50,9 @@ _prompt_field() {
   local device_count="$1"
   local choice=""
   if [[ "$device_count" -eq 1 ]]; then
-    read -r -p 'was wird geändert? ((1)Beschreibung, (2)Location, (3)Status): ' choice
+    read -r -p 'was wird geändert? ((1)Beschreibung, (2)Location, (3)Status), (4)Kategorie: ' choice
   else
-    read -r -p 'was wird geändert? ((1)Beschreibung, (2)Anzahl, (3)Location): ' choice
+    read -r -p 'was wird geändert? ((1)Beschreibung, (2)Anzahl, (3)Location, (4)Kategorie): ' choice
   fi
   printf '%s' "$choice"
 }
@@ -103,7 +105,7 @@ change_device_main() {
     if _is_interactive; then
       field="$(_prompt_field "$device_count")"
     else
-      echo "ERROR: missing FIELD (non-interactive). Provide 1/2/3 or name (Beschreibung/Location/Status/Anzahl)." >&2
+      echo "ERROR: missing FIELD (non-interactive). Provide 1/2/3/4 or name (Beschreibung/Location/Status/Anzahl/Kategorie)." >&2
       return 2
     fi
   fi
