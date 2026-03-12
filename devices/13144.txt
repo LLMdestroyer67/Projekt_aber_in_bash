@@ -1,0 +1,5 @@
+Beschreibung=dell
+Location=3og
+Status=running
+Kategorie=laptop
+Besitzer=Simon Kolesnik

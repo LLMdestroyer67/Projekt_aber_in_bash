@@ -31,6 +31,7 @@ _field_to_prefix() {
       2|location|loc)                 printf '%s' 'Location=' ;;
       3|status)                       printf '%s' 'Status=' ;;
       4|kategorie|cat)                printf '%s' 'Kategorie=' ;;
+      5|besitzer|owner)               printf '%s' 'Besitzer=' ;;
       *) return 1 ;;
     esac
   elif [[ "$device_count" -eq 2 ]]; then
@@ -50,7 +51,7 @@ _prompt_field() {
   local device_count="$1"
   local choice=""
   if [[ "$device_count" -eq 1 ]]; then
-    read -r -p 'was wird geändert? ((1)Beschreibung, (2)Location, (3)Status), (4)Kategorie: ' choice
+    read -r -p 'was wird geändert? ((1)Beschreibung, (2)Location, (3)Status), (4)Kategorie, (5)Besitzer: ' choice
   else
     read -r -p 'was wird geändert? ((1)Beschreibung, (2)Anzahl, (3)Location, (4)Kategorie): ' choice
   fi
