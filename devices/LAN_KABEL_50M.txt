@@ -1,0 +1,3 @@
+Beschreibung=LAN_KABEL_50M
+Anzahl=1
+Location=Technikraum
