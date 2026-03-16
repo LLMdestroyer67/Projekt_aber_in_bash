@@ -1,3 +1,4 @@
 Beschreibung=Dell Latitude 3440
 Location=IT/EDV
 Status=Voll
+Besitzer=Simon Kolesnik
