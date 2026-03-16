@@ -1,0 +1,193 @@
+2026-03-16T12:16:19Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Logging initialisiert
+2026-03-16T12:16:19Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-03-16T12:16:19Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Logging-Traps installiert
+2026-03-16T12:16:19Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] create_device_main gestartet
+2026-03-16T12:16:19Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] STDOUT: device folder has been created
+2026-03-16T12:16:19Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] DEVICE_DIR bereit: 'devices'
+2026-03-16T12:16:19Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Argument device_id=''
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Input gelesen prompt='Enter the device ID: ' value='121213313'
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] STDOUT: device ID=121213313
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Verwende device_id='121213313'
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] STDOUT: ->Einzelgerät
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Gerätetyp erkannt: Einzelgerät
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] device_file='devices/121213313.txt'
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] STDOUT: device 121213313 has been created
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Leere Gerätedatei erzeugt: 'devices/121213313.txt'
+2026-03-16T12:16:24Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] complete_one_device gestartet device_file='devices/121213313.txt'
+2026-03-16T12:16:33Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Input gelesen prompt='Beschreibung des Geräts: ' value='gerät abc'
+2026-03-16T12:16:52Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Input gelesen prompt='Location des Geräts: ' value='raum abc'
+2026-03-16T12:17:05Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Input gelesen prompt='Status des Geräts : ' value='kaputt'
+2026-03-16T12:21:59Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Input gelesen prompt='Kategorie des Geräts: ' value='cat1'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Input gelesen prompt='Besitzer: ' value='arsch'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Schreibe Einzelgerät in Datei 'devices/121213313.txt'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Geschrieben: Beschreibung='gerät abc'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Geschrieben: Location='raum abc'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Geschrieben: Status='kaputt'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Geschrieben: Kategorie='cat1'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] Geschrieben: Besitzer='arsch'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] complete_one_device abgeschlossen device_file='devices/121213313.txt'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] create_device_main abgeschlossen DEVICE_ID='121213313' DEVICE_count='1'
+2026-03-16T12:22:10Z [INFO] [create_device.sh] [pid=9022] [func=log_info:37] EXIT trap rc=0
+2026-03-16T12:25:50Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Logging initialisiert
+2026-03-16T12:25:50Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-03-16T12:25:50Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Logging-Traps installiert
+2026-03-16T12:25:50Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] change_device_main gestartet device_id='' field='' new_value=''
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Input gelesen prompt='Enter the device ID= ' value='121213313'
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] STDOUT: device ID=121213313
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Verwende device_id='121213313'
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] device_file='devices/121213313.txt'
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] STDOUT: Found device: 121213313 - ready to change
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Gerätedatei gefunden
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] STDOUT: ------------------------------
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Datei nummeriert ausgegeben 'devices/121213313.txt'
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] STDOUT: ------------------------------
+2026-03-16T12:26:01Z [DEBUG] [change_device.sh] [pid=12622] [func=log_debug:36] _device_count_from_id id='121213313'
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] device_count='1'
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] STDOUT: ->Einzelgerät
+2026-03-16T12:26:01Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] _prompt_field gestartet device_count='1'
+2026-03-16T12:26:15Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Input gelesen prompt='was wird geändert? ((1)Beschreibung, (2)Location, (3)Status), (4)Kategorie, (5)Besitzer: ' value='4'
+2026-03-16T12:26:15Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] _prompt_field choice='4'
+2026-03-16T12:26:15Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Verwende field='4'
+2026-03-16T12:26:15Z [DEBUG] [change_device.sh] [pid=12622] [func=log_debug:36] _field_to_prefix device_count='1' field='4' normalized='4'
+2026-03-16T12:26:15Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] change_prefix='Kategorie='
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Input gelesen prompt='neuer Inhalt= ' value='gerät mit funktion'
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Verwende new_value='gerät mit funktion'
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] old_line='Kategorie=cat1' final_line='Kategorie=gerät mit funktion'
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] STDOUT: ändere "Kategorie=cat1" zu "Kategorie=gerät mit funktion"
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] STDOUT: final change: Kategorie=gerät mit funktion
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Temporäre Datei erzeugt tmp='/tmp/tmp.BZgPCiMVRh'
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] Datei erfolgreich umgeschrieben device_file='devices/121213313.txt'
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] change_device_main abgeschlossen DEVICE_ID='121213313' DEVICE_count='1' CHANGE='Kategorie=' FINALCHANGE='Kategorie=gerät mit funktion'
+2026-03-16T12:27:44Z [INFO] [change_device.sh] [pid=12622] [func=log_info:37] EXIT trap rc=0
+2026-03-16T12:29:15Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Logging initialisiert
+2026-03-16T12:29:15Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-03-16T12:29:15Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Logging-Traps installiert
+2026-03-16T12:29:15Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] find_device_main gestartet mode='' query=''
+2026-03-16T12:29:28Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Input gelesen prompt='Find device by (1)ID, (2)description, (3)location, (4)status, (5)category, (6)owner: ' value='6'
+2026-03-16T12:29:28Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] _normalize_mode raw='6' normalized='6'
+2026-03-16T12:29:28Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] normalized mode='owner'
+2026-03-16T12:29:28Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] _find_by_key_contains gestartet key='Besitzer=' value=''
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Input gelesen prompt='Find device by Besitzer: ' value='hurensohn'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Anzahl Gerätedateien='19'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/111111.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Gefundene Zeile in 'devices/111111.txt': 'Besitzer=wer bist du ya'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Treffer in 'devices/111111.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/1111.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/1111.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/111.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/111.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/11.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/11.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/121213313.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Gefundene Zeile in 'devices/121213313.txt': 'Besitzer=arsch'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Treffer in 'devices/121213313.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/1213.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/1213.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/1234.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/1234.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/1312.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/1312.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/13144.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Gefundene Zeile in 'devices/13144.txt': 'Besitzer=Simon Kolesnik'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Treffer in 'devices/13144.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/1.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/1.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/2222.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/2222.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/6851.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/6851.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/lan2.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/lan2.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/LAN_KABEL_15M.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/LAN_KABEL_15M.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/LAN_KABEL_20M.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/LAN_KABEL_20M.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/LAN_KABEL_2M.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/LAN_KABEL_2M.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/LAN_KABEL_3M.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/LAN_KABEL_3M.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/LAN_KABEL_50M.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/LAN_KABEL_50M.txt'
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Prüfe Datei 'devices/lan.txt' für key='Besitzer=' value=''
+2026-03-16T12:29:31Z [DEBUG] [find_device.sh] [pid=14122] [func=log_debug:36] Kein passender key in 'devices/lan.txt'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Trefferanzahl='3'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] STDOUT: ----- devices/111111.txt -----
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Datei nummeriert ausgegeben 'devices/111111.txt'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] STDOUT: ----- devices/121213313.txt -----
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Datei nummeriert ausgegeben 'devices/121213313.txt'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] STDOUT: ----- devices/13144.txt -----
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] Datei nummeriert ausgegeben 'devices/13144.txt'
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] find_device_main abgeschlossen
+2026-03-16T12:29:31Z [ERROR] [find_device.sh] [pid=14122] [func=log_error:183] ERR trap rc=127 command=S
+2026-03-16T12:29:31Z [INFO] [find_device.sh] [pid=14122] [func=log_info:37] EXIT trap rc=127
+2026-03-16T12:34:51Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Logging initialisiert
+2026-03-16T12:34:51Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-03-16T12:34:51Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Logging-Traps installiert
+2026-03-16T12:34:51Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-03-16T12:34:51Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] run_once gestartet
+2026-03-16T12:34:51Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] STDOUT: 
+2026-03-16T12:34:51Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(q) quit|
+2026-03-16T12:34:55Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Input gelesen prompt='> ' value='3'
+2026-03-16T12:34:55Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Menüauswahl choice='3'
+2026-03-16T12:34:55Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Running find_device_main (interactive)...
+2026-03-16T12:34:55Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] find_device_main gestartet mode='' query=''
+2026-03-16T12:34:59Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] Input gelesen prompt='Find device by (1)ID, (2)description, (3)location, (4)status, (5)category, (6)owner: ' value='1'
+2026-03-16T12:34:59Z [DEBUG] [find_device.sh] [pid=16482] [func=log_debug:36] _normalize_mode raw='1' normalized='1'
+2026-03-16T12:34:59Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] normalized mode='id'
+2026-03-16T12:34:59Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] find_by_id gestartet device_id=''
+2026-03-16T12:35:01Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] Input gelesen prompt='Find device by ID: ' value='1312'
+2026-03-16T12:35:01Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] STDOUT: device ID: 1312
+2026-03-16T12:35:01Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] device_file='/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-03-16T12:35:01Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] STDOUT: Found device: 1312
+2026-03-16T12:35:01Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] STDOUT: ----- /workspaces/Projekt_aber_in_bash/devices/1312.txt -----
+2026-03-16T12:35:01Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-03-16T12:35:01Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] find_by_id abgeschlossen
+2026-03-16T12:35:01Z [INFO] [find_device.sh] [pid=16482] [func=log_info:37] find_device_main abgeschlossen
+2026-03-16T12:35:01Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] find_device_main erfolgreich
+2026-03-16T12:35:01Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] run_once erfolgreich abgeschlossen
+2026-03-16T12:35:01Z [DEBUG] [runner.sh] [pid=16482] [func=log_debug:36] Sleep 2s
+2026-03-16T12:35:03Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] run_once gestartet
+2026-03-16T12:35:03Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] STDOUT: 
+2026-03-16T12:35:03Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(q) quit|
+2026-03-16T12:35:10Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Input gelesen prompt='> ' value='2'
+2026-03-16T12:35:10Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Menüauswahl choice='2'
+2026-03-16T12:35:10Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Running change_device_main (interactive)...
+2026-03-16T12:35:10Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] change_device_main gestartet device_id='' field='' new_value=''
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Input gelesen prompt='Enter the device ID= ' value='1312'
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] STDOUT: device ID=1312
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Verwende device_id='1312'
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] device_file='/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] STDOUT: Found device: 1312 - ready to change
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Gerätedatei gefunden
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] STDOUT: ------------------------------
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] STDOUT: ------------------------------
+2026-03-16T12:35:14Z [DEBUG] [change_device.sh] [pid=16482] [func=log_debug:36] _device_count_from_id id='1312'
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] device_count='1'
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] STDOUT: ->Einzelgerät
+2026-03-16T12:35:14Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] _prompt_field gestartet device_count='1'
+2026-03-16T12:35:23Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Input gelesen prompt='was wird geändert? ((1)Beschreibung, (2)Location, (3)Status), (4)Kategorie, (5)Besitzer: ' value='3'
+2026-03-16T12:35:23Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] _prompt_field choice='3'
+2026-03-16T12:35:23Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Verwende field='3'
+2026-03-16T12:35:23Z [DEBUG] [change_device.sh] [pid=16482] [func=log_debug:36] _field_to_prefix device_count='1' field='3' normalized='3'
+2026-03-16T12:35:23Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] change_prefix='Status='
+2026-03-16T12:35:30Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Input gelesen prompt='neuer Inhalt= ' value='fick die bullerei'
+2026-03-16T12:35:30Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Verwende new_value='fick die bullerei'
+2026-03-16T12:35:30Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] old_line='Status=fick die bullerei' final_line='Status=fick die bullerei'
+2026-03-16T12:35:30Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] STDOUT: ändere "Status=fick die bullerei" zu "Status=fick die bullerei"
+2026-03-16T12:35:30Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] STDOUT: final change: Status=fick die bullerei
+2026-03-16T12:35:30Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Temporäre Datei erzeugt tmp='/tmp/tmp.bxUQdlAxVL'
+2026-03-16T12:35:30Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] Datei erfolgreich umgeschrieben device_file='/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-03-16T12:35:30Z [INFO] [change_device.sh] [pid=16482] [func=log_info:37] change_device_main abgeschlossen DEVICE_ID='1312' DEVICE_count='1' CHANGE='Status=' FINALCHANGE='Status=fick die bullerei'
+2026-03-16T12:35:30Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] change_device_main erfolgreich
+2026-03-16T12:35:30Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] run_once erfolgreich abgeschlossen
+2026-03-16T12:35:30Z [DEBUG] [runner.sh] [pid=16482] [func=log_debug:36] Sleep 2s
+2026-03-16T12:35:32Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] run_once gestartet
+2026-03-16T12:35:32Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] STDOUT: 
+2026-03-16T12:35:32Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(q) quit|
+2026-03-16T12:35:36Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Input gelesen prompt='> ' value='q'
+2026-03-16T12:35:36Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Menüauswahl choice='q'
+2026-03-16T12:35:36Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Benutzer hat Quit gewählt
+2026-03-16T12:35:36Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] run_once erfolgreich abgeschlossen
+2026-03-16T12:35:36Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] Runner stopped
+2026-03-16T12:35:36Z [INFO] [runner.sh] [pid=16482] [func=log_info:37] EXIT trap rc=0
