@@ -3,57 +3,83 @@ set -euo pipefail
 
 # Always source files relative to this runner's location
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_NAME="$(basename -- "$0")"
 
 # Config (override via env)
 DEVICE_DIR="${DEVICE_DIR:-$SCRIPT_DIR/devices}"
 RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 
-# Source your modules (these files must NOT auto-run when sourced)
-source "$SCRIPT_DIR/create_device.sh"   
-source "$SCRIPT_DIR/change_device.sh"   
-source "$SCRIPT_DIR/find_device.sh" 
+# Shared logger
+# shellcheck source=./logger.sh
+source "$SCRIPT_DIR/logger.sh"
 
-log() { printf '[%(%F %T)T] %s\n' -1 "$*"; }
+# Source your modules (these files must NOT auto-run when sourced)
+source "$SCRIPT_DIR/create_device.sh"
+source "$SCRIPT_DIR/change_device.sh"
+source "$SCRIPT_DIR/find_device.sh"
 
 shutdown=0
-trap 'shutdown=1' INT TERM
+
+handle_shutdown() {
+  local signal="$1"
+  log_info "Signal empfangen: $signal"
+  shutdown=1
+}
+
+trap 'handle_shutdown INT' INT
+trap 'handle_shutdown TERM' TERM
 
 run_once() {
+  log_info "run_once gestartet"
+
   # ===========================
   # LOGIC
   # ===========================
 
   if [[ -t 0 && -t 1 ]]; then
     # Interactive example: ask what to do
-    echo
-    echo "Choose action: |(1) create device| |(2) change device| |(3) find device| |(q) quit|"
-    read -r -p '> ' choice
+    echo_logged ""
+    echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(q) quit|"
+
+    local choice=""
+    read_logged '> ' choice
+    log_info "Menüauswahl choice='$choice'"
 
     case "$choice" in
       1)
-        log "Running create_device_main (interactive)..."
+        log_info "Running create_device_main (interactive)..."
         # prompts happen inside create_device_main if args are missing
-        if ! DEVICE_DIR="$DEVICE_DIR" create_device_main; then
-          log "create failed (rc=$?)"
+        if SCRIPT_NAME="create_device.sh" DEVICE_DIR="$DEVICE_DIR" create_device_main; then
+          log_info "create_device_main erfolgreich"
+        else
+          rc=$?
+          log_error "create_device_main fehlgeschlagen rc=$rc"
         fi
         ;;
       2)
-        log "Running change_device_main (interactive)..."
-        if ! DEVICE_DIR="$DEVICE_DIR" change_device_main; then
-          log "change failed (rc=$?)"
+        log_info "Running change_device_main (interactive)..."
+        if SCRIPT_NAME="change_device.sh" DEVICE_DIR="$DEVICE_DIR" change_device_main; then
+          log_info "change_device_main erfolgreich"
+        else
+          rc=$?
+          log_error "change_device_main fehlgeschlagen rc=$rc"
         fi
         ;;
       3)
-        log "Running find_device_main (interactive)..."
-        if ! DEVICE_DIR="$DEVICE_DIR" find_device_main; then
-          log "find failed (rc=$?)"
+        log_info "Running find_device_main (interactive)..."
+        if SCRIPT_NAME="find_device.sh" DEVICE_DIR="$DEVICE_DIR" find_device_main; then
+          log_info "find_device_main erfolgreich"
+        else
+          rc=$?
+          log_error "find_device_main fehlgeschlagen rc=$rc"
         fi
-        ;;  
+        ;;
       q|Q)
+        log_info "Benutzer hat Quit gewählt"
         shutdown=1
         ;;
       *)
-        log "Unknown choice: $choice"
+        error_logged "Unknown choice: $choice"
         ;;
     esac
 
@@ -61,32 +87,41 @@ run_once() {
     # Non-interactive example (daemon-style):
     # Your logic must provide args so the called functions don't prompt/hang.
 
+    log_info "Non-interactive Modus erkannt"
+
     # ---- Example placeholder logic: do nothing by default ----
     # Replace this block with your own logic / queue / rules.
     #
     # Example calls:
-    # DEVICE_DIR="$DEVICE_DIR" create_device_main "123"
-    # DEVICE_DIR="$DEVICE_DIR" change_device_main "123" "Status" "active"
+    # SCRIPT_NAME="create_device.sh" DEVICE_DIR="$DEVICE_DIR" create_device_main "123"
+    # SCRIPT_NAME="change_device.sh" DEVICE_DIR="$DEVICE_DIR" change_device_main "123" "Status" "active"
     #
     return 0
   fi
 }
 
 main() {
-  log "Runner started (DEVICE_DIR=$DEVICE_DIR, interval=${RUN_INTERVAL_SECONDS}s)"
+  setup_logging "$@"
+  install_logging_traps
+
+  log_info "Runner started (DEVICE_DIR=$DEVICE_DIR, interval=${RUN_INTERVAL_SECONDS}s)"
 
   while [[ "$shutdown" -eq 0 ]]; do
     # Don’t let one failure kill the loop; capture rc and continue.
-    if ! run_once; then
+    if run_once; then
+      log_info "run_once erfolgreich abgeschlossen"
+    else
       rc=$?
-      log "run_once error rc=$rc (continuing)"
+      log_error "run_once error rc=$rc (continuing)"
     fi
 
     [[ "$shutdown" -eq 1 ]] && break
+
+    log_debug "Sleep ${RUN_INTERVAL_SECONDS}s"
     sleep "$RUN_INTERVAL_SECONDS"
   done
 
-  log "Runner stopped"
+  log_info "Runner stopped"
 }
 
 main "$@"

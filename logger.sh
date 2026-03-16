@@ -3,7 +3,7 @@
 
 LOG_DIR="${LOG_DIR:-logs}"
 LOG_FILE="${LOG_FILE:-$LOG_DIR/device_manager.log}"
-TRACE_COMMANDS="${TRACE_COMMANDS:-1}"
+TRACE_COMMANDS="${TRACE_COMMANDS:-0}" # (1) -> deep logging with command traces, (0) -> only log messages
 
 log_timestamp() {
   date -u +"%Y-%m-%dT%H:%M:%SZ"
