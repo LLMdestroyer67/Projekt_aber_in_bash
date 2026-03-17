@@ -71,6 +71,7 @@ find_by_id() {
 }
 
 # Find files where the line for KEY exists (e.g. "Beschreibung=") and contains VALUE (case-insensitive, literal)
+
 _find_by_key_contains() {
   local key="$1" # e.g. "Beschreibung="
   local value="${2-}"
@@ -79,7 +80,9 @@ _find_by_key_contains() {
 
   if [[ -z "$value" ]]; then
     if _is_interactive; then
-      read_logged "Find device by ${key%=}: " value
+      # ACHTUNG: hier jetzt Command Substitution
+      value="$(read_logged "Find device by ${key%=}: ")"
+      log_debug "_find_by_key_contains: nach read_logged value='$value'"
     else
       error_logged "ERROR: missing search value for ${key%=} (non-interactive)"
       return 2

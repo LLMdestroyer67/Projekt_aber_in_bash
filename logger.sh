@@ -81,14 +81,19 @@ sanitize_input() {
 
 read_logged() {
   local prompt="$1"
-  local __target_var="$2"
   local value=""
 
   read -r -p "$prompt" value
   value="$(sanitize_input "$value")"
-  printf -v "$__target_var" '%s' "$value"
 
   log_info "Input gelesen prompt='$prompt' value='$value'"
+
+  if [[ $# -ge 2 ]]; then
+    local __target_var="$2"
+    printf -v "$__target_var" '%s' "$value"
+  else
+    printf '%s' "$value"
+  fi
 }
 
 echo_logged() {
