@@ -17,6 +17,7 @@ source "$SCRIPT_DIR/logger.sh"
 source "$SCRIPT_DIR/create_device.sh"
 source "$SCRIPT_DIR/change_device.sh"
 source "$SCRIPT_DIR/find_device.sh"
+source "$SCRIPT_DIR/find_and_change.sh"
 
 shutdown=0
 
@@ -39,7 +40,7 @@ run_once() {
   if [[ -t 0 && -t 1 ]]; then
     # Interactive example: ask what to do
     echo_logged ""
-    echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(q) quit|"
+    echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(q) quit|"
 
     local choice=""
     read_logged '> ' choice
@@ -74,6 +75,16 @@ run_once() {
           log_error "find_device_main fehlgeschlagen rc=$rc"
         fi
         ;;
+      4)
+        log_info "Running find_and_change_main (interactive)..."
+        if SCRIPT_NAME="find_and_change.sh" DEVICE_DIR="$DEVICE_DIR" find_and_change_main; then
+          log_info "find_and_change_main erfolgreich"
+        else
+          rc=$?
+          log_error "find_and_change_main fehlgeschlagen rc=$rc"
+        fi
+        ;;
+      
       q|Q)
         log_info "Benutzer hat Quit gewählt"
         shutdown=1

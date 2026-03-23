@@ -7,6 +7,12 @@ SCRIPT_NAME="$(basename -- "$0")"
 # shellcheck source=./logger.sh
 . "$SCRIPT_DIR/logger.sh"
 
+
+FOUND_DEVICE_ID=""
+FOUND_MATCHES=()
+FOUND_MATCH_COUNT=0
+
+
 _is_interactive() {
   [[ -t 0 && -t 1 ]]
 }
@@ -37,7 +43,7 @@ _print_file_numbered() {
 
 find_by_id() {
   local device_id="${1-}"
-
+  #local matches=()
   log_info "find_by_id gestartet device_id='${device_id-}'"
 
   if [[ -z "$device_id" ]]; then
@@ -68,6 +74,11 @@ find_by_id() {
   echo_logged "Found device: $device_id"
   _print_file_numbered "$device_file"
   log_info "find_by_id abgeschlossen"
+  
+  FOUND_DEVICE_ID="$device_id"  
+  FOUND_MATCHES=( "$device_file" )
+  FOUND_MATCH_COUNT=1
+
 }
 
 # Find files where the line for KEY exists (e.g. "Beschreibung=") and contains VALUE (case-insensitive, literal)
@@ -75,6 +86,7 @@ find_by_id() {
 _find_by_key_contains() {
   local key="$1" # e.g. "Beschreibung="
   local value="${2-}"
+  local matches=()
 
   log_info "_find_by_key_contains gestartet key='$key' value='${value-}'"
 
@@ -120,6 +132,7 @@ _find_by_key_contains() {
     if printf '%s\n' "$line" | grep -qiF -- "$value"; then
       matches+=( "$file" )
       log_info "Treffer in '$file'"
+      FOUND_MATCH_COUNT="${#matches[@]}"
     fi
   done
 
@@ -129,6 +142,25 @@ _find_by_key_contains() {
   fi
 
   log_info "Trefferanzahl='${#matches[@]}'"
+
+  if (( ${#matches[@]} == 1 )); then
+    echo_logged "Found 1 device with ${key%=} '$value':"
+    _print_file_numbered "${matches[0]}"
+    log_info "find_by_key_contains abgeschlossen mit 1 Treffer: das ist der allerbeste treffer '${matches[0]}'"
+    local match_file="${matches[0]}"
+    log_info "match_file='$match_file'"
+    local filename="${match_file##*/}" #-> 1234.txt
+    local device_id="${filename%.txt}" #-> 1234   <- ID
+    log_info "device_id='$device_id'"
+    echo_logged "device ID: $device_id"
+    printf "device ID: %s\n" "$device_id"
+    FOUND_DEVICE_ID="$device_id" 
+    #FOUND_MATCHES=( "$device_file" )
+    FOUND_MATCH_COUNT="${#matches[@]}"
+
+    return 0
+
+  fi
 
   for file in "${matches[@]}"; do
     _print_file_numbered "$file"
