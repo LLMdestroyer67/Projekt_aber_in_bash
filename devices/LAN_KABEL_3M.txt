@@ -1,3 +1,4 @@
 Beschreibung=LAN_KABEL_3M
 Anzahl=16
 Location=Tehcnikraum
+Kategorie=RJ45
