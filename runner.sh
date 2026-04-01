@@ -11,7 +11,7 @@ RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 
 # Shared logger
 # shellcheck source=./logger.sh
-source "$SCRIPT_DIR/logger.sh"
+. "$SCRIPT_DIR/common.sh"
 
 # Source your modules (these files must NOT auto-run when sourced)
 source "$SCRIPT_DIR/create_device.sh"
