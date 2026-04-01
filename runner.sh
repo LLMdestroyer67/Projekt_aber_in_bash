@@ -14,10 +14,10 @@ RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 . "$SCRIPT_DIR/common.sh"
 
 # Source your modules (these files must NOT auto-run when sourced)
-source "$SCRIPT_DIR/create_device.sh"
-source "$SCRIPT_DIR/change_device.sh"
-source "$SCRIPT_DIR/find_device.sh"
-source "$SCRIPT_DIR/find_and_change.sh"
+#source "$SCRIPT_DIR/create_device.sh"
+#source "$SCRIPT_DIR/change_device.sh"
+#source "$SCRIPT_DIR/find_device.sh"
+#source "$SCRIPT_DIR/find_and_change.sh"
 
 shutdown=0
 
