@@ -40,7 +40,7 @@ run_once() {
   if [[ -t 0 && -t 1 ]]; then
     # Interactive example: ask what to do
     echo_logged ""
-    echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(q) quit|"
+    echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|"
 
     local choice=""
     read_logged '> ' choice
@@ -84,6 +84,17 @@ run_once() {
           log_error "find_and_change_main fehlgeschlagen rc=$rc"
         fi
         ;;
+      5)
+        log_info "Running change_count_main (interactive)..."
+        if SCRIPT_NAME="change_count.sh" DEVICE_DIR="$DEVICE_DIR" change_count_main; then
+          log_info "change_count_main erfolgreich"
+        else
+          rc=$?
+          log_error "change_count_main fehlgeschlagen rc=$rc"
+        fi
+        ;;
+      
+      
       
       q|Q)
         log_info "Benutzer hat Quit gewählt"

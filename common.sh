@@ -661,3 +661,186 @@ find_device_main() {
 
   log_info "find_device_main abgeschlossen"
 }
+##############################
+#entnahme <---
+change_device_count() {
+  setup_logging "$@"
+  install_logging_traps
+
+  local device_id="${1-}"
+  local field="${2-}"
+  local new_value="${3-}"
+
+  log_info "change_device_count gestartet device_id='${device_id-}' field='${field-}' new_value='${new_value-}'"
+
+  # Get device_id (arg or prompt)
+  if [[ -z "$device_id" ]]; then
+    if _is_interactive; then
+      read_logged 'Enter the device ID= ' device_id
+    else
+      error_logged "ERROR: missing DEVICE_ID (non-interactive)"
+      return 2
+    fi
+  fi
+
+  echo_logged "device ID=$device_id"
+  log_info "Verwende device_id='$device_id'"
+
+  # Basic safety: avoid creating paths like devices/../x
+  if [[ -z "$device_id" || "$device_id" == *"/"* ]]; then
+    error_logged "ERROR: invalid device ID: '$device_id'"
+    return 2
+  fi
+
+  local device_file="$DEVICE_DIR/$device_id.txt"
+  log_info "device_file='$device_file'"
+
+  if [[ ! -f "$device_file" ]]; then
+    error_logged "device $device_id does not exist"
+    return 1
+  fi
+
+  echo_logged "Found device: $device_id - ready to change"
+  log_info "Gerätedatei gefunden"
+
+  if _is_interactive; then
+    echo_logged '------------------------------'
+    nl -ba -- "$device_file"
+    log_info "Datei nummeriert ausgegeben '$device_file'"
+    echo_logged '------------------------------'
+  fi
+
+  local device_count
+  device_count="$(_device_count_from_id "$device_id")"
+  log_info "device_count='$device_count'"
+
+  if [[ "$device_count" -eq 2 ]]; then
+    echo_logged "->Sammeleintrag"
+  else
+    echo_logged "->Einzelgerät -> keine Anzahl"
+    return 1
+  fi
+
+  # Get field (arg or prompt)
+  if [[ -z "$field" ]]; then
+    if _is_interactive; then
+      field="Anzahl="
+    else
+      error_logged "ERROR: missing FIELD (non-interactive). Provide 1/2/3/4 or name (Beschreibung/Location/Status/Anzahl/Kategorie)."
+      return 2
+    fi
+  fi
+  log_info "Verwende field='$field'"
+  change_prefix="Anzahl="
+
+  
+  local old_line=""
+  old_line="$(grep -m 1 -F "$change_prefix" "$device_file" || true)"
+  old_value="${old_line#$change_prefix}"
+  log_info "old_value='$old_value'"
+
+  read_logged 'Möchten Sie die Anzahl erhöhen oder verringern? |(1) Erhöhen|  |(2) Verringern|    |(3) Ändern| ' auswahl
+  log_info "count_more_or_less Auswahl='$auswahl'"
+
+  if [[ "$auswahl" != @(1|2|3) ]]; then
+    error_logged "Ungültige Auswahl: '$auswahl'. Bitte 1, 2 oder 3 eingeben."
+    return 2
+  elif [[ "$auswahl" == "1" ]]; then
+    new_value=$(( old_value + 1 ))
+    log_info "Anzahl wird erhöht: old_value='$old_value' new_value='$new_value'"
+  elif [[ "$auswahl" == "2" ]]; then
+    new_value=$(( old_value - 1 ))
+    log_info "Anzahl wird verringert: old_value='$old_value' new_value='$new_value'"
+  elif [[ "$auswahl" == "3" ]]; then
+    log_info "Anzahl wird direkt geändert: old_value='$old_value' bisherige new_value='$new_value'"
+    read_logged 'neue Anzahl= ' new_value
+  fi
+  local final_line="${change_prefix}${new_value}"
+  log_info "old_line='${old_line-}' final_line='$final_line'"
+
+
+  # Get new_value (arg or prompt)
+  if [[ -z "$new_value" ]]; then
+    if _is_interactive; then
+      read_logged 'neue Anzahl= ' new_value
+    else
+      error_logged "ERROR: missing NEW_VALUE (non-interactive)"
+      return 2
+    fi
+  fi
+  log_info "Verwende new_value='$new_value'"
+
+  if [[ -z "$old_line" ]]; then
+    echo_logged "could not find the line to change, adding it anyway"
+  else
+    echo_logged "ändere \"$old_line\" zu \"$final_line\""
+  fi
+  echo_logged "final change: $final_line"
+
+  # Safe rewrite:
+  # - replace the first line starting with prefix
+  # - remove duplicates of that prefix
+  # - if none existed, append at end
+  local tmp
+  tmp="$(mktemp)" || return 1
+  log_info "Temporäre Datei erzeugt tmp='$tmp'"
+
+  awk -v p="$change_prefix" -v newline="$final_line" '
+    BEGIN { done=0 }
+    {
+      if (substr($0, 1, length(p)) == p) {
+        if (!done) { print newline; done=1 }
+        next
+      }
+      print
+    }
+    END { if (!done) print newline }
+  ' "$device_file" >"$tmp" && mv -- "$tmp" "$device_file"
+
+  log_info "Datei erfolgreich umgeschrieben device_file='$device_file'"
+
+  # Optional outputs for a runner script
+  DEVICE_ID="$device_id"
+  DEVICE_count="$device_count"
+  CHANGE="$change_prefix"
+  FINALCHANGE="$final_line"
+
+  log_info "change_device_main abgeschlossen DEVICE_ID='$DEVICE_ID' DEVICE_count='$DEVICE_count' CHANGE='$CHANGE' FINALCHANGE='$FINALCHANGE'"
+}
+change_count_main() {
+  #local mode="${1-}"   # id/description/location/status/category/owner oder 1-6
+  #local query="${2-}"  # Suchbegriff, optional (wird bei id meist die ID selbst sein)
+
+  # Einfache Usage-Check
+  #if [[ -z "$mode" ]]; then
+  #  echo "Usage: $SCRIPT_NAME <mode> [query]" >&2
+  #  echo "  mode: id/description/location/status/category/owner oder 1-6" >&2
+  #  exit 2
+  #fi
+
+  # 1. Gerät(e) suchen: ruft intern find_by_* auf
+  #    WICHTIG: find_device_main setzt jetzt FOUND_MATCHES / FOUND_MATCH_COUNT / FOUND_DEVICE_ID
+  find_device_main #"$mode" "${query-}"
+
+  # 2. Prüfen, was gefunden wurde
+  if (( FOUND_MATCH_COUNT == 0 )); then
+    echo "Kein Gerät gefunden." >&2
+    return 1
+  elif (( FOUND_MATCH_COUNT > 1 )); then
+    echo "Mehrere Geräte gefunden (${FOUND_MATCH_COUNT}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
+    find_device_main #-> erneuter aufruf, solange man nicht die suchergebnisse anklicken kann
+  fi
+
+  # Hierher kommen wir nur, wenn genau 1 Match gefunden wurde.
+  # FOUND_DEVICE_ID sollte gesetzt sein (durch find_by_id oder _find_by_key_contains).
+  if [[ -z "${FOUND_DEVICE_ID:-}" ]]; then
+    echo "Interner Fehler: FOUND_DEVICE_ID ist leer trotz genau 1 Treffer." >&2
+    return 1
+  fi
+
+  echo "Bearbeite Gerät mit ID: $FOUND_DEVICE_ID"
+
+  # 3. change_device_main mit dieser ID aufrufen.
+  #    field und new_value lässt du einfach interaktiv abfragen (wie bisher).
+  change_device_count "$FOUND_DEVICE_ID"
+}
