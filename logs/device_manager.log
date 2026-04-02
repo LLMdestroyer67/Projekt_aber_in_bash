@@ -6413,3 +6413,15 @@
 2026-04-02T11:48:31Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] Non-interactive Modus erkannt
 2026-04-02T11:48:31Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] run_once erfolgreich abgeschlossen
 2026-04-02T11:48:31Z [DEBUG] [runner.sh] [pid=66747] [func=log_message:137] Sleep 2s
+2026-04-02T11:49:32Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] run_once gestartet
+2026-04-02T11:49:32Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] Non-interactive Modus erkannt
+2026-04-02T11:49:32Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] run_once erfolgreich abgeschlossen
+2026-04-02T11:49:32Z [DEBUG] [runner.sh] [pid=66747] [func=log_message:137] Sleep 2s
+2026-04-02T11:49:34Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] run_once gestartet
+2026-04-02T11:49:34Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] Non-interactive Modus erkannt
+2026-04-02T11:49:34Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] run_once erfolgreich abgeschlossen
+2026-04-02T11:49:34Z [DEBUG] [runner.sh] [pid=66747] [func=log_message:137] Sleep 2s
+2026-04-02T11:49:36Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] run_once gestartet
+2026-04-02T11:49:36Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] Non-interactive Modus erkannt
+2026-04-02T11:49:36Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] run_once erfolgreich abgeschlossen
+2026-04-02T11:49:36Z [DEBUG] [runner.sh] [pid=66747] [func=log_message:137] Sleep 2s
