@@ -145,5 +145,5 @@ main() {
 
   log_info "Runner stopped"
 }
-
+ 
 main "$@"

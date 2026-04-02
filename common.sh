@@ -1,18 +1,33 @@
 #!/usr/bin/env bash
+# common.sh — modulare Funktionsbibliothek (ein Skript), runner-kompatibel
+# - Keine Auto-Ausführung beim Sourcen
+# - Alle public Funktionen/Parameter bleiben gleich
+# - SCRIPT_NAME/DEVICE_DIR aus Runner werden respektiert
 
+###############################################################################
+# 0) Core / Environment (env-respektierend)
+###############################################################################
+
+# Allow runner to override via env; set only if missing (important for your runner)
 DEVICE_DIR="${DEVICE_DIR:-devices}"
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-SCRIPT_NAME="$(basename -- "$0")"
+
+# Resolve library directory safely; only set if missing (runner sets own SCRIPT_DIR)
+SCRIPT_DIR="${SCRIPT_DIR:-$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)}"
+
+# SCRIPT_NAME is used as logging context in your runner: respect env override
+SCRIPT_NAME="${SCRIPT_NAME:-$(basename -- "$0")}"
 
 _is_interactive() {
   [[ -t 0 && -t 1 ]]
 }
 
-##############################
-# logger.sh functions:
+###############################################################################
+# 1) Logging + IO helpers (public)
+###############################################################################
+
 LOG_DIR="${LOG_DIR:-logs}"
 LOG_FILE="${LOG_FILE:-$LOG_DIR/device_manager.log}"
-TRACE_COMMANDS="${TRACE_COMMANDS:-0}" # (1) -> deep logging with command traces, (0) -> only log messages
+TRACE_COMMANDS="${TRACE_COMMANDS:-0}" # (1) deep logging with command traces
 
 log_timestamp() {
   date -u +"%Y-%m-%dT%H:%M:%SZ"
@@ -48,6 +63,7 @@ log_warn()  { log_message "WARN"  "$*"; }
 log_error() { log_message "ERROR" "$*"; }
 
 setup_logging() {
+  # Public: signature preserved
   if [[ "${_LOGGING_INITIALIZED:-0}" == "1" ]]; then
     return 0
   fi
@@ -62,7 +78,7 @@ setup_logging() {
   if [[ "$TRACE_COMMANDS" == "1" && "${_TRACE_INITIALIZED:-0}" != "1" ]]; then
     exec {TRACE_FD}>>"$LOG_FILE"
     export BASH_XTRACEFD="$TRACE_FD"
-    export PS4='+ [$(date -u +"%Y-%m-%dT%H:%M:%SZ")] [TRACE] [${SCRIPT_NAME:-'"$(basename -- "$0")"'}] [${FUNCNAME[0]:-MAIN}:${LINENO}] '
+    export PS4='+ [$(date -u +"%Y-%m-%dT%H:%M:%SZ")] [TRACE] ['"${SCRIPT_NAME:-"$(basename -- "$0")"}"'] [${FUNCNAME[0]:-MAIN}:${LINENO}] '
     set -x
     _TRACE_INITIALIZED=1
     log_info "Command trace aktiviert"
@@ -70,6 +86,7 @@ setup_logging() {
 }
 
 install_logging_traps() {
+  # Public: signature preserved
   if [[ "${_LOGGING_TRAPS_INSTALLED:-0}" == "1" ]]; then
     return 0
   fi
@@ -89,6 +106,11 @@ sanitize_input() {
 }
 
 read_logged() {
+  # Public behavior preserved:
+  # - read prompt
+  # - sanitize
+  # - log
+  # - if second arg exists -> assign to that var name, else print
   local prompt="$1"
   local value=""
 
@@ -117,8 +139,10 @@ error_logged() {
   log_error "STDERR: $msg"
 }
 
-##############################
-# change_device.sh functions:
+###############################################################################
+# 2) Device helpers (internal)
+###############################################################################
+
 _device_count_from_id() {
   local id="$1"
   log_debug "_device_count_from_id id='$id'"
@@ -129,35 +153,80 @@ _device_count_from_id() {
     printf '%s' 2
   fi
 }
+
+_dm__validate_device_id() {
+  local device_id="${1-}"
+  [[ -n "$device_id" && "$device_id" != *"/"* ]]
+}
+
+_dm__device_file() {
+  local device_id="$1"
+  printf '%s/%s.txt' "$DEVICE_DIR" "$device_id"
+}
+
+_print_file_numbered() {
+  local file="$1"
+  echo_logged "----- $file -----"
+  nl -ba -- "$file"
+  log_info "Datei nummeriert ausgegeben '$file'"
+}
+
+_dm__rewrite_prefix_line() {
+  # Replace first matching prefix line, remove duplicates, append if missing.
+  local device_file="$1"
+  local prefix="$2"
+  local newline="$3"
+
+  local tmp
+  tmp="$(mktemp)" || return 1
+  log_info "Temporäre Datei erzeugt tmp='$tmp'"
+
+  awk -v p="$prefix" -v newline="$newline" '
+    BEGIN { done=0 }
+    {
+      if (substr($0, 1, length(p)) == p) {
+        if (!done) { print newline; done=1 }
+        next
+      }
+      print
+    }
+    END { if (!done) print newline }
+  ' "$device_file" >"$tmp" && mv -- "$tmp" "$device_file"
+}
+
+###############################################################################
+# 3) Change device (public + internal helpers)
+###############################################################################
+
 _field_to_prefix() {
   local device_count="$1"
   local field="$2"
 
-  # lowercase for comparison (bash-specific)
   local f="${field,,}"
   log_debug "_field_to_prefix device_count='$device_count' field='$field' normalized='$f'"
 
   if [[ "$device_count" -eq 1 ]]; then
     case "$f" in
       1|beschreibung|desc|description) printf '%s' 'Beschreibung=' ;;
-      2|location|loc) printf '%s' 'Location=' ;;
-      3|status) printf '%s' 'Status=' ;;
-      4|kategorie|cat) printf '%s' 'Kategorie=' ;;
-      5|besitzer|owner) printf '%s' 'Besitzer=' ;;
+      2|location|loc)                 printf '%s' 'Location=' ;;
+      3|status)                       printf '%s' 'Status=' ;;
+      4|kategorie|cat)                printf '%s' 'Kategorie=' ;;
+      5|besitzer|owner)               printf '%s' 'Besitzer=' ;;
       *) return 1 ;;
     esac
   elif [[ "$device_count" -eq 2 ]]; then
     case "$f" in
       1|beschreibung|desc|description) printf '%s' 'Beschreibung=' ;;
-      2|anzahl|count|qty|quantity) printf '%s' 'Anzahl=' ;;
-      3|location|loc) printf '%s' 'Location=' ;;
-      4|kategorie|cat) printf '%s' 'Kategorie=' ;;
+      2|anzahl|count|qty|quantity)     printf '%s' 'Anzahl=' ;;
+      3|location|loc)                  printf '%s' 'Location=' ;;
+      4|kategorie|cat)                 printf '%s' 'Kategorie=' ;;
       *) return 1 ;;
     esac
   else
     return 1
   fi
 }
+
 _prompt_field() {
   local device_count="$1"
   local choice=""
@@ -173,6 +242,7 @@ _prompt_field() {
   log_info "_prompt_field choice='$choice'"
   printf '%s' "$choice"
 }
+
 change_device_main() {
   setup_logging "$@"
   install_logging_traps
@@ -183,7 +253,6 @@ change_device_main() {
 
   log_info "change_device_main gestartet device_id='${device_id-}' field='${field-}' new_value='${new_value-}'"
 
-  # Get device_id (arg or prompt)
   if [[ -z "$device_id" ]]; then
     if _is_interactive; then
       read_logged 'Enter the device ID= ' device_id
@@ -196,13 +265,13 @@ change_device_main() {
   echo_logged "device ID=$device_id"
   log_info "Verwende device_id='$device_id'"
 
-  # Basic safety: avoid creating paths like devices/../x
-  if [[ -z "$device_id" || "$device_id" == *"/"* ]]; then
+  if ! _dm__validate_device_id "$device_id"; then
     error_logged "ERROR: invalid device ID: '$device_id'"
     return 2
   fi
 
-  local device_file="$DEVICE_DIR/$device_id.txt"
+  local device_file
+  device_file="$(_dm__device_file "$device_id")"
   log_info "device_file='$device_file'"
 
   if [[ ! -f "$device_file" ]]; then
@@ -230,7 +299,6 @@ change_device_main() {
     echo_logged "->Sammeleintrag"
   fi
 
-  # Get field (arg or prompt)
   if [[ -z "$field" ]]; then
     if _is_interactive; then
       field="$(_prompt_field "$device_count")"
@@ -248,7 +316,6 @@ change_device_main() {
   fi
   log_info "change_prefix='$change_prefix'"
 
-  # Get new_value (arg or prompt)
   if [[ -z "$new_value" ]]; then
     if _is_interactive; then
       read_logged 'neuer Inhalt= ' new_value
@@ -271,29 +338,9 @@ change_device_main() {
   fi
   echo_logged "final change: $final_line"
 
-  # Safe rewrite:
-  # - replace the first line starting with prefix
-  # - remove duplicates of that prefix
-  # - if none existed, append at end
-  local tmp
-  tmp="$(mktemp)" || return 1
-  log_info "Temporäre Datei erzeugt tmp='$tmp'"
-
-  awk -v p="$change_prefix" -v newline="$final_line" '
-    BEGIN { done=0 }
-    {
-      if (substr($0, 1, length(p)) == p) {
-        if (!done) { print newline; done=1 }
-        next
-      }
-      print
-    }
-    END { if (!done) print newline }
-  ' "$device_file" >"$tmp" && mv -- "$tmp" "$device_file"
-
+  _dm__rewrite_prefix_line "$device_file" "$change_prefix" "$final_line"
   log_info "Datei erfolgreich umgeschrieben device_file='$device_file'"
 
-  # Optional outputs for a runner script
   DEVICE_ID="$device_id"
   DEVICE_count="$device_count"
   CHANGE="$change_prefix"
@@ -302,8 +349,10 @@ change_device_main() {
   log_info "change_device_main abgeschlossen DEVICE_ID='$DEVICE_ID' DEVICE_count='$DEVICE_count' CHANGE='$CHANGE' FINALCHANGE='$FINALCHANGE'"
 }
 
-##############################
-# create_device.sh functions:
+###############################################################################
+# 4) Create device (public)
+###############################################################################
+
 complete_one_device() {
   local device_file="$1"
   local DEVICE_DESC DEVICE_LOC DEVICE_STATUS DEVICE_CAT DEVICE_WHO
@@ -381,8 +430,7 @@ create_device_main() {
     read_logged 'Enter the device ID: ' device_id
   fi
 
-  # basic safety: avoid slashes in filename
-  if [[ -z "$device_id" || "$device_id" == *"/"* ]]; then
+  if ! _dm__validate_device_id "$device_id"; then
     error_logged "ERROR: invalid device ID: '$device_id'"
     log_error "Ungültige device_id='$device_id'"
     return 2
@@ -402,7 +450,8 @@ create_device_main() {
     log_info "Gerätetyp erkannt: Sammeleintrag"
   fi
 
-  local device_file="$DEVICE_DIR/$device_id.txt"
+  local device_file
+  device_file="$(_dm__device_file "$device_id")"
   log_info "device_file='$device_file'"
 
   if [[ -e "$device_file" ]]; then
@@ -425,82 +474,38 @@ create_device_main() {
     return 1
   fi
 
-  # Optional: expose results to a caller (runner) via globals
   DEVICE_ID="$device_id"
   DEVICE_count="$device_count"
 
   log_info "create_device_main abgeschlossen DEVICE_ID='$DEVICE_ID' DEVICE_count='$DEVICE_count'"
 }
 
-##############################
-# find_and_change.sh functions:
-find_and_change_main() {
-  #local mode="${1-}"   # id/description/location/status/category/owner oder 1-6
-  #local query="${2-}"  # Suchbegriff, optional (wird bei id meist die ID selbst sein)
+###############################################################################
+# 5) Find device (public)
+###############################################################################
 
-  # Einfache Usage-Check
-  #if [[ -z "$mode" ]]; then
-  #  echo "Usage: $SCRIPT_NAME <mode> [query]" >&2
-  #  echo "  mode: id/description/location/status/category/owner oder 1-6" >&2
-  #  exit 2
-  #fi
-
-  # 1. Gerät(e) suchen: ruft intern find_by_* auf
-  #    WICHTIG: find_device_main setzt jetzt FOUND_MATCHES / FOUND_MATCH_COUNT / FOUND_DEVICE_ID
-  find_device_main #"$mode" "${query-}"
-
-  # 2. Prüfen, was gefunden wurde
-  if (( FOUND_MATCH_COUNT == 0 )); then
-    echo "Kein Gerät gefunden." >&2
-    return 1
-  elif (( FOUND_MATCH_COUNT > 1 )); then
-    echo "Mehrere Geräte gefunden (${FOUND_MATCH_COUNT}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
-    find_device_main #-> erneuter aufruf, solange man nicht die suchergebnisse anklicken kann
-  fi
-
-  # Hierher kommen wir nur, wenn genau 1 Match gefunden wurde.
-  # FOUND_DEVICE_ID sollte gesetzt sein (durch find_by_id oder _find_by_key_contains).
-  if [[ -z "${FOUND_DEVICE_ID:-}" ]]; then
-    echo "Interner Fehler: FOUND_DEVICE_ID ist leer trotz genau 1 Treffer." >&2
-    return 1
-  fi
-
-  echo "Bearbeite Gerät mit ID: $FOUND_DEVICE_ID"
-
-  # 3. change_device_main mit dieser ID aufrufen.
-  #    field und new_value lässt du einfach interaktiv abfragen (wie bisher).
-  change_device_main "$FOUND_DEVICE_ID"
-}
-
-##############################
-# find_device.sh functions:
 FOUND_DEVICE_ID=""
 FOUND_MATCHES=()
 FOUND_MATCH_COUNT=0
+
 _normalize_mode() {
   local m="${1-}"
   m="${m,,}"
   log_debug "_normalize_mode raw='${1-}' normalized='$m'"
 
   case "$m" in
-    1|id) printf '%s' "id" ;;
+    1|id)                           printf '%s' "id" ;;
     2|description|desc|beschreibung) printf '%s' "description" ;;
-    3|location|loc) printf '%s' "location" ;;
-    4|status) printf '%s' "status" ;;
-    5|kategorie|cat) printf '%s' "category" ;;
-    6|besitzer|owner) printf '%s' "owner" ;;
+    3|location|loc)                 printf '%s' "location" ;;
+    4|status)                       printf '%s' "status" ;;
+    5|kategorie|cat)                printf '%s' "category" ;;
+    6|besitzer|owner)               printf '%s' "owner" ;;
     *) return 1 ;;
   esac
 }
-_print_file_numbered() {
-  local file="$1"
-  echo_logged "----- $file -----"
-  nl -ba -- "$file"
-  log_info "Datei nummeriert ausgegeben '$file'"
-}
+
 find_by_id() {
   local device_id="${1-}"
-  #local matches=()
   log_info "find_by_id gestartet device_id='${device_id-}'"
 
   if [[ -z "$device_id" ]]; then
@@ -514,13 +519,13 @@ find_by_id() {
 
   echo_logged "device ID: $device_id"
 
-  # simple safety: avoid slashes creating paths
   if [[ "$device_id" == *"/"* || -z "$device_id" ]]; then
     error_logged "ERROR: invalid device ID: '$device_id'"
     return 2
   fi
 
-  local device_file="$DEVICE_DIR/$device_id.txt"
+  local device_file
+  device_file="$(_dm__device_file "$device_id")"
   log_info "device_file='$device_file'"
 
   if [[ ! -f "$device_file" ]]; then
@@ -531,22 +536,20 @@ find_by_id() {
   echo_logged "Found device: $device_id"
   _print_file_numbered "$device_file"
   log_info "find_by_id abgeschlossen"
-  
-  FOUND_DEVICE_ID="$device_id"  
+
+  FOUND_DEVICE_ID="$device_id"
   FOUND_MATCHES=( "$device_file" )
   FOUND_MATCH_COUNT=1
-
 }
+
 _find_by_key_contains() {
-  local key="$1" # e.g. "Beschreibung="
+  local key="$1"   # e.g. "Beschreibung="
   local value="${2-}"
-  local matches=()
 
   log_info "_find_by_key_contains gestartet key='$key' value='${value-}'"
 
   if [[ -z "$value" ]]; then
     if _is_interactive; then
-      # ACHTUNG: hier jetzt Command Substitution
       value="$(read_logged "Find device by ${key%=}: ")"
       log_debug "_find_by_key_contains: nach read_logged value='$value'"
     else
@@ -555,7 +558,6 @@ _find_by_key_contains() {
     fi
   fi
 
-  # Build list of *.txt safely (handles no matches)
   local files=()
   shopt -s nullglob
   files=( "$DEVICE_DIR"/*.txt )
@@ -573,7 +575,6 @@ _find_by_key_contains() {
   for file in "${files[@]}"; do
     log_debug "Prüfe Datei '$file' für key='$key' value='$value'"
 
-    # get the first line that starts with the key (case-insensitive)
     line="$(grep -m 1 -iE "^${key}" "$file" 2>/dev/null || true)"
     [[ -z "$line" ]] && {
       log_debug "Kein passender key in '$file'"
@@ -582,7 +583,6 @@ _find_by_key_contains() {
 
     log_debug "Gefundene Zeile in '$file': '$line'"
 
-    # does that line contain the value? (case-insensitive, fixed string)
     if printf '%s\n' "$line" | grep -qiF -- "$value"; then
       matches+=( "$file" )
       log_info "Treffer in '$file'"
@@ -601,30 +601,37 @@ _find_by_key_contains() {
     echo_logged "Found 1 device with ${key%=} '$value':"
     _print_file_numbered "${matches[0]}"
     log_info "find_by_key_contains abgeschlossen mit 1 Treffer: das ist der allerbeste treffer '${matches[0]}'"
+
     local match_file="${matches[0]}"
-    log_info "match_file='$match_file'"
-    local filename="${match_file##*/}" #-> 1234.txt
-    local device_id="${filename%.txt}" #-> 1234   <- ID
+    local filename="${match_file##*/}"
+    local device_id="${filename%.txt}"
+
     log_info "device_id='$device_id'"
+
     echo_logged "device ID: $device_id"
     printf "device ID: %s\n" "$device_id"
-    FOUND_DEVICE_ID="$device_id" 
-    #FOUND_MATCHES=( "$device_file" )
+
+    FOUND_DEVICE_ID="$device_id"
+    FOUND_MATCHES=( "${matches[@]}" )
     FOUND_MATCH_COUNT="${#matches[@]}"
-
     return 0
-
   fi
+
+  FOUND_MATCHES=( "${matches[@]}" )
+  FOUND_MATCH_COUNT="${#matches[@]}"
+  FOUND_DEVICE_ID=""
 
   for file in "${matches[@]}"; do
     _print_file_numbered "$file"
   done
 }
+
 find_by_description() { _find_by_key_contains "Beschreibung=" "${1-}"; }
-find_by_location() { _find_by_key_contains "Location=" "${1-}"; }
-find_by_status() { _find_by_key_contains "Status=" "${1-}"; }
-find_by_category() { _find_by_key_contains "Kategorie=" "${1-}"; }
-find_by_owner() { _find_by_key_contains "Besitzer=" "${1-}"; }
+find_by_location()    { _find_by_key_contains "Location=" "${1-}"; }
+find_by_status()      { _find_by_key_contains "Status=" "${1-}"; }
+find_by_category()    { _find_by_key_contains "Kategorie=" "${1-}"; }
+find_by_owner()       { _find_by_key_contains "Besitzer=" "${1-}"; }
+
 find_device_main() {
   setup_logging "$@"
   install_logging_traps
@@ -651,18 +658,45 @@ find_device_main() {
   log_info "normalized mode='$normalized'"
 
   case "$normalized" in
-    id) find_by_id "$query" ;;
+    id)          find_by_id "$query" ;;
     description) find_by_description "$query" ;;
-    location) find_by_location "$query" ;;
-    status) find_by_status "$query" ;;
-    category) find_by_category "$query" ;;
-    owner) find_by_owner "$query" ;;
+    location)    find_by_location "$query" ;;
+    status)      find_by_status "$query" ;;
+    category)    find_by_category "$query" ;;
+    owner)       find_by_owner "$query" ;;
   esac
 
   log_info "find_device_main abgeschlossen"
 }
-##############################
-#entnahme <---
+
+###############################################################################
+# 6) Orchestrators (public)
+###############################################################################
+
+find_and_change_main() {
+  find_device_main
+
+  if (( FOUND_MATCH_COUNT == 0 )); then
+    echo "Kein Gerät gefunden." >&2
+    return 1
+  elif (( FOUND_MATCH_COUNT > 1 )); then
+    echo "Mehrere Geräte gefunden (${FOUND_MATCH_COUNT}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
+    find_device_main
+  fi
+
+  if [[ -z "${FOUND_DEVICE_ID:-}" ]]; then
+    echo "Interner Fehler: FOUND_DEVICE_ID ist leer trotz genau 1 Treffer." >&2
+    return 1
+  fi
+
+  echo "Bearbeite Gerät mit ID: $FOUND_DEVICE_ID"
+  change_device_main "$FOUND_DEVICE_ID"
+}
+
+###############################################################################
+# 7) Count change (public) — robust ohne extglob-Abhängigkeit
+###############################################################################
+
 change_device_count() {
   setup_logging "$@"
   install_logging_traps
@@ -673,7 +707,6 @@ change_device_count() {
 
   log_info "change_device_count gestartet device_id='${device_id-}' field='${field-}' new_value='${new_value-}'"
 
-  # Get device_id (arg or prompt)
   if [[ -z "$device_id" ]]; then
     if _is_interactive; then
       read_logged 'Enter the device ID= ' device_id
@@ -686,13 +719,13 @@ change_device_count() {
   echo_logged "device ID=$device_id"
   log_info "Verwende device_id='$device_id'"
 
-  # Basic safety: avoid creating paths like devices/../x
-  if [[ -z "$device_id" || "$device_id" == *"/"* ]]; then
+  if ! _dm__validate_device_id "$device_id"; then
     error_logged "ERROR: invalid device ID: '$device_id'"
     return 2
   fi
 
-  local device_file="$DEVICE_DIR/$device_id.txt"
+  local device_file
+  device_file="$(_dm__device_file "$device_id")"
   log_info "device_file='$device_file'"
 
   if [[ ! -f "$device_file" ]]; then
@@ -721,45 +754,49 @@ change_device_count() {
     return 1
   fi
 
-  # Get field (arg or prompt)
   if [[ -z "$field" ]]; then
     if _is_interactive; then
       field="Anzahl="
     else
-      error_logged "ERROR: missing FIELD (non-interactive). Provide 1/2/3/4 or name (Beschreibung/Location/Status/Anzahl/Kategorie)."
+      error_logged "ERROR: missing FIELD (non-interactive)."
       return 2
     fi
   fi
   log_info "Verwende field='$field'"
-  change_prefix="Anzahl="
 
-  
+  local change_prefix="Anzahl="
+
   local old_line=""
   old_line="$(grep -m 1 -F "$change_prefix" "$device_file" || true)"
+
+  local old_value=""
   old_value="${old_line#$change_prefix}"
   log_info "old_value='$old_value'"
 
+  local auswahl=""
   read_logged 'Möchten Sie die Anzahl erhöhen oder verringern? |(1) Erhöhen|  |(2) Verringern|    |(3) Ändern| ' auswahl
   log_info "count_more_or_less Auswahl='$auswahl'"
 
-  if [[ "$auswahl" != @(1|2|3) ]]; then
-    error_logged "Ungültige Auswahl: '$auswahl'. Bitte 1, 2 oder 3 eingeben."
-    return 2
-  elif [[ "$auswahl" == "1" ]]; then
-    new_value=$(( old_value + 1 ))
-    log_info "Anzahl wird erhöht: old_value='$old_value' new_value='$new_value'"
-  elif [[ "$auswahl" == "2" ]]; then
-    new_value=$(( old_value - 1 ))
-    log_info "Anzahl wird verringert: old_value='$old_value' new_value='$new_value'"
-  elif [[ "$auswahl" == "3" ]]; then
-    log_info "Anzahl wird direkt geändert: old_value='$old_value' bisherige new_value='$new_value'"
-    read_logged 'neue Anzahl= ' new_value
-  fi
-  local final_line="${change_prefix}${new_value}"
-  log_info "old_line='${old_line-}' final_line='$final_line'"
+  # Robust: keine Abhängigkeit von extglob (bei set -euo pipefail wichtig)
+  case "$auswahl" in
+    1)
+      new_value=$(( old_value + 1 ))
+      log_info "Anzahl wird erhöht: old_value='$old_value' new_value='$new_value'"
+      ;;
+    2)
+      new_value=$(( old_value - 1 ))
+      log_info "Anzahl wird verringert: old_value='$old_value' new_value='$new_value'"
+      ;;
+    3)
+      log_info "Anzahl wird direkt geändert: old_value='$old_value' bisherige new_value='$new_value'"
+      read_logged 'neue Anzahl= ' new_value
+      ;;
+    *)
+      error_logged "Ungültige Auswahl: '$auswahl'. Bitte 1, 2 oder 3 eingeben."
+      return 2
+      ;;
+  esac
 
-
-  # Get new_value (arg or prompt)
   if [[ -z "$new_value" ]]; then
     if _is_interactive; then
       read_logged 'neue Anzahl= ' new_value
@@ -770,6 +807,9 @@ change_device_count() {
   fi
   log_info "Verwende new_value='$new_value'"
 
+  local final_line="${change_prefix}${new_value}"
+  log_info "old_line='${old_line-}' final_line='$final_line'"
+
   if [[ -z "$old_line" ]]; then
     echo_logged "could not find the line to change, adding it anyway"
   else
@@ -777,29 +817,9 @@ change_device_count() {
   fi
   echo_logged "final change: $final_line"
 
-  # Safe rewrite:
-  # - replace the first line starting with prefix
-  # - remove duplicates of that prefix
-  # - if none existed, append at end
-  local tmp
-  tmp="$(mktemp)" || return 1
-  log_info "Temporäre Datei erzeugt tmp='$tmp'"
-
-  awk -v p="$change_prefix" -v newline="$final_line" '
-    BEGIN { done=0 }
-    {
-      if (substr($0, 1, length(p)) == p) {
-        if (!done) { print newline; done=1 }
-        next
-      }
-      print
-    }
-    END { if (!done) print newline }
-  ' "$device_file" >"$tmp" && mv -- "$tmp" "$device_file"
-
+  _dm__rewrite_prefix_line "$device_file" "$change_prefix" "$final_line"
   log_info "Datei erfolgreich umgeschrieben device_file='$device_file'"
 
-  # Optional outputs for a runner script
   DEVICE_ID="$device_id"
   DEVICE_count="$device_count"
   CHANGE="$change_prefix"
@@ -807,40 +827,72 @@ change_device_count() {
 
   log_info "change_device_main abgeschlossen DEVICE_ID='$DEVICE_ID' DEVICE_count='$DEVICE_count' CHANGE='$CHANGE' FINALCHANGE='$FINALCHANGE'"
 }
+
 change_count_main() {
-  #local mode="${1-}"   # id/description/location/status/category/owner oder 1-6
-  #local query="${2-}"  # Suchbegriff, optional (wird bei id meist die ID selbst sein)
+  find_device_main
 
-  # Einfache Usage-Check
-  #if [[ -z "$mode" ]]; then
-  #  echo "Usage: $SCRIPT_NAME <mode> [query]" >&2
-  #  echo "  mode: id/description/location/status/category/owner oder 1-6" >&2
-  #  exit 2
-  #fi
-
-  # 1. Gerät(e) suchen: ruft intern find_by_* auf
-  #    WICHTIG: find_device_main setzt jetzt FOUND_MATCHES / FOUND_MATCH_COUNT / FOUND_DEVICE_ID
-  find_device_main #"$mode" "${query-}"
-
-  # 2. Prüfen, was gefunden wurde
   if (( FOUND_MATCH_COUNT == 0 )); then
     echo "Kein Gerät gefunden." >&2
     return 1
   elif (( FOUND_MATCH_COUNT > 1 )); then
     echo "Mehrere Geräte gefunden (${FOUND_MATCH_COUNT}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
-    find_device_main #-> erneuter aufruf, solange man nicht die suchergebnisse anklicken kann
+    find_device_main
   fi
 
-  # Hierher kommen wir nur, wenn genau 1 Match gefunden wurde.
-  # FOUND_DEVICE_ID sollte gesetzt sein (durch find_by_id oder _find_by_key_contains).
   if [[ -z "${FOUND_DEVICE_ID:-}" ]]; then
     echo "Interner Fehler: FOUND_DEVICE_ID ist leer trotz genau 1 Treffer." >&2
     return 1
   fi
 
   echo "Bearbeite Gerät mit ID: $FOUND_DEVICE_ID"
-
-  # 3. change_device_main mit dieser ID aufrufen.
-  #    field und new_value lässt du einfach interaktiv abfragen (wie bisher).
   change_device_count "$FOUND_DEVICE_ID"
 }
+
+###############################################################################
+# 8) Optional dispatcher (ONLY when executed directly; safe for source)
+###############################################################################
+
+_dm__dispatch() {
+  local base
+  base="$(basename -- "$0")"
+
+  case "$base" in
+    create_device.sh)      create_device_main "$@"; return $? ;;
+    change_device.sh)      change_device_main "$@"; return $? ;;
+    find_device.sh)        find_device_main "$@"; return $? ;;
+    find_and_change.sh)    find_and_change_main "$@"; return $? ;;
+    change_count.sh)       change_count_main "$@"; return $? ;;
+  esac
+
+  local cmd="${1-}"
+  case "$cmd" in
+    create) shift; create_device_main "$@" ;;
+    change) shift; change_device_main "$@" ;;
+    find) shift; find_device_main "$@" ;;
+    find_and_change) shift; find_and_change_main "$@" ;;
+    change_count) shift; change_count_main "$@" ;;
+    ""|help|-h|--help)
+      cat <<'EOF'
+Usage:
+  ./common.sh <command> [args...]
+
+Commands:
+  create [device_id]
+  change [device_id] [field] [new_value]
+  find [mode] [query]
+  find_and_change
+  change_count
+EOF
+      return 2
+      ;;
+    *)
+      error_logged "Unknown command '$cmd'. Use --help."
+      return 2
+      ;;
+  esac
+}
+
+# Critical: do not auto-run when sourced (your runner sources common.sh)
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  _dm__dispatch "$@"
+fi
