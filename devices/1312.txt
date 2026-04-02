@@ -1,5 +1,5 @@
 Beschreibung=ACAB
 Location=überall
 Status=fick die bullerei
-Kategorie=blau ist schlecht
+Kategorie=blabla
 Besitzer=die Kommunistische Partei Deutschlands

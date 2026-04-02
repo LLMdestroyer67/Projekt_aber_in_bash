@@ -2,4 +2,4 @@ Beschreibung=Dell Latitude 3440
 Location=auf meinem schreibtisch
 Status=Voll
 Besitzer=Simon Kolesnik
-Kategorie=kak huren laptop
+Kategorie=Laptop

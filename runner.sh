@@ -9,15 +9,8 @@ SCRIPT_NAME="$(basename -- "$0")"
 DEVICE_DIR="${DEVICE_DIR:-$SCRIPT_DIR/devices}"
 RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 
-# Shared logger
-# shellcheck source=./logger.sh
+# Sourcing the library of functions
 . "$SCRIPT_DIR/common.sh"
-
-# Source your modules (these files must NOT auto-run when sourced)
-#source "$SCRIPT_DIR/create_device.sh"
-#source "$SCRIPT_DIR/change_device.sh"
-#source "$SCRIPT_DIR/find_device.sh"
-#source "$SCRIPT_DIR/find_and_change.sh"
 
 shutdown=0
 
@@ -37,7 +30,7 @@ run_once() {
   # LOGIC
   # ===========================
 
-  if [[ -t 0 && -t 1 ]]; then
+  if _is_interactive; then
     # Interactive example: ask what to do
     echo_logged ""
     echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|"
@@ -130,6 +123,7 @@ main() {
 
   while [[ "$shutdown" -eq 0 ]]; do
     # Don’t let one failure kill the loop; capture rc and continue.
+    echo "DEBUG: stdin tty=$([ -t 0 ] && echo yes || echo no), stdout tty=$([ -t 1 ] && echo yes || echo no)" >&2
     if run_once; then
       log_info "run_once erfolgreich abgeschlossen"
     else
