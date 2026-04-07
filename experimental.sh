@@ -13,6 +13,203 @@ DEVICE_DIR="${DEVICE_DIR:-devices}"
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 SCRIPT_NAME="$(basename -- "$0")"
 
+# =============================================================================
+# FIELD / MODE DEFINITIONS
+#
+# Format for single/multi fields:  "pattern1|pattern2|...:Prefix="
+# Format for find modes:           "pattern1|pattern2|...:canonical:FileKey="
+#   - canonical  = the normalized mode name used internally
+#   - FileKey=   = the grep key used in device files (empty for "id" mode)
+# =============================================================================
+
+# Fields for single devices (Einzelgerät)
+single_field_1="1|beschreibung|desc|description:Beschreibung="
+single_field_2="2|location|loc:Location="
+single_field_3="3|status:Status="
+single_field_4="4|kategorie|cat:Kategorie="
+single_field_5="5|besitzer|owner:Besitzer="
+single_field_6="6|Seriennummer|serial:Seriennummer="
+single_field_7="7|SAP-ID|sap_id:SAP-ID="
+single_field_8="8|Hersteller|manufacturer:Hersteller="
+single_field_9="9|Modell|model:Modell="
+single_field_10="10|Anschaffungsdatum|purchase_date:Anschaffungsdatum="
+single_field_11="11|Ausmusterungsdatum|disposal_date:Ausmusterungsdatum="
+single_field_12="12|Einkaufswert|purchase_value:Einkaufswert="
+single_fields=(
+  "$single_field_1"
+  "$single_field_2"
+  "$single_field_3"
+  "$single_field_4"
+  "$single_field_5"
+  "$single_field_6"
+  "$single_field_7"
+  "$single_field_8"
+  "$single_field_9"
+  "$single_field_10"
+  "$single_field_11"
+  "$single_field_12"
+)
+
+# Fields for multi/collection devices (Sammeleintrag)
+multi_field_1="1|beschreibung|desc|description:Beschreibung="
+multi_field_2="2|anzahl|count|qty|quantity:Anzahl="
+multi_field_3="3|location|loc:Location="
+multi_field_4="4|kategorie|cat:Kategorie="
+multi_fields=(
+  "$multi_field_1"
+  "$multi_field_2"
+  "$multi_field_3"
+  "$multi_field_4"
+)
+
+# Find/search modes
+find_mode_1="1|id:id:"
+find_mode_2="2|description|desc|beschreibung:description:Beschreibung="
+find_mode_3="3|location|loc:location:Location="
+find_mode_4="4|status:status:Status="
+find_mode_5="5|kategorie|cat:category:Kategorie="
+find_mode_6="6|besitzer|owner:owner:Besitzer="
+find_mode_7="7|Seriennummer|serial:serial:Seriennummer="
+find_mode_8="8|SAP-ID|sap_id:sap_id:SAP-ID="
+find_mode_9="9|Hersteller|manufacturer:manufacturer:Hersteller="
+find_mode_10="10|Modell|model:model:Modell="
+find_mode_11="11|Anschaffungsdatum|purchase_date:purchase_date:Anschaffungsdatum="
+find_mode_12="12|Ausmusterungsdatum|disposal_date:disposal_date:Ausmusterungsdatum="
+find_mode_13="13|Einkaufswert|purchase_value:purchase_value:Einkaufswert="
+find_modes=(
+  "$find_mode_1"
+  "$find_mode_2"
+  "$find_mode_3"
+  "$find_mode_4"
+  "$find_mode_5"
+  "$find_mode_6"
+  "$find_mode_7"
+  "$find_mode_8"
+  "$find_mode_9"
+  "$find_mode_10"
+  "$find_mode_11"
+  "$find_mode_12"
+  "$find_mode_13"
+)
+
+# -----------------------------------------------------------------------------
+# _helper_fields_build_prompt()
+# Beschreibung: Baut einen Prompt-String aus einem fields-Array
+# Parameter:    $@ = field definitions ("patterns:Prefix=")
+# Rückgabe:     Prompt-String auf stdout  e.g. "(1)Beschreibung, (2)Anzahl, ..."
+# -----------------------------------------------------------------------------
+_helper_fields_build_prompt() {
+  local parts=()
+  for field in "$@"; do
+    local patterns="${field%%:*}"
+    local prefix="${field#*:}"
+    local num="${patterns%%|*}"
+    local label="${prefix%=}"
+    parts+=( "(${num})${label}" )
+  done
+  local IFS=', '
+  printf '%s' "${parts[*]}"
+}
+
+# -----------------------------------------------------------------------------
+# _helper_fields_match_to_prefix()
+# Beschreibung: Sucht in einem fields-Array nach einem passenden Muster und
+#               gibt den zugehörigen Präfix zurück
+# Parameter:    $1 = Eingabe-String (normalisiert), $2.. = field definitions
+# Rückgabe:     Präfix-String auf stdout; rc=1 wenn kein Treffer
+# -----------------------------------------------------------------------------
+_helper_fields_match_to_prefix() {
+  local input="$1"
+  shift
+  for field in "$@"; do
+    local patterns="${field%%:*}"
+    local prefix="${field#*:}"
+    local IFS='|'
+    read -ra pats <<< "$patterns"
+    local pat
+    for pat in "${pats[@]}"; do
+      if [[ "$input" == "$pat" ]]; then
+        printf '%s' "$prefix"
+        return 0
+      fi
+    done
+  done
+  return 1
+}
+
+# -----------------------------------------------------------------------------
+# _helper_modes_build_prompt()
+# Beschreibung: Baut Prompt- und Fehlertext aus dem find_modes-Array
+# Parameter:    $1 = "prompt" oder "error"
+# Rückgabe:     Fertiger String auf stdout
+# -----------------------------------------------------------------------------
+_helper_modes_build_prompt() {
+  local type="$1"
+  local prompt_parts=() error_parts=()
+  for m in "${find_modes[@]}"; do
+    local patterns="${m%%:*}"
+    local rest="${m#*:}"
+    local canonical="${rest%%:*}"
+    local num="${patterns%%|*}"
+    prompt_parts+=( "(${num})${canonical}" )
+    error_parts+=( "${canonical}/${num}" )
+  done
+  if [[ "$type" == "prompt" ]]; then
+    local IFS=', '
+    printf 'Find device by %s: ' "${prompt_parts[*]}"
+  else
+    local IFS='/'
+    printf '%s' "${error_parts[*]}"
+  fi
+}
+
+# -----------------------------------------------------------------------------
+# _helper_modes_normalize()
+# Beschreibung: Normalisiert einen Suchmodus-String auf den kanonischen Wert
+# Parameter:    $1 = roher Modus-String
+# Rückgabe:     Kanonischer Modus auf stdout; rc=1 bei ungültigem Modus
+# -----------------------------------------------------------------------------
+_helper_modes_normalize() {
+  local input="${1,,}"
+  for m in "${find_modes[@]}"; do
+    local patterns="${m%%:*}"
+    local rest="${m#*:}"
+    local canonical="${rest%%:*}"
+    local IFS='|'
+    read -ra pats <<< "$patterns"
+    local pat
+    for pat in "${pats[@]}"; do
+      if [[ "$input" == "$pat" ]]; then
+        printf '%s' "$canonical"
+        return 0
+      fi
+    done
+  done
+  return 1
+}
+
+# -----------------------------------------------------------------------------
+# _helper_modes_get_file_key()
+# Beschreibung: Gibt den Datei-Schlüssel (z.B. "Beschreibung=") für einen
+#               kanonischen Modus zurück
+# Parameter:    $1 = canonical mode
+# Rückgabe:     FileKey= auf stdout; rc=1 wenn nicht gefunden
+# -----------------------------------------------------------------------------
+_helper_modes_get_file_key() {
+  local canonical="$1"
+  for m in "${find_modes[@]}"; do
+    local rest="${m#*:}"
+    local c="${rest%%:*}"
+    local key="${rest#*:}"
+    if [[ "$c" == "$canonical" ]]; then
+      printf '%s' "$key"
+      return 0
+    fi
+  done
+  return 1
+}
+
+#=============================================================================
 # -----------------------------------------------------------------------------
 # _helper_core_is_interactive()
 # Beschreibung: Prüft ob stdin und stdout interaktive Terminals sind
@@ -352,15 +549,8 @@ _device_count_from_id() {
 # Rückgabe:     Präfix-String auf stdout, rc=1 bei ungültigem Feld
 # -----------------------------------------------------------------------------
 _helper_change_field_to_prefix_single() {
-  local f="$1"
-  case "$f" in
-    1|beschreibung|desc|description) printf '%s' 'Beschreibung=' ;;
-    2|location|loc)                  printf '%s' 'Location=' ;;
-    3|status)                        printf '%s' 'Status=' ;;
-    4|kategorie|cat)                 printf '%s' 'Kategorie=' ;;
-    5|besitzer|owner)                printf '%s' 'Besitzer=' ;;
-    *) return 1 ;;
-  esac
+  local f="${1,,}"
+  _helper_fields_match_to_prefix "$f" "${single_fields[@]}"
 }
 
 # -----------------------------------------------------------------------------
@@ -370,14 +560,8 @@ _helper_change_field_to_prefix_single() {
 # Rückgabe:     Präfix-String auf stdout, rc=1 bei ungültigem Feld
 # -----------------------------------------------------------------------------
 _helper_change_field_to_prefix_multi() {
-  local f="$1"
-  case "$f" in
-    1|beschreibung|desc|description) printf '%s' 'Beschreibung=' ;;
-    2|anzahl|count|qty|quantity)     printf '%s' 'Anzahl=' ;;
-    3|location|loc)                  printf '%s' 'Location=' ;;
-    4|kategorie|cat)                 printf '%s' 'Kategorie=' ;;
-    *) return 1 ;;
-  esac
+  local f="${1,,}"
+  _helper_fields_match_to_prefix "$f" "${multi_fields[@]}"
 }
 
 _field_to_prefix() {
@@ -403,7 +587,9 @@ _field_to_prefix() {
 # -----------------------------------------------------------------------------
 _helper_change_prompt_field_single() {
   local choice=""
-  read_logged 'was wird geändert? ((1)Beschreibung, (2)Location, (3)Status), (4)Kategorie, (5)Besitzer: ' choice
+  local prompt
+  prompt="was wird geändert? ($(_helper_fields_build_prompt "${single_fields[@]}")): "
+  read_logged "$prompt" choice
   printf '%s' "$choice"
 }
 
@@ -415,7 +601,9 @@ _helper_change_prompt_field_single() {
 # -----------------------------------------------------------------------------
 _helper_change_prompt_field_multi() {
   local choice=""
-  read_logged 'was wird geändert? ((1)Beschreibung, (2)Anzahl, (3)Location, (4)Kategorie): ' choice
+  local prompt
+  prompt="was wird geändert? ($(_helper_fields_build_prompt "${multi_fields[@]}")): "
+  read_logged "$prompt" choice
   printf '%s' "$choice"
 }
 
@@ -710,47 +898,47 @@ _helper_create_write_field() {
   log_info "Geschrieben: ${key}='${value}'"
 }
 
+# -----------------------------------------------------------------------------
+# _helper_create_fill_fields()
+# Beschreibung: Liest und schreibt alle Felder eines fields-Arrays in eine Datei
+# Parameter:    $1 = device_file, $2.. = field definitions ("patterns:Prefix=")
+# Rückgabe:     keine (Seiteneffekt: Datei wird beschrieben)
+# -----------------------------------------------------------------------------
+_helper_create_fill_fields() {
+  local device_file="$1"
+  shift
+  local wrote=0
+  for field in "$@"; do
+    local prefix="${field#*:}"
+    local key="${prefix%=}"
+    local safe_key="${key//[^a-zA-Z0-9_]/_}"
+    local var_name="FIELD_VAL_${safe_key^^}"
+    _helper_create_read_field "${key} des Geräts: " "$var_name"
+    local val="${!var_name}"
+    if [[ -z "$val" ]]; then
+      log_info "Feld '$key' wurde übersprungen (leer)"
+      continue
+    fi
+    if [[ "$wrote" -eq 0 ]]; then
+      _helper_create_write_field "$device_file" "$key" "$val" ">"
+      wrote=1
+    else
+      _helper_create_write_field "$device_file" "$key" "$val" ">>"
+    fi
+  done
+}
+
 complete_one_device() {
   local device_file="$1"
-  local DEVICE_DESC DEVICE_LOC DEVICE_STATUS DEVICE_CAT DEVICE_WHO
-
   log_info "complete_one_device gestartet device_file='$device_file'"
-
-  _helper_create_read_field 'Beschreibung des Geräts: ' DEVICE_DESC
-  _helper_create_read_field 'Location des Geräts: '     DEVICE_LOC
-  _helper_create_read_field 'Status des Geräts : '      DEVICE_STATUS
-  _helper_create_read_field 'Kategorie des Geräts: '    DEVICE_CAT
-  _helper_create_read_field 'Besitzer: '                DEVICE_WHO
-
-  log_info "Schreibe Einzelgerät in Datei '$device_file'"
-
-  _helper_create_write_field "$device_file" "Beschreibung" "$DEVICE_DESC"  ">"
-  _helper_create_write_field "$device_file" "Location"     "$DEVICE_LOC"   ">>"
-  _helper_create_write_field "$device_file" "Status"       "$DEVICE_STATUS" ">>"
-  _helper_create_write_field "$device_file" "Kategorie"    "$DEVICE_CAT"   ">>"
-  _helper_create_write_field "$device_file" "Besitzer"     "$DEVICE_WHO"   ">>"
-
+  _helper_create_fill_fields "$device_file" "${single_fields[@]}"
   log_info "complete_one_device abgeschlossen device_file='$device_file'"
 }
 
 complete_more_device() {
   local device_file="$1"
-  local DEVICE_DESC DEVICE_CT DEVICE_LOC DEVICE_CAT
-
   log_info "complete_more_device gestartet device_file='$device_file'"
-
-  _helper_create_read_field 'Beschreibung des Geräts: ' DEVICE_DESC
-  _helper_create_read_field 'Anzahl: '                  DEVICE_CT
-  _helper_create_read_field 'Location: '                DEVICE_LOC
-  _helper_create_read_field 'Kategorie: '               DEVICE_CAT
-
-  log_info "Schreibe Sammeleintrag in Datei '$device_file'"
-
-  _helper_create_write_field "$device_file" "Beschreibung" "$DEVICE_DESC" ">"
-  _helper_create_write_field "$device_file" "Anzahl"       "$DEVICE_CT"   ">>"
-  _helper_create_write_field "$device_file" "Location"     "$DEVICE_LOC"  ">>"
-  _helper_create_write_field "$device_file" "Kategorie"    "$DEVICE_CAT"  ">>"
-
+  _helper_create_fill_fields "$device_file" "${multi_fields[@]}"
   log_info "complete_more_device abgeschlossen device_file='$device_file'"
 }
 
@@ -951,19 +1139,7 @@ FOUND_MATCH_COUNT=0
 # Rückgabe:     Normalisierter Modus auf stdout; rc=1 bei ungültigem Modus
 # -----------------------------------------------------------------------------
 _helper_find_normalize_mode() {
-  local m="${1-}"
-  m="${m,,}"
-  log_debug "_helper_find_normalize_mode raw='${1-}' normalized='$m'"
-
-  case "$m" in
-    1|id)                              printf '%s' "id" ;;
-    2|description|desc|beschreibung)   printf '%s' "description" ;;
-    3|location|loc)                    printf '%s' "location" ;;
-    4|status)                          printf '%s' "status" ;;
-    5|kategorie|cat)                   printf '%s' "category" ;;
-    6|besitzer|owner)                  printf '%s' "owner" ;;
-    *) return 1 ;;
-  esac
+  _helper_modes_normalize "${1-}"
 }
 
 _normalize_mode() {
@@ -1184,11 +1360,19 @@ _find_by_key_contains() {
   _helper_find_handle_multi_match "${matches[@]}"
 }
 
-find_by_description() { _find_by_key_contains "Beschreibung=" "${1-}"; }
-find_by_location()    { _find_by_key_contains "Location="     "${1-}"; }
-find_by_status()      { _find_by_key_contains "Status="       "${1-}"; }
-find_by_category()    { _find_by_key_contains "Kategorie="    "${1-}"; }
-find_by_owner()       { _find_by_key_contains "Besitzer="     "${1-}"; }
+# -----------------------------------------------------------------------------
+# find_by_* functions — generated dynamically from find_modes
+# Each non-id mode gets a find_by_<canonical>() function that calls
+# _find_by_key_contains with the correct file key.
+# -----------------------------------------------------------------------------
+for _fmode in "${find_modes[@]}"; do
+  _frest="${_fmode#*:}"
+  _fcanonical="${_frest%%:*}"
+  _fkey="${_frest#*:}"
+  [[ "$_fcanonical" == "id" ]] && continue
+  eval "find_by_${_fcanonical}() { _find_by_key_contains '${_fkey}' \"\${1-}\"; }"
+done
+unset _fmode _frest _fcanonical _fkey
 
 # -----------------------------------------------------------------------------
 # _helper_find_resolve_mode()
@@ -1200,9 +1384,9 @@ _helper_find_resolve_mode() {
   local mode="$1"
   if [[ -z "$mode" ]]; then
     if _helper_core_is_interactive; then
-      read_logged 'Find device by (1)ID, (2)description, (3)location, (4)status, (5)category, (6)owner: ' mode
+      read_logged "$(_helper_modes_build_prompt prompt)" mode
     else
-      error_logged "ERROR: missing mode (non-interactive). Use: id/description/location/status/category/owner (or 1/2/3/4/5/6)"
+      error_logged "ERROR: missing mode (non-interactive). Use: $(_helper_modes_build_prompt error)"
       return 2
     fi
   fi
@@ -1217,14 +1401,11 @@ _helper_find_resolve_mode() {
 # -----------------------------------------------------------------------------
 _helper_find_dispatch_by_mode() {
   local normalized="$1" query="$2"
-  case "$normalized" in
-    id)          find_by_id          "$query" ;;
-    description) find_by_description "$query" ;;
-    location)    find_by_location    "$query" ;;
-    status)      find_by_status      "$query" ;;
-    category)    find_by_category    "$query" ;;
-    owner)       find_by_owner       "$query" ;;
-  esac
+  if [[ "$normalized" == "id" ]]; then
+    find_by_id "$query"
+  else
+    "find_by_${normalized}" "$query"
+  fi
 }
 
 find_device_main() {

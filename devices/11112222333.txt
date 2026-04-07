@@ -1,5 +1,0 @@
-Beschreibung=idiotengerät
-Location=idiotenhaus
-Status=idiot
-Kategorie=idiot
-Besitzer=der idiotische idiot

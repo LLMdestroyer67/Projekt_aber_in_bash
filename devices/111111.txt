@@ -1,5 +1,0 @@
-Beschreibung=hurensohn beispiel
-Location=in der grotte
-Status=fatal
-Kategorie=arsch
-Besitzer=wer bist du ya

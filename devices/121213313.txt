@@ -1,5 +1,0 @@
-Beschreibung=gerät abc
-Location=raum abc
-Status=kaputt
-Kategorie=gerät mit funktion
-Besitzer=arsch

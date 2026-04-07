@@ -10,7 +10,7 @@ DEVICE_DIR="${DEVICE_DIR:-$SCRIPT_DIR/devices}"
 RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 
 # Sourcing the library of functions
-. "$SCRIPT_DIR/common.sh"
+. "$SCRIPT_DIR/experimental.sh"
 
 shutdown=0
 

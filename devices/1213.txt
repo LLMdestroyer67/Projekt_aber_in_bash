@@ -1,4 +1,0 @@
-Beschreibung=hurenlaptop
-Location=5og
-Status=kaputt
-Kategorie=Laptop

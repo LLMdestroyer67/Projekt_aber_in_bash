@@ -7839,3 +7839,464 @@
 2026-04-02T12:04:32Z [DEBUG] [runner.sh] [pid=66747] [func=log_message:137] Sleep 2s
 2026-04-02T12:04:34Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] run_once gestartet
 2026-04-02T12:04:34Z [INFO] [runner.sh] [pid=66747] [func=log_message:137] Non-interactive Modus erkannt
+2026-04-02T15:10:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Logging initialisiert
+2026-04-02T15:10:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-02T15:10:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Logging-Traps installiert
+2026-04-02T15:10:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-02T15:10:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] run_once gestartet
+2026-04-02T15:10:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] STDOUT: 
+2026-04-02T15:10:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-02T15:11:46Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='> ' value='1'
+2026-04-02T15:11:46Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Menüauswahl choice='1'
+2026-04-02T15:11:46Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Running create_device_main (interactive)...
+2026-04-02T15:11:46Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] create_device_main gestartet
+2026-04-02T15:11:46Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] STDOUT: device folder has been created
+2026-04-02T15:11:46Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-04-02T15:11:46Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Argument device_id=''
+2026-04-02T15:12:21Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Enter the device ID: ' value='1234'
+2026-04-02T15:12:21Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] STDOUT: device ID=1234
+2026-04-02T15:12:21Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Verwende device_id='1234'
+2026-04-02T15:12:21Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] device_count='1'
+2026-04-02T15:12:21Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] device_file='/workspaces/Projekt_aber_in_bash/devices/1234.txt'
+2026-04-02T15:12:21Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] STDOUT: device 1234 has been created
+2026-04-02T15:12:21Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Leere Gerätedatei erzeugt: '/workspaces/Projekt_aber_in_bash/devices/1234.txt'
+2026-04-02T15:12:21Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] complete_one_device gestartet device_file='/workspaces/Projekt_aber_in_bash/devices/1234.txt'
+2026-04-02T15:12:33Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Beschreibung des Geräts: ' value='Dell Latitude'
+2026-04-02T15:12:33Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Geschrieben: Beschreibung='Dell Latitude'
+2026-04-02T15:12:37Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Location des Geräts: ' value='Technikraum'
+2026-04-02T15:12:37Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Geschrieben: Location='Technikraum'
+2026-04-02T15:12:39Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Status des Geräts: ' value='bereit'
+2026-04-02T15:12:39Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Geschrieben: Status='bereit'
+2026-04-02T15:12:42Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Kategorie des Geräts: ' value='Laptop'
+2026-04-02T15:12:42Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Geschrieben: Kategorie='Laptop'
+2026-04-02T15:12:48Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Besitzer des Geräts: ' value='Max Mustermann'
+2026-04-02T15:12:48Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] Geschrieben: Besitzer='Max Mustermann'
+2026-04-02T15:12:48Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] complete_one_device abgeschlossen device_file='/workspaces/Projekt_aber_in_bash/devices/1234.txt'
+2026-04-02T15:12:48Z [INFO] [create_device.sh] [pid=20675] [func=log_message:306] create_device_main abgeschlossen DEVICE_ID='1234' DEVICE_count='1'
+2026-04-02T15:12:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] create_device_main erfolgreich
+2026-04-02T15:12:48Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] run_once erfolgreich abgeschlossen
+2026-04-02T15:12:48Z [DEBUG] [runner.sh] [pid=20675] [func=log_message:306] Sleep 2s
+2026-04-02T15:12:50Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] run_once gestartet
+2026-04-02T15:12:50Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] STDOUT: 
+2026-04-02T15:12:50Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-02T15:13:05Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='> ' value='5'
+2026-04-02T15:13:05Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Menüauswahl choice='5'
+2026-04-02T15:13:05Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Running change_count_main (interactive)...
+2026-04-02T15:13:05Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] find_device_main gestartet mode='' query=''
+2026-04-02T15:13:18Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner: ' value='2'
+2026-04-02T15:13:18Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] normalized mode='description'
+2026-04-02T15:13:18Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] _find_by_key_contains gestartet key='Beschreibung=' value=''
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Find device by Beschreibung: ' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] _helper_find_resolve_search_value: nach read_logged value='20m'
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Anzahl Gerätedateien='9'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/1234.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/1234.txt': 'Beschreibung=Dell Latitude'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/6851.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Beschreibung=Dell Latitude 3440'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan2.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Beschreibung=Lan_kabel'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Beschreibung=LAN_KABEL_15M'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Beschreibung=LAN_KABEL_20M'
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Beschreibung=LAN Kabel 2M'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Beschreibung=LAN_KABEL_3M'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan.txt' für key='Beschreibung=' value='20m'
+2026-04-02T15:13:23Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan.txt': 'Beschreibung=irgendein scheiß kabel'
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Trefferanzahl='1'
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: Found 1 device with Beschreibung '20m':
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: ----- /workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt -----
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] find_by_key_contains abgeschlossen mit 1 Treffer: '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] device_id='LAN_KABEL_20M'
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: device ID: LAN_KABEL_20M
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] find_device_main abgeschlossen
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] change_device_count gestartet device_id='LAN_KABEL_20M' field='' new_value=''
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: device ID=LAN_KABEL_20M
+2026-04-02T15:13:23Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Verwende device_id='LAN_KABEL_20M'
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] device_file='/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: Found device: LAN_KABEL_20M - ready to change
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Gerätedatei gefunden
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: ------------------------------
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: ------------------------------
+2026-04-02T15:13:24Z [DEBUG] [change_count.sh] [pid=20675] [func=log_message:306] _helper_change_device_count_from_id id='LAN_KABEL_20M'
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] device_count='2'
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: ->Sammeleintrag
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Verwende field='Anzahl='
+2026-04-02T15:13:24Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] old_value='7'
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Möchten Sie die Anzahl erhöhen oder verringern? |(1) Erhöhen|  |(2) Verringern|    |(3) Ändern| ' value='1'
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] count_more_or_less Auswahl='1'
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Anzahl wird erhöht: old_value='7' new_value='8'
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Verwende new_value='8'
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] old_line='Anzahl=7' final_line='Anzahl=8'
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: ändere "Anzahl=7" zu "Anzahl=8"
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] STDOUT: final change: Anzahl=8
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Temporäre Datei erzeugt tmp='/tmp/tmp.4PO7xJKezy'
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] Datei erfolgreich umgeschrieben device_file='/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:13:27Z [INFO] [change_count.sh] [pid=20675] [func=log_message:306] change_device_main abgeschlossen DEVICE_ID='LAN_KABEL_20M' DEVICE_count='2' CHANGE='Anzahl=' FINALCHANGE='Anzahl=8'
+2026-04-02T15:13:27Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] change_count_main erfolgreich
+2026-04-02T15:13:27Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] run_once erfolgreich abgeschlossen
+2026-04-02T15:13:27Z [DEBUG] [runner.sh] [pid=20675] [func=log_message:306] Sleep 2s
+2026-04-02T15:13:29Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] run_once gestartet
+2026-04-02T15:13:29Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] STDOUT: 
+2026-04-02T15:13:29Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-02T15:13:34Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='> ' value='4'
+2026-04-02T15:13:34Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Menüauswahl choice='4'
+2026-04-02T15:13:34Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Running find_and_change_main (interactive)...
+2026-04-02T15:13:34Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] find_device_main gestartet mode='' query=''
+2026-04-02T15:13:53Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner: ' value='2'
+2026-04-02T15:13:53Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] normalized mode='description'
+2026-04-02T15:13:53Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] _find_by_key_contains gestartet key='Beschreibung=' value=''
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='Find device by Beschreibung: ' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] _helper_find_resolve_search_value: nach read_logged value='50m'
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Anzahl Gerätedateien='9'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/1234.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/1234.txt': 'Beschreibung=Dell Latitude'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/6851.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Beschreibung=Dell Latitude 3440'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan2.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Beschreibung=Lan_kabel'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Beschreibung=LAN_KABEL_15M'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Beschreibung=LAN_KABEL_20M'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Beschreibung=LAN Kabel 2M'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Beschreibung=LAN_KABEL_3M'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan.txt' für key='Beschreibung=' value='50m'
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan.txt': 'Beschreibung=irgendein scheiß kabel'
+2026-04-02T15:13:55Z [ERROR] [find_and_change.sh] [pid=20675] [func=log_message:306] STDERR: device with Beschreibung '50m' does not exist
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] find_device_main abgeschlossen
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] change_device_main gestartet device_id='LAN_KABEL_20M' field='' new_value=''
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] STDOUT: device ID=LAN_KABEL_20M
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Verwende device_id='LAN_KABEL_20M'
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] device_file='/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] STDOUT: Found device: LAN_KABEL_20M - ready to change
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Gerätedatei gefunden
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] STDOUT: ------------------------------
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] STDOUT: ------------------------------
+2026-04-02T15:13:55Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] _helper_change_device_count_from_id id='LAN_KABEL_20M'
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] device_count='2'
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] STDOUT: ->Sammeleintrag
+2026-04-02T15:13:55Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] _prompt_field gestartet device_count='2'
+2026-04-02T15:14:14Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='was wird geändert? ((1)Beschreibung,(2)Anzahl,(3)Location,(4)Kategorie): ' value='4'
+2026-04-02T15:14:14Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] _prompt_field choice='4'
+2026-04-02T15:14:14Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Verwende field='4'
+2026-04-02T15:14:14Z [DEBUG] [find_and_change.sh] [pid=20675] [func=log_message:306] _field_to_prefix device_count='2' field='4' normalized='4'
+2026-04-02T15:14:14Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] change_prefix='Kategorie='
+2026-04-02T15:14:20Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='neuer Inhalt= ' value='RJ45'
+2026-04-02T15:14:20Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Verwende new_value='RJ45'
+2026-04-02T15:14:20Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] old_line='' final_line='Kategorie=RJ45'
+2026-04-02T15:14:20Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] STDOUT: could not find the line to change, adding it anyway
+2026-04-02T15:14:20Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] STDOUT: final change: Kategorie=RJ45
+2026-04-02T15:14:21Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Temporäre Datei erzeugt tmp='/tmp/tmp.2W043Ue3Nb'
+2026-04-02T15:14:21Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] Datei erfolgreich umgeschrieben device_file='/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-02T15:14:21Z [INFO] [find_and_change.sh] [pid=20675] [func=log_message:306] change_device_main abgeschlossen DEVICE_ID='LAN_KABEL_20M' DEVICE_count='2' CHANGE='Kategorie=' FINALCHANGE='Kategorie=RJ45'
+2026-04-02T15:14:21Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] find_and_change_main erfolgreich
+2026-04-02T15:14:21Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] run_once erfolgreich abgeschlossen
+2026-04-02T15:14:21Z [DEBUG] [runner.sh] [pid=20675] [func=log_message:306] Sleep 2s
+2026-04-02T15:14:23Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] run_once gestartet
+2026-04-02T15:14:23Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] STDOUT: 
+2026-04-02T15:14:23Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-02T15:14:28Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Input gelesen prompt='> ' value='q'
+2026-04-02T15:14:28Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Menüauswahl choice='q'
+2026-04-02T15:14:28Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Benutzer hat Quit gewählt
+2026-04-02T15:14:28Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] run_once erfolgreich abgeschlossen
+2026-04-02T15:14:28Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] Runner stopped
+2026-04-02T15:14:28Z [INFO] [runner.sh] [pid=20675] [func=log_message:306] EXIT trap rc=0
+2026-04-02T15:29:18Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] Logging initialisiert
+2026-04-02T15:29:18Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-02T15:29:18Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] Logging-Traps installiert
+2026-04-02T15:29:18Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-02T15:29:18Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] run_once gestartet
+2026-04-02T15:29:18Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] STDOUT: 
+2026-04-02T15:29:18Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-02T15:29:21Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] Input gelesen prompt='> ' value='2'
+2026-04-02T15:29:21Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] Menüauswahl choice='2'
+2026-04-02T15:29:21Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] Running change_device_main (interactive)...
+2026-04-02T15:29:21Z [INFO] [change_device.sh] [pid=32151] [func=log_message:334] change_device_main gestartet device_id='' field='' new_value=''
+2026-04-02T15:29:25Z [INFO] [change_device.sh] [pid=32151] [func=log_message:334] Signal empfangen: INT
+2026-04-02T15:29:25Z [ERROR] [runner.sh] [pid=32151] [func=log_message:334] change_device_main fehlgeschlagen rc=130
+2026-04-02T15:29:25Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] run_once erfolgreich abgeschlossen
+2026-04-02T15:29:25Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] Runner stopped
+2026-04-02T15:29:25Z [INFO] [runner.sh] [pid=32151] [func=log_message:334] EXIT trap rc=0
+2026-04-02T15:29:27Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Logging initialisiert
+2026-04-02T15:29:27Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-02T15:29:27Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Logging-Traps installiert
+2026-04-02T15:29:27Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-02T15:29:27Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] run_once gestartet
+2026-04-02T15:29:27Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] STDOUT: 
+2026-04-02T15:29:27Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-02T15:29:29Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='> ' value='3'
+2026-04-02T15:29:29Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Menüauswahl choice='3'
+2026-04-02T15:29:29Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Running find_device_main (interactive)...
+2026-04-02T15:29:29Z [INFO] [find_device.sh] [pid=32375] [func=log_message:334] find_device_main gestartet mode='' query=''
+2026-04-02T15:31:29Z [INFO] [find_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner,(7)serial,(8)sap_id,(9)manufacturer,(10)model,(11)purchase_date,(12)disposal_date,(13)purchase_value: ' value='13'
+2026-04-02T15:31:29Z [INFO] [find_device.sh] [pid=32375] [func=log_message:334] normalized mode='purchase_value'
+2026-04-02T15:31:29Z [INFO] [find_device.sh] [pid=32375] [func=log_message:334] _find_by_key_contains gestartet key='Einkaufswert=' value=''
+2026-04-02T15:31:37Z [INFO] [find_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Find device by Einkaufswert: ' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] _helper_find_resolve_search_value: nach read_logged value='hmmm'
+2026-04-02T15:31:37Z [INFO] [find_device.sh] [pid=32375] [func=log_message:334] Anzahl Gerätedateien='9'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/1234.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/6851.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan2.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [DEBUG] [find_device.sh] [pid=32375] [func=log_message:334] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan.txt' für key='Einkaufswert=' value='hmmm'
+2026-04-02T15:31:37Z [ERROR] [find_device.sh] [pid=32375] [func=log_message:334] STDERR: device with Einkaufswert 'hmmm' does not exist
+2026-04-02T15:31:37Z [INFO] [find_device.sh] [pid=32375] [func=log_message:334] find_device_main abgeschlossen
+2026-04-02T15:31:37Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] find_device_main erfolgreich
+2026-04-02T15:31:37Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] run_once erfolgreich abgeschlossen
+2026-04-02T15:31:37Z [DEBUG] [runner.sh] [pid=32375] [func=log_message:334] Sleep 2s
+2026-04-02T15:31:39Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] run_once gestartet
+2026-04-02T15:31:39Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] STDOUT: 
+2026-04-02T15:31:39Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-02T15:31:56Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='> ' value='1'
+2026-04-02T15:31:56Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Menüauswahl choice='1'
+2026-04-02T15:31:56Z [INFO] [runner.sh] [pid=32375] [func=log_message:334] Running create_device_main (interactive)...
+2026-04-02T15:31:56Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] create_device_main gestartet
+2026-04-02T15:31:56Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] STDOUT: device folder has been created
+2026-04-02T15:31:56Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-04-02T15:31:56Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Argument device_id=''
+2026-04-02T15:32:00Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Enter the device ID: ' value='1312'
+2026-04-02T15:32:00Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] STDOUT: device ID=1312
+2026-04-02T15:32:00Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Verwende device_id='1312'
+2026-04-02T15:32:00Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] device_count='1'
+2026-04-02T15:32:00Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] device_file='/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-04-02T15:32:00Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] STDOUT: device 1312 has been created
+2026-04-02T15:32:00Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Leere Gerätedatei erzeugt: '/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-04-02T15:32:00Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] complete_one_device gestartet device_file='/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-04-02T15:32:03Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Beschreibung des Geräts: ' value='acab'
+2026-04-02T15:32:03Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Geschrieben: Beschreibung='acab'
+2026-04-02T15:32:08Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Location des Geräts: ' value='technikraum'
+2026-04-02T15:32:08Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Geschrieben: Location='technikraum'
+2026-04-02T15:32:13Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Status des Geräts: ' value='ready'
+2026-04-02T15:32:13Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Geschrieben: Status='ready'
+2026-04-02T15:32:16Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Kategorie des Geräts: ' value='Laptop'
+2026-04-02T15:32:16Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Geschrieben: Kategorie='Laptop'
+2026-04-02T15:32:25Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Besitzer des Geräts: ' value='Max Mustermann'
+2026-04-02T15:32:25Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Geschrieben: Besitzer='Max Mustermann'
+2026-04-02T15:32:30Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='Seriennummer des Geräts: ' value='1234567890'
+2026-04-02T15:32:30Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Geschrieben: Seriennummer='1234567890'
+2026-04-02T15:32:32Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] Input gelesen prompt='SAP-ID des Geräts: ' value='-'
+2026-04-02T15:32:32Z [INFO] [create_device.sh] [pid=32375] [func=log_message:334] EXIT trap rc=2
+2026-04-02T15:34:29Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] Logging initialisiert
+2026-04-02T15:34:29Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-02T15:34:29Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] Logging-Traps installiert
+2026-04-02T15:34:29Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-02T15:34:29Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] run_once gestartet
+2026-04-02T15:34:29Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] STDOUT: 
+2026-04-02T15:34:29Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-02T15:34:31Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='> ' value='1'
+2026-04-02T15:34:31Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] Menüauswahl choice='1'
+2026-04-02T15:34:31Z [INFO] [runner.sh] [pid=35794] [func=log_message:334] Running create_device_main (interactive)...
+2026-04-02T15:34:31Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] create_device_main gestartet
+2026-04-02T15:34:31Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] STDOUT: device folder has been created
+2026-04-02T15:34:31Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-04-02T15:34:31Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Argument device_id=''
+2026-04-02T15:34:33Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='Enter the device ID: ' value='1312'
+2026-04-02T15:34:33Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] STDOUT: device ID=1312
+2026-04-02T15:34:33Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Verwende device_id='1312'
+2026-04-02T15:34:33Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] device_count='1'
+2026-04-02T15:34:33Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] device_file='/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-04-02T15:34:33Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] STDOUT: device 1312 has been created
+2026-04-02T15:34:33Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Leere Gerätedatei erzeugt: '/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-04-02T15:34:33Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] complete_one_device gestartet device_file='/workspaces/Projekt_aber_in_bash/devices/1312.txt'
+2026-04-02T15:34:42Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='Beschreibung des Geräts: ' value='all cops are beatuiful'
+2026-04-02T15:34:42Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Geschrieben: Beschreibung='all cops are beatuiful'
+2026-04-02T15:34:53Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='Location des Geräts: ' value='nicht in bayern'
+2026-04-02T15:34:53Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Geschrieben: Location='nicht in bayern'
+2026-04-02T15:34:56Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='Status des Geräts: ' value='ready'
+2026-04-02T15:34:56Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Geschrieben: Status='ready'
+2026-04-02T15:35:00Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='Kategorie des Geräts: ' value='laptop'
+2026-04-02T15:35:00Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Geschrieben: Kategorie='laptop'
+2026-04-02T15:35:04Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='Besitzer des Geräts: ' value='max mustermann'
+2026-04-02T15:35:04Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Geschrieben: Besitzer='max mustermann'
+2026-04-02T15:35:07Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='Seriennummer des Geräts: ' value='123456789'
+2026-04-02T15:35:07Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Geschrieben: Seriennummer='123456789'
+2026-04-02T15:35:08Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] Input gelesen prompt='SAP-ID des Geräts: ' value=''
+2026-04-02T15:35:08Z [INFO] [create_device.sh] [pid=35794] [func=log_message:334] EXIT trap rc=2
+2026-04-07T10:18:20Z [INFO] [runner.sh] [pid=861] [func=log_message:334] Logging initialisiert
+2026-04-07T10:18:20Z [INFO] [runner.sh] [pid=861] [func=log_message:334] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-07T10:18:20Z [INFO] [runner.sh] [pid=861] [func=log_message:334] Logging-Traps installiert
+2026-04-07T10:18:20Z [INFO] [runner.sh] [pid=861] [func=log_message:334] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-07T10:18:20Z [INFO] [runner.sh] [pid=861] [func=log_message:334] run_once gestartet
+2026-04-07T10:18:20Z [INFO] [runner.sh] [pid=861] [func=log_message:334] STDOUT: 
+2026-04-07T10:18:20Z [INFO] [runner.sh] [pid=861] [func=log_message:334] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-07T10:18:24Z [INFO] [runner.sh] [pid=861] [func=log_message:334] Input gelesen prompt='> ' value='1'
+2026-04-07T10:18:24Z [INFO] [runner.sh] [pid=861] [func=log_message:334] Menüauswahl choice='1'
+2026-04-07T10:18:24Z [INFO] [runner.sh] [pid=861] [func=log_message:334] Running create_device_main (interactive)...
+2026-04-07T10:18:24Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] create_device_main gestartet
+2026-04-07T10:18:24Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] STDOUT: device folder has been created
+2026-04-07T10:18:24Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-04-07T10:18:24Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Argument device_id=''
+2026-04-07T10:18:29Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Input gelesen prompt='Enter the device ID: ' value='12121212'
+2026-04-07T10:18:29Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] STDOUT: device ID=12121212
+2026-04-07T10:18:29Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Verwende device_id='12121212'
+2026-04-07T10:18:29Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] device_count='1'
+2026-04-07T10:18:29Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] device_file='/workspaces/Projekt_aber_in_bash/devices/12121212.txt'
+2026-04-07T10:18:29Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] STDOUT: device 12121212 has been created
+2026-04-07T10:18:29Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Leere Gerätedatei erzeugt: '/workspaces/Projekt_aber_in_bash/devices/12121212.txt'
+2026-04-07T10:18:29Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] complete_one_device gestartet device_file='/workspaces/Projekt_aber_in_bash/devices/12121212.txt'
+2026-04-07T10:18:33Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Input gelesen prompt='Beschreibung des Geräts: ' value='aslöfkjaö'
+2026-04-07T10:18:33Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Geschrieben: Beschreibung='aslöfkjaö'
+2026-04-07T10:18:34Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Input gelesen prompt='Location des Geräts: ' value='adsflkj'
+2026-04-07T10:18:34Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Geschrieben: Location='adsflkj'
+2026-04-07T10:18:35Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Input gelesen prompt='Status des Geräts: ' value='asdölfj'
+2026-04-07T10:18:35Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Geschrieben: Status='asdölfj'
+2026-04-07T10:18:37Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Input gelesen prompt='Kategorie des Geräts: ' value='asdfafdadsfaf'
+2026-04-07T10:18:37Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Geschrieben: Kategorie='asdfafdadsfaf'
+2026-04-07T10:18:38Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Input gelesen prompt='Besitzer des Geräts: ' value='asdfklj'
+2026-04-07T10:18:38Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Geschrieben: Besitzer='asdfklj'
+2026-04-07T10:18:40Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Input gelesen prompt='Seriennummer des Geräts: ' value='lökjasflkd'
+2026-04-07T10:18:40Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Geschrieben: Seriennummer='lökjasflkd'
+2026-04-07T10:18:42Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] Input gelesen prompt='SAP-ID des Geräts: ' value=''
+2026-04-07T10:18:42Z [INFO] [create_device.sh] [pid=861] [func=log_message:334] EXIT trap rc=2
+2026-04-07T10:29:53Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] Logging initialisiert
+2026-04-07T10:29:53Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-07T10:29:53Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] Logging-Traps installiert
+2026-04-07T10:29:53Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-07T10:29:53Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] run_once gestartet
+2026-04-07T10:29:53Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] STDOUT: 
+2026-04-07T10:29:53Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-07T10:29:54Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='> ' value='1'
+2026-04-07T10:29:54Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] Menüauswahl choice='1'
+2026-04-07T10:29:54Z [INFO] [runner.sh] [pid=5276] [func=log_message:334] Running create_device_main (interactive)...
+2026-04-07T10:29:54Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] create_device_main gestartet
+2026-04-07T10:29:54Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] STDOUT: device folder has been created
+2026-04-07T10:29:54Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-04-07T10:29:54Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Argument device_id=''
+2026-04-07T10:29:57Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='Enter the device ID: ' value='13131313'
+2026-04-07T10:29:57Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] STDOUT: device ID=13131313
+2026-04-07T10:29:57Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Verwende device_id='13131313'
+2026-04-07T10:29:57Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] device_count='1'
+2026-04-07T10:29:57Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] device_file='/workspaces/Projekt_aber_in_bash/devices/13131313.txt'
+2026-04-07T10:29:57Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] STDOUT: device 13131313 has been created
+2026-04-07T10:29:57Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Leere Gerätedatei erzeugt: '/workspaces/Projekt_aber_in_bash/devices/13131313.txt'
+2026-04-07T10:29:57Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] complete_one_device gestartet device_file='/workspaces/Projekt_aber_in_bash/devices/13131313.txt'
+2026-04-07T10:30:00Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='Beschreibung des Geräts: ' value='hallo'
+2026-04-07T10:30:00Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Geschrieben: Beschreibung='hallo'
+2026-04-07T10:30:01Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='Location des Geräts: ' value='dies'
+2026-04-07T10:30:01Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Geschrieben: Location='dies'
+2026-04-07T10:30:03Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='Status des Geräts: ' value='ist'
+2026-04-07T10:30:03Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Geschrieben: Status='ist'
+2026-04-07T10:30:05Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='Kategorie des Geräts: ' value='ein'
+2026-04-07T10:30:05Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Geschrieben: Kategorie='ein'
+2026-04-07T10:30:06Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='Besitzer des Geräts: ' value='test'
+2026-04-07T10:30:06Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Geschrieben: Besitzer='test'
+2026-04-07T10:30:11Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='Seriennummer des Geräts: ' value='auslassen:'
+2026-04-07T10:30:11Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Geschrieben: Seriennummer='auslassen:'
+2026-04-07T10:30:11Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] Input gelesen prompt='SAP-ID des Geräts: ' value=''
+2026-04-07T10:30:11Z [INFO] [create_device.sh] [pid=5276] [func=log_message:334] EXIT trap rc=2
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Logging initialisiert
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=123 
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Logging-Traps installiert
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] create_device_main gestartet
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] STDOUT: device folder has been created
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] DEVICE_DIR bereit: '/tmp/ptest_devices'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Argument device_id='123'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] STDOUT: device ID=123
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Verwende device_id='123'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] device_count='1'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] device_file='/tmp/ptest_devices/123.txt'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] STDOUT: device 123 has been created
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Leere Gerätedatei erzeugt: '/tmp/ptest_devices/123.txt'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] complete_one_device gestartet device_file='/tmp/ptest_devices/123.txt'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Beschreibung des Geräts: ' value='ein'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Geschrieben: Beschreibung='ein'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Location des Geräts: ' value='test'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Geschrieben: Location='test'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Status des Geräts: ' value='auslassen:'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Geschrieben: Status='auslassen:'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Kategorie des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'Kategorie' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Besitzer des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'Besitzer' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Seriennummer des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='SAP-ID des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Hersteller des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'Hersteller' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Modell des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'Modell' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Anschaffungsdatum des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Ausmusterungsdatum des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Input gelesen prompt='Einkaufswert des Geräts: ' value=''
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] complete_one_device abgeschlossen device_file='/tmp/ptest_devices/123.txt'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] create_device_main abgeschlossen DEVICE_ID='123' DEVICE_count='1'
+2026-04-07T10:37:08Z [INFO] [bash] [pid=8105] [func=log_message:334] EXIT trap rc=0
+2026-04-07T10:41:58Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Logging initialisiert
+2026-04-07T10:41:59Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-07T10:41:59Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Logging-Traps installiert
+2026-04-07T10:41:59Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-07T10:41:59Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] run_once gestartet
+2026-04-07T10:41:59Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] STDOUT: 
+2026-04-07T10:41:59Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-07T10:42:00Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='> ' value='1'
+2026-04-07T10:42:00Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Menüauswahl choice='1'
+2026-04-07T10:42:00Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Running create_device_main (interactive)...
+2026-04-07T10:42:01Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] create_device_main gestartet
+2026-04-07T10:42:01Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] STDOUT: device folder has been created
+2026-04-07T10:42:01Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-04-07T10:42:01Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Argument device_id=''
+2026-04-07T10:42:04Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Enter the device ID: ' value='131313121212'
+2026-04-07T10:42:04Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] STDOUT: device ID=131313121212
+2026-04-07T10:42:04Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Verwende device_id='131313121212'
+2026-04-07T10:42:04Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] device_count='1'
+2026-04-07T10:42:04Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] device_file='/workspaces/Projekt_aber_in_bash/devices/131313121212.txt'
+2026-04-07T10:42:04Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] STDOUT: device 131313121212 has been created
+2026-04-07T10:42:04Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Leere Gerätedatei erzeugt: '/workspaces/Projekt_aber_in_bash/devices/131313121212.txt'
+2026-04-07T10:42:04Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] complete_one_device gestartet device_file='/workspaces/Projekt_aber_in_bash/devices/131313121212.txt'
+2026-04-07T10:42:07Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Beschreibung des Geräts: ' value='die'
+2026-04-07T10:42:07Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Geschrieben: Beschreibung='die'
+2026-04-07T10:42:10Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Location des Geräts: ' value='sist'
+2026-04-07T10:42:10Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Geschrieben: Location='sist'
+2026-04-07T10:42:11Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Status des Geräts: ' value='ein'
+2026-04-07T10:42:11Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Geschrieben: Status='ein'
+2026-04-07T10:42:12Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Kategorie des Geräts: ' value='test'
+2026-04-07T10:42:12Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Geschrieben: Kategorie='test'
+2026-04-07T10:42:15Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Besitzer des Geräts: ' value='gleich'
+2026-04-07T10:42:15Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Geschrieben: Besitzer='gleich'
+2026-04-07T10:42:18Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Seriennummer des Geräts: ' value='lass #ich'
+2026-04-07T10:42:18Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Geschrieben: Seriennummer='lass #ich'
+2026-04-07T10:42:21Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='SAP-ID des Geräts: ' value='aus'
+2026-04-07T10:42:21Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Geschrieben: SAP-ID='aus'
+2026-04-07T10:42:21Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Hersteller des Geräts: ' value=''
+2026-04-07T10:42:21Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Feld 'Hersteller' wurde übersprungen (leer)
+2026-04-07T10:42:22Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Modell des Geräts: ' value=''
+2026-04-07T10:42:22Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Feld 'Modell' wurde übersprungen (leer)
+2026-04-07T10:42:22Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Anschaffungsdatum des Geräts: ' value=''
+2026-04-07T10:42:22Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-04-07T10:42:23Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Ausmusterungsdatum des Geräts: ' value=''
+2026-04-07T10:42:23Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-04-07T10:42:23Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='Einkaufswert des Geräts: ' value=''
+2026-04-07T10:42:23Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-04-07T10:42:23Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] complete_one_device abgeschlossen device_file='/workspaces/Projekt_aber_in_bash/devices/131313121212.txt'
+2026-04-07T10:42:23Z [INFO] [create_device.sh] [pid=10049] [func=log_message:334] create_device_main abgeschlossen DEVICE_ID='131313121212' DEVICE_count='1'
+2026-04-07T10:42:23Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] create_device_main erfolgreich
+2026-04-07T10:42:23Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] run_once erfolgreich abgeschlossen
+2026-04-07T10:42:23Z [DEBUG] [runner.sh] [pid=10049] [func=log_message:334] Sleep 2s
+2026-04-07T10:42:25Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] run_once gestartet
+2026-04-07T10:42:25Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] STDOUT: 
+2026-04-07T10:42:25Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] STDOUT: Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-07T10:42:39Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Input gelesen prompt='> ' value='q'
+2026-04-07T10:42:39Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Menüauswahl choice='q'
+2026-04-07T10:42:39Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Benutzer hat Quit gewählt
+2026-04-07T10:42:39Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] run_once erfolgreich abgeschlossen
+2026-04-07T10:42:39Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] Runner stopped
+2026-04-07T10:42:39Z [INFO] [runner.sh] [pid=10049] [func=log_message:334] EXIT trap rc=0

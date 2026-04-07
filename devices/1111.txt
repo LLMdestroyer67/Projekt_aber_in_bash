@@ -1,3 +1,0 @@
-Beschreibung=bestes Thinkpad jemals x220
-Location=Technikraum
-Status=kaputt

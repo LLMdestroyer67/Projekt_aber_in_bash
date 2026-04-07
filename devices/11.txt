@@ -1,3 +1,0 @@
-Beschreibung=random samsung
-Location=Technikraum
-Status=wer weiß
