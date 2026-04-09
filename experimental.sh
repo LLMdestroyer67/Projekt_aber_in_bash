@@ -23,86 +23,106 @@ SCRIPT_NAME="$(basename -- "$0")"
 # =============================================================================
 
 # Fields for single devices (Einzelgerät)
-single_field_1="1|beschreibung|desc|description:Beschreibung="
-single_field_2="2|location|loc:Location="
-single_field_3="3|status:Status="
-single_field_4="4|kategorie|cat:Kategorie="
-single_field_5="5|besitzer|owner:Besitzer="
-single_field_6="6|Seriennummer|serial:Seriennummer="
-single_field_7="7|SAP-ID|sap_id:SAP-ID="
-single_field_8="8|Hersteller|manufacturer:Hersteller="
-single_field_9="9|Modell|model:Modell="
-single_field_10="10|Anschaffungsdatum|purchase_date:Anschaffungsdatum="
-single_field_11="11|Ausmusterungsdatum|disposal_date:Ausmusterungsdatum="
-single_field_12="12|Einkaufswert|purchase_value:Einkaufswert="
 single_fields=(
-  "$single_field_1"
-  "$single_field_2"
-  "$single_field_3"
-  "$single_field_4"
-  "$single_field_5"
-  "$single_field_6"
-  "$single_field_7"
-  "$single_field_8"
-  "$single_field_9"
-  "$single_field_10"
-  "$single_field_11"
-  "$single_field_12"
+  "1|beschreibung|desc|description:Beschreibung="
+  "2|location|loc:Location="
+  "3|status:Status="
+  "4|kategorie|cat:Kategorie="
+  "5|besitzer|owner:Besitzer="
+  "6|Seriennummer|serial:Seriennummer="
+  "7|SAP-ID|sap_id:SAP-ID="
+  "8|Hersteller|manufacturer:Hersteller="
+  "9|Modell|model:Modell="
+  "10|Anschaffungsdatum|purchase_date:Anschaffungsdatum="
+  "11|Ausmusterungsdatum|disposal_date:Ausmusterungsdatum="
+  "12|Einkaufswert|purchase_value:Einkaufswert="
 )
 
 # Fields for multi/collection devices (Sammeleintrag)
-multi_field_1="1|beschreibung|desc|description:Beschreibung="
-multi_field_2="2|anzahl|count|qty|quantity:Anzahl="
-multi_field_3="3|location|loc:Location="
-multi_field_4="4|kategorie|cat:Kategorie="
 multi_fields=(
-  "$multi_field_1"
-  "$multi_field_2"
-  "$multi_field_3"
-  "$multi_field_4"
+  "1|beschreibung|desc|description:Beschreibung="
+  "2|anzahl|count|qty|quantity:Anzahl="
+  "3|location|loc:Location="
+  "4|kategorie|cat:Kategorie="
 )
 
 # Find/search modes
-find_mode_1="1|id:id:"
-find_mode_2="2|description|desc|beschreibung:description:Beschreibung="
-find_mode_3="3|location|loc:location:Location="
-find_mode_4="4|status:status:Status="
-find_mode_5="5|kategorie|cat:category:Kategorie="
-find_mode_6="6|besitzer|owner:owner:Besitzer="
-find_mode_7="7|Seriennummer|serial:serial:Seriennummer="
-find_mode_8="8|SAP-ID|sap_id:sap_id:SAP-ID="
-find_mode_9="9|Hersteller|manufacturer:manufacturer:Hersteller="
-find_mode_10="10|Modell|model:model:Modell="
-find_mode_11="11|Anschaffungsdatum|purchase_date:purchase_date:Anschaffungsdatum="
-find_mode_12="12|Ausmusterungsdatum|disposal_date:disposal_date:Ausmusterungsdatum="
-find_mode_13="13|Einkaufswert|purchase_value:purchase_value:Einkaufswert="
 find_modes=(
-  "$find_mode_1"
-  "$find_mode_2"
-  "$find_mode_3"
-  "$find_mode_4"
-  "$find_mode_5"
-  "$find_mode_6"
-  "$find_mode_7"
-  "$find_mode_8"
-  "$find_mode_9"
-  "$find_mode_10"
-  "$find_mode_11"
-  "$find_mode_12"
-  "$find_mode_13"
+  "1|id:id:"
+  "2|description|desc|beschreibung:description:Beschreibung="
+  "3|location|loc:location:Location="
+  "4|status:status:Status="
+  "5|kategorie|cat:category:Kategorie="
+  "6|besitzer|owner:owner:Besitzer="
+  "7|Seriennummer|serial:serial:Seriennummer="
+  "8|SAP-ID|sap_id:sap_id:SAP-ID="
+  "9|Hersteller|manufacturer:manufacturer:Hersteller="
+  "10|Modell|model:model:Modell="
+  "11|Anschaffungsdatum|purchase_date:purchase_date:Anschaffungsdatum="
+  "12|Ausmusterungsdatum|disposal_date:disposal_date:Ausmusterungsdatum="
+  "13|Einkaufswert|purchase_value:purchase_value:Einkaufswert="
 )
+
+# =============================================================================
+# GENERIC FIELD/MODE PARSING HELPERS
+# Shared utilities to eliminate duplicate pattern-matching logic
+# =============================================================================
+
+# Parse field definition into components: patterns, prefix, canonical, filekey
+# Field format: "patterns:prefix" or "patterns:canonical:filekey"
+_generic_parse_field() {
+  local field="$1" component="$2"
+  local patterns="${field%%:*}"
+  local rest="${field#*:}"
+  
+  case "$component" in
+    patterns) printf '%s' "$patterns" ;;
+    prefix)   printf '%s' "$rest" ;;  # For single/multi fields (just the prefix after colon)
+    canonical) printf '%s' "${rest%%:*}" ;;  # For find modes (first part after first colon)
+    filekey)   printf '%s' "${rest#*:}" ;;   # For find modes (part after second colon)
+  esac
+}
+
+# Find field in array by pattern match, return specified component
+# Usage: _generic_find_in_fields "input" "return_part" field1 field2 field3...
+_generic_find_in_fields() {
+  local input="$1" return_part="$2"
+  shift 2
+  
+  for field in "$@"; do
+    local patterns="$(_generic_parse_field "$field" patterns)"
+    local IFS='|'
+    read -ra pats <<< "$patterns"
+    local pat
+    for pat in "${pats[@]}"; do
+      if [[ "$input" == "$pat" ]]; then
+        case "$return_part" in
+          prefix)    printf '%s' "$(_generic_parse_field "$field" prefix)" ;;
+          canonical) printf '%s' "$(_generic_parse_field "$field" canonical)" ;;
+          filekey)   printf '%s' "$(_generic_parse_field "$field" filekey)" ;;
+        esac
+        return 0
+      fi
+    done
+  done
+  return 1
+}
+
+# =============================================================================
+# FIELD/MODE BUILDING HELPERS
+# =============================================================================
 
 # -----------------------------------------------------------------------------
 # _helper_fields_build_prompt()
 # Beschreibung: Baut einen Prompt-String aus einem fields-Array
 # Parameter:    $@ = field definitions ("patterns:Prefix=")
 # Rückgabe:     Prompt-String auf stdout  e.g. "(1)Beschreibung, (2)Anzahl, ..."
-# -----------------------------------------------------------------------------
+# Refactored: Uses _generic_parse_field for cleaner code
 _helper_fields_build_prompt() {
   local parts=()
   for field in "$@"; do
-    local patterns="${field%%:*}"
-    local prefix="${field#*:}"
+    local patterns="$(_generic_parse_field "$field" patterns)"
+    local prefix="$(_generic_parse_field "$field" prefix)"
     local num="${patterns%%|*}"
     local label="${prefix%=}"
     parts+=( "(${num})${label}" )
@@ -117,24 +137,11 @@ _helper_fields_build_prompt() {
 #               gibt den zugehörigen Präfix zurück
 # Parameter:    $1 = Eingabe-String (normalisiert), $2.. = field definitions
 # Rückgabe:     Präfix-String auf stdout; rc=1 wenn kein Treffer
-# -----------------------------------------------------------------------------
+# Refactored: Uses _generic_find_in_fields
 _helper_fields_match_to_prefix() {
   local input="$1"
   shift
-  for field in "$@"; do
-    local patterns="${field%%:*}"
-    local prefix="${field#*:}"
-    local IFS='|'
-    read -ra pats <<< "$patterns"
-    local pat
-    for pat in "${pats[@]}"; do
-      if [[ "$input" == "$pat" ]]; then
-        printf '%s' "$prefix"
-        return 0
-      fi
-    done
-  done
-  return 1
+  _generic_find_in_fields "$input" "prefix" "$@"
 }
 
 # -----------------------------------------------------------------------------
@@ -168,24 +175,10 @@ _helper_modes_build_prompt() {
 # Beschreibung: Normalisiert einen Suchmodus-String auf den kanonischen Wert
 # Parameter:    $1 = roher Modus-String
 # Rückgabe:     Kanonischer Modus auf stdout; rc=1 bei ungültigem Modus
-# -----------------------------------------------------------------------------
+# Refactored: Uses _generic_find_in_fields
 _helper_modes_normalize() {
   local input="${1,,}"
-  for m in "${find_modes[@]}"; do
-    local patterns="${m%%:*}"
-    local rest="${m#*:}"
-    local canonical="${rest%%:*}"
-    local IFS='|'
-    read -ra pats <<< "$patterns"
-    local pat
-    for pat in "${pats[@]}"; do
-      if [[ "$input" == "$pat" ]]; then
-        printf '%s' "$canonical"
-        return 0
-      fi
-    done
-  done
-  return 1
+  _generic_find_in_fields "$input" "canonical" "${find_modes[@]}"
 }
 
 # -----------------------------------------------------------------------------
@@ -194,15 +187,13 @@ _helper_modes_normalize() {
 #               kanonischen Modus zurück
 # Parameter:    $1 = canonical mode
 # Rückgabe:     FileKey= auf stdout; rc=1 wenn nicht gefunden
-# -----------------------------------------------------------------------------
+# Refactored: Manual loop since we search by canonical instead of patterns
 _helper_modes_get_file_key() {
   local canonical="$1"
   for m in "${find_modes[@]}"; do
-    local rest="${m#*:}"
-    local c="${rest%%:*}"
-    local key="${rest#*:}"
+    local c="$(_generic_parse_field "$m" canonical)"
     if [[ "$c" == "$canonical" ]]; then
-      printf '%s' "$key"
+      _generic_parse_field "$m" filekey
       return 0
     fi
   done
@@ -242,10 +233,6 @@ _helper_log_timestamp() {
   date -u +"%Y-%m-%dT%H:%M:%SZ"
 }
 
-log_timestamp() {
-  _helper_log_timestamp
-}
-
 # -----------------------------------------------------------------------------
 # _helper_log_escape_string()
 # Beschreibung: Ersetzt Newline/CR-Zeichen durch Escape-Sequenzen
@@ -257,10 +244,6 @@ _helper_log_escape_string() {
   s="${s//$'\n'/\\n}"
   s="${s//$'\r'/\\r}"
   printf '%s' "$s"
-}
-
-_log_escape() {
-  _helper_log_escape_string "${1-}"
 }
 
 # -----------------------------------------------------------------------------
@@ -436,10 +419,6 @@ _helper_input_strip_control_chars() {
   printf '%s' "$value"
 }
 
-sanitize_input() {
-  _helper_input_strip_control_chars "${1-}"
-}
-
 # -----------------------------------------------------------------------------
 # _helper_input_read_raw()
 # Beschreibung: Liest eine Zeile von stdin mit Prompt
@@ -486,31 +465,25 @@ read_logged() {
 }
 
 # -----------------------------------------------------------------------------
-# _helper_output_stdout_and_log()
-# Beschreibung: Gibt eine Nachricht auf stdout aus und loggt sie
-# Parameter:    $1 = Nachricht
-# Rückgabe:     keine (Seiteneffekt: stdout + LOG_FILE)
-# -----------------------------------------------------------------------------
+# Generic output and log helper for any stream + level
+# Parameter: $1 = message, $2 = fd (1=stdout, 2=stderr), $3 = log_level
+_helper_output_and_log() {
+  local msg="$1" fd="${2:-1}" level="${3:-INFO}"
+  echo "$msg" >&"$fd"
+  log_message "$level" "$msg"
+}
+
+# Public wrappers for convenience
 _helper_output_stdout_and_log() {
-  local msg="$1"
-  echo "$msg"
-  log_info "STDOUT: $msg"
+  _helper_output_and_log "$1" 1 INFO
+}
+
+_helper_output_stderr_and_log() {
+  _helper_output_and_log "$1" 2 ERROR
 }
 
 echo_logged() {
   _helper_output_stdout_and_log "$*"
-}
-
-# -----------------------------------------------------------------------------
-# _helper_output_stderr_and_log()
-# Beschreibung: Gibt eine Nachricht auf stderr aus und loggt sie als ERROR
-# Parameter:    $1 = Nachricht
-# Rückgabe:     keine (Seiteneffekt: stderr + LOG_FILE)
-# -----------------------------------------------------------------------------
-_helper_output_stderr_and_log() {
-  local msg="$1"
-  echo "$msg" >&2
-  log_error "STDERR: $msg"
 }
 
 error_logged() {
@@ -536,10 +509,6 @@ _helper_change_device_count_from_id() {
   else
     printf '%s' 2
   fi
-}
-
-_device_count_from_id() {
-  _helper_change_device_count_from_id "$1"
 }
 
 # -----------------------------------------------------------------------------
