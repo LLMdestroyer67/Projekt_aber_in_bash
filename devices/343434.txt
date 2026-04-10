@@ -1,0 +1,3 @@
+Beschreibung=gerät nr 34
+Location=technikraum
+Status=ungetestet
