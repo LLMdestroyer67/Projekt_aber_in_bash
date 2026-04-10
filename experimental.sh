@@ -358,7 +358,28 @@ _helper_log_format_entry() {
 # Beschreibung: Schreibt einen formatierten Log-Eintrag in die Log-Datei
 # Parameter:    $1 = level, $2 = message
 # Rückgabe:     keine (Seiteneffekt: Schreibt in LOG_FILE)
-# -----------------------------------------------------------------------------
+# Rotate log file if it exceeds max size (Phase 1.6 enhancement)
+_helper_log_rotate_if_needed() {
+  local logfile="$1"
+  local max_size="${2:-$LOG_MAX_SIZE}"
+  local keep_days="${3:-$LOG_KEEP_DAYS}"
+  
+  [[ ! -f "$logfile" ]] && return 0
+  
+  local current_size
+  current_size=$(stat -f%z -- "$logfile" 2>/dev/null || stat -c%s -- "$logfile" 2>/dev/null || echo 0)
+  
+  if (( current_size >= max_size )); then
+    local i
+    for (( i = 9; i >= 1; i-- )); do
+      [[ -f "${logfile}.${i}" ]] && rm -f "${logfile}.$((i+1))" 2>/dev/null
+      [[ -f "${logfile}.${i}" ]] && mv -- "${logfile}.${i}" "${logfile}.$((i+1))"
+    done
+    [[ -f "$logfile" ]] && mv -- "$logfile" "${logfile}.1"
+    find "$(dirname "$logfile")" -name "$(basename "$logfile")".\* -mtime +${keep_days} -delete 2>/dev/null || true
+  fi
+}
+# =============================================================================
 _helper_log_write_entry() {
   local level="$1"
   shift || true
@@ -373,6 +394,7 @@ _helper_log_write_entry() {
   pid="$$"
 
   _helper_log_ensure_dir "$LOG_DIR"
+  _helper_log_rotate_if_needed "$LOG_FILE"
   _helper_log_format_entry \
     "$level" "$script_name" "$func_name" "$line_no" "$ts" "$pid" "$msg" \
     >>"$LOG_FILE"
