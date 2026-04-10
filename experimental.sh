@@ -842,6 +842,9 @@ _helper_change_export_globals() {
 }
 
 change_device_main() {
+  # Change device field value
+  # Args: $1=device_id (optional), $2=field (optional), $3=new_value (optional)
+  # Exit codes: 0=success, 1=not found/error, 2=usage error
   setup_logging "$@"
   install_logging_traps
 
@@ -1055,6 +1058,9 @@ _helper_create_fill_device_file() {
 }
 
 create_device_main() {
+  # Create new device (type 1=single, type 2=collection)
+  # Args: $1=device_id (optional, prompted if missing)
+  # Exit codes: 0=success, 1=file exists/error, 2=invalid input
   setup_logging "$@"
   install_logging_traps
 
@@ -1142,6 +1148,8 @@ _helper_fac_assert_found_id() {
 }
 
 find_and_change_main() {
+  # Find device then modify a field
+  # Exit codes: 0=success, 1=not found/error, 2=ambiguous results
   _helper_fac_search_device
 
   local rc
@@ -1445,6 +1453,9 @@ _helper_find_dispatch_by_mode() {
 }
 
 find_device_main() {
+  # Find device by ID, description, location, status, etc.
+  # Args: $1=mode (id/description/location/...), $2=query
+  # Exit codes: 0=found, 1=not found, 2=invalid mode
   setup_logging "$@"
   install_logging_traps
 
@@ -1556,6 +1567,9 @@ _helper_count_resolve_final_new_value() {
 }
 
 change_device_count() {
+  # Change collection device count (increase/decrease/set)
+  # Args: $1=device_id (optional), $2=field (ignored), $3=new_count (optional)
+  # Exit codes: 0=success, 1=not found/not collection, 2=invalid input
   setup_logging "$@"
   install_logging_traps
 
@@ -1641,6 +1655,8 @@ change_device_count() {
 ##############################
 
 change_count_main() {
+  # Find device then modify collection count (orchestrator)
+  # Exit codes: 0=success, 1=not found, 2=ambiguous/invalid
   # 1. Gerät(e) suchen
   find_device_main
 
