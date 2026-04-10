@@ -14,6 +14,73 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 SCRIPT_NAME="$(basename -- "$0")"
 
 # =============================================================================
+# FUNCTION INDEX - QUICK REFERENCE
+# =============================================================================
+#
+# SECTION 1: FIELD & MODE DEFINITIONS (lines 25-70)
+#   - single_fields[]      Device type 1 field definitions
+#   - multi_fields[]       Device type 2 (collections) field definitions
+#   - find_modes[]         Search mode definitions
+#
+# SECTION 2: GENERIC FIELD/MODE PARSING HELPERS (lines 72-210)
+#   - _generic_parse_field()          Parse field definition components
+#   - _generic_find_in_fields()       Find field in array by pattern
+#   - _helper_fields_build_prompt()   Build user prompt from fields
+#   - _helper_fields_match_to_prefix() Match field input to prefix
+#   - _helper_modes_build_prompt()    Build prompt/error from modes
+#   - _helper_modes_normalize()       Normalize mode to canonical name
+#   - _helper_modes_get_file_key()    Get file key for mode
+#
+# SECTION 3: CORE INTERACTIVE CHECK (lines 212-226)
+#   - _helper_core_is_interactive()   Check if stdin/stdout are TTY
+#   - _is_interactive()               Public wrapper
+#
+# SECTION 4: LOGGING & INITIALIZATION (lines 228-416)
+#   - setup_logging()                 Initialize logging system
+#   - install_logging_traps()         Install ERR/EXIT traps
+#   - _helper_log_*()                 Logging helper functions
+#   - log_debug/info/warn/error()     Log at different levels
+#
+# SECTION 5: INPUT/OUTPUT & MESSAGING (lines 418-500)
+#   - read_logged()                   Read input + log it
+#   - echo_logged()                   Write to stdout + log it
+#   - error_logged()                  Write to stderr + log it
+#
+# SECTION 6: CHANGE DEVICE MAIN (lines 502-846)
+#   - change_device_main()            Main function: modify device field
+#   - _helper_change_*()              Helper functions for field changes
+#
+# SECTION 7: CREATE DEVICE MAIN (lines 848-1038)
+#   - create_device_main()            Main function: create new device
+#   - complete_one_device()           Fill single device (type 1)
+#   - complete_more_device()          Fill collection device (type 2)
+#
+# SECTION 8: FIND DEVICE MAIN (lines 1040-1410)
+#   - find_device_main()              Main function: search devices
+#   - find_by_id()                    Search by device ID
+#   - _find_by_key_contains()         Search by field value
+#
+# SECTION 9: FIND & CHANGE COMBINED (lines 1035-1102)
+#   - find_and_change_main()          Search then modify
+#
+# SECTION 10: COUNT CHANGE MAIN (lines 1412-1596)
+#   - change_device_count()           Main function: modify count
+#   - change_count_main()             Orchestrate find → count change
+#
+# =============================================================================
+
+# Exit codes (Phase 1 standardization)
+readonly EXIT_OK=0           # Success
+readonly EXIT_ERROR=1        # Logic/data error (not found, validation failed)
+readonly EXIT_USAGE_ERROR=2  # Missing/invalid argument
+
+# Config (with Phase 1 additions)
+LOG_MAX_SIZE="${LOG_MAX_SIZE:-10485760}"  # 10 MB default
+LOG_KEEP_DAYS="${LOG_KEEP_DAYS:-7}"       # Keep 7 days
+TRACE_COMMANDS="${TRACE_COMMANDS:-0}"
+
+
+# =============================================================================
 # FIELD / MODE DEFINITIONS
 #
 # Format for single/multi fields:  "pattern1|pattern2|...:Prefix="
