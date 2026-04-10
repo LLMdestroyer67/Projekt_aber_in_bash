@@ -727,8 +727,8 @@ _helper_change_resolve_device_id() {
 _helper_change_assert_device_file_exists() {
   local device_file="$1" device_id="$2"
   if [[ ! -f "$device_file" ]]; then
-    error_logged "device $device_id does not exist"
-    return 1
+    error_logged "ERROR (_helper_device_file_validate): device '$device_id' not found. Use 'find' to list devices or 'create' to add new one. (exit code: $EXIT_ERROR)"
+    return "$EXIT_ERROR"
   fi
 }
 
@@ -775,8 +775,8 @@ _helper_change_resolve_field() {
     if _helper_core_is_interactive; then
       field="$(_prompt_field "$device_count")"
     else
-      error_logged "ERROR: missing FIELD (non-interactive). Provide 1/2/3/4 or name (Beschreibung/Location/Status/Anzahl/Kategorie)."
-      return 2
+      error_logged "ERROR (change_device_main): missing FIELD argument. Non-interactive requires field name/number: 1/2/3/4 or Beschreibung/Location/Status/Anzahl/Kategorie. (exit code: $EXIT_USAGE_ERROR)"
+      return "$EXIT_USAGE_ERROR"
     fi
   fi
   printf '%s' "$field"
@@ -1045,9 +1045,9 @@ _helper_create_detect_device_type() {
 _helper_create_assert_file_not_exists() {
   local device_file="$1" device_id="$2"
   if [[ -e "$device_file" ]]; then
-    error_logged "device $device_id already exists"
+    error_logged "ERROR (_helper_create_assert_file_not_exists): device '$device_id' already exists at $device_file. Use 'find' to view or 'change' to modify existing device. (exit code: $EXIT_ERROR)"
     log_error "Datei existiert bereits: '$device_file'"
-    return 1
+    return "$EXIT_ERROR"
   fi
 }
 
@@ -1102,9 +1102,9 @@ create_device_main() {
   device_id="$(_helper_create_resolve_device_id "$device_id")"
 
   if ! _helper_validate_device_id_strict "$device_id"; then
-    error_logged "ERROR: invalid device ID: '$device_id'"
+    error_logged "ERROR (create_device_main): invalid device ID '$device_id'. Device IDs must be alphanumeric with optional hyphens/underscores. Rejected chars: /, space, \$, backtick, quotes. (exit code: $EXIT_USAGE_ERROR)"
     log_error "Ungültige device_id='$device_id'"
-    return 2
+    return "$EXIT_USAGE_ERROR"
   fi
 
   echo_logged "device ID=$device_id"
@@ -1305,8 +1305,8 @@ _helper_find_collect_device_files() {
   log_info "Anzahl Gerätedateien='${#_files_ref[@]}'"
 
   if (( ${#_files_ref[@]} == 0 )); then
-    error_logged "No device files found in '$DEVICE_DIR'"
-    return 1
+    error_logged "ERROR (find_device_main): no devices found in $DEVICE_DIR. Use 'create' to add new device. (exit code: $EXIT_ERROR)"
+    return "$EXIT_ERROR"
   fi
 }
 
@@ -1323,8 +1323,8 @@ _helper_find_resolve_search_value() {
       value="$(read_logged "Find device by ${key%=}: ")"
       log_debug "_helper_find_resolve_search_value: nach read_logged value='$value'"
     else
-      error_logged "ERROR: missing search value for ${key%=} (non-interactive)"
-      return 2
+      error_logged "ERROR (find_device_main): missing search value for ${key%=}. Non-interactive mode requires explicit search criteria as argument. (exit code: $EXIT_USAGE_ERROR)"
+      return "$EXIT_USAGE_ERROR"
     fi
   fi
   printf '%s' "$value"
