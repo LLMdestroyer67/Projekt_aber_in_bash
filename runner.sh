@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# =============================================================================
+# runner.sh – Device Manager Main Entry Point
+#
+# CONCURRENCY WARNING (Phase 1.8):
+# This runner is NOT thread-safe. Multiple concurrent runner instances
+# accessing the same DEVICE_DIR may corrupt device files due to lack of
+# file locking. Ensure only ONE runner instance is active at a time.
+#
+# For production use with multiple processes, implement external locking
+# (e.g., flock, mkdir-based semaphore) at the invocation level.
+#
+# =============================================================================
+
 # Always source files relative to this runner's location
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 SCRIPT_NAME="$(basename -- "$0")"
@@ -10,7 +23,7 @@ DEVICE_DIR="${DEVICE_DIR:-$SCRIPT_DIR/devices}"
 RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 
 # Sourcing the library of functions
-. "$SCRIPT_DIR/experimental.sh"  #<---Production: common.sh
+. "$SCRIPT_DIR/experimental.sh"
 
 shutdown=0
 
