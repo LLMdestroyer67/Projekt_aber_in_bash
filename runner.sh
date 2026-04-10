@@ -10,7 +10,7 @@ DEVICE_DIR="${DEVICE_DIR:-$SCRIPT_DIR/devices}"
 RUN_INTERVAL_SECONDS="${RUN_INTERVAL_SECONDS:-2}"
 
 # Sourcing the library of functions
-. "$SCRIPT_DIR/experimental.sh"
+. "$SCRIPT_DIR/experimental.sh"  #<---Production: common.sh
 
 shutdown=0
 
@@ -123,7 +123,6 @@ main() {
 
   while [[ "$shutdown" -eq 0 ]]; do
     # Don’t let one failure kill the loop; capture rc and continue.
-    echo "DEBUG: stdin tty=$([ -t 0 ] && echo yes || echo no), stdout tty=$([ -t 1 ] && echo yes || echo no)" >&2
     if run_once; then
       log_info "run_once erfolgreich abgeschlossen"
     else
