@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # =============================================================================
 # common.sh – Modulare Geräteverwaltungs-Bibliothek
