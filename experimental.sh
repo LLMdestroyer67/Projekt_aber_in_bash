@@ -660,16 +660,19 @@ _prompt_field() {
 }
 
 # -----------------------------------------------------------------------------
-# _helper_change_validate_device_id()
+# _helper_validate_device_id_strict()
 # Beschreibung: Prüft ob eine device_id nicht leer und ohne Slash ist
 # Parameter:    $1 = device_id
 # Rückgabe:     rc=0 gültig, rc=1 ungültig
 # -----------------------------------------------------------------------------
-_helper_change_validate_device_id() {
-  local device_id="$1"
-  if [[ -z "$device_id" || "$device_id" == *"/"* ]]; then
-    return 1
-  fi
+# Strict validation for device IDs (Phase 1.5 enhancement)
+# Reject: empty, contains /, whitespace, or shell metacharacters
+_helper_validate_device_id_strict() {
+  local id="$1"
+  # Reject empty
+  [[ -z "$id" ]] && return 1
+  # Reject if contains /, whitespace, or shell metacharacters ($, `, ", ')
+  [[ "$id" =~ [/\ $\`\"\'] ]] && return 1
   return 0
 }
 
@@ -858,7 +861,7 @@ change_device_main() {
   echo_logged "device ID=$device_id"
   log_info "Verwende device_id='$device_id'"
 
-  if ! _helper_change_validate_device_id "$device_id"; then
+  if ! _helper_validate_device_id_strict "$device_id"; then
     error_logged "ERROR: invalid device ID: '$device_id'"
     return 2
   fi
@@ -1075,7 +1078,7 @@ create_device_main() {
 
   device_id="$(_helper_create_resolve_device_id "$device_id")"
 
-  if ! _helper_change_validate_device_id "$device_id"; then
+  if ! _helper_validate_device_id_strict "$device_id"; then
     error_logged "ERROR: invalid device ID: '$device_id'"
     log_error "Ungültige device_id='$device_id'"
     return 2
@@ -1247,7 +1250,7 @@ find_by_id() {
 
   echo_logged "device ID: $device_id"
 
-  if ! _helper_change_validate_device_id "$device_id"; then
+  if ! _helper_validate_device_id_strict "$device_id"; then
     error_logged "ERROR: invalid device ID: '$device_id'"
     return 2
   fi
@@ -1583,7 +1586,7 @@ change_device_count() {
   echo_logged "device ID=$device_id"
   log_info "Verwende device_id='$device_id'"
 
-  if ! _helper_change_validate_device_id "$device_id"; then
+  if ! _helper_validate_device_id_strict "$device_id"; then
     error_logged "ERROR: invalid device ID: '$device_id'"
     return 2
   fi
