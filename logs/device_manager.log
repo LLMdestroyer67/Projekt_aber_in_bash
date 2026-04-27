@@ -8681,3 +8681,17 @@
 2026-04-10T10:45:00Z [INFO] [runner.sh] [pid=53480] [func=log_message:407] run_once erfolgreich abgeschlossen
 2026-04-10T10:45:00Z [INFO] [runner.sh] [pid=53480] [func=log_message:407] Runner stopped
 2026-04-10T10:45:00Z [INFO] [runner.sh] [pid=53480] [func=log_message:407] EXIT trap rc=0
+2026-04-27T08:37:06Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Logging initialisiert
+2026-04-27T08:37:06Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-27T08:37:06Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Logging-Traps installiert
+2026-04-27T08:37:06Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-27T08:37:06Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] run_once gestartet
+2026-04-27T08:37:06Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] 
+2026-04-27T08:37:06Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Signal empfangen: INT
+2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Input gelesen prompt='> ' value=''
+2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Menüauswahl choice=''
+2026-04-27T08:37:15Z [ERROR] [runner.sh] [pid=8413] [func=log_message:407] Unknown choice: 
+2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] run_once erfolgreich abgeschlossen
+2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Runner stopped
+2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] EXIT trap rc=0
