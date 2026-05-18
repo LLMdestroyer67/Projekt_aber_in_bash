@@ -8695,3 +8695,102 @@
 2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] run_once erfolgreich abgeschlossen
 2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] Runner stopped
 2026-04-27T08:37:15Z [INFO] [runner.sh] [pid=8413] [func=log_message:407] EXIT trap rc=0
+2026-04-30T16:52:33Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] Logging initialisiert
+2026-04-30T16:52:33Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-30T16:52:33Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] Logging-Traps installiert
+2026-04-30T16:52:33Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-30T16:52:33Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] run_once gestartet
+2026-04-30T16:52:33Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] 
+2026-04-30T16:52:33Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-30T16:52:42Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] Input gelesen prompt='> ' value='5'
+2026-04-30T16:52:42Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] Menüauswahl choice='5'
+2026-04-30T16:52:42Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] Running change_count_main (interactive)...
+2026-04-30T16:52:42Z [INFO] [change_count.sh] [pid=1669] [func=log_message:407] find_device_main gestartet mode='' query=''
+2026-04-30T16:54:45Z [INFO] [change_count.sh] [pid=1669] [func=log_message:407] Input gelesen prompt='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner,(7)serial,(8)sap_id,(9)manufacturer,(10)model,(11)purchase_date,(12)disposal_date,(13)purchase_value: ' value='13'
+2026-04-30T16:54:45Z [INFO] [change_count.sh] [pid=1669] [func=log_message:407] normalized mode='purchase_value'
+2026-04-30T16:54:45Z [INFO] [change_count.sh] [pid=1669] [func=log_message:407] _find_by_key_contains gestartet key='Einkaufswert=' value=''
+2026-04-30T16:55:03Z [INFO] [change_count.sh] [pid=1669] [func=log_message:407] Signal empfangen: INT
+2026-04-30T16:55:03Z [INFO] [change_count.sh] [pid=1669] [func=log_message:407] find_device_main abgeschlossen
+2026-04-30T16:55:03Z [ERROR] [runner.sh] [pid=1669] [func=log_message:407] change_count_main fehlgeschlagen rc=1
+2026-04-30T16:55:03Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] run_once erfolgreich abgeschlossen
+2026-04-30T16:55:03Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] Runner stopped
+2026-04-30T16:55:03Z [INFO] [runner.sh] [pid=1669] [func=log_message:407] EXIT trap rc=0
+2026-04-30T16:55:06Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Logging initialisiert
+2026-04-30T16:55:06Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-04-30T16:55:06Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Logging-Traps installiert
+2026-04-30T16:55:06Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-04-30T16:55:06Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] run_once gestartet
+2026-04-30T16:55:06Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] 
+2026-04-30T16:55:06Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-30T16:55:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Input gelesen prompt='> ' value='5'
+2026-04-30T16:55:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Menüauswahl choice='5'
+2026-04-30T16:55:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Running change_count_main (interactive)...
+2026-04-30T16:55:10Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] find_device_main gestartet mode='' query=''
+2026-04-30T16:55:17Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Input gelesen prompt='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner,(7)serial,(8)sap_id,(9)manufacturer,(10)model,(11)purchase_date,(12)disposal_date,(13)purchase_value: ' value='2'
+2026-04-30T16:55:17Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] normalized mode='description'
+2026-04-30T16:55:17Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] _find_by_key_contains gestartet key='Beschreibung=' value=''
+2026-04-30T16:55:28Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Input gelesen prompt='Find device by Beschreibung: ' value='20'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] _helper_find_resolve_search_value: nach read_logged value='20'
+2026-04-30T16:55:28Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Anzahl Gerätedateien='9'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/343434.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/343434.txt': 'Beschreibung=gerät nr 34'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/6851.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Beschreibung=Dell Latitude 3440'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan2.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Beschreibung=Lan_kabel'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Beschreibung=LAN_KABEL_15M'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Beschreibung=LAN_KABEL_20M'
+2026-04-30T16:55:28Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Beschreibung=LAN Kabel 2M'
+2026-04-30T16:55:28Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:29Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Beschreibung=LAN_KABEL_3M'
+2026-04-30T16:55:29Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:29Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan.txt' für key='Beschreibung=' value='20'
+2026-04-30T16:55:29Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan.txt': 'Beschreibung=irgendein scheiß kabel'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Trefferanzahl='1'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Found 1 device with Beschreibung '20':
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] ----- /workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt -----
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] find_by_key_contains abgeschlossen mit 1 Treffer: '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] device_id='LAN_KABEL_20M'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] device ID: LAN_KABEL_20M
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] find_device_main abgeschlossen
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] change_device_count gestartet device_id='LAN_KABEL_20M' field='' new_value=''
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] device ID=LAN_KABEL_20M
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Verwende device_id='LAN_KABEL_20M'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] device_file='/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Found device: LAN_KABEL_20M - ready to change
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Gerätedatei gefunden
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] ------------------------------
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] ------------------------------
+2026-04-30T16:55:29Z [DEBUG] [change_count.sh] [pid=2271] [func=log_message:407] _helper_change_device_count_from_id id='LAN_KABEL_20M'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] device_count='2'
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] ->Sammeleintrag
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Verwende field='Anzahl='
+2026-04-30T16:55:29Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] old_value='8'
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Input gelesen prompt='Möchten Sie die Anzahl erhöhen oder verringern? |(1) Erhöhen|  |(2) Verringern|    |(3) Ändern| ' value='2'
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] count_more_or_less Auswahl='2'
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Anzahl wird verringert: old_value='8' new_value='7'
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Verwende new_value='7'
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] old_line='Anzahl=8' final_line='Anzahl=7'
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] ändere "Anzahl=8" zu "Anzahl=7"
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] final change: Anzahl=7
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Temporäre Datei erzeugt tmp='/tmp/tmp.m9yFyMqlY7'
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] Datei erfolgreich umgeschrieben device_file='/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-04-30T16:56:05Z [INFO] [change_count.sh] [pid=2271] [func=log_message:407] change_device_main abgeschlossen DEVICE_ID='LAN_KABEL_20M' DEVICE_count='2' CHANGE='Anzahl=' FINALCHANGE='Anzahl=7'
+2026-04-30T16:56:05Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] change_count_main erfolgreich
+2026-04-30T16:56:05Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] run_once erfolgreich abgeschlossen
+2026-04-30T16:56:05Z [DEBUG] [runner.sh] [pid=2271] [func=log_message:407] Sleep 2s
+2026-04-30T16:56:07Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] run_once gestartet
+2026-04-30T16:56:07Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] 
+2026-04-30T16:56:07Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Input gelesen prompt='> ' value='q'
+2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Menüauswahl choice='q'
+2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Benutzer hat Quit gewählt
+2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] run_once erfolgreich abgeschlossen
+2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Runner stopped
+2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] EXIT trap rc=0

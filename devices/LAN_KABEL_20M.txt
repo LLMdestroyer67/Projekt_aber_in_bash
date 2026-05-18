@@ -1,4 +1,4 @@
 Beschreibung=LAN_KABEL_20M
-Anzahl=8
+Anzahl=7
 Location=Technikraum
 Kategorie=RJ45
