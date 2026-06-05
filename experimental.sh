@@ -126,6 +126,14 @@ else
   echo "ERROR: modules/io.sh not found (expected at $SCRIPT_DIR/modules/io.sh)" >&2
 fi
 
+# Validators moved to modules/validators.sh
+if [[ -f "$SCRIPT_DIR/modules/validators.sh" ]]; then
+  . "$SCRIPT_DIR/modules/validators.sh"
+else
+  # validators are optional during partial modularization but warn for devs
+  echo "WARNING: modules/validators.sh not found (expected at $SCRIPT_DIR/modules/validators.sh)" >&2
+fi
+
 ##############################
 # change_device.sh functions
 ##############################
