@@ -141,6 +141,13 @@ else
   echo "WARNING: modules/device_ops.sh not found (expected at $SCRIPT_DIR/modules/device_ops.sh)" >&2
 fi
 
+# Find helpers moved to modules/find.sh
+if [[ -f "$SCRIPT_DIR/modules/find.sh" ]]; then
+  . "$SCRIPT_DIR/modules/find.sh"
+else
+  echo "WARNING: modules/find.sh not found (expected at $SCRIPT_DIR/modules/find.sh)" >&2
+fi
+
 ##############################
 # change_device.sh functions
 ##############################
