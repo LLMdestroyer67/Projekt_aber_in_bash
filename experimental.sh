@@ -1504,6 +1504,29 @@ find_device_main() {
   log_info "find_device_main abgeschlossen"
 }
 
+read_device_main() {
+  # Read and display a device by ID
+  # Args: $1=device_id (required in non-interactive mode)
+  setup_logging "$@"
+  install_logging_traps
+
+  local device_id="${1-}"
+  device_id="$(_helper_find_resolve_device_id_interactive "${device_id}")" || return $?
+
+  echo_logged "device ID: $device_id"
+
+  if ! _helper_validate_device_id_strict "$device_id"; then
+    error_logged "ERROR: invalid device ID: '$device_id'"
+    return 2
+  fi
+
+  local device_file="$DEVICE_DIR/$device_id.txt"
+  _helper_change_assert_device_file_exists "$device_file" "$device_id" || return $?
+
+  _helper_find_print_file_numbered "$device_file"
+  log_info "read_device_main abgeschlossen device_id='$device_id'"
+}
+
 ##############################
 # entnahme / change_device_count
 ##############################
