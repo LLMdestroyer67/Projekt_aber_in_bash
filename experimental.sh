@@ -148,6 +148,13 @@ else
   echo "WARNING: modules/find.sh not found (expected at $SCRIPT_DIR/modules/find.sh)" >&2
 fi
 
+# Create helpers moved to modules/create.sh
+if [[ -f "$SCRIPT_DIR/modules/create.sh" ]]; then
+  . "$SCRIPT_DIR/modules/create.sh"
+else
+  echo "WARNING: modules/create.sh not found (expected at $SCRIPT_DIR/modules/create.sh)" >&2
+fi
+
 ##############################
 # change_device.sh functions
 ##############################
