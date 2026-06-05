@@ -134,6 +134,13 @@ else
   echo "WARNING: modules/validators.sh not found (expected at $SCRIPT_DIR/modules/validators.sh)" >&2
 fi
 
+# Device operation helpers moved to modules/device_ops.sh
+if [[ -f "$SCRIPT_DIR/modules/device_ops.sh" ]]; then
+  . "$SCRIPT_DIR/modules/device_ops.sh"
+else
+  echo "WARNING: modules/device_ops.sh not found (expected at $SCRIPT_DIR/modules/device_ops.sh)" >&2
+fi
+
 ##############################
 # change_device.sh functions
 ##############################
