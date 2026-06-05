@@ -1,1 +1,1 @@
-Beschreibung=irgendein scheiß kabel
+Beschreibung=LAN-Kabel

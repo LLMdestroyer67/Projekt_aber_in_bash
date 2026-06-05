@@ -1,3 +1,3 @@
-Beschreibung=Lan_kabel
+Beschreibung=LAN-Kabel
 Anzahl=23
 Location=Technikraum

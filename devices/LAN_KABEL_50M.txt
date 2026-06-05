@@ -1,2 +1,2 @@
-Beschlreibung=LAN_KABEL_50M
+Beschreibung=LAN_KABEL_50M
 Anzahl=3
