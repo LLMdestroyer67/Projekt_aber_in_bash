@@ -6,42 +6,54 @@ Purpose
 Quick commands (build / test / lint)
 - Make scripts executable: chmod +x runner.sh experimental.sh
 - Run interactive app: ./runner.sh
+- Run a single public function (no runner):
+  - source experimental.sh
+  - create_device_main "DEVICE_ID"  # or any other *_main
 - Run full test suite: cd tests && bash run_all_tests.sh
 - Run a single test file: bash tests/test_validation.sh (or any test_*.sh)
+- Run a single test with debug tracing: bash -x tests/test_validation.sh
 - Run integration tests: bash tests/test_integration.sh
-- No automated linter or build tool is included in the repo (scripts follow set -euo pipefail and are shellcheck-compliant).
+- View recent logs: tail -50 logs/device_manager.log
+- No automated linter/build tool included; scripts follow set -euo pipefail and are shellcheck-friendly.
 
 High-level architecture (big picture)
-- Entry point: runner.sh — orchestrates interactive menu and non-interactive workflows.
-- Core library: experimental.sh — all business logic and helper functions (public mains + 1600+ lines of implementation).
-- Data: devices/ — one plain-text file per device (key=value lines, .txt files).
-- Logs: logs/ — device_manager.log with ISO-8601 entries, rotation handled by helpers.
-- Tests: tests/ — manual Bash test framework (8 assertion helpers) and ~65 test cases; run_all_tests.sh runs everything.
-- Docs: docs/{ARCHITECTURE.md,API.md,INTERNALS.md,OPERATIONS.md} contain authoritative design, API, internals and operations guidance — consult them for deeper context.
+- Entry point: runner.sh — interactive menu and a thin orchestrator for non-interactive workflows.
+- Core library: experimental.sh — monolithic implementation (public *_main functions + many `_helper_` utilities). Prefer editing helpers there.
+- Data model: devices/ — one plain-text file per device (key=value lines, *.txt). Two device types: numeric single devices and alphanumeric collections (with `Anzahl=`).
+- Logging: logs/device_manager.log — ISO-8601 timestamped entries; automatic rotation handled by helper.
+- Tests: tests/ — small Bash test framework (test_helpers.sh) and multiple test_* scripts that are the authoritative usage examples.
+- Docs: docs/ contain ARCHITECTURE.md, API.md, INTERNALS.md, OPERATIONS.md — consult these before large changes.
 
-Key repository conventions (important, repo-specific)
-- Public functions: named like *_main (create_device_main, read_device_main, change_device_main, find_device_main, find_and_change_main, change_count_main). These are the supported API surface.
-- Internal helpers: prefixed with `_helper_`, `_generic_`, or `_prompt_` (keep internal vs public separation).
-- Exit codes: 0 = success, 1 = logic/error, 2 = usage error (consistently used across mains).
-- Device IDs and types:
-  - Type 1 (single devices): numeric IDs (e.g., 1001). Fields: Beschreibung, Location, Status, Kategorie, etc.
-  - Type 2 (collections): alphanumeric IDs (e.g., LAN_CABLE_50M). Fields: Beschreibung, Anzahl, Location, Kategorie, etc.
-- Device storage format: one file per device, plain key=value lines (no JSON/YAML). Use atomic write (tmp then rename) when modifying.
-- Logging: use log_debug/log_info/log_warn/log_error; log lines include timestamp, PID, function and line number. LOG_FILE and LOG_DIR controlled by env vars.
-- Configuration: all via environment variables (DEVICE_DIR, LOG_DIR/LOG_FILE, LOG_MAX_SIZE, LOG_KEEP_DAYS, RUN_INTERVAL_SECONDS, TRACE_COMMANDS).
-- Concurrency: single-threaded design. No internal file locking — do not run multiple runner.sh processes against the same DEVICE_DIR without external locking (flock or mkdir-semaphore).
-- Input validation: `_helper_validate_device_id_strict` enforces allowed characters (alphanumeric, hyphen, underscore); disallows path traversal and injection chars.
-- Tests: tests are pure Bash; run individual test scripts directly (bash tests/test_fields.sh). Tests also serve as usage examples for API and helpers.
+Key repository conventions (repo-specific)
+- Public API: functions named *_main (create_device_main, read_device_main, change_device_main, find_device_main, find_and_change_main, change_count_main). Keep these stable.
+- Internal helpers: prefixes `_helper_`, `_generic_`, `_prompt_` (do not export unless needed).
+- Exit codes: 0 = success, 1 = logic/error, 2 = usage error. Use consistently for public mains.
+- Device IDs and detection:
+  - Type 1 (single): numeric IDs (e.g., 1001) — no `Anzahl` field.
+  - Type 2 (collection): alphanumeric IDs (e.g., LAN_CABLE_50M) — includes `Anzahl=` field and count operations.
+- Device file format: plain key=value lines. When updating, use atomic write (mktemp -> write -> mv) as in `_helper_change_rewrite_file`.
+- Logging helpers: use log_debug/log_info/log_warn/log_error and echo_logged / error_logged for combined stdout+log messages.
+- Input helpers: use read_logged to prompt and log user input consistently.
+- Validation: use `_helper_validate_device_id_strict` to reject dangerous IDs (/, spaces, $, `, quotes). Always validate user-supplied IDs in mains.
+- Tests as examples: tests/* are also usage examples — prefer adding tests when changing behavior.
+- Concurrency: intentionally single-threaded. If enabling concurrency, implement an external locking wrapper (flock) and add tests demonstrating safe behavior.
+- Commit message convention: when making commits during automated assistant sessions, append the Co-authored-by trailer:
+  Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
 
-Where to look first
-- For usage examples and CLI behavior: docs/OPERATIONS.md and docs/API.md
-- For design and decisions: docs/ARCHITECTURE.md
-- For implementation details and helper contracts: docs/INTERNALS.md and experimental.sh
-- For tests/examples: tests/*.sh
+Where to look first (fast path)
+- Quick feature change: experimental.sh — search for the relevant `_helper_` then update small helper functions.
+- To understand public behavior: docs/API.md then tests/* for concrete examples.
+- For logging/diagnostics: docs/OPERATIONS.md and logs/device_manager.log
 
-Notes for Copilot sessions
-- When asked to modify behavior, prefer editing experimental.sh helper functions to keep public mains small and stable.
-- Preserve public function signatures and exit-code semantics to maintain backward compatibility.
-- Respect single-threaded assumption or add explicit external-locking logic if implementing concurrency.
+Guidance for Copilot sessions (practical rules)
+- Make small, surgical edits to experimental.sh helpers. Avoid wholesale rewrites of the file.
+- Run tests locally after changes: cd tests && bash run_all_tests.sh. Fix failures before committing.
+- When adding or changing public mains, update docs/API.md and add corresponding tests under tests/.
+- Preserve exit codes and public function signatures for backward compatibility.
+- Use existing test helpers (test_helpers.sh) for new tests; keep tests deterministic (no network/time dependence).
 
-If you want the Copilot instructions adjusted or expanded (examples, CI snippets, shellcheck hooks, or coverage for a specific file), say which area to expand.
+Files to avoid changing unless necessary
+- docs/ — these are the canonical design docs; update when behavior or API changes.
+- tests/ — keep tests authoritative; update only to reflect intentional behavioral changes.
+
+If you want this file expanded (examples, CI snippets, shellcheck hooks, or targeted areas to cover), say which area to expand.
