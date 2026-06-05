@@ -162,6 +162,13 @@ else
   echo "WARNING: modules/cli.sh not found (expected at $SCRIPT_DIR/modules/cli.sh)" >&2
 fi
 
+# Count helpers moved to modules/count.sh
+if [[ -f "$SCRIPT_DIR/modules/count.sh" ]]; then
+  . "$SCRIPT_DIR/modules/count.sh"
+else
+  echo "WARNING: modules/count.sh not found (expected at $SCRIPT_DIR/modules/count.sh)" >&2
+fi
+
 ##############################
 # change_device.sh functions
 ##############################
