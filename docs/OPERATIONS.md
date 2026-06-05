@@ -671,3 +671,7 @@ For feature requests:
 - Document use case in an issue/ticket
 - Link to `ARCHITECTURE.md` for design context
 - Provide test case if possible
+
+---
+
+NOTE: The implementation has been modularized. The main compatibility shim is experimental.sh which now sources modules/*.sh (modules/logging.sh, modules/fields.sh, modules/io.sh, modules/find.sh, modules/create.sh, modules/device_ops.sh, modules/cli.sh). For non-interactive scripts prefer run_cli (in modules/cli.sh) or call the public *_main functions directly.

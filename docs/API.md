@@ -4,7 +4,7 @@
 
 This document describes the public API of the Bash Device Manager. All user-facing operations go through these main functions.
 
-**Location:** `experimental.sh`
+**Location:** `experimental.sh` (now split into modules/ — experimental.sh sources modules for backward compatibility)
 **Exit Codes:** 0=success, 1=error, 2=usage error
 
 ---
