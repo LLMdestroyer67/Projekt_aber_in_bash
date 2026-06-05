@@ -155,6 +155,13 @@ else
   echo "WARNING: modules/create.sh not found (expected at $SCRIPT_DIR/modules/create.sh)" >&2
 fi
 
+# CLI dispatch helpers moved to modules/cli.sh
+if [[ -f "$SCRIPT_DIR/modules/cli.sh" ]]; then
+  . "$SCRIPT_DIR/modules/cli.sh"
+else
+  echo "WARNING: modules/cli.sh not found (expected at $SCRIPT_DIR/modules/cli.sh)" >&2
+fi
+
 ##############################
 # change_device.sh functions
 ##############################
