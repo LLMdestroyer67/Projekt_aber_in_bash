@@ -48,3 +48,8 @@
 2026-06-05T09:55:15Z [DEBUG] [test_find.sh] [pid=21709] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
 2026-06-05T09:55:15Z [DEBUG] [test_find.sh] [pid=21709] [func=log_message:114] _helper_change_device_count_from_id id='1001'
 2026-06-05T09:55:15Z [DEBUG] [test_find.sh] [pid=21709] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-06-05T09:56:15Z [DEBUG] [test_find.sh] [pid=22749] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-06-05T09:56:15Z [DEBUG] [test_find.sh] [pid=22749] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-06-05T09:56:15Z [DEBUG] [test_find.sh] [pid=22749] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-06-05T09:56:15Z [DEBUG] [test_find.sh] [pid=22749] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-06-05T09:56:15Z [DEBUG] [test_find.sh] [pid=22749] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
