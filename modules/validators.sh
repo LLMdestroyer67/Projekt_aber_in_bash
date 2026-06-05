@@ -8,6 +8,17 @@ fi
 
 # Keep _helper_core_is_interactive in experimental.sh; these helpers call it.
 
+# Determine device count type from device id: 1 = single device (numeric), 2 = collection (alphanumeric)
+_helper_change_device_count_from_id() {
+  local id="$1"
+  log_debug "_helper_change_device_count_from_id id='$id'"
+  if [[ "$id" =~ ^[+-]?[0-9]+$ ]]; then
+    printf '%s' 1
+  else
+    printf '%s' 2
+  fi
+}
+
 # Strict validation for device IDs
 _helper_validate_device_id_strict() {
   local id="$1"
