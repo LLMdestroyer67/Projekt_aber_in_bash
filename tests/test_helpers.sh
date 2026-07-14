@@ -213,3 +213,104 @@ cleanup_test_env() {
   [[ -d "$TEST_DEVICE_DIR" ]] && rm -rf "$TEST_DEVICE_DIR"
   [[ -d "$TEST_LOG_DIR" ]] && rm -rf "$TEST_LOG_DIR"
 }
+
+# ============================================================================
+# Additional Assertion Functions (Phase 2+ enhancements)
+# ============================================================================
+
+assert_function_exists() {
+  local func_name="$1"
+  local msg="${2:-Function should exist: $func_name}"
+  
+  if declare -f "$func_name" >/dev/null 2>&1; then
+    TEST_PASS=$((TEST_PASS + 1))
+    echo -e "${GREEN}✓${NC} PASS: $msg"
+    return 0
+  else
+    TEST_FAIL=$((TEST_FAIL + 1))
+    echo -e "${RED}✗${NC} FAIL: $msg"
+    return 1
+  fi
+}
+
+assert_exit_code() {
+  local expected_code="$1"
+  local actual_code="$2"
+  local msg="${3:-Exit code check}"
+  
+  if [[ "$expected_code" -eq "$actual_code" ]]; then
+    TEST_PASS=$((TEST_PASS + 1))
+    echo -e "${GREEN}✓${NC} PASS: $msg (exit=$actual_code)"
+    return 0
+  else
+    TEST_FAIL=$((TEST_FAIL + 1))
+    echo -e "${RED}✗${NC} FAIL: $msg"
+    echo "  Expected exit code: $expected_code"
+    echo "  Actual exit code:   $actual_code"
+    return 1
+  fi
+}
+
+assert_stderr_not_empty() {
+  local stderr_content="$1"
+  local msg="${2:-Stderr should not be empty}"
+  
+  if [[ -n "$stderr_content" ]]; then
+    TEST_PASS=$((TEST_PASS + 1))
+    echo -e "${GREEN}✓${NC} PASS: $msg"
+    return 0
+  else
+    TEST_FAIL=$((TEST_FAIL + 1))
+    echo -e "${RED}✗${NC} FAIL: $msg"
+    return 1
+  fi
+}
+
+assert_stdout_empty() {
+  local stdout_content="$1"
+  local msg="${2:-Stdout should be empty}"
+  
+  if [[ -z "$stdout_content" ]]; then
+    TEST_PASS=$((TEST_PASS + 1))
+    echo -e "${GREEN}✓${NC} PASS: $msg"
+    return 0
+  else
+    TEST_FAIL=$((TEST_FAIL + 1))
+    echo -e "${RED}✗${NC} FAIL: $msg"
+    echo "  Got output: $stdout_content"
+    return 1
+  fi
+}
+
+# Helper for testing non-interactive functions with closed stdin
+run_noninteractive() {
+  local cmd="$1"
+  local timeout_sec="${2:-5}"
+  
+  # Run command with stdin closed and capture output + exit code
+  timeout "$timeout_sec" bash -c "$cmd" </dev/null 2>&1
+  return $?
+}
+
+# Helper to verify device file has required fields
+verify_device_file_valid() {
+  local device_file="$1"
+  local msg="${2:-Device file should be valid}"
+  
+  if [[ ! -f "$device_file" ]]; then
+    TEST_FAIL=$((TEST_FAIL + 1))
+    echo -e "${RED}✗${NC} FAIL: $msg (file not found)"
+    return 1
+  fi
+  
+  # Check for at least one required field
+  if grep -q "^Beschreibung=" "$device_file"; then
+    TEST_PASS=$((TEST_PASS + 1))
+    echo -e "${GREEN}✓${NC} PASS: $msg"
+    return 0
+  else
+    TEST_FAIL=$((TEST_FAIL + 1))
+    echo -e "${RED}✗${NC} FAIL: $msg (missing Beschreibung field)"
+    return 1
+  fi
+}
