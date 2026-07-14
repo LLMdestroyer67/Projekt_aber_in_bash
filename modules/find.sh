@@ -11,6 +11,86 @@ if [[ -f "$SCRIPT_DIR/modules/logging.sh" ]]; then
   . "$SCRIPT_DIR/modules/logging.sh"
 fi
 
+# Print device file contents with line numbers
+_helper_find_print_file_numbered() {
+  local file="$1"
+  echo_logged "----- $file -----"
+  nl -ba -- "$file"
+  log_info "Datei nummeriert ausgegeben '$file'"
+}
+
+# Resolve device ID from argument or interactive input
+_helper_find_resolve_device_id_interactive() {
+  local device_id="$1"
+  if [[ -z "$device_id" ]]; then
+    if _helper_core_is_interactive; then
+      read_logged 'Find device by ID: ' device_id
+    else
+      error_logged "ERROR: missing DEVICE_ID (non-interactive)"
+      return 2
+    fi
+  fi
+  printf '%s' "$device_id"
+}
+
+# Set global variables for found device (single result)
+_helper_find_set_found_globals_single() {
+  local device_id="$1" device_file="$2"
+  FOUND_DEVICE_ID="$device_id"
+  FOUND_MATCHES=( "$device_file" )
+  FOUND_MATCH_COUNT=1
+}
+
+# Collect all device files from DEVICE_DIR into array
+_helper_find_collect_device_files() {
+  local -n files_ref=$1
+  local -a all_files=()
+
+  if [[ ! -d "$DEVICE_DIR" ]]; then
+    error_logged "ERROR: DEVICE_DIR does not exist: '$DEVICE_DIR'"
+    return 1
+  fi
+
+  local file
+  while IFS= read -r -d '' file; do
+    all_files+=( "$file" )
+  done < <(find "$DEVICE_DIR" -type f -name "*.txt" -print0 2>/dev/null)
+
+  if (( ${#all_files[@]} == 0 )); then
+    error_logged "ERROR: no device files found in '$DEVICE_DIR'"
+    return 1
+  fi
+
+  files_ref=( "${all_files[@]}" )
+  return 0
+}
+
+# Find device by exact ID
+find_by_id() {
+  local device_id="${1-}"
+  log_info "find_by_id gestartet device_id='${device_id-}'"
+
+  device_id="$(_helper_find_resolve_device_id_interactive "$device_id")" || return $?
+
+  echo_logged "device ID: $device_id"
+
+  if ! _helper_validate_device_id_strict "$device_id"; then
+    error_logged "ERROR: invalid device ID: '$device_id'"
+    return 2
+  fi
+
+  local device_file="$DEVICE_DIR/$device_id.txt"
+  log_info "device_file='$device_file'"
+
+  _helper_change_assert_device_file_exists "$device_file" "$device_id" || return $?
+
+  echo_logged "Found device: $device_id"
+  _helper_find_print_file_numbered "$device_file"
+  log_info "find_by_id abgeschlossen"
+
+  _helper_find_set_found_globals_single "$device_id" "$device_file"
+}
+
 _helper_find_resolve_search_value() {
   local value="$1" key="$2"
   if [[ -z "$value" ]]; then
