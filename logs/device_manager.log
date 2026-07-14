@@ -8794,3 +8794,221 @@
 2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] run_once erfolgreich abgeschlossen
 2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Runner stopped
 2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] EXIT trap rc=0
+2026-07-14T08:55:57Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Logging initialisiert
+2026-07-14T08:55:57Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-07-14T08:55:57Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Logging-Traps installiert
+2026-07-14T08:55:57Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T08:55:57Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:55:57Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:55:57Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:55:57Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:55:59Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:55:59Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:55:59Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:55:59Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:56:01Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:56:01Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:56:01Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:56:01Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:56:03Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:56:03Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:56:03Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:56:03Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:56:05Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:56:05Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:56:05Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:56:05Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:56:07Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:56:07Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:56:07Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:56:07Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:56:09Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:56:09Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:56:09Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:56:09Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:56:11Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:56:11Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:56:11Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:56:11Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:56:13Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once gestartet
+2026-07-14T08:56:13Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T08:56:14Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T08:56:14Z [DEBUG] [runner.sh] [pid=3858] [func=log_message:114] Sleep 2s
+2026-07-14T08:56:15Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] Signal empfangen: INT
+2026-07-14T08:56:15Z [ERROR] [runner.sh] [pid=3858] [func=log_message:149] ERR trap rc=130 command=sleep "$RUN_INTERVAL_SECONDS"
+2026-07-14T08:56:15Z [INFO] [runner.sh] [pid=3858] [func=log_message:114] EXIT trap rc=130
+2026-07-14T09:10:58Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Logging initialisiert
+2026-07-14T09:10:58Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=--help 
+2026-07-14T09:10:58Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Logging-Traps installiert
+2026-07-14T09:10:58Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T09:10:58Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:10:58Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:10:58Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:10:58Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:00Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:00Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:00Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:00Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:02Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:02Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:02Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:02Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:04Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:04Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:04Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:04Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:06Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:06Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:07Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:07Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:09Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:09Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:09Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:09Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:11Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:11Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:11Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:11Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:13Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:13Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:13Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:13Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:15Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:15Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:15Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:15Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:17Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:17Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:17Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:17Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:19Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:19Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:19Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:19Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:21Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:21Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:21Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:21Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:23Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:23Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:23Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:23Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:25Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:25Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:25Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:25Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:27Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:27Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:27Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:27Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:29Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:29Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:29Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:29Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:31Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:31Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:31Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:31Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:33Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:33Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:33Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:33Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:35Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:35Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:35Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:35Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:37Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:37Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:37Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:37Z [DEBUG] [runner.sh] [pid=13660] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:39Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] Signal empfangen: TERM
+2026-07-14T09:11:39Z [ERROR] [runner.sh] [pid=13660] [func=log_message:149] ERR trap rc=143 command=sleep "$RUN_INTERVAL_SECONDS"
+2026-07-14T09:11:39Z [INFO] [runner.sh] [pid=13660] [func=log_message:114] EXIT trap rc=143
+2026-07-14T09:11:43Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] Logging initialisiert
+2026-07-14T09:11:43Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-07-14T09:11:43Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] Logging-Traps installiert
+2026-07-14T09:11:43Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T09:11:43Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:43Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:43Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:43Z [DEBUG] [runner.sh] [pid=14853] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:45Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:45Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:45Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:45Z [DEBUG] [runner.sh] [pid=14853] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:47Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] run_once gestartet
+2026-07-14T09:11:47Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] Non-interactive Modus erkannt
+2026-07-14T09:11:47Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:11:47Z [DEBUG] [runner.sh] [pid=14853] [func=log_message:114] Sleep 2s
+2026-07-14T09:11:48Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] Signal empfangen: TERM
+2026-07-14T09:11:48Z [ERROR] [runner.sh] [pid=14853] [func=log_message:149] ERR trap rc=143 command=sleep "$RUN_INTERVAL_SECONDS"
+2026-07-14T09:11:48Z [INFO] [runner.sh] [pid=14853] [func=log_message:114] EXIT trap rc=143
+2026-07-14T09:40:20Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] Logging initialisiert
+2026-07-14T09:40:20Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-07-14T09:40:20Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] Logging-Traps installiert
+2026-07-14T09:40:20Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T09:40:20Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] run_once gestartet
+2026-07-14T09:40:20Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] 
+2026-07-14T09:40:20Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-07-14T09:40:24Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] Menüauswahl choice='q'
+2026-07-14T09:40:24Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] Benutzer hat Quit gewählt
+2026-07-14T09:40:24Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T09:40:24Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] Runner stopped
+2026-07-14T09:40:24Z [INFO] [runner.sh] [pid=25127] [func=log_message:114] EXIT trap rc=0
+2026-07-14T09:54:50Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] Logging initialisiert
+2026-07-14T09:54:50Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-07-14T09:54:50Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] Logging-Traps installiert
+2026-07-14T09:54:51Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T09:54:51Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] run_once gestartet
+2026-07-14T09:54:51Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] 
+2026-07-14T09:54:51Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-07-14T09:55:27Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] Menüauswahl choice='4'
+2026-07-14T09:55:27Z [INFO] [runner.sh] [pid=30401] [func=log_message:114] Running find_and_change_main (interactive)...
+2026-07-14T09:55:27Z [INFO] [find_and_change.sh] [pid=30401] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:12:14Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] Logging initialisiert
+2026-07-14T10:12:14Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-07-14T10:12:14Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:12:14Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T10:12:14Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] run_once gestartet
+2026-07-14T10:12:14Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] 
+2026-07-14T10:12:14Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-07-14T10:12:18Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] Menüauswahl choice='4'
+2026-07-14T10:12:18Z [INFO] [runner.sh] [pid=48697] [func=log_message:114] Running find_and_change_main (interactive)...
+2026-07-14T10:12:18Z [INFO] [find_and_change.sh] [pid=48697] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:12:25Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] Logging initialisiert
+2026-07-14T10:12:25Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-07-14T10:12:25Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:12:25Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T10:12:25Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] run_once gestartet
+2026-07-14T10:12:25Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] 
+2026-07-14T10:12:25Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-07-14T10:12:28Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] Menüauswahl choice='5'
+2026-07-14T10:12:28Z [INFO] [runner.sh] [pid=48892] [func=log_message:114] Running change_count_main (interactive)...
+2026-07-14T10:12:28Z [INFO] [change_count.sh] [pid=48892] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-07-14T10:12:41Z [ERROR] [change_count.sh] [pid=48892] [func=log_message:114] invalid input: mode='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner,(7)serial,(8)sap_id,(9)manufacturer,(10)model,(11)purchase_date,(12)disposal_date,(13)purchase_value: q'
+2026-07-14T10:12:41Z [INFO] [change_count.sh] [pid=48892] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:19:48Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Logging initialisiert
+2026-07-14T10:19:48Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-07-14T10:19:48Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:19:48Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T10:19:48Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] run_once gestartet
+2026-07-14T10:19:48Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] 
+2026-07-14T10:19:48Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-07-14T10:19:50Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Menüauswahl choice='5'
+2026-07-14T10:19:50Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Running change_count_main (interactive)...
+2026-07-14T10:19:50Z [INFO] [change_count.sh] [pid=63706] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-07-14T10:19:53Z [ERROR] [change_count.sh] [pid=63706] [func=log_message:114] invalid input: mode='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner,(7)serial,(8)sap_id,(9)manufacturer,(10)model,(11)purchase_date,(12)disposal_date,(13)purchase_value: 4'
+2026-07-14T10:19:53Z [ERROR] [runner.sh] [pid=63706] [func=log_message:114] change_count_main fehlgeschlagen rc=1
+2026-07-14T10:19:53Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T10:19:53Z [DEBUG] [runner.sh] [pid=63706] [func=log_message:114] Sleep 2s
+2026-07-14T10:19:55Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] run_once gestartet
+2026-07-14T10:19:55Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] 
+2026-07-14T10:19:55Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-07-14T10:19:57Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Menüauswahl choice='4'
+2026-07-14T10:19:57Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Running find_and_change_main (interactive)...
+2026-07-14T10:19:57Z [INFO] [find_and_change.sh] [pid=63706] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-07-14T10:21:04Z [INFO] [find_and_change.sh] [pid=63706] [func=log_message:114] Signal empfangen: INT
+2026-07-14T10:21:04Z [ERROR] [runner.sh] [pid=63706] [func=log_message:114] find_and_change_main fehlgeschlagen rc=1
+2026-07-14T10:21:04Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T10:21:04Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Runner stopped
+2026-07-14T10:21:04Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] EXIT trap rc=0

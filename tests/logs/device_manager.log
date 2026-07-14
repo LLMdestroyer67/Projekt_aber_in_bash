@@ -81,3 +81,1725 @@
 2026-07-14T05:54:53Z [DEBUG] [test_find.sh] [pid=11236] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
 2026-07-14T05:54:53Z [DEBUG] [test_find.sh] [pid=11236] [func=log_message:114] _helper_change_device_count_from_id id='1001'
 2026-07-14T05:54:53Z [DEBUG] [test_find.sh] [pid=11236] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T09:56:43Z [DEBUG] [test_find.sh] [pid=31808] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T09:56:43Z [DEBUG] [test_find.sh] [pid=31808] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T09:56:43Z [DEBUG] [test_find.sh] [pid=31808] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T09:56:43Z [DEBUG] [test_find.sh] [pid=31808] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T09:56:43Z [DEBUG] [test_find.sh] [pid=31808] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:00:37Z [DEBUG] [test_find.sh] [pid=34075] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:00:37Z [DEBUG] [test_find.sh] [pid=34075] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:00:37Z [DEBUG] [test_find.sh] [pid=34075] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:00:37Z [DEBUG] [test_find.sh] [pid=34075] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:00:37Z [DEBUG] [test_find.sh] [pid=34075] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Logging initialisiert
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] device folder has been created
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] device_count='2'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Logging initialisiert
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] device folder has been created
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:05:10Z [INFO] [test] [pid=37475] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:05:11Z [INFO] [test] [pid=37475] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:05:11Z [INFO] [test] [pid=37475] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:05:11Z [INFO] [test] [pid=37475] [func=log_message:114] device_count='2'
+2026-07-14T10:05:11Z [INFO] [test] [pid=37475] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:05:11Z [ERROR] [test] [pid=37475] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:05:11Z [ERROR] [test] [pid=37475] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:05:11Z [INFO] [test] [pid=37475] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Logging initialisiert
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] device folder has been created
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] device_count='2'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Logging initialisiert
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] device folder has been created
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:06:23Z [INFO] [test] [pid=38632] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] device_count='2'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] Logging initialisiert
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:06:24Z [INFO] [test] [pid=38632] [func=log_message:114] EXIT trap rc=127
+2026-07-14T10:06:24Z [INFO] [test] [pid=38991] [func=log_message:114] Logging initialisiert
+2026-07-14T10:06:24Z [INFO] [test] [pid=38991] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:06:24Z [INFO] [test] [pid=38991] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:06:24Z [INFO] [test_data_integrity.sh] [pid=38991] [func=log_message:114] EXIT trap rc=127
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] Logging initialisiert
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] device folder has been created
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] device_count='2'
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:06:24Z [INFO] [test] [pid=39127] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Logging initialisiert
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] device folder has been created
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] device_count='2'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:06:25Z [ERROR] [test] [pid=39127] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:06:25Z [ERROR] [test] [pid=39127] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:06:25Z [INFO] [test] [pid=39127] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:06:25Z [DEBUG] [test_find.sh] [pid=39440] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:06:25Z [DEBUG] [test_find.sh] [pid=39440] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:06:25Z [DEBUG] [test_find.sh] [pid=39440] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:06:25Z [DEBUG] [test_find.sh] [pid=39440] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:06:25Z [DEBUG] [test_find.sh] [pid=39440] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Logging initialisiert
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device folder has been created
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device ID=1001
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device_count='1'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device 1001 has been created
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device folder has been created
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device_count='2'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:06:26Z [INFO] [test] [pid=39663] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:06:27Z [INFO] [test] [pid=39663] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:06:27Z [INFO] [test] [pid=39663] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:06:27Z [INFO] [test] [pid=39663] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:06:27Z [INFO] [test] [pid=39663] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:06:27Z [INFO] [test] [pid=39663] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:06:27Z [ERROR] [test] [pid=39663] [func=log_message:46] ERR trap rc=127 command=return $?
+2026-07-14T10:06:27Z [INFO] [test] [pid=39663] [func=log_message:114] EXIT trap rc=127
+2026-07-14T10:08:56Z [INFO] [test] [pid=41950] [func=log_message:114] Logging initialisiert
+2026-07-14T10:08:56Z [INFO] [test] [pid=41950] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:08:56Z [INFO] [test] [pid=41950] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:08:56Z [INFO] [test] [pid=41950] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device folder has been created
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device_count='2'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Logging initialisiert
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device folder has been created
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device_count='2'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:08:57Z [INFO] [test] [pid=41950] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] Logging initialisiert
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:08:57Z [DEBUG] [test] [pid=42288] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] device_count='2'
+2026-07-14T10:08:57Z [INFO] [test] [pid=42288] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:08:57Z [ERROR] [test_data_integrity.sh] [pid=42288] [func=log_message:35] ERR trap rc=127 command=return $?
+2026-07-14T10:08:57Z [INFO] [test_data_integrity.sh] [pid=42288] [func=log_message:114] EXIT trap rc=127
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Logging initialisiert
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device folder has been created
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device_count='2'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Logging initialisiert
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device folder has been created
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device_count='2'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:08:58Z [ERROR] [test] [pid=42512] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:08:58Z [ERROR] [test] [pid=42512] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:08:58Z [INFO] [test] [pid=42512] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:08:58Z [DEBUG] [test_find.sh] [pid=42825] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:08:58Z [DEBUG] [test_find.sh] [pid=42825] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:08:58Z [DEBUG] [test_find.sh] [pid=42825] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:08:58Z [DEBUG] [test_find.sh] [pid=42825] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:08:58Z [DEBUG] [test_find.sh] [pid=42825] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Logging initialisiert
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] device folder has been created
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] device ID=1001
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] device_count='1'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] device 1001 has been created
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] device folder has been created
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:08:59Z [INFO] [test] [pid=43026] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] device_count='2'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] device ID: 1001
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:09:00Z [ERROR] [test] [pid=43026] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:09:00Z [ERROR] [test] [pid=43026] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:09:00Z [INFO] [test] [pid=43026] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Logging initialisiert
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] device folder has been created
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] device_count='2'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Logging initialisiert
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] device folder has been created
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:09:04Z [INFO] [test] [pid=43565] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] device_count='2'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43565] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] Logging initialisiert
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:09:05Z [DEBUG] [test] [pid=43890] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] device_count='2'
+2026-07-14T10:09:05Z [INFO] [test] [pid=43890] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:09:05Z [ERROR] [test_data_integrity.sh] [pid=43890] [func=log_message:35] ERR trap rc=127 command=return $?
+2026-07-14T10:09:05Z [INFO] [test_data_integrity.sh] [pid=43890] [func=log_message:114] EXIT trap rc=127
+2026-07-14T10:09:05Z [INFO] [test] [pid=44119] [func=log_message:114] Logging initialisiert
+2026-07-14T10:09:05Z [INFO] [test] [pid=44119] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:09:05Z [INFO] [test] [pid=44119] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:09:05Z [INFO] [test] [pid=44119] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:09:05Z [INFO] [test] [pid=44119] [func=log_message:114] device folder has been created
+2026-07-14T10:09:05Z [INFO] [test] [pid=44119] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] device_count='2'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Logging initialisiert
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] device folder has been created
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] device_count='2'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:09:06Z [ERROR] [test] [pid=44119] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:09:06Z [ERROR] [test] [pid=44119] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:09:06Z [INFO] [test] [pid=44119] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:09:06Z [DEBUG] [test_find.sh] [pid=44453] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:09:06Z [DEBUG] [test_find.sh] [pid=44453] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:09:06Z [DEBUG] [test_find.sh] [pid=44453] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:09:06Z [DEBUG] [test_find.sh] [pid=44453] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:09:06Z [DEBUG] [test_find.sh] [pid=44453] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Logging initialisiert
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device folder has been created
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device ID=1001
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device_count='1'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device 1001 has been created
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device folder has been created
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device_count='2'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device ID: 1001
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:09:07Z [INFO] [test] [pid=44647] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:09:08Z [INFO] [test] [pid=44647] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:09:08Z [INFO] [test] [pid=44647] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:09:08Z [INFO] [test] [pid=44647] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:09:08Z [ERROR] [test] [pid=44647] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:09:08Z [ERROR] [test] [pid=44647] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:09:08Z [INFO] [test] [pid=44647] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Logging initialisiert
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] device folder has been created
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] device_count='2'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Logging initialisiert
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] device folder has been created
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:11:12Z [INFO] [test] [pid=46434] [func=log_message:114] device_count='2'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Logging initialisiert
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] device ID: CLI_TEST_001
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] ----- ./test_devices/CLI_TEST_001.txt -----
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] read_device_main abgeschlossen device_id='CLI_TEST_001'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] change_device_main gestartet device_id='CLI_TEST_001' field='Status' new_value='maintenance'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Found device: CLI_TEST_001 - ready to change
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] ------------------------------
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] ------------------------------
+2026-07-14T10:11:13Z [DEBUG] [test] [pid=46434] [func=log_message:114] _helper_change_device_count_from_id id='CLI_TEST_001'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] device_count='2'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:11:13Z [INFO] [test] [pid=46434] [func=log_message:114] EXIT trap rc=127
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] Logging initialisiert
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] ------------------------------
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_002.txt'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] ------------------------------
+2026-07-14T10:11:13Z [DEBUG] [test] [pid=46904] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] device_count='2'
+2026-07-14T10:11:13Z [INFO] [test] [pid=46904] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:11:13Z [ERROR] [test_data_integrity.sh] [pid=46904] [func=log_message:35] ERR trap rc=127 command=return $?
+2026-07-14T10:11:13Z [INFO] [test_data_integrity.sh] [pid=46904] [func=log_message:114] EXIT trap rc=127
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Logging initialisiert
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device folder has been created
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device_count='2'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Logging initialisiert
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device folder has been created
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device_count='2'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:11:14Z [ERROR] [test] [pid=47171] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:11:14Z [ERROR] [test] [pid=47171] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:11:14Z [INFO] [test] [pid=47171] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:11:14Z [DEBUG] [test_find.sh] [pid=47504] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:11:15Z [DEBUG] [test_find.sh] [pid=47504] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:11:15Z [DEBUG] [test_find.sh] [pid=47504] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:11:15Z [DEBUG] [test_find.sh] [pid=47504] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:11:15Z [DEBUG] [test_find.sh] [pid=47504] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Logging initialisiert
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device folder has been created
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device ID=1001
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device_count='1'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device 1001 has been created
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device folder has been created
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device_count='2'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:11:15Z [INFO] [test] [pid=47699] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] device ID: 1001
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:11:16Z [ERROR] [test] [pid=47699] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:11:16Z [ERROR] [test] [pid=47699] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:11:16Z [INFO] [test] [pid=47699] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Logging initialisiert
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device folder has been created
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device_count='2'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Logging initialisiert
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device folder has been created
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device_count='2'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:16:44Z [INFO] [test] [pid=51625] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:16:45Z [INFO] [test] [pid=51625] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:16:45Z [INFO] [test] [pid=51625] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:16:45Z [INFO] [test] [pid=51625] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:16:45Z [INFO] [test] [pid=51625] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:16:45Z [INFO] [test] [pid=51625] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:16:45Z [INFO] [test] [pid=51625] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:16:45Z [INFO] [test] [pid=51625] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:16:45Z [INFO] [test] [pid=51625] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] Logging initialisiert
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] device folder has been created
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] device_count='2'
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:16:49Z [ERROR] [test] [pid=52002] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'CLI_TEST_001' already exists at ./test_devices/CLI_TEST_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:16:49Z [ERROR] [test] [pid=52002] [func=log_message:114] Datei existiert bereits: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:16:49Z [INFO] [test] [pid=52002] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] Logging initialisiert
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] device folder has been created
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] device_count='2'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:16:54Z [ERROR] [test] [pid=52185] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'CLI_TEST_001' already exists at ./test_devices/CLI_TEST_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:16:54Z [ERROR] [test] [pid=52185] [func=log_message:114] Datei existiert bereits: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52185] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] Logging initialisiert
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:16:54Z [DEBUG] [test] [pid=52307] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] device_count='2'
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:16:54Z [INFO] [test] [pid=52307] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:16:54Z [ERROR] [test] [pid=52307] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:16:54Z [ERROR] [test_data_integrity.sh] [pid=52307] [func=log_message:35] ERR trap rc=1 command=return 1
+2026-07-14T10:16:54Z [INFO] [test_data_integrity.sh] [pid=52307] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Logging initialisiert
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device folder has been created
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device_count='2'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Logging initialisiert
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device folder has been created
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device_count='2'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:16:55Z [ERROR] [test] [pid=52547] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:16:55Z [ERROR] [test] [pid=52547] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:16:55Z [INFO] [test] [pid=52547] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:16:55Z [DEBUG] [test_find.sh] [pid=52865] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:16:55Z [DEBUG] [test_find.sh] [pid=52865] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:16:55Z [DEBUG] [test_find.sh] [pid=52865] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:16:55Z [DEBUG] [test_find.sh] [pid=52865] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:16:55Z [DEBUG] [test_find.sh] [pid=52865] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Logging initialisiert
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] device folder has been created
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] device ID=1001
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] device_count='1'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] device 1001 has been created
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:16:56Z [INFO] [test] [pid=53082] [func=log_message:114] device folder has been created
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] device_count='2'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] device ID: 1001
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:16:57Z [ERROR] [test] [pid=53082] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:16:57Z [ERROR] [test] [pid=53082] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:16:57Z [INFO] [test] [pid=53082] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:17:19Z [INFO] [test] [pid=53829] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:19Z [INFO] [test] [pid=53829] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:17:19Z [INFO] [test] [pid=53829] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:19Z [INFO] [test] [pid=53829] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:19Z [INFO] [test] [pid=53829] [func=log_message:114] device folder has been created
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device_count='2'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device folder has been created
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device_count='2'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device ID: CLI_TEST_001
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] ----- ./test_devices/CLI_TEST_001.txt -----
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] read_device_main abgeschlossen device_id='CLI_TEST_001'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] change_device_main gestartet device_id='CLI_TEST_001' field='Status' new_value='maintenance'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Found device: CLI_TEST_001 - ready to change
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:17:20Z [DEBUG] [test] [pid=53829] [func=log_message:114] _helper_change_device_count_from_id id='CLI_TEST_001'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] device_count='2'
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:17:20Z [DEBUG] [test] [pid=53829] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:17:20Z [ERROR] [test] [pid=53829] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:17:20Z [INFO] [test] [pid=53829] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:17:20Z [INFO] [test] [pid=54300] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:20Z [INFO] [test] [pid=54300] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:17:20Z [INFO] [test] [pid=54300] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:17:21Z [DEBUG] [test] [pid=54300] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] device_count='2'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:17:21Z [INFO] [test] [pid=54300] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:17:21Z [DEBUG] [test] [pid=54300] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:17:21Z [ERROR] [test] [pid=54300] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:17:21Z [ERROR] [test_data_integrity.sh] [pid=54300] [func=log_message:35] ERR trap rc=1 command=return 1
+2026-07-14T10:17:21Z [INFO] [test_data_integrity.sh] [pid=54300] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] device folder has been created
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] device_count='2'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:21Z [INFO] [test] [pid=54567] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] device folder has been created
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] device_count='2'
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:22Z [ERROR] [test] [pid=54567] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:17:22Z [ERROR] [test] [pid=54567] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:22Z [INFO] [test] [pid=54567] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:17:22Z [DEBUG] [test_find.sh] [pid=54908] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:17:22Z [DEBUG] [test_find.sh] [pid=54908] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:17:22Z [DEBUG] [test_find.sh] [pid=54908] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:17:22Z [DEBUG] [test_find.sh] [pid=54908] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:17:22Z [DEBUG] [test_find.sh] [pid=54908] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:17:22Z [INFO] [test] [pid=55102] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:22Z [INFO] [test] [pid=55102] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:17:22Z [INFO] [test] [pid=55102] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:22Z [INFO] [test] [pid=55102] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:22Z [INFO] [test] [pid=55102] [func=log_message:114] device folder has been created
+2026-07-14T10:17:22Z [INFO] [test] [pid=55102] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device ID=1001
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device_count='1'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device 1001 has been created
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device folder has been created
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device_count='2'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device ID: 1001
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:17:23Z [INFO] [test] [pid=55102] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:17:23Z [ERROR] [test] [pid=55102] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:17:23Z [ERROR] [test] [pid=55102] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:17:24Z [INFO] [test] [pid=55102] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:17:49Z [INFO] [test] [pid=55881] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:49Z [INFO] [test] [pid=55881] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:17:49Z [INFO] [test] [pid=55881] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:49Z [INFO] [test] [pid=55881] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:49Z [INFO] [test] [pid=55881] [func=log_message:114] device folder has been created
+2026-07-14T10:17:49Z [INFO] [test] [pid=55881] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device_count='2'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device folder has been created
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device_count='2'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device ID: CLI_TEST_001
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] ----- ./test_devices/CLI_TEST_001.txt -----
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] read_device_main abgeschlossen device_id='CLI_TEST_001'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] change_device_main gestartet device_id='CLI_TEST_001' field='Status' new_value='maintenance'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Found device: CLI_TEST_001 - ready to change
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:17:50Z [DEBUG] [test] [pid=55881] [func=log_message:114] _helper_change_device_count_from_id id='CLI_TEST_001'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] device_count='2'
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:17:50Z [DEBUG] [test] [pid=55881] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:17:50Z [ERROR] [test] [pid=55881] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:17:50Z [INFO] [test] [pid=55881] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:17:51Z [DEBUG] [test] [pid=56355] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] device_count='2'
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:17:51Z [INFO] [test] [pid=56355] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:17:51Z [DEBUG] [test] [pid=56355] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:17:51Z [ERROR] [test] [pid=56355] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:17:51Z [ERROR] [test_data_integrity.sh] [pid=56355] [func=log_message:35] ERR trap rc=1 command=return 1
+2026-07-14T10:17:51Z [INFO] [test_data_integrity.sh] [pid=56355] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:17:51Z [INFO] [test] [pid=56637] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device folder has been created
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device_count='2'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device folder has been created
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device_count='2'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:52Z [ERROR] [test] [pid=56637] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:17:52Z [ERROR] [test] [pid=56637] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:17:52Z [INFO] [test] [pid=56637] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:17:52Z [DEBUG] [test_find.sh] [pid=56972] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:17:52Z [DEBUG] [test_find.sh] [pid=56972] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:17:52Z [DEBUG] [test_find.sh] [pid=56972] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:17:52Z [DEBUG] [test_find.sh] [pid=56972] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:17:52Z [DEBUG] [test_find.sh] [pid=56972] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Logging initialisiert
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device folder has been created
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device ID=1001
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device_count='1'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device 1001 has been created
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device folder has been created
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device_count='2'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:17:53Z [INFO] [test] [pid=57167] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] device ID: 1001
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:17:54Z [ERROR] [test] [pid=57167] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:17:54Z [ERROR] [test] [pid=57167] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:17:54Z [INFO] [test] [pid=57167] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device folder has been created
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device_count='2'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device folder has been created
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device_count='2'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] device ID: CLI_TEST_001
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] ----- ./test_devices/CLI_TEST_001.txt -----
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:18Z [INFO] [test] [pid=57944] [func=log_message:114] read_device_main abgeschlossen device_id='CLI_TEST_001'
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] change_device_main gestartet device_id='CLI_TEST_001' field='Status' new_value='maintenance'
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] Found device: CLI_TEST_001 - ready to change
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:18:19Z [DEBUG] [test] [pid=57944] [func=log_message:114] _helper_change_device_count_from_id id='CLI_TEST_001'
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] device_count='2'
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:18:19Z [DEBUG] [test] [pid=57944] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:18:19Z [ERROR] [test] [pid=57944] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:18:19Z [INFO] [test] [pid=57944] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:18:19Z [DEBUG] [test] [pid=58425] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] device_count='2'
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:18:19Z [INFO] [test] [pid=58425] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:18:19Z [DEBUG] [test] [pid=58425] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:18:19Z [ERROR] [test] [pid=58425] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:18:19Z [ERROR] [test_data_integrity.sh] [pid=58425] [func=log_message:35] ERR trap rc=1 command=return 1
+2026-07-14T10:18:19Z [INFO] [test_data_integrity.sh] [pid=58425] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device folder has been created
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device_count='2'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device folder has been created
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device_count='2'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:20Z [ERROR] [test] [pid=58681] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:18:20Z [ERROR] [test] [pid=58681] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:20Z [INFO] [test] [pid=58681] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:20Z [DEBUG] [test_find.sh] [pid=58994] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:18:20Z [DEBUG] [test_find.sh] [pid=58994] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:18:20Z [DEBUG] [test_find.sh] [pid=58994] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:18:20Z [DEBUG] [test_find.sh] [pid=58994] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:18:20Z [DEBUG] [test_find.sh] [pid=58994] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] device folder has been created
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] device ID=1001
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] device_count='1'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] device 1001 has been created
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:18:21Z [INFO] [test] [pid=59206] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] device folder has been created
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] device_count='2'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] device ID: 1001
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:18:22Z [ERROR] [test] [pid=59206] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:18:22Z [ERROR] [test] [pid=59206] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:18:22Z [INFO] [test] [pid=59206] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] device folder has been created
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] device_count='2'
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:27Z [INFO] [test] [pid=59777] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_002 
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device folder has been created
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Argument device_id='CLI_TEST_002'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device ID=CLI_TEST_002
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Verwende device_id='CLI_TEST_002'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device_count='2'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device CLI_TEST_002 has been created
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_002.txt'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Geschrieben: Beschreibung='Second Device'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Geschrieben: Anzahl='Lab B'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Feld 'Location' wurde übersprungen (leer)
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_002.txt'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_002' DEVICE_count='2'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device ID: CLI_TEST_001
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] ----- ./test_devices/CLI_TEST_001.txt -----
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] read_device_main abgeschlossen device_id='CLI_TEST_001'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] change_device_main gestartet device_id='CLI_TEST_001' field='Status' new_value='maintenance'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Found device: CLI_TEST_001 - ready to change
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:18:28Z [DEBUG] [test] [pid=59777] [func=log_message:114] _helper_change_device_count_from_id id='CLI_TEST_001'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] device_count='2'
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:18:28Z [DEBUG] [test] [pid=59777] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:18:28Z [ERROR] [test] [pid=59777] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:18:28Z [INFO] [test] [pid=59777] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:28Z [INFO] [test] [pid=60257] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:28Z [INFO] [test] [pid=60257] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:18:28Z [INFO] [test] [pid=60257] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:18:29Z [DEBUG] [test] [pid=60257] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] device_count='2'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:18:29Z [INFO] [test] [pid=60257] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:18:29Z [DEBUG] [test] [pid=60257] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:18:29Z [ERROR] [test] [pid=60257] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:18:29Z [ERROR] [test_data_integrity.sh] [pid=60257] [func=log_message:35] ERR trap rc=1 command=return 1
+2026-07-14T10:18:29Z [INFO] [test_data_integrity.sh] [pid=60257] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] device folder has been created
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] device_count='2'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] device folder has been created
+2026-07-14T10:18:29Z [INFO] [test] [pid=60508] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:30Z [INFO] [test] [pid=60508] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:18:30Z [INFO] [test] [pid=60508] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:18:30Z [INFO] [test] [pid=60508] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:18:30Z [INFO] [test] [pid=60508] [func=log_message:114] device_count='2'
+2026-07-14T10:18:30Z [INFO] [test] [pid=60508] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:30Z [ERROR] [test] [pid=60508] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:18:30Z [ERROR] [test] [pid=60508] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:30Z [INFO] [test] [pid=60508] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:30Z [DEBUG] [test_find.sh] [pid=60833] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:18:30Z [DEBUG] [test_find.sh] [pid=60833] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:18:30Z [DEBUG] [test_find.sh] [pid=60833] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:18:30Z [DEBUG] [test_find.sh] [pid=60833] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:18:30Z [DEBUG] [test_find.sh] [pid=60833] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device folder has been created
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device ID=1001
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device_count='1'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device 1001 has been created
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device folder has been created
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device_count='2'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device ID: 1001
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:18:31Z [ERROR] [test] [pid=61027] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:18:31Z [ERROR] [test] [pid=61027] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:18:31Z [INFO] [test] [pid=61027] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=CLI_TEST_001 
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] device folder has been created
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Argument device_id='CLI_TEST_001'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] device ID=CLI_TEST_001
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Verwende device_id='CLI_TEST_001'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] device_count='2'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] device CLI_TEST_001 has been created
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Geschrieben: Beschreibung='CLI Test Device'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Geschrieben: Anzahl='Lab A'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/CLI_TEST_001.txt'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='CLI_TEST_001' DEVICE_count='2'
+2026-07-14T10:18:36Z [INFO] [test] [pid=61603] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:18:36Z [INFO] [test] [pid=61774] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=MALFORMED_001 
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] device ID: MALFORMED_001
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] ----- ./test_devices/MALFORMED_001.txt -----
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/MALFORMED_001.txt'
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] read_device_main abgeschlossen device_id='MALFORMED_001'
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] change_device_main gestartet device_id='MALFORMED_002' field='Status' new_value='inactive'
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] device ID=MALFORMED_002
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] Verwende device_id='MALFORMED_002'
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] device_file='./test_devices/MALFORMED_002.txt'
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] Found device: MALFORMED_002 - ready to change
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] Gerätedatei gefunden
+2026-07-14T10:18:37Z [DEBUG] [test] [pid=61774] [func=log_message:114] _helper_change_device_count_from_id id='MALFORMED_002'
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] device_count='2'
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] ->Sammeleintrag
+2026-07-14T10:18:37Z [INFO] [test] [pid=61774] [func=log_message:114] Verwende field='Status'
+2026-07-14T10:18:37Z [DEBUG] [test] [pid=61774] [func=log_message:114] _field_to_prefix device_count='2' field='Status' normalized='status'
+2026-07-14T10:18:37Z [ERROR] [test] [pid=61774] [func=log_message:114] ERROR: invalid FIELD 'Status' for device_count=2
+2026-07-14T10:18:37Z [ERROR] [test_data_integrity.sh] [pid=61774] [func=log_message:35] ERR trap rc=1 command=return 1
+2026-07-14T10:18:37Z [INFO] [test_data_integrity.sh] [pid=61774] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] device folder has been created
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] device_count='2'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] device TEST_SINGLE_001 has been created
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Geschrieben: Beschreibung='Test Description'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Geschrieben: Anzahl='Test Location'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Geschrieben: Location='active'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Feld 'Kategorie' wurde übersprungen (leer)
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='TEST_SINGLE_001' DEVICE_count='2'
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=TEST_SINGLE_001 
+2026-07-14T10:18:37Z [INFO] [test] [pid=62036] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] device folder has been created
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] Argument device_id='TEST_SINGLE_001'
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] device ID=TEST_SINGLE_001
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] Verwende device_id='TEST_SINGLE_001'
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] device_count='2'
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] device_file='./test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:38Z [ERROR] [test] [pid=62036] [func=log_message:114] ERROR (_helper_create_assert_file_not_exists): device 'TEST_SINGLE_001' already exists at ./test_devices/TEST_SINGLE_001.txt. Use 'find' to view or 'change' to modify existing device. (exit code: 1)
+2026-07-14T10:18:38Z [ERROR] [test] [pid=62036] [func=log_message:114] Datei existiert bereits: './test_devices/TEST_SINGLE_001.txt'
+2026-07-14T10:18:38Z [INFO] [test] [pid=62036] [func=log_message:114] EXIT trap rc=1
+2026-07-14T10:18:38Z [DEBUG] [test_find.sh] [pid=62348] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Location=DataCenter'
+2026-07-14T10:18:38Z [DEBUG] [test_find.sh] [pid=62348] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:18:38Z [DEBUG] [test_find.sh] [pid=62348] [func=log_message:114] Gefundene Zeile in './test_devices/1001.txt': 'Status=active'
+2026-07-14T10:18:38Z [DEBUG] [test_find.sh] [pid=62348] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-07-14T10:18:38Z [DEBUG] [test_find.sh] [pid=62348] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-07-14T10:18:38Z [INFO] [test] [pid=62549] [func=log_message:114] Logging initialisiert
+2026-07-14T10:18:38Z [INFO] [test] [pid=62549] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=1001 
+2026-07-14T10:18:38Z [INFO] [test] [pid=62549] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:18:38Z [INFO] [test] [pid=62549] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:38Z [INFO] [test] [pid=62549] [func=log_message:114] device folder has been created
+2026-07-14T10:18:38Z [INFO] [test] [pid=62549] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Argument device_id='1001'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device ID=1001
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Verwende device_id='1001'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device_count='1'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device_file='./test_devices/1001.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device 1001 has been created
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/1001.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] complete_one_device gestartet device_file='./test_devices/1001.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Geschrieben: Beschreibung='Test Server'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Geschrieben: Location='Lab A'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Geschrieben: Status='active'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Geschrieben: Kategorie='Server'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Feld 'Besitzer' wurde übersprungen (leer)
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Feld 'Hersteller' wurde übersprungen (leer)
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Feld 'Modell' wurde übersprungen (leer)
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] complete_one_device abgeschlossen device_file='./test_devices/1001.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='1001' DEVICE_count='1'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] create_device_main gestartet
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device folder has been created
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] DEVICE_DIR bereit: './test_devices'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Argument device_id='LAN_CABLE_50M'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device ID=LAN_CABLE_50M
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Verwende device_id='LAN_CABLE_50M'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device_count='2'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device LAN_CABLE_50M has been created
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Leere Gerätedatei erzeugt: './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] complete_more_device gestartet device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Geschrieben: Beschreibung='50m network cables'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Geschrieben: Anzahl='Anzahl=100'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Geschrieben: Location='Storage'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Geschrieben: Kategorie='Network'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] complete_more_device abgeschlossen device_file='./test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAN_CABLE_50M' DEVICE_count='2'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device ID: 1001
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] ----- ./test_devices/1001.txt -----
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/1001.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] read_device_main abgeschlossen device_id='1001'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device ID: LAN_CABLE_50M
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] ----- ./test_devices/LAN_CABLE_50M.txt -----
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] Datei nummeriert ausgegeben './test_devices/LAN_CABLE_50M.txt'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] read_device_main abgeschlossen device_id='LAN_CABLE_50M'
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] device ID: NONEXISTENT
+2026-07-14T10:18:39Z [ERROR] [test] [pid=62549] [func=log_message:114] ERROR (_helper_device_file_validate): device 'NONEXISTENT' not found. Use 'find' to list devices or 'create' to add new one. (exit code: 1)
+2026-07-14T10:18:39Z [ERROR] [test] [pid=62549] [func=log_message:56] ERR trap rc=1 command=return $?
+2026-07-14T10:18:39Z [INFO] [test] [pid=62549] [func=log_message:114] EXIT trap rc=1
