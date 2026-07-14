@@ -22,9 +22,21 @@ _helper_change_device_count_from_id() {
 # Strict validation for device IDs
 _helper_validate_device_id_strict() {
   local id="$1"
+  # Empty IDs are invalid
   [[ -z "$id" ]] && return 1
-  [[ "$id" =~ [/\ \`\"\'] ]] && return 1
-  return 0
+
+  # Allow pure numeric IDs (e.g., 1001)
+  if [[ "$id" =~ ^[0-9]+$ ]]; then
+    return 0
+  fi
+
+  # Allow alphanumeric with hyphen/underscore (e.g., LAN_CABLE_50M)
+  if [[ "$id" =~ ^[A-Za-z0-9_-]+$ ]]; then
+    return 0
+  fi
+
+  # Anything else is invalid (spaces, slashes, shell metacharacters, quotes)
+  return 1
 }
 
 # Resolve device_id (argument or interactive)
