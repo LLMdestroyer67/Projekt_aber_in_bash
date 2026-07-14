@@ -71,3 +71,48 @@ _helper_change_export_globals() {
   CHANGE="$change_prefix"
   FINALCHANGE="$final_line"
 }
+
+# Resolve field from argument or interactive input
+_helper_change_resolve_field() {
+  local field="$1" device_count="$2"
+  if [[ -z "$field" ]]; then
+    if _helper_core_is_interactive; then
+      field="$(_prompt_field "$device_count")"
+    else
+      error_logged "ERROR (change_device_main): missing FIELD argument. Non-interactive requires field name/number: 1/2/3/4 or Beschreibung/Location/Status/Anzahl/Kategorie. (exit code: $EXIT_USAGE_ERROR)"
+      return "$EXIT_USAGE_ERROR"
+    fi
+  fi
+  printf '%s' "$field"
+}
+
+# Map device field (single or multi) to field prefix
+_field_to_prefix() {
+  local device_count="$1"
+  local field="$2"
+  local f="${field,,}"
+  log_debug "_field_to_prefix device_count='$device_count' field='$field' normalized='$f'"
+
+  if [[ "$device_count" -eq 1 ]]; then
+    _helper_change_field_to_prefix_single "$f"
+  elif [[ "$device_count" -eq 2 ]]; then
+    _helper_change_field_to_prefix_multi "$f"
+  else
+    return 1
+  fi
+}
+
+# Map field to prefix for single devices
+_helper_change_field_to_prefix_single() {
+  local f="${1,,}"
+  _helper_fields_match_to_prefix "$f" "${single_fields[@]}"
+}
+
+# Map field to prefix for collection devices
+_helper_change_field_to_prefix_multi() {
+  local f="${1,,}"
+  _helper_fields_match_to_prefix "$f" "${multi_fields[@]}"
+}
+
+
+

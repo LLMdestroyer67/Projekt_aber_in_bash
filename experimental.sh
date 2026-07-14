@@ -49,3 +49,9 @@ fi
 if [[ -f "$SCRIPT_DIR/modules/cli.sh" ]]; then
   . "$SCRIPT_DIR/modules/cli.sh"
 fi
+
+# Initialize global variables used by find operations
+FOUND_DEVICE_ID=""
+FOUND_MATCHES=()
+FOUND_MATCH_COUNT=0
+

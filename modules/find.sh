@@ -213,3 +213,27 @@ _helper_find_dispatch_by_mode() {
   fi
 }
 
+# Normalize find mode (wrapper for modes_normalize)
+_helper_find_normalize_mode() {
+  _helper_modes_normalize "${1-}"
+}
+
+# Find and change: search device then change a field
+_helper_fac_search_device() {
+  find_device_main
+}
+
+# Check match count and provide appropriate message
+_helper_fac_check_match_count() {
+  local count="$1"
+  if (( count == 0 )); then
+    echo "Kein Gerät gefunden." >&2
+    return 1
+  elif (( count > 1 )); then
+    echo "Mehrere Geräte gefunden (${count}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
+    return 2
+  fi
+  return 0
+}
+
+

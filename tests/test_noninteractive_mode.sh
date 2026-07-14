@@ -54,7 +54,7 @@ fi
 
 # Test 6: In interactive context (direct terminal), _is_interactive returns 0
 # (This is harder to test directly, so we just verify the function exists)
-test_output=$(source experimental.sh; declare -f _is_interactive)
+test_output=$(source "$(dirname "$0")/../experimental.sh" >/dev/null 2>&1; declare -f _is_interactive)
 [[ -n "$test_output" ]] && \
   echo -e "${GREEN}✓${NC} PASS: _is_interactive function exists and is callable" || \
   echo -e "${RED}✗${NC} FAIL: _is_interactive not defined"
