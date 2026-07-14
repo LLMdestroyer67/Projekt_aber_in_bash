@@ -9,6 +9,19 @@ else
   echo "ERROR: modules/logging.sh not found (expected at $SCRIPT_DIR/modules/logging.sh)" >&2
 fi
 
+# -----------------------------------------------------------------------------
+# Interactive detection helpers
+# - _helper_core_is_interactive: low-level check (stdin or stdout is a TTY)
+# - _is_interactive: public wrapper kept for backwards compatibility
+# -----------------------------------------------------------------------------
+_helper_core_is_interactive() {
+  [[ -t 0 || -t 1 ]]
+}
+
+_is_interactive() {
+  _helper_core_is_interactive
+}
+
 # Echo helpers that route through logging layer
 echo_logged() {
   # Log and print user-facing messages
