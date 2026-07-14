@@ -10,8 +10,16 @@ else
 fi
 
 # Echo helpers that route through logging layer
-echo_logged() { printf '%s\n' "$*"; }
-error_logged() { printf '%s\n' "ERROR: $*" >&2; }
+echo_logged() {
+  # Log and print user-facing messages
+  log_info "$*" 2>/dev/null || true
+  printf '%s\n' "$*"
+}
+error_logged() {
+  # Log errors and print to stderr
+  log_error "$*" 2>/dev/null || true
+  printf '%s\n' "ERROR: $*" >&2
+}
 
 # Read input with optional prompt and strip control chars
 read_logged() {
@@ -21,8 +29,13 @@ read_logged() {
   fi
   local val
   IFS= read -r val || val=''
-  # Strip CR and leading/trailing whitespace
-  val="${val//$'\r'/}"; val="${val##+([[:space:]])}"; val="${val%%+([[:space:]])}"
+  # Strip CR
+  val="${val//$'\r'/}"
+  # Trim leading whitespace
+  val="${val#${val%%[![:space:]]*}}"
+  # Trim trailing whitespace
+  val="${val%${val##*[![:space:]]}}"
+
   if [[ -n "$varname" ]]; then
     printf -v "$varname" '%s' "$val"
   else
@@ -43,8 +56,8 @@ _helper_input_yesno() {
 # Trim helper (portable, uses parameter expansion)
 _helper_trim() {
   local s="$1"
-  s="${s##+([[:space:]])}"
-  s="${s%%+([[:space:]])}"
+  s="${s#${s%%[![:space:]]*}}"
+  s="${s%${s##*[![:space:]]}}"
   printf '%s' "$s"
 }
 
