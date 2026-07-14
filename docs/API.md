@@ -2,6 +2,10 @@
 
 ## Overview
 
+Note: Device write helpers now support optional atomic locking (flock with mkdir fallback). This is opt-in and transparent to public *_main APIs; device file format and exit codes remain unchanged.
+
+## Overview
+
 This document describes the public API of the Bash Device Manager. All user-facing operations go through these main functions.
 
 **Location:** `experimental.sh` (now split into modules/ — experimental.sh sources modules for backward compatibility)

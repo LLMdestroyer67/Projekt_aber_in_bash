@@ -378,6 +378,7 @@ bash test_integration.sh            # Run integration tests
 - Optional CLI argument parser (--help, --version)
 - Optional backup/restore functionality
 - Optional file locking for concurrency
+- Optional atomic write locking implemented (flock + mkdir fallback) to make device file updates safer in environments that opt-in to locking
 
 ---
 
