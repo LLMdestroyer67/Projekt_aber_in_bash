@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash *)",
+      "Bash(grep *)",
+      "Bash(cd /workspaces/Projekt_aber_in_b)"
+    ]
+  }
+}

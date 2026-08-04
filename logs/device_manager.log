@@ -9012,3 +9012,35 @@
 2026-07-14T10:21:04Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] run_once erfolgreich abgeschlossen
 2026-07-14T10:21:04Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] Runner stopped
 2026-07-14T10:21:04Z [INFO] [runner.sh] [pid=63706] [func=log_message:114] EXIT trap rc=0
+2026-07-14T10:56:22Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Logging initialisiert
+2026-07-14T10:56:22Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-07-14T10:56:22Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Logging-Traps installiert
+2026-07-14T10:56:22Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-07-14T10:56:22Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] run_once gestartet
+2026-07-14T10:56:22Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] 
+2026-07-14T10:56:22Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-07-14T10:56:23Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Menüauswahl choice='3'
+2026-07-14T10:56:23Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Running find_device_main (interactive)...
+2026-07-14T10:56:23Z [INFO] [find_device.sh] [pid=77598] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-07-14T10:56:44Z [ERROR] [find_device.sh] [pid=77598] [func=log_message:114] invalid input: mode='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner,(7)serial,(8)sap_id,(9)manufacturer,(10)model,(11)purchase_date,(12)disposal_date,(13)purchase_value: q'
+2026-07-14T10:56:44Z [ERROR] [runner.sh] [pid=77598] [func=log_message:114] find_device_main fehlgeschlagen rc=2
+2026-07-14T10:56:44Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T10:56:44Z [DEBUG] [runner.sh] [pid=77598] [func=log_message:114] Sleep 2s
+2026-07-14T10:56:46Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] run_once gestartet
+2026-07-14T10:56:46Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] 
+2026-07-14T10:56:46Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-07-14T10:56:48Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Menüauswahl choice='3'
+2026-07-14T10:56:48Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Running find_device_main (interactive)...
+2026-07-14T10:56:48Z [INFO] [find_device.sh] [pid=77598] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-07-14T10:56:49Z [ERROR] [find_device.sh] [pid=77598] [func=log_message:114] invalid input: mode='Find device by (1)id,(2)description,(3)location,(4)status,(5)category,(6)owner,(7)serial,(8)sap_id,(9)manufacturer,(10)model,(11)purchase_date,(12)disposal_date,(13)purchase_value: '
+2026-07-14T10:56:49Z [ERROR] [runner.sh] [pid=77598] [func=log_message:114] find_device_main fehlgeschlagen rc=2
+2026-07-14T10:56:49Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-07-14T10:56:49Z [DEBUG] [runner.sh] [pid=77598] [func=log_message:114] Sleep 2s
+2026-07-14T10:56:51Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] run_once gestartet
+2026-07-14T10:56:51Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] 
+2026-07-14T10:56:51Z [INFO] [runner.sh] [pid=77598] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-08-04T14:14:50Z [INFO] [test] [pid=21834] [func=log_message:114] Logging initialisiert
+2026-08-04T14:14:50Z [INFO] [test] [pid=21834] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-08-04T14:14:50Z [INFO] [test] [pid=21834] [func=log_message:114] Logging-Traps installiert
+2026-08-04T14:14:50Z [ERROR] [test] [pid=21834] [func=log_message:114] ERROR: missing DEVICE_ID (non-interactive)
+2026-08-04T14:14:50Z [INFO] [bash] [pid=21834] [func=log_message:114] EXIT trap rc=2
