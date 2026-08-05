@@ -9044,3 +9044,53 @@
 2026-08-04T14:14:50Z [INFO] [test] [pid=21834] [func=log_message:114] Logging-Traps installiert
 2026-08-04T14:14:50Z [ERROR] [test] [pid=21834] [func=log_message:114] ERROR: missing DEVICE_ID (non-interactive)
 2026-08-04T14:14:50Z [INFO] [bash] [pid=21834] [func=log_message:114] EXIT trap rc=2
+2026-08-05T10:11:22Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] Logging initialisiert
+2026-08-05T10:11:22Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-08-05T10:11:22Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] Logging-Traps installiert
+2026-08-05T10:11:22Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-08-05T10:11:22Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] run_once gestartet
+2026-08-05T10:11:22Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] 
+2026-08-05T10:11:22Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-08-05T10:11:24Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] Menüauswahl choice='1'
+2026-08-05T10:11:24Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] Running create_device_main (interactive)...
+2026-08-05T10:11:24Z [INFO] [create_device.sh] [pid=1931] [func=log_message:114] create_device_main gestartet
+2026-08-05T10:11:24Z [INFO] [create_device.sh] [pid=1931] [func=log_message:114] device folder has been created
+2026-08-05T10:11:24Z [INFO] [create_device.sh] [pid=1931] [func=log_message:114] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-08-05T10:11:24Z [INFO] [create_device.sh] [pid=1931] [func=log_message:114] Argument device_id=''
+2026-08-05T10:11:34Z [INFO] [create_device.sh] [pid=1931] [func=log_message:114] Signal empfangen: INT
+2026-08-05T10:11:34Z [ERROR] [create_device.sh] [pid=1931] [func=log_message:114] ERROR (create_device_main): invalid device ID 'Enter the device ID: '. Device IDs must be alphanumeric with optional hyphens/underscores. Rejected chars: /, space, dollar-sign, backtick, quotes. (exit code: 2)
+2026-08-05T10:11:34Z [ERROR] [create_device.sh] [pid=1931] [func=log_message:114] Ungültige device_id='Enter the device ID: '
+2026-08-05T10:11:34Z [ERROR] [runner.sh] [pid=1931] [func=log_message:114] create_device_main fehlgeschlagen rc=2
+2026-08-05T10:11:34Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-08-05T10:11:34Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] Runner stopped
+2026-08-05T10:11:34Z [INFO] [runner.sh] [pid=1931] [func=log_message:114] EXIT trap rc=0
+2026-08-05T10:11:44Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Logging initialisiert
+2026-08-05T10:11:44Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-08-05T10:11:44Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Logging-Traps installiert
+2026-08-05T10:11:44Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-08-05T10:11:44Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] run_once gestartet
+2026-08-05T10:11:44Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] 
+2026-08-05T10:11:44Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-08-05T10:11:46Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Menüauswahl choice='1'
+2026-08-05T10:11:46Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Running create_device_main (interactive)...
+2026-08-05T10:11:46Z [INFO] [create_device.sh] [pid=2310] [func=log_message:114] create_device_main gestartet
+2026-08-05T10:11:46Z [INFO] [create_device.sh] [pid=2310] [func=log_message:114] device folder has been created
+2026-08-05T10:11:46Z [INFO] [create_device.sh] [pid=2310] [func=log_message:114] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-08-05T10:11:46Z [INFO] [create_device.sh] [pid=2310] [func=log_message:114] Argument device_id=''
+2026-08-05T10:11:48Z [ERROR] [create_device.sh] [pid=2310] [func=log_message:114] ERROR (create_device_main): invalid device ID 'Enter the device ID: 1122'. Device IDs must be alphanumeric with optional hyphens/underscores. Rejected chars: /, space, dollar-sign, backtick, quotes. (exit code: 2)
+2026-08-05T10:11:49Z [ERROR] [create_device.sh] [pid=2310] [func=log_message:114] Ungültige device_id='Enter the device ID: 1122'
+2026-08-05T10:11:49Z [ERROR] [runner.sh] [pid=2310] [func=log_message:114] create_device_main fehlgeschlagen rc=2
+2026-08-05T10:11:49Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-08-05T10:11:49Z [DEBUG] [runner.sh] [pid=2310] [func=log_message:114] Sleep 2s
+2026-08-05T10:11:51Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] run_once gestartet
+2026-08-05T10:11:51Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] 
+2026-08-05T10:11:51Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|
+2026-08-05T10:12:12Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Signal empfangen: INT
+2026-08-05T10:12:12Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Signal empfangen: INT
+2026-08-05T10:12:12Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Signal empfangen: INT
+2026-08-05T10:12:12Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Signal empfangen: INT
+2026-08-05T10:12:13Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Menüauswahl choice=''
+2026-08-05T10:12:13Z [ERROR] [runner.sh] [pid=2310] [func=log_message:114] Unknown choice: 
+2026-08-05T10:12:13Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-08-05T10:12:13Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] Runner stopped
+2026-08-05T10:12:13Z [INFO] [runner.sh] [pid=2310] [func=log_message:114] EXIT trap rc=0
