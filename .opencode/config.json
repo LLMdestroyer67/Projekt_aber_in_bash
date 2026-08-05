@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "lumo": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Lumo",
+      "options": {
+        "baseURL": "https://lumo-api.proton.me/api/ai/v1"
+      },
+      
+      "models": {
+        "auto": {
+          "name": "Lumo Auto"
+        },
+	"lite": {
+	  "name": "Lumo Lite"
+	},
+	"max": {
+	  "name": "Lumo Max"
+	}
+      }
+    }
+  }
+}
