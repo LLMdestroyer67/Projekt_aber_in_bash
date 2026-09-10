@@ -43,7 +43,7 @@ run_once() {
   # LOGIC
   # ===========================
 
-  if _is_interactive; then
+  if _helper_core_is_interactive; then
     # Interactive example: ask what to do
     echo_logged ""
     echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|"

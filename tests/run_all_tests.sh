@@ -28,6 +28,7 @@ run_test_file() {
     TESTS_RUN=$((TESTS_RUN + 1))
   else
     echo "  ✗ Test file failed"
+    TOTAL_FAIL=$((TOTAL_FAIL + 1))
     TESTS_RUN=$((TESTS_RUN + 1))
   fi
   echo ""
@@ -45,4 +46,9 @@ echo "╚═══════════════════════�
 echo ""
 echo "Tests run: $TESTS_RUN"
 echo ""
-echo "All test suites completed. Review output above for details."
+if [[ "$TOTAL_FAIL" -eq 0 ]]; then
+  echo "All test suites passed."
+else
+  echo "Failed test suites: $TOTAL_FAIL"
+  exit 1
+fi

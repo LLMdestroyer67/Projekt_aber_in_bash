@@ -8794,3 +8794,72 @@
 2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] run_once erfolgreich abgeschlossen
 2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] Runner stopped
 2026-04-30T16:56:10Z [INFO] [runner.sh] [pid=2271] [func=log_message:407] EXIT trap rc=0
+2026-09-10T09:28:56Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] Logging initialisiert
+2026-09-10T09:28:56Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-10T09:28:56Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] Logging-Traps installiert
+2026-09-10T09:28:56Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-09-10T09:28:56Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] run_once gestartet
+2026-09-10T09:28:56Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] Non-interactive Modus erkannt
+2026-09-10T09:28:56Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T09:28:56Z [DEBUG] [runner.sh] [pid=1548] [func=log_message:114] Sleep 2s
+2026-09-10T09:28:58Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] run_once gestartet
+2026-09-10T09:28:58Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] Non-interactive Modus erkannt
+2026-09-10T09:28:58Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T09:28:58Z [DEBUG] [runner.sh] [pid=1548] [func=log_message:114] Sleep 2s
+2026-09-10T09:29:00Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] run_once gestartet
+2026-09-10T09:29:00Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] Non-interactive Modus erkannt
+2026-09-10T09:29:00Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T09:29:00Z [DEBUG] [runner.sh] [pid=1548] [func=log_message:114] Sleep 2s
+2026-09-10T09:29:01Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] Signal empfangen: INT
+2026-09-10T09:29:01Z [ERROR] [runner.sh] [pid=1548] [func=log_message:149] ERR trap rc=130 command=sleep "$RUN_INTERVAL_SECONDS"
+2026-09-10T09:29:01Z [INFO] [runner.sh] [pid=1548] [func=log_message:114] EXIT trap rc=130
+2026-09-10T10:23:21Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] Logging initialisiert
+2026-09-10T10:23:21Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-10T10:23:21Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] Logging-Traps installiert
+2026-09-10T10:23:21Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-09-10T10:23:21Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] run_once gestartet
+2026-09-10T10:23:21Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] Non-interactive Modus erkannt
+2026-09-10T10:23:21Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T10:23:21Z [DEBUG] [runner.sh] [pid=22145] [func=log_message:114] Sleep 2s
+2026-09-10T10:23:23Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] run_once gestartet
+2026-09-10T10:23:23Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] Non-interactive Modus erkannt
+2026-09-10T10:23:23Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T10:23:23Z [DEBUG] [runner.sh] [pid=22145] [func=log_message:114] Sleep 2s
+2026-09-10T10:23:25Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] Signal empfangen: INT
+2026-09-10T10:23:25Z [ERROR] [runner.sh] [pid=22145] [func=log_message:149] ERR trap rc=130 command=sleep "$RUN_INTERVAL_SECONDS"
+2026-09-10T10:23:25Z [INFO] [runner.sh] [pid=22145] [func=log_message:114] EXIT trap rc=130
+2026-09-10T10:23:41Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] Logging initialisiert
+2026-09-10T10:23:41Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-10T10:23:41Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] Logging-Traps installiert
+2026-09-10T10:23:41Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-09-10T10:23:41Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] run_once gestartet
+2026-09-10T10:23:41Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] Non-interactive Modus erkannt
+2026-09-10T10:23:41Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T10:23:41Z [DEBUG] [runner.sh] [pid=22517] [func=log_message:114] Sleep 2s
+2026-09-10T10:23:43Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] run_once gestartet
+2026-09-10T10:23:43Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] Non-interactive Modus erkannt
+2026-09-10T10:23:43Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T10:23:43Z [DEBUG] [runner.sh] [pid=22517] [func=log_message:114] Sleep 2s
+2026-09-10T10:23:44Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] Signal empfangen: INT
+2026-09-10T10:23:44Z [ERROR] [runner.sh] [pid=22517] [func=log_message:149] ERR trap rc=130 command=sleep "$RUN_INTERVAL_SECONDS"
+2026-09-10T10:23:44Z [INFO] [runner.sh] [pid=22517] [func=log_message:114] EXIT trap rc=130
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] Logging initialisiert
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] Logging-Traps installiert
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] run_once gestartet
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] Menüauswahl choice='q'
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] Benutzer hat Quit gewählt
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] Runner stopped
+2026-09-10T10:27:57Z [INFO] [runner.sh] [pid=25525] [func=log_message:114] EXIT trap rc=0
+2026-09-10T11:14:27Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] Logging initialisiert
+2026-09-10T11:14:27Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-10T11:14:27Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] Logging-Traps installiert
+2026-09-10T11:14:27Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-09-10T11:14:27Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] run_once gestartet
+2026-09-10T11:14:29Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] Menüauswahl choice='q'
+2026-09-10T11:14:29Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] Benutzer hat Quit gewählt
+2026-09-10T11:14:29Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-10T11:14:29Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] Runner stopped
+2026-09-10T11:14:29Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] EXIT trap rc=0

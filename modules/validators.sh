@@ -23,7 +23,7 @@ _helper_change_device_count_from_id() {
 _helper_validate_device_id_strict() {
   local id="$1"
   [[ -z "$id" ]] && return 1
-  [[ "$id" =~ [/\ \`\"\'] ]] && return 1
+  [[ "$id" =~ ^[[:alnum:]_-]+$ ]] || return 1
   return 0
 }
 

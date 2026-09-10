@@ -2,6 +2,11 @@
 # This module contains read_logged, echo_logged, error_logged and
 # helpers for prompting and normalizing user input.
 
+# Return success only when stdin and stdout are attached to terminals.
+_helper_core_is_interactive() {
+  [[ -t 0 && -t 1 ]]
+}
+
 # Ensure logging helpers are available
 if [[ -f "$SCRIPT_DIR/modules/logging.sh" ]]; then
   . "$SCRIPT_DIR/modules/logging.sh"
