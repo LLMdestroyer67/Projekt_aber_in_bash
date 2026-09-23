@@ -191,6 +191,39 @@ find_and_change_main() {
   change_device_main "$FOUND_DEVICE_ID"
 }
 
+find_and_change_menu_main() {
+  # Interactive menu workflow for both field and collection-count changes.
+  local search_rc=0
+  find_device_main || search_rc=$?
+  if (( search_rc != 0 )); then
+    return "$search_rc"
+  fi
+
+  _helper_fac_check_match_count "${FOUND_MATCH_COUNT:-0}" || return $?
+  _helper_fac_assert_found_id "${FOUND_DEVICE_ID:-}" || return 1
+
+  local device_count
+  device_count="$(_helper_change_device_count_from_id "$FOUND_DEVICE_ID")"
+  if [[ "$device_count" -eq 2 ]]; then
+    local change_choice=""
+    read_logged 'Was soll geändert werden? |(1) Feld|  |(2) Anzahl| ' change_choice || return $?
+    case "$change_choice" in
+      1)
+        change_device_main "$FOUND_DEVICE_ID"
+        ;;
+      2)
+        change_device_count "$FOUND_DEVICE_ID"
+        ;;
+      *)
+        error_logged "Ungültige Auswahl: '$change_choice'. Bitte 1 oder 2 eingeben."
+        return 2
+        ;;
+    esac
+  else
+    change_device_main "$FOUND_DEVICE_ID"
+  fi
+}
+
 find_device_main() {
   # Find device by ID, description, location, status, etc.
   # Args: $1=mode (id/description/location/...), $2=query

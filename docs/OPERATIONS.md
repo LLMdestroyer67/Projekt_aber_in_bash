@@ -63,14 +63,13 @@ ls -ld ./devices ./logs
 1. Create device
 2. Change device
 3. Find device
-4. Find and change
-5. Change count (Anzahl) for collections
+4. Find and change (field or collection count)
 
-Enter selection (1-5) or 'q' to quit: 
+Enter selection (1-4) or 'q' to quit:
 ```
 
 **Usage:**
-1. Enter a number (1-5) and press Enter
+1. Enter a number (1-4) and press Enter
 2. Follow prompts for device ID, fields, values
 3. Results are displayed and logged
 4. Returns to menu for next operation

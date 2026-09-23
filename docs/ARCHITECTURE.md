@@ -89,12 +89,12 @@ Verfallsdatum=2025-12-31
 
 ```
 1. runner.sh starts in interactive mode
-2. Displays menu with 5 options:
+2. Displays menu with 4 options:
    - Create device (create_device_main)
    - Change device (change_device_main)
    - Find device (find_device_main)
-   - Find and change (find_and_change_main)
-   - Change count (change_count_main)
+   - Find and change; for collections, choose a field change or count change
+     after the device is found
 3. User selects option via numeric input
 4. Function prompts for parameters (device ID, field name, value)
 5. Operation executes, logs results
@@ -142,6 +142,8 @@ Located in `experimental.sh`, prefixed with main function names:
 - `find_device_main` — Search devices by criteria
 - `find_and_change_main` — Find then modify in one operation
 - `change_count_main` — Increment/decrement count (for type 2 only)
+- `find_and_change_menu_main` — Interactive menu workflow that offers field
+  or count changes after finding a device
 
 All return exit codes: 0 (success), 1 (error), 2 (usage error).
 

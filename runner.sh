@@ -46,7 +46,7 @@ run_once() {
   if _helper_core_is_interactive; then
     # Interactive example: ask what to do
     echo_logged ""
-    echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change device| |(5) change count|  |(q) quit|"
+    echo_logged "Choose action: |(1) create device| |(2) change device| |(3) find device| |(4) find and change|  |(q) quit|"
 
     local choice=""
     read_logged '> ' choice
@@ -90,28 +90,15 @@ run_once() {
         fi
         ;;
       4)
-        log_info "Running find_and_change_main (interactive)..."
-        if SCRIPT_NAME="find_and_change.sh" DEVICE_DIR="$DEVICE_DIR" find_and_change_main; then
-          log_info "find_and_change_main erfolgreich"
+        log_info "Running find_and_change_menu_main (interactive)..."
+        if SCRIPT_NAME="find_and_change.sh" DEVICE_DIR="$DEVICE_DIR" find_and_change_menu_main; then
+          log_info "find_and_change_menu_main erfolgreich"
         else
           rc=$?
-          log_error "find_and_change_main fehlgeschlagen rc=$rc"
+          log_error "find_and_change_menu_main fehlgeschlagen rc=$rc"
           if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
         fi
         ;;
-      5)
-        log_info "Running change_count_main (interactive)..."
-        if SCRIPT_NAME="change_count.sh" DEVICE_DIR="$DEVICE_DIR" change_count_main; then
-          log_info "change_count_main erfolgreich"
-        else
-          rc=$?
-          log_error "change_count_main fehlgeschlagen rc=$rc"
-          if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
-        fi
-        ;;
-      
-      
-      
       q|Q)
         log_info "Benutzer hat Quit gewählt"
         shutdown=1
