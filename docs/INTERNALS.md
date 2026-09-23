@@ -222,6 +222,11 @@ error_logged "ERROR (create_device_main): device already exists"
 
 **Returns:** 0 if interactive, 1 if non-interactive
 
+**Behavior:**
+- Checks whether standard input is attached to a terminal.
+- Does not require standard output to be a terminal because interactive
+  resolvers run inside command substitutions whose output is captured.
+
 **Example:**
 ```bash
 if _helper_core_is_interactive; then
@@ -540,7 +545,8 @@ fi
 **Returns:** User input on stdout
 
 **Behavior:**
-- Displays prompt
+- Displays the prompt on stderr so command substitutions capture only the
+  entered value
 - Reads line from stdin
 - Logs the fact that input was read
 

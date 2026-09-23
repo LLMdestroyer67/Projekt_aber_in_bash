@@ -15,7 +15,7 @@ _helper_find_resolve_search_value() {
   local value="$1" key="$2"
   if [[ -z "$value" ]]; then
     if _helper_core_is_interactive; then
-      value="$(read_logged "Find device by ${key%=}: ")"
+      value="$(read_logged "Find device by ${key%=}: ")" || return $?
       log_debug "_helper_find_resolve_search_value: nach read_logged value='$value'"
     else
       error_logged "ERROR (find_device_main): missing search value for ${key%=}. Non-interactive mode requires explicit search criteria as argument. (exit code: $EXIT_USAGE_ERROR)"
@@ -23,6 +23,57 @@ _helper_find_resolve_search_value() {
     fi
   fi
   printf '%s' "$value"
+}
+
+_helper_find_resolve_device_id_interactive() {
+  local device_id="$1"
+  if [[ -z "$device_id" ]]; then
+    if _helper_core_is_interactive; then
+      read_logged 'Find device by ID: ' device_id || return $?
+    else
+      error_logged "ERROR: missing DEVICE_ID (non-interactive)"
+      return "$EXIT_USAGE_ERROR"
+    fi
+  fi
+  printf '%s' "$device_id"
+}
+
+_helper_find_print_file_numbered() {
+  local file="$1"
+  echo_logged "----- $file -----"
+  nl -ba -- "$file"
+  log_info "Datei nummeriert ausgegeben '$file'"
+}
+
+_helper_find_collect_device_files() {
+  local -n files_ref="$1"
+  shopt -s nullglob
+  files_ref=( "$DEVICE_DIR"/*.txt )
+  shopt -u nullglob
+  if (( ${#files_ref[@]} == 0 )); then
+    error_logged "No device files found in '$DEVICE_DIR'"
+    return 1
+  fi
+}
+
+find_by_id() {
+  local device_id="${1-}"
+  device_id="$(_helper_find_resolve_device_id_interactive "$device_id")" || return $?
+  echo_logged "device ID: $device_id"
+  if ! _helper_validate_device_id_strict "$device_id"; then
+    error_logged "ERROR: invalid device ID: '$device_id'"
+    return "$EXIT_USAGE_ERROR"
+  fi
+  local device_file="$DEVICE_DIR/$device_id.txt"
+  if [[ ! -f "$device_file" ]]; then
+    error_logged "ERROR: device '$device_id' not found"
+    return 1
+  fi
+  echo_logged "Found device: $device_id"
+  _helper_find_print_file_numbered "$device_file"
+  FOUND_DEVICE_ID="$device_id"
+  FOUND_MATCHES=( "$device_file" )
+  FOUND_MATCH_COUNT=1
 }
 
 _helper_find_file_matches_key_value() {
@@ -68,6 +119,8 @@ _find_by_key_contains() {
   local key="$1"
   local value="${2-}"
   local matches=()
+  FOUND_DEVICE_ID=""
+  FOUND_MATCH_COUNT=0
 
   log_info "_find_by_key_contains gestartet key='$key' value='${value-}'"
 
@@ -115,13 +168,17 @@ _helper_find_resolve_mode() {
   local mode="$1"
   if [[ -z "$mode" ]]; then
     if _helper_core_is_interactive; then
-      read_logged "$(_helper_modes_build_prompt prompt)" mode
+      read_logged "$(_helper_modes_build_prompt prompt)" mode || return $?
     else
       error_logged "ERROR: missing mode (non-interactive). Use: $(_helper_modes_build_prompt error)"
       return 2
     fi
   fi
   printf '%s' "$mode"
+}
+
+_helper_find_normalize_mode() {
+  _helper_modes_normalize "${1-}"
 }
 
 _helper_find_dispatch_by_mode() {
@@ -132,4 +189,3 @@ _helper_find_dispatch_by_mode() {
     "find_by_${normalized}" "$query"
   fi
 }
-

@@ -32,7 +32,7 @@ _helper_change_resolve_device_id() {
   local device_id="$1"
   if [[ -z "$device_id" ]]; then
     if _helper_core_is_interactive; then
-      read_logged 'Enter the device ID= ' device_id
+      read_logged 'Enter the device ID= ' device_id || return $?
     else
       error_logged "ERROR: missing DEVICE_ID (non-interactive)"
       return 2
@@ -69,6 +69,29 @@ _helper_change_announce_device_type() {
   else
     echo_logged "->Sammeleintrag"
   fi
+}
+
+_helper_change_resolve_new_value() {
+  local new_value="$1"
+  if [[ -z "$new_value" ]]; then
+    if _helper_core_is_interactive; then
+      read_logged 'neuer Inhalt= ' new_value || return $?
+    else
+      error_logged "ERROR: missing NEW_VALUE (non-interactive)"
+      return "$EXIT_USAGE_ERROR"
+    fi
+  fi
+  printf '%s' "$new_value"
+}
+
+_helper_change_announce_change() {
+  local old_line="$1" final_line="$2"
+  if [[ -z "$old_line" ]]; then
+    echo_logged "could not find the line to change, adding it anyway"
+  else
+    echo_logged "ändere \"$old_line\" zu \"$final_line\""
+  fi
+  echo_logged "final change: $final_line"
 }
 
 # Find old line matching prefix

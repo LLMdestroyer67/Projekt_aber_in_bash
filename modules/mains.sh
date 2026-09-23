@@ -26,6 +26,29 @@ if [[ -f "$SCRIPT_DIR/modules/count.sh" ]]; then
   . "$SCRIPT_DIR/modules/count.sh"
 fi
 
+_helper_fac_search_device() {
+  find_device_main
+}
+
+_helper_fac_check_match_count() {
+  local count="$1"
+  if (( count == 0 )); then
+    echo "Kein Gerät gefunden." >&2
+    return 1
+  elif (( count > 1 )); then
+    echo "Mehrere Geräte gefunden (${count}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
+    return 2
+  fi
+}
+
+_helper_fac_assert_found_id() {
+  local found_id="$1"
+  if [[ -z "$found_id" ]]; then
+    echo "Interner Fehler: FOUND_DEVICE_ID ist leer trotz genau 1 Treffer." >&2
+    return 1
+  fi
+}
+
 change_device_main() {
   # Change device field value
   # Args: $1=device_id (optional), $2=field (optional), $3=new_value (optional)
@@ -107,7 +130,7 @@ create_device_main() {
   local device_id="${1-}"
   log_info "Argument device_id='${device_id-}'"
 
-  device_id="$(_helper_create_resolve_device_id "$device_id")"
+  device_id="$(_helper_create_resolve_device_id "$device_id")" || return $?
 
   if ! _helper_validate_device_id_strict "$device_id"; then
     error_logged "ERROR (create_device_main): invalid device ID '$device_id'. Device IDs must be alphanumeric with optional hyphens/underscores. Rejected chars: /, space, dollar-sign, backtick, quotes. (exit code: $EXIT_USAGE_ERROR)"
@@ -138,16 +161,28 @@ create_device_main() {
 find_and_change_main() {
   # Find device then modify a field
   # Exit codes: 0=success, 1=not found/error, 2=ambiguous results
-  _helper_fac_search_device
+  local search_rc=0
+  _helper_fac_search_device || search_rc=$?
+  local match_count="${FOUND_MATCH_COUNT:-0}"
+  if [[ ! "$match_count" =~ ^[0-9]+$ ]]; then
+    match_count=0
+  fi
+  if (( search_rc != 0 )); then
+    return "$search_rc"
+  fi
 
   local rc
-  _helper_fac_check_match_count "$FOUND_MATCH_COUNT"
+  _helper_fac_check_match_count "$match_count"
   rc=$?
 
   if (( rc == 1 )); then
     return 1
   elif (( rc == 2 )); then
-    find_device_main
+    local search_rc=0
+    find_device_main || search_rc=$?
+    if (( search_rc != 0 )); then
+      return "$search_rc"
+    fi
   fi
 
   _helper_fac_assert_found_id "${FOUND_DEVICE_ID:-}" || return 1
@@ -165,6 +200,9 @@ find_device_main() {
 
   local mode="${1-}"
   local query="${2-}"
+  FOUND_DEVICE_ID=""
+  FOUND_MATCHES=()
+  FOUND_MATCH_COUNT=0
 
   log_info "find_device_main gestartet mode='${mode-}' query='${query-}'"
 
@@ -177,9 +215,11 @@ find_device_main() {
   fi
   log_info "normalized mode='$normalized'"
 
-  _helper_find_dispatch_by_mode "$normalized" "$query"
+  local rc=0
+  _helper_find_dispatch_by_mode "$normalized" "$query" || rc=$?
 
   log_info "find_device_main abgeschlossen"
+  return "$rc"
 }
 
 read_device_main() {
@@ -209,15 +249,23 @@ change_count_main() {
   # Find device then modify collection count (orchestrator)
   # Exit codes: 0=success, 1=not found, 2=ambiguous/invalid
   # 1. Gerät(e) suchen
-  find_device_main
+  local search_rc=0
+  find_device_main || search_rc=$?
+  if (( search_rc != 0 )); then
+    return "$search_rc"
+  fi
 
   # 2. Prüfen, was gefunden wurde
-  if (( FOUND_MATCH_COUNT == 0 )); then
+  local match_count="${FOUND_MATCH_COUNT:-0}"
+  if [[ ! "$match_count" =~ ^[0-9]+$ ]]; then
+    match_count=0
+  fi
+  if (( match_count == 0 )); then
     echo "Kein Gerät gefunden." >&2
     return 1
-  elif (( FOUND_MATCH_COUNT > 1 )); then
-    echo "Mehrere Geräte gefunden (${FOUND_MATCH_COUNT}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
-    find_device_main
+  elif (( match_count > 1 )); then
+    echo "Mehrere Geräte gefunden (${match_count}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
+    return 2
   fi
 
   if [[ -z "${FOUND_DEVICE_ID:-}" ]]; then

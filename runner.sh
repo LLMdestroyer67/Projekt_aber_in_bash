@@ -50,6 +50,11 @@ run_once() {
 
     local choice=""
     read_logged '> ' choice
+    if (( READ_LOGGED_EOF )); then
+      log_info "Interaktive Eingabe beendet (EOF)"
+      shutdown=1
+      return 0
+    fi
     log_info "Menüauswahl choice='$choice'"
 
     case "$choice" in
@@ -61,6 +66,7 @@ run_once() {
         else
           rc=$?
           log_error "create_device_main fehlgeschlagen rc=$rc"
+          if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
         fi
         ;;
       2)
@@ -70,6 +76,7 @@ run_once() {
         else
           rc=$?
           log_error "change_device_main fehlgeschlagen rc=$rc"
+          if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
         fi
         ;;
       3)
@@ -79,6 +86,7 @@ run_once() {
         else
           rc=$?
           log_error "find_device_main fehlgeschlagen rc=$rc"
+          if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
         fi
         ;;
       4)
@@ -88,6 +96,7 @@ run_once() {
         else
           rc=$?
           log_error "find_and_change_main fehlgeschlagen rc=$rc"
+          if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
         fi
         ;;
       5)
@@ -97,6 +106,7 @@ run_once() {
         else
           rc=$?
           log_error "change_count_main fehlgeschlagen rc=$rc"
+          if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
         fi
         ;;
       

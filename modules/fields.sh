@@ -142,3 +142,57 @@ _helper_modes_get_file_key() {
   done
   return 1
 }
+
+# Resolve a change field using the field definitions for the device type.
+_helper_change_field_to_prefix_single() {
+  _helper_fields_match_to_prefix "${1,,}" "${single_fields[@]}"
+}
+
+_helper_change_field_to_prefix_multi() {
+  _helper_fields_match_to_prefix "${1,,}" "${multi_fields[@]}"
+}
+
+_field_to_prefix() {
+  local device_count="$1" field="$2"
+  if [[ "$device_count" -eq 1 ]]; then
+    _helper_change_field_to_prefix_single "$field"
+  elif [[ "$device_count" -eq 2 ]]; then
+    _helper_change_field_to_prefix_multi "$field"
+  else
+    return 1
+  fi
+}
+
+_helper_change_prompt_field_single() {
+  local choice=""
+  read_logged "was wird geändert? ($(_helper_fields_build_prompt "${single_fields[@]}")): " choice || return $?
+  printf '%s' "$choice"
+}
+
+_helper_change_prompt_field_multi() {
+  local choice=""
+  read_logged "was wird geändert? ($(_helper_fields_build_prompt "${multi_fields[@]}")): " choice || return $?
+  printf '%s' "$choice"
+}
+
+_prompt_field() {
+  local device_count="$1"
+  if [[ "$device_count" -eq 1 ]]; then
+    _helper_change_prompt_field_single
+  else
+    _helper_change_prompt_field_multi
+  fi
+}
+
+_helper_change_resolve_field() {
+  local field="$1" device_count="$2"
+  if [[ -z "$field" ]]; then
+    if _helper_core_is_interactive; then
+      field="$(_prompt_field "$device_count")" || return $?
+    else
+      error_logged "ERROR (change_device_main): missing FIELD argument"
+      return "$EXIT_USAGE_ERROR"
+    fi
+  fi
+  printf '%s' "$field"
+}

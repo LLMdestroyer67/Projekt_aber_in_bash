@@ -2,9 +2,12 @@
 # This module contains read_logged, echo_logged, error_logged and
 # helpers for prompting and normalizing user input.
 
-# Return success only when stdin and stdout are attached to terminals.
+# Interactive input is determined by stdin.  Helpers commonly run inside
+# command substitutions, where stdout is intentionally a pipe used to return
+# the entered value; requiring stdout to be a TTY would misclassify those
+# prompts as non-interactive.
 _helper_core_is_interactive() {
-  [[ -t 0 && -t 1 ]]
+  [[ -t 0 ]]
 }
 
 # Ensure logging helpers are available
@@ -19,13 +22,25 @@ echo_logged() { printf '%s\n' "$*"; }
 error_logged() { printf '%s\n' "ERROR: $*" >&2; }
 
 # Read input with optional prompt and strip control chars
+# Returns status 3 when stdin reaches EOF; callers must propagate that status
+# instead of treating the resulting empty value as user input.
 read_logged() {
-  local prompt="$1" varname="$2"
+  local prompt="${1-}" varname="${2-}"
   if [[ -n "$prompt" ]]; then
-    printf '%s' "$prompt"
+    # Prompts must not share stdout with values returned by command
+    # substitutions (for example, device_id="$(read_logged ...)").
+    # stderr remains visible to interactive users and is not captured as the
+    # function's return value.
+    printf '%s' "$prompt" >&2
   fi
   local val
-  IFS= read -r val || val=''
+  READ_LOGGED_EOF=0
+  local read_status=0
+  if ! IFS= read -r val; then
+    READ_LOGGED_EOF=1
+    read_status=3
+    val=''
+  fi
   # Strip CR and leading/trailing whitespace
   val="${val//$'\r'/}"; val="${val##+([[:space:]])}"; val="${val%%+([[:space:]])}"
   if [[ -n "$varname" ]]; then
@@ -33,6 +48,7 @@ read_logged() {
   else
     printf '%s' "$val"
   fi
+  return "$read_status"
 }
 
 # Normalize yes/no input

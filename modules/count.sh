@@ -22,7 +22,7 @@ _helper_count_resolve_old_value() {
 
 _helper_count_prompt_operation() {
   local auswahl=""
-  read_logged 'Möchten Sie die Anzahl erhöhen oder verringern? |(1) Erhöhen|  |(2) Verringern|    |(3) Ändern| ' auswahl
+  read_logged 'Möchten Sie die Anzahl erhöhen oder verringern? |(1) Erhöhen|  |(2) Verringern|    |(3) Ändern| ' auswahl || return $?
   printf '%s' "$auswahl"
 }
 
@@ -48,7 +48,7 @@ _helper_count_compute_new_value() {
       ;;
     3)
       log_info "Anzahl wird direkt geändert: old_value='$old_value'"
-      read_logged 'neue Anzahl= ' new_value
+      read_logged 'neue Anzahl= ' new_value || return $?
       ;;
   esac
   printf '%s' "$new_value"
@@ -58,7 +58,7 @@ _helper_count_resolve_final_new_value() {
   local new_value="$1"
   if [[ -z "$new_value" ]]; then
     if _helper_core_is_interactive; then
-      read_logged 'neue Anzahl= ' new_value
+      read_logged 'neue Anzahl= ' new_value || return $?
     else
       error_logged "ERROR: missing NEW_VALUE (non-interactive)"
       return 2
@@ -124,12 +124,12 @@ change_device_count() {
   log_info "old_value='$old_value'"
 
   local auswahl
-  auswahl="$(_helper_count_prompt_operation)"
+  auswahl="$(_helper_count_prompt_operation)" || return $?
   log_info "count_more_or_less Auswahl='$auswahl'"
 
   _helper_count_validate_operation "$auswahl" || return $?
 
-  new_value="$(_helper_count_compute_new_value "$auswahl" "$old_value")"
+  new_value="$(_helper_count_compute_new_value "$auswahl" "$old_value")" || return $?
 
   new_value="$(_helper_count_resolve_final_new_value "$new_value")" || return $?
   log_info "Verwende new_value='$new_value'"
@@ -152,7 +152,11 @@ change_count_main() {
   # Find device then modify collection count (orchestrator)
   # Exit codes: 0=success, 1=not found, 2=ambiguous/invalid
   # 1. Gerät(e) suchen
-  find_device_main
+  local search_rc=0
+  find_device_main || search_rc=$?
+  if (( search_rc != 0 )); then
+    return "$search_rc"
+  fi
 
   # 2. Prüfen, was gefunden wurde
   if (( FOUND_MATCH_COUNT == 0 )); then

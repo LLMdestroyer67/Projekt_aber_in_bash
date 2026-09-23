@@ -13,7 +13,7 @@ fi
 
 _helper_create_read_field() {
   local prompt="$1" target_var="$2"
-  read_logged "$prompt" "$target_var"
+  read_logged "$prompt" "$target_var" || return $?
 }
 
 _helper_create_write_field() {
@@ -35,7 +35,7 @@ _helper_create_fill_fields() {
     local key="${prefix%=}"
     local safe_key="${key//[^a-zA-Z0-9_]/_}"
     local var_name="FIELD_VAL_${safe_key^^}"
-    _helper_create_read_field "${key} des Geräts: " "$var_name"
+    _helper_create_read_field "${key} des Geräts: " "$var_name" || return $?
     local val="${!var_name}"
     if [[ -z "$val" ]]; then
       log_info "Feld '$key' wurde übersprungen (leer)"
@@ -53,21 +53,21 @@ _helper_create_fill_fields() {
 complete_one_device() {
   local device_file="$1"
   log_info "complete_one_device gestartet device_file='$device_file'"
-  _helper_create_fill_fields "$device_file" "${single_fields[@]}"
+  _helper_create_fill_fields "$device_file" "${single_fields[@]}" || return $?
   log_info "complete_one_device abgeschlossen device_file='$device_file'"
 }
 
 complete_more_device() {
   local device_file="$1"
   log_info "complete_more_device gestartet device_file='$device_file'"
-  _helper_create_fill_fields "$device_file" "${multi_fields[@]}"
+  _helper_create_fill_fields "$device_file" "${multi_fields[@]}" || return $?
   log_info "complete_more_device abgeschlossen device_file='$device_file'"
 }
 
 _helper_create_resolve_device_id() {
   local device_id="$1"
   if [[ -z "$device_id" ]]; then
-    read_logged 'Enter the device ID: ' device_id
+    read_logged 'Enter the device ID: ' device_id || return $?
   fi
   printf '%s' "$device_id"
 }
@@ -100,9 +100,9 @@ _helper_create_init_device_file() {
 _helper_create_fill_device_file() {
   local device_file="$1" device_count="$2"
   if [[ "$device_count" -eq 1 ]]; then
-    complete_one_device "$device_file"
+    complete_one_device "$device_file" || return $?
   elif [[ "$device_count" -eq 2 ]]; then
-    complete_more_device "$device_file"
+    complete_more_device "$device_file" || return $?
   else
     error_logged 'ERROR'
     log_error "Unerwarteter device_count='$device_count'"

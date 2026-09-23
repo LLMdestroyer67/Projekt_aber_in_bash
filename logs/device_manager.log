@@ -8863,3 +8863,398 @@
 2026-09-10T11:14:29Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] run_once erfolgreich abgeschlossen
 2026-09-10T11:14:29Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] Runner stopped
 2026-09-10T11:14:29Z [INFO] [runner.sh] [pid=2869] [func=log_message:114] EXIT trap rc=0
+2026-09-23T09:38:17Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Logging initialisiert
+2026-09-23T09:38:17Z [INFO] [runner.sh] [pid=978] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-23T09:38:17Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:38:17Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-09-23T09:38:17Z [INFO] [runner.sh] [pid=978] [func=log_message:114] run_once gestartet
+2026-09-23T09:38:19Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Menüauswahl choice='1'
+2026-09-23T09:38:19Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Running create_device_main (interactive)...
+2026-09-23T09:38:19Z [INFO] [create_device.sh] [pid=978] [func=log_message:114] create_device_main gestartet
+2026-09-23T09:38:19Z [INFO] [create_device.sh] [pid=978] [func=log_message:114] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-09-23T09:38:19Z [INFO] [create_device.sh] [pid=978] [func=log_message:114] Argument device_id=''
+2026-09-23T09:38:20Z [ERROR] [create_device.sh] [pid=978] [func=log_message:114] Ungültige device_id='Enter the device ID: qq'
+2026-09-23T09:38:20Z [ERROR] [runner.sh] [pid=978] [func=log_message:114] create_device_main fehlgeschlagen rc=2
+2026-09-23T09:38:20Z [INFO] [runner.sh] [pid=978] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:38:20Z [DEBUG] [runner.sh] [pid=978] [func=log_message:114] Sleep 2s
+2026-09-23T09:38:22Z [INFO] [runner.sh] [pid=978] [func=log_message:114] run_once gestartet
+2026-09-23T09:38:25Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Menüauswahl choice='1'
+2026-09-23T09:38:25Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Running create_device_main (interactive)...
+2026-09-23T09:38:25Z [INFO] [create_device.sh] [pid=978] [func=log_message:114] create_device_main gestartet
+2026-09-23T09:38:25Z [INFO] [create_device.sh] [pid=978] [func=log_message:114] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-09-23T09:38:25Z [INFO] [create_device.sh] [pid=978] [func=log_message:114] Argument device_id=''
+2026-09-23T09:38:27Z [ERROR] [create_device.sh] [pid=978] [func=log_message:114] Ungültige device_id='Enter the device ID: 1234'
+2026-09-23T09:38:27Z [ERROR] [runner.sh] [pid=978] [func=log_message:114] create_device_main fehlgeschlagen rc=2
+2026-09-23T09:38:27Z [INFO] [runner.sh] [pid=978] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:38:27Z [DEBUG] [runner.sh] [pid=978] [func=log_message:114] Sleep 2s
+2026-09-23T09:38:29Z [INFO] [runner.sh] [pid=978] [func=log_message:114] run_once gestartet
+2026-09-23T09:38:43Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Signal empfangen: INT
+2026-09-23T09:38:44Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Menüauswahl choice=''
+2026-09-23T09:38:44Z [INFO] [runner.sh] [pid=978] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:38:44Z [INFO] [runner.sh] [pid=978] [func=log_message:114] Runner stopped
+2026-09-23T09:38:44Z [INFO] [runner.sh] [pid=978] [func=log_message:114] EXIT trap rc=0
+2026-09-23T09:47:42Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] Logging initialisiert
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=900003 3 maintenance 
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:47:43Z [DEBUG] [test_find.sh] [pid=10969] [func=log_message:114] Gefundene Zeile in 'tests/test_devices/1001.txt': 'Location=DataCenter'
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] change_device_main gestartet device_id='900003' field='3' new_value='maintenance'
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] Verwende device_id='900003'
+2026-09-23T09:47:43Z [DEBUG] [test_find.sh] [pid=10969] [func=log_message:114] Gefundene Zeile in 'tests/test_devices/1001.txt': 'Status=active'
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] device_file='tests/test_devices/900003.txt'
+2026-09-23T09:47:43Z [DEBUG] [test_find.sh] [pid=10969] [func=log_message:114] Gefundene Zeile in 'tests/test_devices/1001.txt': 'Status=active'
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] Gerätedatei gefunden
+2026-09-23T09:47:43Z [DEBUG] [test_find.sh] [pid=10969] [func=log_message:114] _helper_change_device_count_from_id id='1001'
+2026-09-23T09:47:43Z [DEBUG] [test_regressions.sh] [pid=10963] [func=log_message:114] _helper_change_device_count_from_id id='900003'
+2026-09-23T09:47:43Z [DEBUG] [test_find.sh] [pid=10969] [func=log_message:114] _helper_change_device_count_from_id id='LAN_CABLE_20M'
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] device_count='1'
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] Verwende field='3'
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] change_prefix='Status='
+2026-09-23T09:47:43Z [ERROR] [test_regressions.sh] [pid=10963] [func=log_message:22] ERR trap rc=1 command=return 1
+2026-09-23T09:47:43Z [INFO] [test_regressions.sh] [pid=10963] [func=log_message:114] EXIT trap rc=1
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Logging initialisiert
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args=900003 3 maintenance 
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] change_device_main gestartet device_id='900003' field='3' new_value='maintenance'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Verwende device_id='900003'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] device_file='tests/test_devices/900003.txt'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Gerätedatei gefunden
+2026-09-23T09:47:48Z [DEBUG] [test_regressions.sh] [pid=11223] [func=log_message:114] _helper_change_device_count_from_id id='900003'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] device_count='1'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Verwende field='3'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] change_prefix='Status='
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Verwende new_value='maintenance'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] old_line='Status=active' final_line='Status=maintenance'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Temporäre Datei erzeugt tmp='/tmp/tmp.TSfSXktVmU'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Datei erfolgreich umgeschrieben device_file='tests/test_devices/900003.txt'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] change_device_main abgeschlossen DEVICE_ID='900003' DEVICE_count='1' CHANGE='Status=' FINALCHANGE='Status=maintenance'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] find_device_main gestartet mode='1' query='900003'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] normalized mode='id'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] Datei nummeriert ausgegeben 'tests/test_devices/900003.txt'
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] find_device_main abgeschlossen
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-09-23T09:47:48Z [INFO] [test_regressions.sh] [pid=11223] [func=log_message:114] EXIT trap rc=0
+2026-09-23T09:48:11Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] Logging initialisiert
+2026-09-23T09:48:11Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-23T09:48:11Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=0s)
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] run_once gestartet
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] Menüauswahl choice='3'
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] Running find_device_main (interactive)...
+2026-09-23T09:48:12Z [INFO] [find_device.sh] [pid=12208] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-09-23T09:48:12Z [INFO] [find_device.sh] [pid=12208] [func=log_message:114] normalized mode='id'
+2026-09-23T09:48:12Z [INFO] [find_device.sh] [pid=12208] [func=log_message:114] find_device_main abgeschlossen
+2026-09-23T09:48:12Z [ERROR] [runner.sh] [pid=12208] [func=log_message:114] find_device_main fehlgeschlagen rc=1
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:48:12Z [DEBUG] [runner.sh] [pid=12208] [func=log_message:114] Sleep 0s
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] run_once gestartet
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] Menüauswahl choice='q'
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] Benutzer hat Quit gewählt
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] Runner stopped
+2026-09-23T09:48:12Z [INFO] [runner.sh] [pid=12208] [func=log_message:114] EXIT trap rc=0
+2026-09-23T09:51:13Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Logging initialisiert
+2026-09-23T09:51:13Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-23T09:51:13Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:51:13Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-09-23T09:51:13Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] run_once gestartet
+2026-09-23T09:51:16Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Menüauswahl choice='1'
+2026-09-23T09:51:16Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Running create_device_main (interactive)...
+2026-09-23T09:51:16Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] create_device_main gestartet
+2026-09-23T09:51:16Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-09-23T09:51:16Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Argument device_id=''
+2026-09-23T09:51:20Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Verwende device_id='12312'
+2026-09-23T09:51:20Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] device_count='1'
+2026-09-23T09:51:20Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] device_file='/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T09:51:20Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Leere Gerätedatei erzeugt: '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T09:51:20Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] complete_one_device gestartet device_file='/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T09:51:26Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Beschreibung='gerät abc'
+2026-09-23T09:51:30Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Location='mooo'
+2026-09-23T09:51:33Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Status='mooooooooo'
+2026-09-23T09:51:38Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Kategorie='cat?'
+2026-09-23T09:51:42Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Besitzer='MT'
+2026-09-23T09:51:48Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Seriennummer='12893467'
+2026-09-23T09:51:50Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-09-23T09:51:54Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Hersteller='dell'
+2026-09-23T09:51:55Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Modell='aojfdn'
+2026-09-23T09:51:56Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Anschaffungsdatum='adf'
+2026-09-23T09:51:57Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Geschrieben: Ausmusterungsdatum='dafs'
+2026-09-23T09:51:58Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-09-23T09:51:58Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] complete_one_device abgeschlossen device_file='/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T09:51:58Z [INFO] [create_device.sh] [pid=16101] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='12312' DEVICE_count='1'
+2026-09-23T09:51:58Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] create_device_main erfolgreich
+2026-09-23T09:51:58Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:51:58Z [DEBUG] [runner.sh] [pid=16101] [func=log_message:114] Sleep 2s
+2026-09-23T09:52:00Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] run_once gestartet
+2026-09-23T09:52:03Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Signal empfangen: INT
+2026-09-23T09:52:08Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Menüauswahl choice='4'
+2026-09-23T09:52:08Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Running find_and_change_main (interactive)...
+2026-09-23T09:52:08Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] normalized mode='description'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] _find_by_key_contains gestartet key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] _helper_find_resolve_search_value: nach read_logged value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/12312.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/12312.txt': 'Beschreibung=gerät abc'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/343434.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/343434.txt': 'Beschreibung=Gerät Nr. 34'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/343434.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/6851.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Beschreibung=Dell Latitude 3440'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/6851.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Beschreibung=LAN_KABEL_15M'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Beschreibung=LAN_KABEL_20M'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Beschreibung=LAN Kabel 2M'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Beschreibung=LAN_KABEL_3M'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt': 'Beschreibung=LAN_KABEL_50M'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan.txt': 'Beschreibung=LAN-Kabel'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/lan.txt'
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan2.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:11Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Beschreibung=LAN-Kabel'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Trefferanzahl='10'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/343434.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/6851.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan2.txt'
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] find_device_main abgeschlossen
+2026-09-23T09:52:11Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] normalized mode='description'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] _find_by_key_contains gestartet key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] _helper_find_resolve_search_value: nach read_logged value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/12312.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/12312.txt': 'Beschreibung=gerät abc'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/343434.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/343434.txt': 'Beschreibung=Gerät Nr. 34'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/343434.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/6851.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Beschreibung=Dell Latitude 3440'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/6851.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Beschreibung=LAN_KABEL_15M'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Beschreibung=LAN_KABEL_20M'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Beschreibung=LAN Kabel 2M'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Beschreibung=LAN_KABEL_3M'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt': 'Beschreibung=LAN_KABEL_50M'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan.txt': 'Beschreibung=LAN-Kabel'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/lan.txt'
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan2.txt' für key='Beschreibung=' value=''
+2026-09-23T09:52:21Z [DEBUG] [find_and_change.sh] [pid=16101] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Beschreibung=LAN-Kabel'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Trefferanzahl='10'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/343434.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/6851.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan2.txt'
+2026-09-23T09:52:21Z [INFO] [find_and_change.sh] [pid=16101] [func=log_message:114] find_device_main abgeschlossen
+2026-09-23T09:52:21Z [ERROR] [runner.sh] [pid=16101] [func=log_message:114] find_and_change_main fehlgeschlagen rc=1
+2026-09-23T09:52:21Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:52:21Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] Runner stopped
+2026-09-23T09:52:21Z [INFO] [runner.sh] [pid=16101] [func=log_message:114] EXIT trap rc=0
+2026-09-23T09:57:53Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] Logging initialisiert
+2026-09-23T09:57:53Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-23T09:57:53Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:57:53Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] Runner started (DEVICE_DIR=/tmp/tmp.veoKrIHd22, interval=0s)
+2026-09-23T09:57:53Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] run_once gestartet
+2026-09-23T09:57:53Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] Menüauswahl choice='1'
+2026-09-23T09:57:53Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] Running create_device_main (interactive)...
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] create_device_main gestartet
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] DEVICE_DIR bereit: '/tmp/tmp.veoKrIHd22'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] Argument device_id=''
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] Verwende device_id='11001'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] device_count='1'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] device_file='/tmp/tmp.veoKrIHd22/11001.txt'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] Leere Gerätedatei erzeugt: '/tmp/tmp.veoKrIHd22/11001.txt'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] complete_one_device gestartet device_file='/tmp/tmp.veoKrIHd22/11001.txt'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] Geschrieben: Beschreibung='Server'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] Geschrieben: Location='Lab'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] Geschrieben: Status='active'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] Geschrieben: Kategorie='IT'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] complete_one_device abgeschlossen device_file='/tmp/tmp.veoKrIHd22/11001.txt'
+2026-09-23T09:57:53Z [INFO] [create_device.sh] [pid=27355] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='11001' DEVICE_count='1'
+2026-09-23T09:57:53Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] create_device_main erfolgreich
+2026-09-23T09:57:54Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:57:54Z [DEBUG] [runner.sh] [pid=27355] [func=log_message:114] Sleep 0s
+2026-09-23T09:57:54Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] run_once gestartet
+2026-09-23T09:57:58Z [INFO] [runner.sh] [pid=27355] [func=log_message:114] Signal empfangen: TERM
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] Logging initialisiert
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] Runner started (DEVICE_DIR=/tmp/tmp.7Tncj1EybN, interval=0s)
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] run_once gestartet
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] Menüauswahl choice='1'
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] Running create_device_main (interactive)...
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] create_device_main gestartet
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] DEVICE_DIR bereit: '/tmp/tmp.7Tncj1EybN'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] Argument device_id=''
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] Verwende device_id='11001'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] device_count='1'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] device_file='/tmp/tmp.7Tncj1EybN/11001.txt'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] Leere Gerätedatei erzeugt: '/tmp/tmp.7Tncj1EybN/11001.txt'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] complete_one_device gestartet device_file='/tmp/tmp.7Tncj1EybN/11001.txt'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] Geschrieben: Beschreibung='Server'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] Geschrieben: Location='Lab'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] Geschrieben: Status='active'
+2026-09-23T09:58:33Z [INFO] [create_device.sh] [pid=28222] [func=log_message:114] Geschrieben: Kategorie='IT'
+2026-09-23T09:58:33Z [ERROR] [runner.sh] [pid=28222] [func=log_message:114] create_device_main fehlgeschlagen rc=3
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] Runner stopped
+2026-09-23T09:58:33Z [INFO] [runner.sh] [pid=28222] [func=log_message:114] EXIT trap rc=0
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] Logging initialisiert
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] Runner started (DEVICE_DIR=/tmp/tmp.COzbeThmpZ, interval=0s)
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] run_once gestartet
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] Menüauswahl choice='1'
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] Running create_device_main (interactive)...
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] create_device_main gestartet
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] DEVICE_DIR bereit: '/tmp/tmp.COzbeThmpZ'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] Argument device_id=''
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] Verwende device_id='LAB_CABLE'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] device_count='2'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] device_file='/tmp/tmp.COzbeThmpZ/LAB_CABLE.txt'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] Leere Gerätedatei erzeugt: '/tmp/tmp.COzbeThmpZ/LAB_CABLE.txt'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] complete_more_device gestartet device_file='/tmp/tmp.COzbeThmpZ/LAB_CABLE.txt'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] Geschrieben: Beschreibung='Cable'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] Geschrieben: Anzahl='10'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] Geschrieben: Location='Lab'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] Geschrieben: Kategorie='IT'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] complete_more_device abgeschlossen device_file='/tmp/tmp.COzbeThmpZ/LAB_CABLE.txt'
+2026-09-23T09:58:36Z [INFO] [create_device.sh] [pid=28449] [func=log_message:114] create_device_main abgeschlossen DEVICE_ID='LAB_CABLE' DEVICE_count='2'
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] create_device_main erfolgreich
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:58:36Z [DEBUG] [runner.sh] [pid=28449] [func=log_message:114] Sleep 0s
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] run_once gestartet
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] Interaktive Eingabe beendet (EOF)
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] Runner stopped
+2026-09-23T09:58:36Z [INFO] [runner.sh] [pid=28449] [func=log_message:114] EXIT trap rc=0
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] Logging initialisiert
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] Runner started (DEVICE_DIR=/tmp/tmp.GKuYU32emr, interval=0s)
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] run_once gestartet
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] Menüauswahl choice='1'
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] Running create_device_main (interactive)...
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] create_device_main gestartet
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] DEVICE_DIR bereit: '/tmp/tmp.GKuYU32emr'
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] Argument device_id=''
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] Verwende device_id='LAB_CABLE'
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] device_count='2'
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] device_file='/tmp/tmp.GKuYU32emr/LAB_CABLE.txt'
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] Leere Gerätedatei erzeugt: '/tmp/tmp.GKuYU32emr/LAB_CABLE.txt'
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] complete_more_device gestartet device_file='/tmp/tmp.GKuYU32emr/LAB_CABLE.txt'
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] Geschrieben: Beschreibung='Cable'
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] Geschrieben: Anzahl='10'
+2026-09-23T09:58:40Z [INFO] [create_device.sh] [pid=28732] [func=log_message:114] Geschrieben: Location='Lab'
+2026-09-23T09:58:40Z [ERROR] [runner.sh] [pid=28732] [func=log_message:114] create_device_main fehlgeschlagen rc=3
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] Runner stopped
+2026-09-23T09:58:40Z [INFO] [runner.sh] [pid=28732] [func=log_message:114] EXIT trap rc=0
+2026-09-23T09:59:55Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] Logging initialisiert
+2026-09-23T09:59:55Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-23T09:59:55Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] Logging-Traps installiert
+2026-09-23T09:59:55Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] Runner started (DEVICE_DIR=/workspaces/Projekt_aber_in_bash/devices, interval=2s)
+2026-09-23T09:59:55Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] run_once gestartet
+2026-09-23T09:59:59Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] Menüauswahl choice='4'
+2026-09-23T09:59:59Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] Running find_and_change_main (interactive)...
+2026-09-23T09:59:59Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-09-23T10:00:01Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] normalized mode='description'
+2026-09-23T10:00:01Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] _find_by_key_contains gestartet key='Beschreibung=' value=''
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] _helper_find_resolve_search_value: nach read_logged value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/12312.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/12312.txt': 'Beschreibung=gerät abc'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/343434.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/343434.txt': 'Beschreibung=Gerät Nr. 34'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/6851.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Beschreibung=Dell Latitude 3440'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Beschreibung=LAN_KABEL_15M'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Beschreibung=LAN_KABEL_20M'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Beschreibung=LAN Kabel 2M'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Beschreibung=LAN_KABEL_3M'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt': 'Beschreibung=LAN_KABEL_50M'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan.txt': 'Beschreibung=LAN-Kabel'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan2.txt' für key='Beschreibung=' value='12'
+2026-09-23T10:00:10Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Beschreibung=LAN-Kabel'
+2026-09-23T10:00:10Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] find_device_main abgeschlossen
+2026-09-23T10:00:10Z [ERROR] [runner.sh] [pid=31853] [func=log_message:114] find_and_change_main fehlgeschlagen rc=1
+2026-09-23T10:00:10Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T10:00:10Z [DEBUG] [runner.sh] [pid=31853] [func=log_message:114] Sleep 2s
+2026-09-23T10:00:12Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] run_once gestartet
+2026-09-23T10:00:51Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] Menüauswahl choice='4'
+2026-09-23T10:00:51Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] Running find_and_change_main (interactive)...
+2026-09-23T10:00:51Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] find_device_main gestartet mode='' query=''
+2026-09-23T10:01:05Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] normalized mode='category'
+2026-09-23T10:01:05Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] _find_by_key_contains gestartet key='Kategorie=' value=''
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] _helper_find_resolve_search_value: nach read_logged value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/12312.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/12312.txt': 'Kategorie=cat?'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] Treffer in '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/343434.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/6851.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Kategorie=Laptop'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Kategorie=RJ45'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Kategorie=RJ45'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] Prüfe Datei '/workspaces/Projekt_aber_in_bash/devices/lan2.txt' für key='Kategorie=' value='cat'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] Trefferanzahl='1'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] find_by_key_contains abgeschlossen mit 1 Treffer: '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] device_id='12312'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] find_device_main abgeschlossen
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] change_device_main gestartet device_id='12312' field='' new_value=''
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] Verwende device_id='12312'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] device_file='/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] Gerätedatei gefunden
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/12312.txt'
+2026-09-23T10:01:07Z [DEBUG] [find_and_change.sh] [pid=31853] [func=log_message:114] _helper_change_device_count_from_id id='12312'
+2026-09-23T10:01:07Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] device_count='1'
+2026-09-23T10:01:19Z [INFO] [find_and_change.sh] [pid=31853] [func=log_message:114] Signal empfangen: INT
+2026-09-23T10:01:19Z [ERROR] [runner.sh] [pid=31853] [func=log_message:114] find_and_change_main fehlgeschlagen rc=130
+2026-09-23T10:01:19Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] run_once erfolgreich abgeschlossen
+2026-09-23T10:01:19Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] Runner stopped
+2026-09-23T10:01:19Z [INFO] [runner.sh] [pid=31853] [func=log_message:114] EXIT trap rc=0

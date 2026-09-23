@@ -1,0 +1,10 @@
+Beschreibung=gerät abc
+Location=mooo
+Status=mooooooooo
+Kategorie=cat?
+Besitzer=MT
+Seriennummer=12893467
+Hersteller=dell
+Modell=aojfdn
+Anschaffungsdatum=adf
+Ausmusterungsdatum=dafs

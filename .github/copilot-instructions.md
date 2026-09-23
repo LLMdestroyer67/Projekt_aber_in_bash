@@ -57,3 +57,14 @@ Files to avoid changing unless necessary
 - tests/ — keep tests authoritative; update only to reflect intentional behavioral changes.
 
 If you want this file expanded (examples, CI snippets, shellcheck hooks, or targeted areas to cover), say which area to expand.
+
+## Custom development agents
+
+Focused agent profiles are available in `.github/agents/`:
+
+- `bash-feature-developer.agent.md` — implement features and bug fixes
+- `bash-test-engineer.agent.md` — add regression coverage and diagnose failures
+- `documentation-maintainer.agent.md` — maintain the canonical docs
+- `security-reviewer.agent.md` — review Bash-specific security risks
+
+Use the feature agent for implementation, the test agent for behavior coverage, and the documentation or security agent for their specialized reviews. All agents must follow this file and preserve the repository's public API and exit-code conventions.
