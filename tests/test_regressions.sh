@@ -33,13 +33,13 @@ assert_rc 0 "$find_rc" "Find by numeric mode and ID succeeds"
 assert_equals "900003" "${FOUND_DEVICE_ID:-}" "Find by ID sets FOUND_DEVICE_ID"
 assert_equals "1" "${FOUND_MATCH_COUNT:-0}" "Find by ID sets one match"
 
-test_section "Regression: failed collection search count"
+test_section "Regression: missing non-interactive search mode"
 if change_count_main "missing"; then
   count_rc=0
 else
   count_rc=$?
 fi
-assert_rc 1 "$count_rc" "Failed collection search returns logic error"
+assert_rc 2 "$count_rc" "Missing search mode returns usage error"
 assert_equals "0" "${FOUND_MATCH_COUNT:-0}" \
   "Failed search leaves a safe zero match count"
 

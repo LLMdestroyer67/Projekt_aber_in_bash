@@ -1,0 +1,8 @@
+Beschreibung=hallo
+Location=was
+Status=soll
+Kategorie=das
+Besitzer=ich
+Seriennummer=möchte 
+SAP-ID=doch einfach
+Hersteller=urlaub

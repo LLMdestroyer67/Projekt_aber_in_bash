@@ -4,14 +4,8 @@ set -euo pipefail
 # =============================================================================
 # runner.sh – Device Manager Main Entry Point
 #
-# CONCURRENCY WARNING (Phase 1.8):
-# This runner is NOT thread-safe. Multiple concurrent runner instances
-# accessing the same DEVICE_DIR may corrupt device files due to lack of
-# file locking. Ensure only ONE runner instance is active at a time.
-#
-# For production use with multiple processes, implement external locking
-# (e.g., flock, mkdir-based semaphore) at the invocation level.
-#
+# With command-line arguments, runner.sh dispatches one non-interactive
+# operation through run_cli. With no arguments, it retains the interactive loop.
 # =============================================================================
 
 # Always source files relative to this runner's location
@@ -108,20 +102,6 @@ run_once() {
         ;;
     esac
 
-  else
-    # Non-interactive example (daemon-style):
-    # Your logic must provide args so the called functions don't prompt/hang.
-
-    log_info "Non-interactive Modus erkannt"
-
-    # ---- Example placeholder logic: do nothing by default ----
-    # Replace this block with your own logic / queue / rules.
-    #
-    # Example calls:
-    # SCRIPT_NAME="create_device.sh" DEVICE_DIR="$DEVICE_DIR" create_device_main "123"
-    # SCRIPT_NAME="change_device.sh" DEVICE_DIR="$DEVICE_DIR" change_device_main "123" "Status" "active"
-    #
-    return 0
   fi
 }
 
@@ -130,6 +110,11 @@ main() {
   install_logging_traps
 
   log_info "Runner started (DEVICE_DIR=$DEVICE_DIR, interval=${RUN_INTERVAL_SECONDS}s)"
+
+  if (( $# > 0 )); then
+    run_cli "$@"
+    return $?
+  fi
 
   while [[ "$shutdown" -eq 0 ]]; do
     # Don’t let one failure kill the loop; capture rc and continue.

@@ -227,28 +227,31 @@ find_and_change_main "status=" "active" "Status" "maintenance"
 
 ### `change_count_main`
 
-**Description:** Increment or decrement the Anzahl (count) field for collection devices (Type 2).
+**Description:** Find a unique collection device and interactively change its
+`Anzahl` field.
 
 **Signature:**
 ```bash
-change_count_main [device_id] [operation] [amount]
+change_count_main [search_mode] [search_value]
 ```
 
 **Parameters:**
-- `$1` (optional): Device ID (must be Type 2 collection)
-- `$2` (optional): Operation: `+` (increment), `-` (decrement)
-- `$3` (optional): Amount (integer)
+- `$1` (optional): Search mode accepted by `find_device_main` (for example
+  `id`, `location`, or `kategorie`). In interactive mode, this is prompted.
+- `$2` (optional): Search value. In interactive mode, this is prompted.
 
 **Returns:**
-- 0 (EXIT_OK) — Count changed successfully
-- 1 (EXIT_ERROR) — Device not found, not a collection, invalid operation
-- 2 (EXIT_USAGE_ERROR) — Missing arguments
+- 0 (EXIT_OK) — A unique collection device was found and its count changed
+- 1 (EXIT_ERROR) — No device was found, or the selected device is not a
+  collection
+- 2 (EXIT_USAGE_ERROR) — Missing or invalid search input, or ambiguous result
 
 **Behavior:**
-- **Interactive:** Prompts for device ID, operation, amount
-- **Non-interactive:** All three arguments required
-- Only works for Type 2 devices (detected by device ID format)
-- Validates new count is non-negative
+- Searches using the same mode/value handling as `find_device_main`.
+- Requires exactly one matching device.
+- Prompts for the count operation and new value through
+  `change_device_count`.
+- Only collection devices (alphanumeric IDs with `Anzahl=`) can be changed.
 
 **Device Type Detection:**
 - Type 1: Numeric ID (e.g., 123, 1001) — cannot change count
@@ -261,12 +264,12 @@ change_count_main [device_id] [operation] [amount]
 **Example:**
 ```bash
 # Interactive
-./runner.sh 5
+./runner.sh
+# Choose "find and change", then select the count operation
 change_count_main
 
 # Non-interactive
-change_count_main "LAN_CABLE_50M" "+" "10"    # Add 10 cables
-change_count_main "SCREW_M4_1000" "-" "50"    # Remove 50 screws
+printf '1\n1\n10\n' | change_count_main "id" "LAN_CABLE_50M"
 ```
 
 ---
@@ -385,9 +388,7 @@ find_and_change_main "id=" "SERVER_001" "Status" "maintenance"
 ### Bulk Update Collection Counts
 
 ```bash
-change_count_main "LAN_CABLE_50M" "+" "100"
-change_count_main "SCREW_M4_1000" "-" "250"
-change_count_main "USB_CABLE" "+" "50"
+printf '1\n1\n100\n' | change_count_main "id" "LAN_CABLE_50M"
 ```
 
 ### Scripted Workflow
@@ -405,8 +406,8 @@ create_device_main "LAN_CABLE_50M" || true
 # Find all devices by category
 find_device_main "kategorie=" "Server"
 
-# Update counts
-change_count_main "LAN_CABLE_50M" "+" "10"
+# Update a count (the operation/value are read from stdin)
+printf '1\n1\n10\n' | change_count_main "id" "LAN_CABLE_50M"
 
 # Search and modify
 find_and_change_main "id=" "SERVER_001" "Status" "active"

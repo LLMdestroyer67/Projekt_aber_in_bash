@@ -7,7 +7,7 @@ The Bash Device Manager is a lightweight, terminal-based system for tracking har
 **Core Philosophy:**
 - Simple, maintainable codebase
 - Plain-text storage (human-readable, versionable)
-- Single-threaded operation (no concurrency handling)
+- Atomic device writes protected by a portable directory lock
 - No external dependencies beyond GNU coreutils + Bash 4+
 - Interactive and non-interactive operation modes
 
@@ -18,7 +18,18 @@ The Bash Device Manager is a lightweight, terminal-based system for tracking har
 ```
 Projekt_aber_in_bash/
 ├── runner.sh                 # Main entry point; orchestrates menu/workflows
-├── experimental.sh           # Primary library (1600+ lines, all business logic)
+├── experimental.sh           # Backward-compatible shim; sources modules/
+├── modules/                  # Modular implementation (logging, I/O, workflows)
+│   ├── logging.sh            # Logging, rotation, and traps
+│   ├── fields.sh             # Field and mode handling
+│   ├── io.sh                # Input/output helpers
+│   ├── validators.sh         # Validation and change prompts
+│   ├── device_ops.sh         # Atomic device-file updates
+│   ├── create.sh             # Create workflow
+│   ├── find.sh               # Find/search workflow
+│   ├── count.sh              # Collection count workflow
+│   ├── mains.sh              # Public main functions
+│   └── cli.sh                # run_cli dispatcher
 ├── devices/                  # Plain-text device files (*.txt)
 ├── logs/                     # Operation logs (device_manager.log)
 ├── tests/                    # Test suite (Bash test framework + test files)
@@ -101,14 +112,13 @@ Verfallsdatum=2025-12-31
 6. Returns to menu or exits
 ```
 
-### Non-Interactive Mode
+### Scripted Calls
 
 ```
-runner.sh arg1 arg2 arg3...
-  -> Determines operation type and parameters
-  -> Calls appropriate main function
+source experimental.sh
+  -> Loads modules/ and exposes the public functions
+  -> Call a *_main function with all required arguments
   -> Returns exit code (0=success, 1=error, 2=usage error)
-  -> No interactive prompts
 ```
 
 ### Operation Flow (Example: Create Device)
@@ -116,7 +126,9 @@ runner.sh arg1 arg2 arg3...
 ```
 runner.sh
   ↓
-create_device_main() [experimental.sh]
+experimental.sh (compatibility shim)
+  ↓
+create_device_main() [modules/mains.sh]
   ├─ _helper_core_is_interactive() → check if TTY
   ├─ _helper_create_resolve_device_id() → prompt or use arg
   ├─ _helper_validate_device_id_strict() → validate chars
@@ -135,7 +147,8 @@ create_device_main() [experimental.sh]
 
 ### Public Functions (User-Facing)
 
-Located in `experimental.sh`, prefixed with main function names:
+The public functions are implemented in `modules/mains.sh` and
+`modules/count.sh`, then exposed through `experimental.sh`:
 
 - `create_device_main` — Add new device
 - `change_device_main` — Modify device field
@@ -279,13 +292,14 @@ Use 'find' to list devices or 'create' to add new one. (exit code: 1)
 
 **IMPORTANT: Single-threaded only.**
 
-No file locking is implemented. Multiple `runner.sh` processes accessing the same device files concurrently will cause data corruption.
+Device writes acquire `$DEVICE_DIR.lock` using `mkdir`, wait up to
+`DEVICE_LOCK_TIMEOUT_SECONDS` (default 10 seconds), and fail explicitly on
+timeout. Rewrites remain atomic through a temporary file followed by `mv`.
 
 **Workarounds:**
 - Run one process at a time
 - Use external locking (flock, mkdir-based semaphore)
 - Document as operational requirement
-- Future enhancement: implement file locking (Phase 3)
 
 ---
 
@@ -336,7 +350,8 @@ Manual Bash test framework (no external dependencies):
 - **Edge cases:** Empty files, Unicode, large values, special chars (12 cases)
 - **Integration:** Full workflows, multi-step operations (10 cases)
 
-**Total:** 65+ test cases
+The test suite covers validation, fields, CRUD, search, logging, edge cases,
+and integration workflows.
 
 ### Running Tests
 
@@ -373,14 +388,6 @@ bash test_integration.sh            # Run integration tests
 
 ---
 
-## Future Enhancements (Phase 3)
-
-- Optional modular file structure (split experimental.sh if >2000 lines)
-- Optional JSON logging output (backward compatible)
-- Optional CLI argument parser (--help, --version)
-- Optional backup/restore functionality
-- Optional file locking for concurrency
-
 ---
 
 ## Development Guidelines
@@ -413,13 +420,10 @@ bash test_integration.sh            # Run integration tests
   - Standardized exit codes
   - Implemented log rotation
   - Added input validation
-  - Documented concurrency limitations
+  - Documented concurrency limitations and write locking
 
-- **v1.1** (Phase 2 Complete) — Testing & documentation
-  - Created test framework (65+ tests)
-  - Improved error messages
-  - Added edge case handling
-  - Created 4 documentation files (ARCHITECTURE, API, INTERNALS, OPERATIONS)
+- **Current implementation** — Runtime code is modular under `modules/`;
+  `experimental.sh` remains the compatibility shim for existing callers.
 
 ---
 

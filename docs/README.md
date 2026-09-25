@@ -29,11 +29,11 @@
 - Function organization (public vs internal)
 - Configuration via environment variables
 - Logging system and error handling
-- Concurrency model (single-threaded)
+- Concurrency model and device-write locking
 - Security considerations
 - Testing strategy
 - Performance characteristics
-- Future enhancements (Phase 3)
+- Current modular layout and compatibility boundary
 
 **Best for:**
 - Understanding how the system works
@@ -72,7 +72,7 @@
 **Contents:**
 - Installation & prerequisites
 - Directory setup
-- Running in interactive and non-interactive modes
+- Running the interactive runner and making scripted API calls
 - Configuration (env vars, persistent setup)
 - Log management (viewing, rotation, clearing)
 - 10 common issues with detailed solutions:
@@ -164,16 +164,6 @@
 
 ---
 
-## Document Statistics
-
-| Document | Size | Sections | Topics |
-|----------|------|----------|--------|
-| ARCHITECTURE.md | 12.5 KB | 16 | Design, workflows, functions, logging, security, testing |
-| API.md | 12.0 KB | 12 | Public functions, types, examples, error codes |
-| OPERATIONS.md | 13.4 KB | 12 | Setup, config, logs, troubleshooting, backup, monitoring |
-| INTERNALS.md | 15.7 KB | 15 | 30+ helper functions, patterns, guidelines |
-| **Total** | **53.6 KB** | **55+** | **Complete system documentation** |
-
 ---
 
 ## Navigation Tips
@@ -202,20 +192,18 @@
 
 ## Related Files
 
-- **experimental.sh** - Main library code
+- **experimental.sh** - Backward-compatible shim that sources `modules/*.sh`
+- **modules/** - Modular implementation
 - **runner.sh** - Entry point script
-- **tests/** - Test suite with 65+ test cases
+- **tests/** - Bash test suite covering the documented workflows
 - **PHASE_2_SUMMARY.md** - Phase 2 completion summary
 
 ---
 
 ## Version
 
-**Current:** 1.1 (Phase 2 Complete)
-- Phase 1: Stabilization & bug fixes
-- Phase 2: Testing & documentation
-
-**Last Updated:** 2026-04-10
+The documentation describes the current modular implementation. `experimental.sh`
+is retained as the compatibility entry point.
 
 ---
 

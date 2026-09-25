@@ -4,7 +4,7 @@
 
 This document describes internal helper functions used by the public API. These are implementation details; most users don't need to know them.
 
-**Location:** All in `experimental.sh`
+**Location:** `modules/` (loaded by the compatibility shim `experimental.sh`)
 **Prefix Convention:** `_helper_*`, `_generic_*`, `_prompt_*`, `_section_*`
 
 ---
@@ -146,7 +146,7 @@ log_info "User entered: $SAFE"
 
 **Example:**
 ```bash
-ENTRY=$(_helper_log_format_entry "INFO" "experimental.sh" "create_device_main" "1087" "2026-04-10T08:15:42Z" "$$" "Device created")
+ENTRY=$(_helper_log_format_entry "INFO" "modules/mains.sh" "create_device_main" "1087" "2026-04-10T08:15:42Z" "$$" "Device created")
 echo "$ENTRY" >> "$LOG_FILE"
 ```
 
@@ -717,6 +717,23 @@ echo "Location: $LOCATION"
 ```
 
 ---
+
+## Module locations
+
+| Area | Module |
+|------|--------|
+| Logging and traps | `modules/logging.sh` |
+| Input/output | `modules/io.sh` |
+| Fields and modes | `modules/fields.sh` |
+| Validation and change prompts | `modules/validators.sh` |
+| Atomic file updates | `modules/device_ops.sh` |
+| Create and find workflows | `modules/create.sh`, `modules/find.sh` |
+| Public mains | `modules/mains.sh` |
+| Collection counts | `modules/count.sh` |
+| Non-interactive dispatch | `modules/cli.sh` |
+
+`experimental.sh` remains a source-compatible loading shim. It is not the
+implementation location for new helpers.
 
 ## Modification Guidelines
 

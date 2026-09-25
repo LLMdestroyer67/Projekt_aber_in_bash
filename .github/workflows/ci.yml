@@ -12,14 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up bash
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y bash coreutils
-      - name: Make scripts executable
-        run: |
-          chmod +x runner.sh || true
-          chmod +x experimental.sh || true
+      - name: Check Bash syntax
+        run: bash -n runner.sh experimental.sh modules/*.sh tests/*.sh
       - name: Run test suite
-        run: |
-          cd tests && bash run_all_tests.sh
+        run: bash tests/run_all_tests.sh

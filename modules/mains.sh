@@ -148,9 +148,17 @@ create_device_main() {
   local device_file="$DEVICE_DIR/$device_id.txt"
   log_info "device_file='$device_file'"
 
-  _helper_create_assert_file_not_exists "$device_file" "$device_id" || return $?
+  _helper_device_lock_acquire || return 1
+  if ! _helper_create_assert_file_not_exists "$device_file" "$device_id"; then
+    _helper_device_lock_release
+    return 1
+  fi
   _helper_create_init_device_file "$device_file" "$device_id"
-  _helper_create_fill_device_file "$device_file" "$device_count" || return $?
+  if ! _helper_create_fill_device_file "$device_file" "$device_count"; then
+    _helper_device_lock_release
+    return 1
+  fi
+  _helper_device_lock_release
 
   DEVICE_ID="$device_id"
   DEVICE_count="$device_count"

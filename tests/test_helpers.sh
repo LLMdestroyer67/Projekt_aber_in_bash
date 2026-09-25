@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# Test Helpers Library (Phase 2 - Bash Manual Testing Framework)
+# Test Helpers Library
 # 
 # Provides assertion functions for testing Bash scripts without external deps.
 # Usage: source this file, then call assert_* functions
@@ -201,15 +201,19 @@ test_summary() {
 }
 
 setup_test_env() {
-  local test_dir="${1:-.}"
-  export TEST_DIR="$test_dir"
-  export TEST_DEVICE_DIR="$test_dir/test_devices"
-  export TEST_LOG_DIR="$test_dir/test_logs"
-  
+  local test_dir="${1:-${TMPDIR:-/tmp}}"
+  TEST_DIR="$(mktemp -d "$test_dir/device-manager-tests.XXXXXX")"
+  export TEST_DIR
+  export TEST_DEVICE_DIR="$TEST_DIR/devices"
+  export TEST_LOG_DIR="$TEST_DIR/logs"
+
   mkdir -p "$TEST_DEVICE_DIR" "$TEST_LOG_DIR"
+  trap cleanup_test_env EXIT
 }
 
 cleanup_test_env() {
-  [[ -d "$TEST_DEVICE_DIR" ]] && rm -rf "$TEST_DEVICE_DIR"
-  [[ -d "$TEST_LOG_DIR" ]] && rm -rf "$TEST_LOG_DIR"
+  if [[ -n "${TEST_DIR:-}" && -d "$TEST_DIR" ]]; then
+    rm -rf -- "$TEST_DIR"
+  fi
+  unset TEST_DIR TEST_DEVICE_DIR TEST_LOG_DIR
 }

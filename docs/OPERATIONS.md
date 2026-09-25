@@ -74,14 +74,14 @@ Enter selection (1-4) or 'q' to quit:
 3. Results are displayed and logged
 4. Returns to menu for next operation
 
-### Non-Interactive Mode
+### Non-Interactive Calls
 
 ```bash
-# Pass arguments directly (no prompts)
-./runner.sh create SERVER_001
-./runner.sh find "id=" "SERVER"
-./runner.sh change SERVER_001 Status active
-./runner.sh count LAN_CABLE_50M + 10
+# Use the compatibility shim and public functions from a script
+source ./experimental.sh
+create_device_main SERVER_001
+find_device_main "id=" "SERVER"
+change_device_main SERVER_001 Status active
 ```
 
 **Exit codes:**
@@ -92,7 +92,7 @@ Enter selection (1-4) or 'q' to quit:
 **Example in scripts:**
 ```bash
 #!/bin/bash
-if ./runner.sh find "id=" "SERVER_001"; then
+if find_device_main "id=" "SERVER_001"; then
     echo "Device found"
 else
     echo "Not found (exit code: $?)"
@@ -261,7 +261,8 @@ runner.sh
 # Select "Find device" option
 
 # 2. Or search directly
-./runner.sh find "id=" ""    # Lists all devices
+source ./experimental.sh
+find_device_main "id=" ""    # Lists all devices
 
 # 3. Check file directly
 ls -l devices/
@@ -384,39 +385,24 @@ echo "Exit code: $?"
 
 ---
 
-### Issue: Concurrent runners corrupt files
+### Issue: Concurrent runners wait for the device lock
 
-**Cause:** Single-threaded design, no file locking
+**Behavior:** Device writes acquire `$DEVICE_DIR.lock` before rewriting or
+creating files. A writer waits up to `DEVICE_LOCK_TIMEOUT_SECONDS` (default
+10 seconds), then fails explicitly if another process still holds the lock.
 
-**This is a known limitation.** Multiple runner.sh processes accessing same devices will corrupt data.
+The lock protects writes, while reads may continue concurrently. Atomic
+temporary-file replacement prevents readers from observing partial rewrites.
 
-**Solution:**
-- Run only one process at a time
-- Use external locking (flock)
-- Wrap with a mutex script:
+Set a suitable timeout for the deployment:
 
 ```bash
-#!/bin/bash
-LOCK="/tmp/device_manager.lock"
-
-# Acquire lock
-exec 200>"$LOCK"
-flock -x 200
-
-# Run command
-./runner.sh "$@"
-EXIT=$?
-
-# Release lock
-flock -u 200
-exit $EXIT
+export DEVICE_LOCK_TIMEOUT_SECONDS=30
 ```
 
-Usage:
-```bash
-./run_with_lock.sh find "id=" "SERVER"
-./run_with_lock.sh create SERVER_002
-```
+If a process terminates while holding the lock, remove the stale
+`$DEVICE_DIR.lock` directory only after verifying that no writer is still
+active.
 
 ---
 
@@ -448,7 +434,7 @@ bash test_integration.sh
 
 ### Test Coverage
 
-- **65+ test cases** covering:
+- Test coverage includes:
   - Device ID validation
   - Field parsing
   - CRUD operations
@@ -519,17 +505,17 @@ export LOG_MAX_SIZE=52428800            # 50 MB
 # Use faster storage
 export DEVICE_DIR="/ssd/devices"        # If available
 
-# Consider caching (Phase 3 enhancement)
+# Use the existing plain-text files and search helpers for large inventories.
 ```
 
 ### Profiling a Slow Operation
 
 ```bash
 # Time a find operation
-time ./runner.sh find "id=" "SERVER"
+time bash -c 'source ./experimental.sh; find_device_main "id=" "SERVER"'
 
-# Profile with bash tracing
-time bash -x ./runner.sh find "id=" "SERVER" 2>&1 | tee profile.log
+# Profile a scripted find call with bash tracing
+time bash -x -c 'source ./experimental.sh; find_device_main "id=" "SERVER"' 2>&1 | tee profile.log
 
 # Analyze profile log
 sort profile.log | uniq -c | sort -rn | head -20
@@ -594,7 +580,8 @@ export LOG_DIR="/var/log/device_mgr"
 cd /path/to/Projekt_aber_in_bash
 
 # Find all devices without location
-./runner.sh find "location=" "" >> /var/log/device_manager_audit.log
+source ./experimental.sh
+find_device_main "location=" "" >> /var/log/device_manager_audit.log
 
 # Show device count
 echo "Device count: $(find devices -name "*.txt" | wc -l)" >> /var/log/device_manager_audit.log
@@ -651,7 +638,8 @@ Current Version: 1.1 (Phase 2 Complete)
 - ✓ Error recovery hints
 
 **Known Limitations:**
-- Single-threaded only (no concurrent access)
+- Device writes are serialized with a portable lock at `$DEVICE_DIR.lock`;
+  set `DEVICE_LOCK_TIMEOUT_SECONDS` to change the wait timeout.
 - No database backend (intentional, plain-text only)
 - Manual test runs (no CI/CD integration)
 
@@ -663,7 +651,7 @@ For issues:
 1. Check this file (troubleshooting section)
 2. Review logs: `tail -100 logs/device_manager.log`
 3. Run tests: `cd tests/ && bash run_all_tests.sh`
-4. Check code comments in `experimental.sh`
+4. Check the implementation modules under `modules/` (loaded through `experimental.sh`)
 5. Review `API.md` for function usage
 
 For feature requests:
@@ -673,4 +661,10 @@ For feature requests:
 
 ---
 
-NOTE: The implementation has been modularized. The main compatibility shim is experimental.sh which now sources modules/*.sh (modules/logging.sh, modules/fields.sh, modules/io.sh, modules/find.sh, modules/create.sh, modules/device_ops.sh, modules/cli.sh). For non-interactive scripts prefer run_cli (in modules/cli.sh) or call the public *_main functions directly.
+NOTE: The implementation is modularized. `experimental.sh` is the compatibility
+shim and sources the modules in dependency order, including `logging.sh`,
+`fields.sh`, `io.sh`, `validators.sh`, `device_ops.sh`, `create.sh`, `find.sh`,
+`count.sh`, `mains.sh`, and `cli.sh`. `runner.sh` intentionally provides the
+interactive loop. Pass an explicit command such as `./runner.sh read 12312`
+for one non-interactive operation; scripted callers may also source
+`experimental.sh` and call public `*_main` functions or `run_cli`.

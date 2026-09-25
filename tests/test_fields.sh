@@ -6,6 +6,8 @@
 
 source "$(dirname "$0")/test_helpers.sh"
 source "$(dirname "$0")/../experimental.sh"
+setup_test_env
+export LOG_DIR="$TEST_LOG_DIR"
 
 test_section "Field Parsing Tests"
 
@@ -51,4 +53,5 @@ test_section "Mode File Key Tests"
 FILEKEY=$(_helper_modes_get_file_key "description")
 assert_equals "Beschreibung=" "$FILEKEY" "_helper_modes_get_file_key finds file key for description mode"
 
+cleanup_test_env
 test_summary

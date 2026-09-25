@@ -17,8 +17,9 @@ Quick commands (build / test / lint)
 - No automated linter/build tool included; scripts follow set -euo pipefail and are shellcheck-friendly.
 
 High-level architecture (big picture)
-- Entry point: runner.sh — interactive menu and a thin orchestrator for non-interactive workflows.
-- Core library: experimental.sh — monolithic implementation (public *_main functions + many `_helper_` utilities). Prefer editing helpers there.
+- Entry point: `runner.sh` — interactive menu loop by default; explicit
+  arguments dispatch one non-interactive command through `run_cli`.
+- Core library: `modules/` — implementation split by concern and sourced by `experimental.sh`, the backward-compatible shim. Public `*_main` functions are defined in `modules/mains.sh` and `modules/count.sh`; edit the owning module rather than the shim.
 - Data model: devices/ — one plain-text file per device (key=value lines, *.txt). Two device types: numeric single devices and alphanumeric collections (with `Anzahl=`).
 - Logging: logs/device_manager.log — ISO-8601 timestamped entries; automatic rotation handled by helper.
 - Tests: tests/ — small Bash test framework (test_helpers.sh) and multiple test_* scripts that are the authoritative usage examples.
@@ -36,17 +37,18 @@ Key repository conventions (repo-specific)
 - Input helpers: use read_logged to prompt and log user input consistently.
 - Validation: use `_helper_validate_device_id_strict` to reject dangerous IDs (/, spaces, $, `, quotes). Always validate user-supplied IDs in mains.
 - Tests as examples: tests/* are also usage examples — prefer adding tests when changing behavior.
-- Concurrency: intentionally single-threaded. If enabling concurrency, implement an external locking wrapper (flock) and add tests demonstrating safe behavior.
+- Concurrency: device writes use a portable `mkdir` lock at
+  `$DEVICE_DIR.lock`; configure `DEVICE_LOCK_TIMEOUT_SECONDS` as needed.
 - Commit message convention: when making commits during automated assistant sessions, append the Co-authored-by trailer:
   Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
 
 Where to look first (fast path)
-- Quick feature change: experimental.sh — search for the relevant `_helper_` then update small helper functions.
+- Quick feature change: search `modules/` for the relevant helper, then update the owning module. Preserve `experimental.sh` as the compatibility shim.
 - To understand public behavior: docs/API.md then tests/* for concrete examples.
 - For logging/diagnostics: docs/OPERATIONS.md and logs/device_manager.log
 
 Guidance for Copilot sessions (practical rules)
-- Make small, surgical edits to experimental.sh helpers. Avoid wholesale rewrites of the file.
+- Make small, surgical edits to the relevant module. Avoid changing `experimental.sh` unless the source order or compatibility surface must change.
 - Run tests locally after changes: cd tests && bash run_all_tests.sh. Fix failures before committing.
 - When adding or changing public mains, update docs/API.md and add corresponding tests under tests/.
 - Preserve exit codes and public function signatures for backward compatibility.

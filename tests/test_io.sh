@@ -6,11 +6,13 @@
 source "$(dirname "$0")/test_helpers.sh"
 source "$(dirname "$0")/../experimental.sh"
 REPO_ROOT="$(cd -- "$(dirname "$0")/.." && pwd -P)"
+setup_test_env
+export LOG_DIR="$TEST_LOG_DIR"
 
 test_section "read_logged prompt and captured-value contract"
 
 prompt_file="$(mktemp)"
-trap 'rm -f "$prompt_file"' EXIT
+trap 'rm -f "$prompt_file"; cleanup_test_env' EXIT
 
 captured_value="$(printf '900001\n' | _helper_create_resolve_device_id '' 2>"$prompt_file")"
 captured_prompt="$(<"$prompt_file")"
