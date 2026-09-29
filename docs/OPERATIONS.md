@@ -15,19 +15,19 @@
 cd /path/to/Projekt_aber_in_bash
 
 # 2. Verify directory structure
-ls -la runner.sh experimental.sh devices/ logs/
+ls -la geraeteverwaltung.sh geraeteverwaltung_funktionen.sh devices/ logs/
 
 # 3. Make scripts executable
-chmod +x runner.sh experimental.sh
+chmod +x geraeteverwaltung.sh geraeteverwaltung_funktionen.sh runner.sh experimental.sh
 
 # 4. Set environment variables (optional, defaults provided)
-export DEVICE_DIR="./devices"
-export LOG_DIR="./logs"
-export LOG_MAX_SIZE=10485760     # 10 MB
-export LOG_KEEP_DAYS=7
+export GERAETE_VERZEICHNIS="./devices"
+export PROTOKOLL_VERZEICHNIS="./logs"
+export PROTOKOLL_MAX_GROESSE=10485760     # 10 MB
+export PROTOKOLL_BEWAHRUNGS_TAGE=7
 
 # 5. Run interactively
-./runner.sh
+./geraeteverwaltung.sh
 ```
 
 ### Directory Setup
@@ -51,21 +51,21 @@ ls -ld ./devices ./logs
 ### Interactive Mode (Default)
 
 ```bash
-./runner.sh
+./geraeteverwaltung.sh
 ```
 
 **Output:**
 ```
 ═══════════════════════════════════════════════════════════════
-                   Device Manager - Main Menu
+                   Geräteverwaltung - Hauptmenü
 ═══════════════════════════════════════════════════════════════
 
-1. Create device
-2. Change device
-3. Find device
-4. Find and change (field or collection count)
+1. Gerät anlegen
+2. Gerät ändern
+3. Gerät suchen
+4. Gerät suchen und ändern (Feld oder Bestand)
 
-Enter selection (1-4) or 'q' to quit:
+Auswahl (1-4) oder 'q' zum Beenden:
 ```
 
 **Usage:**
@@ -77,12 +77,24 @@ Enter selection (1-4) or 'q' to quit:
 ### Non-Interactive Calls
 
 ```bash
-# Use the compatibility shim and public functions from a script
-source ./experimental.sh
-create_device_main SERVER_001
-find_device_main "id=" "SERVER"
-change_device_main SERVER_001 Status active
+# Prefer canonical German API names; English function names remain wrappers.
+source ./geraeteverwaltung_funktionen.sh
+geraet_anlegen SERVER_001
+geraet_suchen "geraete_id" "SERVER"
+geraet_aendern SERVER_001 Status active
+
+# Canonical CLI command; historical commands such as "find" also work.
+./geraeteverwaltung.sh geraet-suchen geraete_id SERVER
 ```
+
+`runner.sh` and `experimental.sh` remain compatibility paths for existing
+scripts and interactive invocations.
+
+To inspect legacy field names without changing inventory, run
+`./geraeteverwaltung.sh daten-migrieren`. Apply a migration explicitly with
+`./geraeteverwaltung.sh daten-migrieren --anwenden`; each changed file gets a sibling
+`.bak.<timestamp>.<pid>` backup. A conflicting pair of legacy and canonical fields
+stops the migration before any file is rewritten.
 
 **Exit codes:**
 - 0 — Success
@@ -92,7 +104,7 @@ change_device_main SERVER_001 Status active
 **Example in scripts:**
 ```bash
 #!/bin/bash
-if find_device_main "id=" "SERVER_001"; then
+if geraet_suchen "geraete_id" "SERVER_001"; then
     echo "Device found"
 else
     echo "Not found (exit code: $?)"
@@ -105,35 +117,52 @@ fi
 
 ### Environment Variables
 
-Set these before running to customize behavior:
+Set the German canonical variables before running to customize behavior.
+The corresponding English variables remain accepted for compatibility.
 
 ```bash
 # Device storage location
-export DEVICE_DIR="/data/devices"       # Default: ./devices
+export GERAETE_VERZEICHNIS="/data/devices" # Default: ./devices
 
 # Logging configuration
-export LOG_DIR="/var/log/device_mgr"    # Default: ./logs
-export LOG_FILE="$LOG_DIR/devices.log"  # Default: LOG_DIR/device_manager.log
+export PROTOKOLL_VERZEICHNIS="/var/log/device_mgr" # Default: ./logs
+export PROTOKOLL_DATEI="$PROTOKOLL_VERZEICHNIS/devices.log"
 
 # Log rotation (automatic)
-export LOG_MAX_SIZE=10485760            # Default: 10 MB (bytes)
-export LOG_KEEP_DAYS=7                  # Default: 7 days
+export PROTOKOLL_MAX_GROESSE=10485760  # Default: 10 MB (bytes)
+export PROTOKOLL_BEWAHRUNGS_TAGE=7     # Default: 7 days
 
 # Debug/runtime
-export TRACE_COMMANDS=1                 # 0 (off) or 1 (on) - enables `set -x`
-export RUN_INTERVAL_SECONDS=30          # For daemon polling (if used)
+export BEFEHLS_TRACE=1                 # 0 (aus) oder 1 (ein)
+export LAUF_INTERVALL_SEKUNDEN=30      # Pause der interaktiven Schleife
 ```
+
+German names are canonical and take precedence when both forms are set:
+
+```bash
+export GERAETE_VERZEICHNIS="/data/devices"
+export PROTOKOLL_VERZEICHNIS="/var/log/device_mgr"
+export PROTOKOLL_DATEI="$PROTOKOLL_VERZEICHNIS/devices.log"
+export PROTOKOLL_MAX_GROESSE=10485760
+export PROTOKOLL_BEWAHRUNGS_TAGE=7
+export BEFEHLS_TRACE=0
+export LAUF_INTERVALL_SEKUNDEN=30
+export GERAETE_SPERRE_WARTESEKUNDEN=10
+```
+
+English environment names continue to work for existing setups. See
+[NAMING.md](NAMING.md) for the complete rename map.
 
 ### Persistent Configuration
 
 Create a setup script to avoid re-entering variables:
 
 ```bash
-# ~/.bashrc or /etc/profile.d/device_manager.sh
-export DEVICE_DIR="/home/admin/device_manager/devices"
-export LOG_DIR="/home/admin/device_manager/logs"
-export LOG_MAX_SIZE=52428800            # 50 MB
-export LOG_KEEP_DAYS=14                 # 2 weeks
+# ~/.bashrc or /etc/profile.d/geraeteverwaltung.sh
+export GERAETE_VERZEICHNIS="/home/admin/device_manager/devices"
+export PROTOKOLL_VERZEICHNIS="/home/admin/device_manager/logs"
+export PROTOKOLL_MAX_GROESSE=52428800  # 50 MB
+export PROTOKOLL_BEWAHRUNGS_TAGE=14    # 2 weeks
 ```
 
 Then source it before running:
@@ -378,7 +407,7 @@ bash --version
 df -h .
 
 # 5. Test individual functions
-source experimental.sh
+source geraeteverwaltung_funktionen.sh
 create_device_main "TEST_ID"
 echo "Exit code: $?"
 ```
@@ -597,12 +626,12 @@ echo "Device count: $(find devices -name "*.txt" | wc -l)" >> /var/log/device_ma
 #!/bin/bash
 # Export all devices to CSV
 
-echo "ID,Description,Location,Status" > inventory.csv
+echo "ID,Beschreibung,Standort,Status" > inventory.csv
 
 for file in devices/*.txt; do
     ID=$(basename "$file" .txt)
     DESC=$(grep "Beschreibung=" "$file" | cut -d= -f2)
-    LOC=$(grep "Location=" "$file" | cut -d= -f2)
+    LOC=$(grep "Standort=" "$file" | cut -d= -f2)
     STATUS=$(grep "Status=" "$file" | cut -d= -f2)
     
     echo "$ID,$DESC,$LOC,$STATUS" >> inventory.csv
@@ -661,10 +690,11 @@ For feature requests:
 
 ---
 
-NOTE: The implementation is modularized. `experimental.sh` is the compatibility
-shim and sources the modules in dependency order, including `logging.sh`,
+NOTE: The implementation is modularized. `geraeteverwaltung_funktionen.sh` is
+the canonical library and sources modules in dependency order, including `logging.sh`,
 `fields.sh`, `io.sh`, `validators.sh`, `device_ops.sh`, `create.sh`, `find.sh`,
-`count.sh`, `mains.sh`, and `cli.sh`. `runner.sh` intentionally provides the
-interactive loop. Pass an explicit command such as `./runner.sh read 12312`
-for one non-interactive operation; scripted callers may also source
-`experimental.sh` and call public `*_main` functions or `run_cli`.
+`count.sh`, `migrate.sh`, `mains.sh`, and `cli.sh`.
+`geraeteverwaltung.sh` provides the interactive loop. Pass an explicit command
+such as `./geraeteverwaltung.sh geraet-anzeigen 12312` for one non-interactive
+operation; existing callers may continue using `runner.sh`, source
+`experimental.sh`, and call the English API wrappers.

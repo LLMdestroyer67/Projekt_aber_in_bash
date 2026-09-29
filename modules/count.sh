@@ -15,9 +15,16 @@ fi
 
 _helper_count_resolve_old_value() {
   local device_file="$1" change_prefix="$2"
-  local old_line
-  old_line="$(grep -m 1 -F "$change_prefix" "$device_file" || true)"
-  printf '%s' "${old_line#"$change_prefix"}"
+  local canonical_key="${change_prefix%=}" alias old_line=""
+  local aliases=("$canonical_key")
+  if declare -F _helper_inventory_key_aliases >/dev/null; then
+    mapfile -t aliases < <(_helper_inventory_key_aliases "$canonical_key")
+  fi
+  for alias in "${aliases[@]}"; do
+    old_line="$(grep -m 1 -iF "${alias}=" "$device_file" || true)"
+    [[ -n "$old_line" ]] && break
+  done
+  printf '%s' "${old_line#*=}"
 }
 
 _helper_count_prompt_operation() {
@@ -67,7 +74,7 @@ _helper_count_resolve_final_new_value() {
   printf '%s' "$new_value"
 }
 
-change_device_count() {
+bestand_fuer_geraet_aendern() {
   setup_logging "$@"
   install_logging_traps
 
@@ -148,7 +155,7 @@ change_device_count() {
   log_info "change_device_main abgeschlossen DEVICE_ID='$DEVICE_ID' DEVICE_count='$DEVICE_count' CHANGE='$CHANGE' FINALCHANGE='$FINALCHANGE'"
 }
 
-change_count_main() {
+bestand_aendern() {
   # Find device then modify collection count (orchestrator)
   # Exit codes: 0=success, 1=not found, 2=ambiguous/invalid
   # 1. Gerät(e) suchen
@@ -173,5 +180,8 @@ change_count_main() {
   fi
 
   echo "Bearbeite Gerät mit ID: $FOUND_DEVICE_ID"
-  change_device_count "$FOUND_DEVICE_ID"
+  bestand_fuer_geraet_aendern "$FOUND_DEVICE_ID"
 }
+
+change_device_count() { bestand_fuer_geraet_aendern "$@"; }
+change_count_main() { bestand_aendern "$@"; }

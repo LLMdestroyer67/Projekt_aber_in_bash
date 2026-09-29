@@ -9,30 +9,33 @@ if [[ -f "$SCRIPT_DIR/modules/io.sh" ]]; then
   . "$SCRIPT_DIR/modules/io.sh"
 fi
 
-# run_cli: dispatch command to the corresponding main function
-# Usage: run_cli <command> [args...]
-# Commands supported: create, change, find, read, find-and-change, change-count
-run_cli() {
+# Canonical CLI dispatcher. English command spellings remain aliases.
+# Usage: befehl_ausfuehren <befehl> [argumente...]
+befehl_ausfuehren() {
   local cmd="${1-}"
   shift || true
   case "$cmd" in
-    create)
-      create_device_main "$@" ;;
-    change)
-      change_device_main "$@" ;;
-    find)
-      find_device_main "$@" ;;
-    read)
-      read_device_main "$@" ;;
-    find-and-change|find_and_change)
-      find_and_change_main "$@" ;;
-    change-count|count)
-      change_count_main "$@" ;;
+    geraet-anlegen|geraet_anlegen|anlegen|create)
+      geraet_anlegen "$@" ;;
+    geraet-aendern|geraet_aendern|aendern|change)
+      geraet_aendern "$@" ;;
+    geraet-suchen|geraet_suchen|suchen|find)
+      geraet_suchen "$@" ;;
+    geraet-anzeigen|geraet_anzeigen|anzeigen|read)
+      geraet_anzeigen "$@" ;;
+    geraet-suchen-und-aendern|geraet_suchen_und_aendern|suchen-und-aendern|find-and-change|find_and_change)
+      geraet_suchen_und_aendern "$@" ;;
+    bestand-aendern|bestand_aendern|change-count|count)
+      bestand_aendern "$@" ;;
+    daten-migrieren|daten_migrieren|migrate)
+      geraetedaten_migrieren "$@" ;;
     '')
-      echo "No command provided. Supported: create, change, find, read, find-and-change, change-count" >&2
+      echo "Kein Befehl angegeben. Verfügbar: geraet-anlegen, geraet-aendern, geraet-suchen, geraet-anzeigen, bestand-aendern, daten-migrieren" >&2
       return 2 ;;
     *)
-      echo "Unknown command: $cmd" >&2
+      echo "Unbekannter Befehl: $cmd" >&2
       return 2 ;;
   esac
 }
+
+run_cli() { befehl_ausfuehren "$@"; }

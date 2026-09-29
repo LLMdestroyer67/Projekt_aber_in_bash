@@ -78,8 +78,12 @@ find_by_id() {
 
 _helper_find_file_matches_key_value() {
   local file="$1" key="$2" value="$3"
-  local line
-  line="$(grep -m 1 -iE "^${key}" "$file" 2>/dev/null || true)"
+  local line="" alias=""
+  local canonical_key="$(_helper_inventory_key_canonical "$key")"
+  while IFS= read -r alias; do
+    line="$(grep -m 1 -iE "^${alias}=" "$file" 2>/dev/null || true)"
+    [[ -n "$line" ]] && break
+  done < <(_helper_inventory_key_aliases "$canonical_key")
   [[ -z "$line" ]] && return 1
   log_debug "Gefundene Zeile in '$file': '$line'"
   printf '%s\n' "$line" | grep -qiF -- "$value"
@@ -159,10 +163,14 @@ for _fmode in "${find_modes[@]}"; do
   _frest="${_fmode#*:}"
   _fcanonical="${_frest%%:*}"
   _fkey="${_frest#*:}"
-  [[ "$_fcanonical" == "id" ]] && continue
+  [[ "$_fcanonical" == "geraete_id" ]] && continue
   eval "find_by_${_fcanonical}() { _find_by_key_contains '${_fkey}' \"\${1-}\"; }"
 done
 unset _fmode _frest _fcanonical _fkey
+
+# Keep both spellings available for callers that invoke the lower-level
+# search helpers directly.
+find_by_geraete_id() { find_by_id "$@"; }
 
 _helper_find_resolve_mode() {
   local mode="$1"
@@ -183,7 +191,7 @@ _helper_find_normalize_mode() {
 
 _helper_find_dispatch_by_mode() {
   local normalized="$1" query="$2"
-  if [[ "$normalized" == "id" ]]; then
+  if [[ "$normalized" == "geraete_id" ]]; then
     find_by_id "$query"
   else
     "find_by_${normalized}" "$query"

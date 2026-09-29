@@ -1,0 +1,5 @@
+Beschreibung=ACAB
+Standort=all
+Status=cops
+Kategorie=are
+Besitzer=beatiful

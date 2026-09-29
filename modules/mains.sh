@@ -49,7 +49,7 @@ _helper_fac_assert_found_id() {
   fi
 }
 
-change_device_main() {
+geraet_aendern() {
   # Change device field value
   # Args: $1=device_id (optional), $2=field (optional), $3=new_value (optional)
   # Exit codes: 0=success, 1=not found/error, 2=usage error
@@ -114,7 +114,7 @@ change_device_main() {
   log_info "change_device_main abgeschlossen DEVICE_ID='$DEVICE_ID' DEVICE_count='$DEVICE_count' CHANGE='$CHANGE' FINALCHANGE='$FINALCHANGE'"
 }
 
-create_device_main() {
+geraet_anlegen() {
   # Create new device (type 1=single, type 2=collection)
   # Args: $1=device_id (optional, prompted if missing)
   # Exit codes: 0=success, 1=file exists/error, 2=invalid input
@@ -166,7 +166,7 @@ create_device_main() {
   log_info "create_device_main abgeschlossen DEVICE_ID='$DEVICE_ID' DEVICE_count='$DEVICE_count'"
 }
 
-find_and_change_main() {
+geraet_suchen_und_aendern() {
   # Find device then modify a field
   # Exit codes: 0=success, 1=not found/error, 2=ambiguous results
   local search_rc=0
@@ -199,7 +199,7 @@ find_and_change_main() {
   change_device_main "$FOUND_DEVICE_ID"
 }
 
-find_and_change_menu_main() {
+geraet_suchen_und_aendern_menue() {
   # Interactive menu workflow for both field and collection-count changes.
   local search_rc=0
   find_device_main || search_rc=$?
@@ -232,7 +232,7 @@ find_and_change_menu_main() {
   fi
 }
 
-find_device_main() {
+geraet_suchen() {
   # Find device by ID, description, location, status, etc.
   # Args: $1=mode (id/description/location/...), $2=query
   # Exit codes: 0=found, 1=not found, 2=invalid mode
@@ -263,7 +263,7 @@ find_device_main() {
   return "$rc"
 }
 
-read_device_main() {
+geraet_anzeigen() {
   # Read and display a device by ID
   # Args: $1=device_id (required in non-interactive mode)
   setup_logging "$@"
@@ -286,34 +286,10 @@ read_device_main() {
   log_info "read_device_main abgeschlossen device_id='$device_id'"
 }
 
-change_count_main() {
-  # Find device then modify collection count (orchestrator)
-  # Exit codes: 0=success, 1=not found, 2=ambiguous/invalid
-  # 1. Gerät(e) suchen
-  local search_rc=0
-  find_device_main || search_rc=$?
-  if (( search_rc != 0 )); then
-    return "$search_rc"
-  fi
-
-  # 2. Prüfen, was gefunden wurde
-  local match_count="${FOUND_MATCH_COUNT:-0}"
-  if [[ ! "$match_count" =~ ^[0-9]+$ ]]; then
-    match_count=0
-  fi
-  if (( match_count == 0 )); then
-    echo "Kein Gerät gefunden." >&2
-    return 1
-  elif (( match_count > 1 )); then
-    echo "Mehrere Geräte gefunden (${match_count}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
-    return 2
-  fi
-
-  if [[ -z "${FOUND_DEVICE_ID:-}" ]]; then
-    echo "Interner Fehler: FOUND_DEVICE_ID ist leer trotz genau 1 Treffer." >&2
-    return 1
-  fi
-
-  echo "Bearbeite Gerät mit ID: $FOUND_DEVICE_ID"
-  change_device_count "$FOUND_DEVICE_ID"
-}
+# Legacy public names remain thin wrappers around the German canonical API.
+create_device_main() { geraet_anlegen "$@"; }
+read_device_main() { geraet_anzeigen "$@"; }
+change_device_main() { geraet_aendern "$@"; }
+find_device_main() { geraet_suchen "$@"; }
+find_and_change_main() { geraet_suchen_und_aendern "$@"; }
+find_and_change_menu_main() { geraet_suchen_und_aendern_menue "$@"; }

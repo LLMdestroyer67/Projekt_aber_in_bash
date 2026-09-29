@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check Bash syntax
-        run: bash -n runner.sh experimental.sh modules/*.sh tests/*.sh
+        run: bash -n geraeteverwaltung.sh geraeteverwaltung_funktionen.sh runner.sh experimental.sh modules/*.sh tests/*.sh
       - name: Run test suite
         run: bash tests/run_all_tests.sh

@@ -28,11 +28,14 @@ test_section "Mode Normalization Tests"
 
 # Test _helper_modes_normalize - ID mode
 MODE_ID=$(_helper_modes_normalize "id")
-assert_equals "id" "$MODE_ID" "Normalize 'id' mode"
+assert_equals "geraete_id" "$MODE_ID" "Normalize legacy ID mode to German canonical mode"
 
 # Test _helper_modes_normalize - lowercase
 MODE_DESC=$(_helper_modes_normalize "description")
-assert_equals "description" "$MODE_DESC" "Normalize 'description' mode"
+assert_equals "beschreibung" "$MODE_DESC" "Normalize English description alias to German mode"
+
+MODE_LOCATION=$(_helper_modes_normalize "Location")
+assert_equals "standort" "$MODE_LOCATION" "Normalize legacy Location mode to German canonical mode"
 
 # Test _helper_modes_normalize - invalid should fail
 _helper_modes_normalize "invalid_mode" && \
@@ -50,8 +53,14 @@ PROMPT=$(_helper_fields_build_prompt "${single_fields[@]:0:2}")
 test_section "Mode File Key Tests"
 
 # Test _helper_modes_get_file_key
-FILEKEY=$(_helper_modes_get_file_key "description")
+FILEKEY=$(_helper_modes_get_file_key "beschreibung")
 assert_equals "Beschreibung=" "$FILEKEY" "_helper_modes_get_file_key finds file key for description mode"
+
+FILEKEY=$(_helper_modes_get_file_key "standort")
+assert_equals "Standort=" "$FILEKEY" "_helper_modes_get_file_key returns canonical Standort key"
+
+FILEKEY=$(_helper_modes_get_file_key "location")
+assert_equals "Standort=" "$FILEKEY" "_helper_modes_get_file_key accepts legacy mode aliases"
 
 cleanup_test_env
 test_summary

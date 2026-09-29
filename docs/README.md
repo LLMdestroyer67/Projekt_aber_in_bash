@@ -15,6 +15,9 @@
 4. **Extending the code?** See [INTERNALS.md](INTERNALS.md)
    - Helper function reference and patterns
 
+5. **Looking up a renamed term?** See [NAMING.md](NAMING.md)
+   - Canonical German names and compatibility mappings
+
 ---
 
 ## Files Overview
@@ -45,13 +48,14 @@
 **Purpose:** Public function reference
 
 **Contents:**
-- 5 main functions fully documented:
-  - `create_device_main`
-  - `read_device_main`
-  - `change_device_main`
-  - `find_device_main`
-  - `find_and_change_main`
-  - `change_count_main`
+- 7 canonical public functions fully documented:
+  - `geraet_anlegen`
+  - `geraet_anzeigen`
+  - `geraet_aendern`
+  - `geraet_suchen`
+  - `geraet_suchen_und_aendern`
+  - `bestand_aendern`
+  - `geraetedaten_migrieren`
 - For each: signature, parameters, returns, behavior, examples
 - Exit code reference (0, 1, 2)
 - Device type specifications
@@ -59,6 +63,7 @@
 - Common usage patterns
 - Environment variables
 - Backward compatibility guarantees
+- Canonical German API names and legacy English wrappers
 
 **Best for:**
 - Calling the functions
@@ -119,6 +124,7 @@
   - Device operations
 - Modification guidelines for developers
 - Naming conventions and standards
+- German canonical inventory keys and English aliases
 
 **Best for:**
 - Understanding internal implementation
@@ -149,7 +155,7 @@
 ### Extending or modifying the code
 1. INTERNALS.md - Helper function reference
 2. ARCHITECTURE.md - Design guidelines
-3. Code comments in experimental.sh
+3. Code comments in geraeteverwaltung_funktionen.sh
 4. Test files in tests/ for examples
 
 ### Deploying to production
@@ -192,9 +198,12 @@
 
 ## Related Files
 
-- **experimental.sh** - Backward-compatible shim that sources `modules/*.sh`
+- **geraeteverwaltung_funktionen.sh** - Canonical library that sources `modules/*.sh`
+- **experimental.sh** - Backward-compatible library shim
 - **modules/** - Modular implementation
-- **runner.sh** - Entry point script
+- **geraeteverwaltung.sh** - Canonical application entry point
+- **runner.sh** - Backward-compatible entry-point wrapper
+- **NAMING.md** - Canonical German naming and compatibility glossary
 - **tests/** - Bash test suite covering the documented workflows
 - **PHASE_2_SUMMARY.md** - Phase 2 completion summary
 
@@ -202,8 +211,8 @@
 
 ## Version
 
-The documentation describes the current modular implementation. `experimental.sh`
-is retained as the compatibility entry point.
+The documentation describes the current modular implementation.
+`experimental.sh` and `runner.sh` remain as compatibility entry points.
 
 ---
 

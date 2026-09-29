@@ -4,11 +4,11 @@ Purpose
 - Short guidance to help Copilot-powered assistants work effectively in this repository.
 
 Quick commands (build / test / lint)
-- Make scripts executable: chmod +x runner.sh experimental.sh
-- Run interactive app: ./runner.sh
+- Make scripts executable: chmod +x geraeteverwaltung.sh geraeteverwaltung_funktionen.sh
+- Run interactive app: ./geraeteverwaltung.sh
 - Run a single public function (no runner):
-  - source experimental.sh
-  - create_device_main "DEVICE_ID"  # or any other *_main
+  - source geraeteverwaltung_funktionen.sh
+  - geraet_anlegen "GERAETE_ID"  # or another German public function
 - Run full test suite: cd tests && bash run_all_tests.sh
 - Run a single test file: bash tests/test_validation.sh (or any test_*.sh)
 - Run a single test with debug tracing: bash -x tests/test_validation.sh
@@ -17,16 +17,20 @@ Quick commands (build / test / lint)
 - No automated linter/build tool included; scripts follow set -euo pipefail and are shellcheck-friendly.
 
 High-level architecture (big picture)
-- Entry point: `runner.sh` — interactive menu loop by default; explicit
-  arguments dispatch one non-interactive command through `run_cli`.
-- Core library: `modules/` — implementation split by concern and sourced by `experimental.sh`, the backward-compatible shim. Public `*_main` functions are defined in `modules/mains.sh` and `modules/count.sh`; edit the owning module rather than the shim.
+- Entry point: `geraeteverwaltung.sh` — interactive menu loop by default;
+  explicit arguments dispatch one non-interactive command through `befehl_ausfuehren`.
+- Core library: `modules/` — implementation split by concern and sourced by
+  `geraeteverwaltung_funktionen.sh`. `runner.sh` and `experimental.sh` remain
+  compatibility wrappers.
 - Data model: devices/ — one plain-text file per device (key=value lines, *.txt). Two device types: numeric single devices and alphanumeric collections (with `Anzahl=`).
 - Logging: logs/device_manager.log — ISO-8601 timestamped entries; automatic rotation handled by helper.
 - Tests: tests/ — small Bash test framework (test_helpers.sh) and multiple test_* scripts that are the authoritative usage examples.
 - Docs: docs/ contain ARCHITECTURE.md, API.md, INTERNALS.md, OPERATIONS.md — consult these before large changes.
 
 Key repository conventions (repo-specific)
-- Public API: functions named *_main (create_device_main, read_device_main, change_device_main, find_device_main, find_and_change_main, change_count_main). Keep these stable.
+- Public API: German names (`geraet_anlegen`, `geraet_anzeigen`,
+  `geraet_aendern`, `geraet_suchen`, `bestand_aendern`, and related functions)
+  are canonical. English names remain compatibility wrappers.
 - Internal helpers: prefixes `_helper_`, `_generic_`, `_prompt_` (do not export unless needed).
 - Exit codes: 0 = success, 1 = logic/error, 2 = usage error. Use consistently for public mains.
 - Device IDs and detection:
@@ -38,19 +42,23 @@ Key repository conventions (repo-specific)
 - Validation: use `_helper_validate_device_id_strict` to reject dangerous IDs (/, spaces, $, `, quotes). Always validate user-supplied IDs in mains.
 - Tests as examples: tests/* are also usage examples — prefer adding tests when changing behavior.
 - Concurrency: device writes use a portable `mkdir` lock at
-  `$DEVICE_DIR.lock`; configure `DEVICE_LOCK_TIMEOUT_SECONDS` as needed.
+  `$GERAETE_VERZEICHNIS.lock`; configure `GERAETE_SPERRE_WARTESEKUNDEN` as needed.
 - Commit message convention: when making commits during automated assistant sessions, append the Co-authored-by trailer:
   Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
 
 Where to look first (fast path)
-- Quick feature change: search `modules/` for the relevant helper, then update the owning module. Preserve `experimental.sh` as the compatibility shim.
+- Quick feature change: search `modules/` for the relevant helper, then update
+  the owning module. Preserve `experimental.sh` as the compatibility shim.
 - To understand public behavior: docs/API.md then tests/* for concrete examples.
 - For logging/diagnostics: docs/OPERATIONS.md and logs/device_manager.log
 
 Guidance for Copilot sessions (practical rules)
-- Make small, surgical edits to the relevant module. Avoid changing `experimental.sh` unless the source order or compatibility surface must change.
+- Make small, surgical edits to the relevant module. Avoid changing
+  `geraeteverwaltung_funktionen.sh` unless the source order or compatibility
+  surface must change.
 - Run tests locally after changes: cd tests && bash run_all_tests.sh. Fix failures before committing.
-- When adding or changing public mains, update docs/API.md and add corresponding tests under tests/.
+- When adding or changing public functions, update docs/API.md and add
+  corresponding tests under tests/.
 - Preserve exit codes and public function signatures for backward compatibility.
 - Use existing test helpers (test_helpers.sh) for new tests; keep tests deterministic (no network/time dependence).
 

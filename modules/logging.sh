@@ -1,11 +1,16 @@
 # Logging helpers moved from experimental.sh
 # Sourced module — do not set -euo here; caller scripts handle shell options
 
-LOG_DIR="${LOG_DIR:-logs}"
-LOG_FILE="${LOG_FILE:-$LOG_DIR/device_manager.log}"
-TRACE_COMMANDS="${TRACE_COMMANDS:-0}"
-LOG_MAX_SIZE="${LOG_MAX_SIZE:-10485760}"
-LOG_KEEP_DAYS="${LOG_KEEP_DAYS:-7}"
+LOG_DIR="${PROTOKOLL_VERZEICHNIS:-${LOG_DIR:-logs}}"
+PROTOKOLL_VERZEICHNIS="$LOG_DIR"
+LOG_FILE="${PROTOKOLL_DATEI:-${LOG_FILE:-$LOG_DIR/device_manager.log}}"
+PROTOKOLL_DATEI="$LOG_FILE"
+TRACE_COMMANDS="${BEFEHLS_TRACE:-${TRACE_COMMANDS:-0}}"
+BEFEHLS_TRACE="$TRACE_COMMANDS"
+LOG_MAX_SIZE="${PROTOKOLL_MAX_GROESSE:-${LOG_MAX_SIZE:-10485760}}"
+PROTOKOLL_MAX_GROESSE="$LOG_MAX_SIZE"
+LOG_KEEP_DAYS="${PROTOKOLL_BEWAHRUNGS_TAGE:-${LOG_KEEP_DAYS:-7}}"
+PROTOKOLL_BEWAHRUNGS_TAGE="$LOG_KEEP_DAYS"
 
 # -----------------------------------------------------------------------------
 # _helper_log_timestamp()

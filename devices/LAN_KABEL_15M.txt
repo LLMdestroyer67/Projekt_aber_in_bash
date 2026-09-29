@@ -1,3 +1,3 @@
 Beschreibung=LAN_KABEL_15M
 Anzahl=8
-Location=Technikraum
+Standort=Technikraum

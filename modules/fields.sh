@@ -5,42 +5,43 @@
 # Fields for single devices (Einzelgerät)
 single_fields=(
   "1|beschreibung|desc|description:Beschreibung="
-  "2|location|loc:Location="
+  "2|standort|location|loc:Standort="
   "3|status:Status="
-  "4|kategorie|cat:Kategorie="
+  "4|kategorie|category|cat:Kategorie="
   "5|besitzer|owner:Besitzer="
-  "6|Seriennummer|serial:Seriennummer="
-  "7|SAP-ID|sap_id:SAP-ID="
-  "8|Hersteller|manufacturer:Hersteller="
-  "9|Modell|model:Modell="
-  "10|Anschaffungsdatum|purchase_date:Anschaffungsdatum="
-  "11|Ausmusterungsdatum|disposal_date:Ausmusterungsdatum="
-  "12|Einkaufswert|purchase_value:Einkaufswert="
+  "6|seriennummer|serial|serialnumber:Seriennummer="
+  "7|sap-id|sap_id|sapid:SAP-ID="
+  "8|hersteller|manufacturer:Hersteller="
+  "9|modell|model:Modell="
+  "10|anschaffungsdatum|purchase_date|purchasedate:Anschaffungsdatum="
+  "11|ausmusterungsdatum|disposal_date|disposaldate:Ausmusterungsdatum="
+  "12|einkaufswert|purchase_value|purchasevalue:Einkaufswert="
 )
 
 # Fields for multi/collection devices (Sammeleintrag)
 multi_fields=(
   "1|beschreibung|desc|description:Beschreibung="
   "2|anzahl|count|qty|quantity:Anzahl="
-  "3|location|loc:Location="
-  "4|kategorie|cat:Kategorie="
+  "3|standort|location|loc:Standort="
+  "4|kategorie|category|cat:Kategorie="
 )
 
-# Find/search modes
+# Canonical German search modes. The previous English names remain accepted
+# as aliases so existing scripts do not need to change immediately.
 find_modes=(
-  "1|id:id:"
-  "2|description|desc|beschreibung:description:Beschreibung="
-  "3|location|loc:location:Location="
+  "1|geraete_id|id:geraete_id:"
+  "2|beschreibung|description|desc:beschreibung:Beschreibung="
+  "3|standort|location|loc:standort:Standort="
   "4|status:status:Status="
-  "5|kategorie|cat:category:Kategorie="
-  "6|besitzer|owner:owner:Besitzer="
-  "7|Seriennummer|serial:serial:Seriennummer="
-  "8|SAP-ID|sap_id:sap_id:SAP-ID="
-  "9|Hersteller|manufacturer:manufacturer:Hersteller="
-  "10|Modell|model:model:Modell="
-  "11|Anschaffungsdatum|purchase_date:purchase_date:Anschaffungsdatum="
-  "12|Ausmusterungsdatum|disposal_date:disposal_date:Ausmusterungsdatum="
-  "13|Einkaufswert|purchase_value:purchase_value:Einkaufswert="
+  "5|kategorie|category|cat:kategorie:Kategorie="
+  "6|besitzer|owner:besitzer:Besitzer="
+  "7|seriennummer|serial|serialnumber:seriennummer:Seriennummer="
+  "8|sap-id|sap_id|sapid:sap-id:SAP-ID="
+  "9|hersteller|manufacturer:hersteller:Hersteller="
+  "10|modell|model:modell:Modell="
+  "11|anschaffungsdatum|purchase_date|purchasedate:anschaffungsdatum:Anschaffungsdatum="
+  "12|ausmusterungsdatum|disposal_date|disposaldate:ausmusterungsdatum:Ausmusterungsdatum="
+  "13|einkaufswert|purchase_value|purchasevalue:einkaufswert:Einkaufswert="
 )
 
 # -----------------------------------------------------------------------------
@@ -70,7 +71,7 @@ _generic_find_in_fields() {
     read -ra pats <<< "$patterns"
     local pat
     for pat in "${pats[@]}"; do
-      if [[ "$input" == "$pat" ]]; then
+      if [[ "${input,,}" == "${pat,,}" ]]; then
         case "$return_part" in
           prefix)    printf '%s' "$(_generic_parse_field "$field" prefix)" ;;
           canonical) printf '%s' "$(_generic_parse_field "$field" canonical)" ;;
@@ -132,15 +133,56 @@ _helper_modes_normalize() {
 }
 
 _helper_modes_get_file_key() {
-  local canonical="$1"
+  local canonical="$(_helper_modes_normalize "$1")" || return 1
   for m in "${find_modes[@]}"; do
     local c="$(_generic_parse_field "$m" canonical)"
-    if [[ "$c" == "$canonical" ]]; then
+    if [[ "${c,,}" == "${canonical,,}" ]]; then
       _generic_parse_field "$m" filekey
       return 0
     fi
   done
   return 1
+}
+
+# Resolve an old or canonical inventory key to its canonical German spelling.
+_helper_inventory_key_canonical() {
+  local key="${1%=}"
+  case "${key,,}" in
+    beschreibung|description|desc) printf '%s' 'Beschreibung' ;;
+    standort|location|loc) printf '%s' 'Standort' ;;
+    status) printf '%s' 'Status' ;;
+    kategorie|category|cat) printf '%s' 'Kategorie' ;;
+    anzahl|count|qty|quantity) printf '%s' 'Anzahl' ;;
+    besitzer|owner) printf '%s' 'Besitzer' ;;
+    seriennummer|serial|serialnumber) printf '%s' 'Seriennummer' ;;
+    sap-id|sap_id|sapid) printf '%s' 'SAP-ID' ;;
+    hersteller|manufacturer) printf '%s' 'Hersteller' ;;
+    modell|model) printf '%s' 'Modell' ;;
+    anschaffungsdatum|purchase_date|purchasedate) printf '%s' 'Anschaffungsdatum' ;;
+    ausmusterungsdatum|disposal_date|disposaldate) printf '%s' 'Ausmusterungsdatum' ;;
+    einkaufswert|purchase_value|purchasevalue) printf '%s' 'Einkaufswert' ;;
+    *) printf '%s' "$key" ;;
+  esac
+}
+
+# Print the known aliases for a canonical or legacy inventory key.
+_helper_inventory_key_aliases() {
+  case "$(_helper_inventory_key_canonical "$1")" in
+    Beschreibung) printf '%s\n' Beschreibung Description description desc ;;
+    Standort) printf '%s\n' Standort Location location loc ;;
+    Status) printf '%s\n' Status status ;;
+    Kategorie) printf '%s\n' Kategorie Category category cat ;;
+    Anzahl) printf '%s\n' Anzahl Count count Qty qty Quantity quantity ;;
+    Besitzer) printf '%s\n' Besitzer Owner owner ;;
+    Seriennummer) printf '%s\n' Seriennummer Serial serial SerialNumber serialnumber ;;
+    SAP-ID) printf '%s\n' SAP-ID SAP_ID sap_id SAPID sapid ;;
+    Hersteller) printf '%s\n' Hersteller Manufacturer manufacturer ;;
+    Modell) printf '%s\n' Modell Model model ;;
+    Anschaffungsdatum) printf '%s\n' Anschaffungsdatum PurchaseDate purchase_date purchasedate ;;
+    Ausmusterungsdatum) printf '%s\n' Ausmusterungsdatum DisposalDate disposal_date disposaldate ;;
+    Einkaufswert) printf '%s\n' Einkaufswert PurchaseValue purchase_value purchasevalue ;;
+    *) printf '%s\n' "$1" ;;
+  esac
 }
 
 # Resolve a change field using the field definitions for the device type.

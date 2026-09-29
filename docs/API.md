@@ -4,14 +4,59 @@
 
 This document describes the public API of the Bash Device Manager. All user-facing operations go through these main functions.
 
-**Location:** `experimental.sh` (now split into modules/ — experimental.sh sources modules for backward compatibility)
+**Location:** `geraeteverwaltung_funktionen.sh` (loads the implementation in `modules/`; `experimental.sh` remains a compatibility shim)
 **Exit Codes:** 0=success, 1=error, 2=usage error
+
+## Canonical German API
+
+German ASCII identifiers are the canonical public names. The English names
+remain callable wrappers with unchanged signatures and exit codes.
+
+| Canonical name | Compatible legacy name |
+|---|---|
+| `geraet_anlegen` | `create_device_main` |
+| `geraet_anzeigen` | `read_device_main` |
+| `geraet_aendern` | `change_device_main` |
+| `geraet_suchen` | `find_device_main` |
+| `geraet_suchen_und_aendern` | `find_and_change_main` |
+| `geraet_suchen_und_aendern_menue` | `find_and_change_menu_main` |
+| `bestand_aendern` | `change_count_main` |
+| `bestand_fuer_geraet_aendern` | `change_device_count` |
+| `befehl_ausfuehren` | `run_cli` |
+| `geraetedaten_migrieren` | `migrate_inventory_main` |
+
+The signatures and exit codes below describe both spellings. Prefer the
+canonical German names in new scripts.
 
 ---
 
 ## Main Functions
 
-### `create_device_main`
+### `geraetedaten_migrieren`
+
+**Description:** Preview or explicitly apply known legacy inventory field-key
+migrations.
+
+**Signature:**
+```bash
+geraetedaten_migrieren [--anwenden]
+```
+
+**Behavior:**
+- With no option, reports which device files would be migrated and does not
+  modify data.
+- With `--anwenden` (or legacy `--apply`), creates a sibling backup and
+  atomically replaces files using canonical German field keys.
+- Checks all files for duplicate aliases before applying any migration;
+  collisions fail without changing inventory files.
+- Preserves unknown fields and is idempotent.
+
+The CLI equivalent is `./geraeteverwaltung.sh daten-migrieren [--anwenden]`; `migrate`
+remains accepted as a legacy command.
+
+### `geraet_anlegen`
+
+Legacy alias: `create_device_main`.
 
 **Description:** Create a new device.
 
@@ -39,22 +84,24 @@ create_device_main [device_id]
 **Example:**
 ```bash
 # Interactive
-./runner.sh 1
-create_device_main
+./geraeteverwaltung.sh
+geraet_anlegen
 
 # Non-interactive
-create_device_main "SERVER_001"
+geraet_anlegen "SERVER_001"
 ```
 
 ---
 
-### `read_device_main`
+### `geraet_anzeigen`
+
+Legacy alias: `read_device_main`.
 
 **Description:** Read and display a device by ID.
 
 **Signature:**
 ```bash
-read_device_main device_id
+geraet_anzeigen geraete_id
 ```
 
 **Parameters:**
@@ -71,28 +118,30 @@ read_device_main device_id
 - Logs lookup operation
 
 **Logs:**
-- INFO: `"read_device_main: reading device_id='<id>'"`
+- INFO: `"geraet_anzeigen: reading geraete_id='<id>'"`
 - ERROR if not found: `"device '<id>' not found"`
 
 **Example:**
 ```bash
-read_device_main "SERVER_001"
+geraet_anzeigen "SERVER_001"
 # Output:
 # Device: SERVER_001
 # Beschreibung: Test Server
-# Location: Lab A
+# Standort: Lab A
 # Status: active
 ```
 
 ---
 
-### `change_device_main`
+### `geraet_aendern`
+
+Legacy alias: `change_device_main`.
 
 **Description:** Modify a field in an existing device.
 
 **Signature:**
 ```bash
-change_device_main [device_id] [field] [new_value]
+geraet_aendern [geraete_id] [feld] [neuer_wert]
 ```
 
 **Parameters:**
@@ -116,33 +165,40 @@ change_device_main [device_id] [field] [new_value]
 - ERROR on failure: descriptive message with recovery hint
 
 **Field Numbers:**
-- Type 1 devices: 1=Beschreibung, 2=Location, 3=Status, 4=Kategorie
-- Type 2 devices: 1=Beschreibung, 2=Anzahl, 3=Location, 4=Kategorie
+- Type 1 devices: 1=Beschreibung, 2=Standort, 3=Status, 4=Kategorie
+- Type 2 devices: 1=Beschreibung, 2=Anzahl, 3=Standort, 4=Kategorie
 
 **Example:**
 ```bash
 # Interactive
-./runner.sh 2
-change_device_main
+./geraeteverwaltung.sh
+geraet_aendern
 
 # Non-interactive
-change_device_main "SERVER_001" "Status" "maintenance"
-change_device_main "SERVER_001" "3" "inactive"
+geraet_aendern "SERVER_001" "Status" "maintenance"
+geraet_aendern "SERVER_001" "3" "inactive"
 ```
 
 ---
 
-### `find_device_main`
+### `geraet_suchen`
+
+Legacy alias: `find_device_main`. Canonical modes are `geraete_id`,
+`beschreibung`, `standort`, `status`, `kategorie`, `besitzer`,
+`seriennummer`, `sap-id`, `hersteller`, `modell`, `anschaffungsdatum`,
+`ausmusterungsdatum`, and `einkaufswert`. Historical modes such as `id`,
+`description`, and `location` remain accepted.
 
 **Description:** Search for devices by multiple criteria.
 
 **Signature:**
 ```bash
-find_device_main [search_mode] [search_value]
+geraet_suchen [suchmodus] [suchwert]
 ```
 
 **Parameters:**
-- `$1` (optional): Search mode: `id=`, `desc=`, `location=`, `status=`, `kategorie=`, `anzahl=`
+- `$1` (optional): Search mode such as `geraete_id`, `beschreibung`,
+  `standort`, `status`, or `kategorie` (English spellings remain aliases)
 - `$2` (optional): Search value (string to match)
 
 **Returns:**
@@ -157,12 +213,12 @@ find_device_main [search_mode] [search_value]
 - Returns all matching device IDs and a preview of each
 
 **Search Modes:**
-- `id=` — Search by device ID (exact or substring)
-- `desc=` — Search by Beschreibung (description)
-- `location=` — Search by Location
-- `status=` — Search by Status
-- `kategorie=` — Search by Kategorie (category)
-- `anzahl=` — Search by Anzahl (count, numeric comparison)
+- `geraete_id` — Search by device ID (exact or substring)
+- `beschreibung` — Search by Beschreibung
+- `standort` — Search by Standort
+- `status` — Search by Status
+- `kategorie` — Search by Kategorie
+- `anzahl` — Search by Anzahl
 
 **Logs:**
 - INFO: `"find_device_main: mode='<mode>' value='<value>'"`
@@ -171,13 +227,13 @@ find_device_main [search_mode] [search_value]
 **Example:**
 ```bash
 # Interactive
-./runner.sh 3
-find_device_main
+./geraeteverwaltung.sh
+geraet_suchen
 
 # Non-interactive
-find_device_main "id=" "SERVER"
-find_device_main "location=" "Lab"
-find_device_main "status=" "active"
+geraet_suchen "geraete_id" "SERVER"
+geraet_suchen "standort" "Lab"
+geraet_suchen "status" "active"
 
 # Output:
 # Found 2 device(s):
@@ -187,13 +243,15 @@ find_device_main "status=" "active"
 
 ---
 
-### `find_and_change_main`
+### `geraet_suchen_und_aendern`
+
+Legacy alias: `find_and_change_main`.
 
 **Description:** Find a device and modify it in one operation.
 
 **Signature:**
 ```bash
-find_and_change_main [search_mode] [search_value] [field] [new_value]
+geraet_suchen_und_aendern [suchmodus] [suchwert] [feld] [neuer_wert]
 ```
 
 **Parameters:**
@@ -220,19 +278,21 @@ find_and_change_main [search_mode] [search_value] [field] [new_value]
 **Example:**
 ```bash
 # Find devices with "active" status and set to "maintenance"
-find_and_change_main "status=" "active" "Status" "maintenance"
+geraet_suchen_und_aendern "status" "active" "Status" "maintenance"
 ```
 
 ---
 
-### `change_count_main`
+### `bestand_aendern`
+
+Legacy alias: `change_count_main`.
 
 **Description:** Find a unique collection device and interactively change its
 `Anzahl` field.
 
 **Signature:**
 ```bash
-change_count_main [search_mode] [search_value]
+bestand_aendern [suchmodus] [suchwert]
 ```
 
 **Parameters:**
@@ -264,12 +324,12 @@ change_count_main [search_mode] [search_value]
 **Example:**
 ```bash
 # Interactive
-./runner.sh
+./geraeteverwaltung.sh
 # Choose "find and change", then select the count operation
-change_count_main
+bestand_aendern
 
 # Non-interactive
-printf '1\n1\n10\n' | change_count_main "id" "LAN_CABLE_50M"
+printf '1\n1\n10\n' | bestand_aendern "geraete_id" "LAN_CABLE_50M"
 ```
 
 ---
@@ -328,7 +388,7 @@ Use 'create' to add new device. (exit code: 1)
 | # | Field Name | Description | Example |
 |---|------------|-------------|---------|
 | 1 | Beschreibung | Description | Server Production |
-| 2 | Location | Physical location | DataCenter Rack 3 |
+| 2 | Standort | Physical location | DataCenter Rack 3 |
 | 3 | Status | Current status | active, inactive, maintenance |
 | 4 | Kategorie | Category/type | Server, Router, Workstation |
 
@@ -348,7 +408,7 @@ Use 'create' to add new device. (exit code: 1)
 |---|------------|-------------|---------|
 | 1 | Beschreibung | Description | 50-meter network cables |
 | 2 | Anzahl | Quantity/count | 125 |
-| 3 | Location | Storage location | Storage Bin A |
+| 3 | Standort | Storage location | Storage Bin A |
 | 4 | Kategorie | Category | Network, Hardware, Consumables |
 
 **Optional Fields:**
@@ -364,31 +424,31 @@ Use 'create' to add new device. (exit code: 1)
 ### List All Devices
 
 ```bash
-find_device_main "id=" ""    # Search by empty ID (matches all)
+geraet_suchen "geraete_id" ""    # Search by empty ID (matches all)
 ```
 
 ### Find Specific Device and Show Details
 
 ```bash
-find_device_main "id=" "SERVER_001"
-read_device_main "SERVER_001"
+geraet_suchen "geraete_id" "SERVER_001"
+geraet_anzeigen "SERVER_001"
 ```
 
 ### Find and Modify in One Step
 
 ```bash
 # Find all servers, change first one's status
-find_device_main "kategorie=" "Server"
-change_device_main "SERVER_001" "Status" "maintenance"
+geraet_suchen "kategorie" "Server"
+geraet_aendern "SERVER_001" "Status" "maintenance"
 
 # Or combined:
-find_and_change_main "id=" "SERVER_001" "Status" "maintenance"
+geraet_suchen_und_aendern "geraete_id" "SERVER_001" "Status" "maintenance"
 ```
 
 ### Bulk Update Collection Counts
 
 ```bash
-printf '1\n1\n100\n' | change_count_main "id" "LAN_CABLE_50M"
+printf '1\n1\n100\n' | bestand_aendern "geraete_id" "LAN_CABLE_50M"
 ```
 
 ### Scripted Workflow
@@ -396,21 +456,21 @@ printf '1\n1\n100\n' | change_count_main "id" "LAN_CABLE_50M"
 ```bash
 #!/bin/bash
 set -euo pipefail
-source experimental.sh
+source geraeteverwaltung_funktionen.sh
 
 # Create 3 devices
-create_device_main "SERVER_001" || true
-create_device_main "SERVER_002" || true
-create_device_main "LAN_CABLE_50M" || true
+geraet_anlegen "SERVER_001" || true
+geraet_anlegen "SERVER_002" || true
+geraet_anlegen "LAN_CABLE_50M" || true
 
 # Find all devices by category
-find_device_main "kategorie=" "Server"
+geraet_suchen "kategorie" "Server"
 
 # Update a count (the operation/value are read from stdin)
-printf '1\n1\n10\n' | change_count_main "id" "LAN_CABLE_50M"
+printf '1\n1\n10\n' | bestand_aendern "geraete_id" "LAN_CABLE_50M"
 
 # Search and modify
-find_and_change_main "id=" "SERVER_001" "Status" "active"
+geraet_suchen_und_aendern "geraete_id" "SERVER_001" "Status" "active"
 ```
 
 ---
@@ -438,11 +498,26 @@ Log entries include:
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| DEVICE_DIR | devices/ | Directory containing device files |
-| LOG_FILE | logs/device_manager.log | Log file path |
-| LOG_MAX_SIZE | 10485760 (10 MB) | Max log file size before rotation |
-| LOG_KEEP_DAYS | 7 | Days of rotated logs to keep |
-| TRACE_COMMANDS | 0 | Enable debug tracing (1 = on) |
+| `GERAETE_VERZEICHNIS` (`DEVICE_DIR`) | devices/ | Directory containing device files |
+| `PROTOKOLL_VERZEICHNIS` (`LOG_DIR`) | logs/ | Directory containing logs |
+| `PROTOKOLL_DATEI` (`LOG_FILE`) | logs/device_manager.log | Log file path |
+| `PROTOKOLL_MAX_GROESSE` (`LOG_MAX_SIZE`) | 10485760 (10 MB) | Max log size before rotation |
+| `PROTOKOLL_BEWAHRUNGS_TAGE` (`LOG_KEEP_DAYS`) | 7 | Days to keep rotated logs |
+| `BEFEHLS_TRACE` (`TRACE_COMMANDS`) | 0 | Enable debug tracing (1 = on) |
+| `LAUF_INTERVALL_SEKUNDEN` (`RUN_INTERVAL_SECONDS`) | 2 in runner | Interactive-loop delay |
+| `GERAETE_SPERRE_WARTESEKUNDEN` (`DEVICE_LOCK_TIMEOUT_SECONDS`) | 10 | Device lock wait timeout |
+
+If both names are supplied when the library/runner starts, the German
+configuration variable takes precedence. The English variable remains
+available for existing deployments.
+
+## Canonical command-line interface
+
+`geraeteverwaltung.sh` accepts the canonical commands `geraet-anlegen`,
+`geraet-aendern`, `geraet-suchen`, `geraet-anzeigen`, and `bestand-aendern`.
+The legacy commands `create`, `change`, `find`, `read`, `find-and-change`,
+`change-count`, and their historical underscore variants remain supported.
+`runner.sh` remains a compatibility wrapper for `geraeteverwaltung.sh`.
 
 ---
 

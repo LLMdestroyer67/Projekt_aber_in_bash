@@ -17,8 +17,10 @@ The Bash Device Manager is a lightweight, terminal-based system for tracking har
 
 ```
 Projekt_aber_in_bash/
-├── runner.sh                 # Main entry point; orchestrates menu/workflows
-├── experimental.sh           # Backward-compatible shim; sources modules/
+├── geraeteverwaltung.sh      # Canonical entry point; menu and CLI dispatcher
+├── geraeteverwaltung_funktionen.sh # Canonical library; sources modules/
+├── runner.sh                 # Compatibility wrapper for the entry point
+├── experimental.sh           # Compatibility wrapper for the library
 ├── modules/                  # Modular implementation (logging, I/O, workflows)
 │   ├── logging.sh            # Logging, rotation, and traps
 │   ├── fields.sh             # Field and mode handling
@@ -28,6 +30,7 @@ Projekt_aber_in_bash/
 │   ├── create.sh             # Create workflow
 │   ├── find.sh               # Find/search workflow
 │   ├── count.sh              # Collection count workflow
+│   ├── migrate.sh            # Explicit inventory key migration
 │   ├── mains.sh              # Public main functions
 │   └── cli.sh                # run_cli dispatcher
 ├── devices/                  # Plain-text device files (*.txt)
@@ -61,7 +64,7 @@ Device data is stored as key=value pairs in plain-text files:
 ```
 # Single device (numeric ID like "1001.txt")
 Beschreibung=Server Production
-Location=DataCenter Rack 3
+Standort=DataCenter Rack 3
 Status=active
 Kategorie=Server
 Seriennummer=ABC123
@@ -69,7 +72,7 @@ Seriennummer=ABC123
 # Collection/bulk device (alphanumeric ID like "LAN_CABLE_50M.txt")
 Beschreibung=50-meter network cables
 Anzahl=125
-Location=Storage Bin A
+Standort=Storage Bin A
 Kategorie=Network
 Verfallsdatum=2025-12-31
 ```
@@ -77,6 +80,9 @@ Verfallsdatum=2025-12-31
 **Key Design Decisions:**
 - One file per device (loose coupling, easy to version control)
 - Simple key=value format (no JSON, YAML, or binary formats)
+- German field names are canonical; legacy English aliases are read and
+  searched without rewriting the source file. A field is rewritten using its
+  canonical key when explicitly changed.
 - Field definitions differ by device type (type 1 vs type 2)
 - No formal schema (fields optional, extensible)
 
@@ -84,12 +90,12 @@ Verfallsdatum=2025-12-31
 
 **Type 1: Single Device**
 - ID format: Numeric (e.g., `1001`, `42`, `999`)
-- Fields: Beschreibung, Location, Status, Kategorie, Seriennummer, Zustand, etc.
+- Fields: Beschreibung, Standort, Status, Kategorie, Seriennummer, etc.
 - Example: Physical servers, workstations, routers
 
 **Type 2: Collection/Bulk Item**
 - ID format: Alphanumeric (e.g., `LAN_CABLE_50M`, `SCREW_M4_1000`, `USB_CABLE`)
-- Fields: Beschreibung, Anzahl (count), Location, Kategorie, Verfallsdatum, etc.
+- Fields: Beschreibung, Anzahl, Standort, Kategorie, Verfallsdatum, etc.
 - Example: Inventory, consumables, grouped items
 
 ---
@@ -99,12 +105,12 @@ Verfallsdatum=2025-12-31
 ### Interactive Mode (Default)
 
 ```
-1. runner.sh starts in interactive mode
+1. geraeteverwaltung.sh starts in interactive mode
 2. Displays menu with 4 options:
-   - Create device (create_device_main)
-   - Change device (change_device_main)
-   - Find device (find_device_main)
-   - Find and change; for collections, choose a field change or count change
+   - Gerät anlegen (geraet_anlegen)
+   - Gerät ändern (geraet_aendern)
+   - Gerät suchen (geraet_suchen)
+   - Gerät suchen und ändern; für Sammeleinträge Feld- oder Bestandsänderung
      after the device is found
 3. User selects option via numeric input
 4. Function prompts for parameters (device ID, field name, value)
@@ -115,7 +121,7 @@ Verfallsdatum=2025-12-31
 ### Scripted Calls
 
 ```
-source experimental.sh
+source geraeteverwaltung_funktionen.sh
   -> Loads modules/ and exposes the public functions
   -> Call a *_main function with all required arguments
   -> Returns exit code (0=success, 1=error, 2=usage error)
@@ -124,11 +130,11 @@ source experimental.sh
 ### Operation Flow (Example: Create Device)
 
 ```
-runner.sh
+geraeteverwaltung.sh
   ↓
-experimental.sh (compatibility shim)
+geraeteverwaltung_funktionen.sh
   ↓
-create_device_main() [modules/mains.sh]
+geraet_anlegen() [modules/mains.sh]
   ├─ _helper_core_is_interactive() → check if TTY
   ├─ _helper_create_resolve_device_id() → prompt or use arg
   ├─ _helper_validate_device_id_strict() → validate chars
@@ -147,15 +153,19 @@ create_device_main() [modules/mains.sh]
 
 ### Public Functions (User-Facing)
 
-The public functions are implemented in `modules/mains.sh` and
-`modules/count.sh`, then exposed through `experimental.sh`:
+The canonical German public functions are implemented in `modules/mains.sh`
+and `modules/count.sh`, then exposed through
+`geraeteverwaltung_funktionen.sh`. The English functions and
+`experimental.sh` library path remain compatibility aliases:
 
-- `create_device_main` — Add new device
-- `change_device_main` — Modify device field
-- `find_device_main` — Search devices by criteria
-- `find_and_change_main` — Find then modify in one operation
-- `change_count_main` — Increment/decrement count (for type 2 only)
-- `find_and_change_menu_main` — Interactive menu workflow that offers field
+- - `geraet_anlegen` — Add new device (`create_device_main` wrapper)
+- `geraet_aendern` — Modify device field (`change_device_main` wrapper)
+- `geraet_anzeigen` — Display device (`read_device_main` wrapper)
+- `geraet_suchen` — Search devices (`find_device_main` wrapper)
+- `geraet_suchen_und_aendern` — Find then modify
+  (`find_and_change_main` wrapper)
+- `bestand_aendern` — Change collection count (`change_count_main` wrapper)
+- `geraet_suchen_und_aendern_menue` — Interactive menu workflow that offers field
   or count changes after finding a device
 
 All return exit codes: 0 (success), 1 (error), 2 (usage error).
@@ -204,6 +214,7 @@ All configuration is via environment variables (no config files):
 ```bash
 # Device storage
 export DEVICE_DIR="/workspaces/Projekt_aber_in_bash/devices"
+export GERAETE_VERZEICHNIS="$DEVICE_DIR"  # Canonical German name; takes precedence
 
 # Logging
 export LOG_DIR="/workspaces/Projekt_aber_in_bash/logs"
@@ -215,6 +226,12 @@ export LOG_KEEP_DAYS=7                # Keep 7 days of rotated logs
 export RUN_INTERVAL_SECONDS=10        # Polling interval (if used as daemon)
 export TRACE_COMMANDS=0               # Enable `set -x` debugging (1 = enabled)
 ```
+
+German canonical names are `GERAETE_VERZEICHNIS`, `PROTOKOLL_VERZEICHNIS`,
+`PROTOKOLL_DATEI`, `PROTOKOLL_MAX_GROESSE`, `PROTOKOLL_BEWAHRUNGS_TAGE`,
+`BEFEHLS_TRACE`, `LAUF_INTERVALL_SEKUNDEN`, and
+`GERAETE_SPERRE_WARTESEKUNDEN`. The English names shown above remain accepted
+as compatibility aliases.
 
 ---
 
@@ -423,7 +440,8 @@ bash test_integration.sh            # Run integration tests
   - Documented concurrency limitations and write locking
 
 - **Current implementation** — Runtime code is modular under `modules/`;
-  `experimental.sh` remains the compatibility shim for existing callers.
+  `geraeteverwaltung_funktionen.sh` is the canonical library and
+  `experimental.sh` remains its compatibility shim.
 
 ---
 

@@ -1,8 +1,9 @@
 Beschreibung=hallo
-Location=was
+Standort=was
 Status=soll
 Kategorie=das
 Besitzer=ich
 Seriennummer=möchte 
 SAP-ID=doch einfach
 Hersteller=urlaub
+Ausmusterungsdatum=bald?

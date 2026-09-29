@@ -14,7 +14,10 @@ You maintain documentation for developers and operators of this Bash project.
 - Use `docs/API.md` for public functions, parameters, output, and exit codes.
 - Use `docs/INTERNALS.md` for helper contracts and implementation patterns.
 - Use `docs/OPERATIONS.md` for setup, execution, logging, troubleshooting, and recovery.
-- Verify claims against the actual files under `modules/`, `runner.sh`, `experimental.sh`, and `tests/`; never preserve stale documentation just because it already exists.
+- Verify claims against the actual files under `modules/`,
+  `geraeteverwaltung.sh`, `geraeteverwaltung_funktionen.sh`, and `tests/`;
+  `runner.sh` and `experimental.sh` are compatibility wrappers. Never preserve
+  stale documentation just because it already exists.
 
 ## Documentation rules
 

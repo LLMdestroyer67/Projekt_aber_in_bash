@@ -1,5 +1,5 @@
 Beschreibung=Dell Latitude 3440
-Location=Schreibtisch
+Standort=Schreibtisch
 Status=Voll
 Besitzer=Simon K.
 Kategorie=Laptop

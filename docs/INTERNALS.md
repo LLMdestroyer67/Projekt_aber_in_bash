@@ -4,7 +4,7 @@
 
 This document describes internal helper functions used by the public API. These are implementation details; most users don't need to know them.
 
-**Location:** `modules/` (loaded by the compatibility shim `experimental.sh`)
+**Location:** `modules/` (loaded by `geraeteverwaltung_funktionen.sh`; `experimental.sh` remains a compatibility shim)
 **Prefix Convention:** `_helper_*`, `_generic_*`, `_prompt_*`, `_section_*`
 
 ---
@@ -320,9 +320,9 @@ fi
 
 **Normalization:**
 - "1" → "Beschreibung"
-- "desc" → "Beschreibung" (partial match)
-- "location" → "Location"
-- "Status" → "Status" (already correct)
+- "desc" → "Beschreibung" (legacy alias)
+- "location" → "standort" (canonical search mode)
+- "Status" → "status" (canonical search mode)
 
 **Example:**
 ```bash
@@ -347,7 +347,7 @@ PROMPT=$(_helper_fields_build_prompt 1)
 echo "$PROMPT"
 # Output:
 # [1] Beschreibung
-# [2] Location
+# [2] Standort
 # [3] Status
 # [4] Kategorie
 ```
@@ -517,7 +517,7 @@ echo "ID: $ID"  # Output: SERVER_001
 
 **Parameters:**
 - `$1` — Path to device file
-- `$2` — Key prefix to search (e.g., "Location=")
+- `$2` — Key prefix to search (e.g., "Standort="; `Location=` remains an alias)
 - `$3` — Value to match
 
 **Returns:**
@@ -526,7 +526,7 @@ echo "ID: $ID"  # Output: SERVER_001
 
 **Example:**
 ```bash
-if _helper_find_file_matches_key_value "devices/SERVER_001.txt" "Location=" "Lab"; then
+if _helper_find_file_matches_key_value "devices/SERVER_001.txt" "Standort=" "Lab"; then
   echo "Device is in Lab"
 fi
 ```
@@ -708,12 +708,12 @@ fi
 ### Parse and Use Pattern
 
 ```bash
-LOCATION=$(_generic_parse_field "$DEVICE_FILE" "Location=")
-if [[ -z "$LOCATION" ]]; then
-  log_warn "Device missing Location field: $device_id"
-  LOCATION="unknown"
+STANDORT=$(_generic_parse_field "$DEVICE_FILE" "Standort=")
+if [[ -z "$STANDORT" ]]; then
+  log_warn "Device missing Standort field: $device_id"
+  STANDORT="unbekannt"
 fi
-echo "Location: $LOCATION"
+echo "Standort: $STANDORT"
 ```
 
 ---
@@ -730,10 +730,18 @@ echo "Location: $LOCATION"
 | Create and find workflows | `modules/create.sh`, `modules/find.sh` |
 | Public mains | `modules/mains.sh` |
 | Collection counts | `modules/count.sh` |
+| Inventory key migration | `modules/migrate.sh` |
 | Non-interactive dispatch | `modules/cli.sh` |
 
-`experimental.sh` remains a source-compatible loading shim. It is not the
-implementation location for new helpers.
+`geraeteverwaltung_funktionen.sh` is the canonical loader. `experimental.sh`
+remains a source-compatible shim. Add new helpers to their owning modules, not
+to either loader.
+
+The public German API is implemented in the same modules:
+`geraet_anlegen`, `geraet_anzeigen`, `geraet_aendern`, `geraet_suchen`,
+`geraet_suchen_und_aendern`, `geraet_suchen_und_aendern_menue`,
+`bestand_aendern`, `bestand_fuer_geraet_aendern`, and
+`befehl_ausfuehren`. Historical English API names are wrappers.
 
 ## Modification Guidelines
 

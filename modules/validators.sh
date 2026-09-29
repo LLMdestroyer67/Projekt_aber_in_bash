@@ -97,5 +97,12 @@ _helper_change_announce_change() {
 # Find old line matching prefix
 _helper_change_find_old_line() {
   local device_file="$1" change_prefix="$2"
-  grep -m 1 -F "$change_prefix" "$device_file" || true
+  local alias=""
+  if declare -F _helper_inventory_key_aliases >/dev/null; then
+    while IFS= read -r alias; do
+      grep -m 1 -iF "${alias}=" "$device_file" && return 0
+    done < <(_helper_inventory_key_aliases "${change_prefix%=}")
+  else
+    grep -m 1 -F "$change_prefix" "$device_file" || true
+  fi
 }

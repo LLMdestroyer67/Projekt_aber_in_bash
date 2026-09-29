@@ -1,5 +1,5 @@
 Beschreibung=gerät abc
-Location=mooo
+Standort=mooo
 Status=mooooooooo
 Kategorie=cat?
 Besitzer=MT
