@@ -158,6 +158,11 @@ bestand_fuer_geraet_aendern() {
 bestand_aendern() {
   # Find device then modify collection count (orchestrator)
   # Exit codes: 0=success, 1=not found, 2=ambiguous/invalid
+  if _helper_core_is_interactive; then
+    geraet_suchen "$@"
+    return $?
+  fi
+
   # 1. Gerät(e) suchen
   local search_rc=0
   find_device_main || search_rc=$?

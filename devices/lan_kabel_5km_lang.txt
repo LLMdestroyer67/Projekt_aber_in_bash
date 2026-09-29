@@ -1,4 +1,4 @@
 Beschreibung=lan
-Anzahl=300
+Anzahl=299
 Standort=technikraum
 Kategorie=kabel

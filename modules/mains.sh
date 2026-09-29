@@ -26,27 +26,131 @@ if [[ -f "$SCRIPT_DIR/modules/count.sh" ]]; then
   . "$SCRIPT_DIR/modules/count.sh"
 fi
 
-_helper_fac_search_device() {
-  find_device_main
-}
-
-_helper_fac_check_match_count() {
-  local count="$1"
-  if (( count == 0 )); then
-    echo "Kein Gerät gefunden." >&2
-    return 1
-  elif (( count > 1 )); then
-    echo "Mehrere Geräte gefunden (${count}), keine eindeutige Auswahl. Bitte Suchkriterium verfeinern." >&2
+_helper_find_ask_criteria() {
+  local current_count="$1" mode_var="$2" value_var="$3"
+  local selected_mode="" selected_value=""
+  local -n mode_ref="$mode_var" value_ref="$value_var"
+  read_logged "$(_helper_modes_build_prompt prompt)" selected_mode || return $?
+  case "${selected_mode,,}" in
+    q|abbrechen|zurueck)
+      return 3
+      ;;
+  esac
+  selected_mode="$(_helper_find_normalize_mode "$selected_mode")" || {
+    error_logged "Ungültiges Suchkriterium. Bitte eines der angezeigten Kriterien verwenden."
+    return 2
+  }
+  read_logged "Suchwert innerhalb der aktuellen $current_count Treffer: " selected_value || return $?
+  if [[ -z "$selected_value" ]]; then
+    error_logged "Der Suchwert darf nicht leer sein."
     return 2
   fi
+  mode_ref="$selected_mode"
+  value_ref="$selected_value"
 }
 
-_helper_fac_assert_found_id() {
-  local found_id="$1"
-  if [[ -z "$found_id" ]]; then
-    echo "Interner Fehler: FOUND_DEVICE_ID ist leer trotz genau 1 Treffer." >&2
-    return 1
-  fi
+_helper_find_offer_change() {
+  local device_id="$1" device_count choice=""
+  while :; do
+    read_logged "Möchten Sie Gerät '$device_id' ändern? (j/n): " choice || return $?
+    case "${choice,,}" in
+      j|ja|y|yes)
+        device_count="$(_helper_change_device_count_from_id "$device_id")"
+        if [[ "$device_count" -eq 2 ]]; then
+          read_logged 'Was soll geändert werden? |(1) Feld|  |(2) Bestand| ' choice || return $?
+          case "$choice" in
+            1) geraet_aendern "$device_id"; return $? ;;
+            2) bestand_fuer_geraet_aendern "$device_id"; return $? ;;
+            *)
+              error_logged "Ungültige Auswahl: '$choice'. Bitte 1 oder 2 eingeben."
+              return 2
+              ;;
+          esac
+        fi
+        geraet_aendern "$device_id"
+        return $?
+        ;;
+      n|nein|no)
+        echo_logged "Keine Änderung vorgenommen."
+        return 0
+        ;;
+      *)
+        error_logged "Bitte mit j oder n antworten."
+        ;;
+    esac
+  done
+}
+
+_helper_find_interactive_workflow() {
+  local mode="${1-}" value="${2-}"
+  local candidates=() matches=() rc
+  FOUND_DEVICE_ID=""
+  FOUND_MATCHES=()
+  FOUND_MATCH_COUNT=0
+  _helper_find_collect_device_files candidates || return $?
+
+  while :; do
+    if [[ -z "$mode" ]]; then
+      if _helper_find_ask_criteria "${#candidates[@]}" mode value; then
+        rc=0
+      else
+        rc=$?
+      fi
+      case "$rc" in
+        0) ;;
+        2)
+          mode=""
+          continue
+          ;;
+        3)
+          return 0
+          ;;
+        *) return "$rc" ;;
+      esac
+    fi
+    if [[ -z "$value" ]]; then
+      read_logged "Suchwert für '$mode': " value || return $?
+      if [[ -z "$value" ]]; then
+        error_logged "Der Suchwert darf nicht leer sein."
+        mode=""
+        continue
+      fi
+    fi
+
+    if _helper_find_filter_candidate_files "$mode" "$value" candidates matches; then
+      rc=0
+    else
+      rc=$?
+    fi
+    if (( rc != 0 )); then
+      error_logged "Ungültiges Suchkriterium: '$mode'"
+      mode=""
+      value=""
+      continue
+    fi
+
+    if (( ${#matches[@]} == 0 )); then
+      error_logged "Kein Gerät passt innerhalb der aktuellen Trefferliste zu '$mode' = '$value'. Bitte erneut eingrenzen."
+      mode=""
+      value=""
+      continue
+    fi
+
+    candidates=( "${matches[@]}" )
+    _helper_find_publish_results candidates
+    mode=""
+    value=""
+    if (( ${#candidates[@]} > 1 )); then
+      echo_logged "Mehrere Treffer (${#candidates[@]}). Bitte Suchkriterium weiter eingrenzen (q zum Beenden)."
+      continue
+    fi
+
+    if _helper_find_offer_change "$FOUND_DEVICE_ID"; then
+      return 0
+    else
+      return $?
+    fi
+  done
 }
 
 geraet_aendern() {
@@ -167,69 +271,22 @@ geraet_anlegen() {
 }
 
 geraet_suchen_und_aendern() {
-  # Find device then modify a field
-  # Exit codes: 0=success, 1=not found/error, 2=ambiguous results
-  local search_rc=0
-  _helper_fac_search_device || search_rc=$?
-  local match_count="${FOUND_MATCH_COUNT:-0}"
-  if [[ ! "$match_count" =~ ^[0-9]+$ ]]; then
-    match_count=0
-  fi
-  if (( search_rc != 0 )); then
-    return "$search_rc"
-  fi
-
-  local rc
-  _helper_fac_check_match_count "$match_count"
-  rc=$?
-
-  if (( rc == 1 )); then
-    return 1
-  elif (( rc == 2 )); then
+  if (( $# == 4 )) && ! _helper_core_is_interactive; then
     local search_rc=0
-    find_device_main || search_rc=$?
-    if (( search_rc != 0 )); then
-      return "$search_rc"
+    geraet_suchen "$1" "$2" || search_rc=$?
+    (( search_rc == 0 )) || return "$search_rc"
+    if [[ "$FOUND_MATCH_COUNT" != "1" || -z "$FOUND_DEVICE_ID" ]]; then
+      error_logged "Die Suche muss genau ein Gerät ergeben, bevor es geändert werden kann."
+      return 2
     fi
+    geraet_aendern "$FOUND_DEVICE_ID" "$3" "$4"
+    return $?
   fi
-
-  _helper_fac_assert_found_id "${FOUND_DEVICE_ID:-}" || return 1
-
-  echo "Bearbeite Gerät mit ID: $FOUND_DEVICE_ID"
-  change_device_main "$FOUND_DEVICE_ID"
+  geraet_suchen "$@"
 }
 
 geraet_suchen_und_aendern_menue() {
-  # Interactive menu workflow for both field and collection-count changes.
-  local search_rc=0
-  find_device_main || search_rc=$?
-  if (( search_rc != 0 )); then
-    return "$search_rc"
-  fi
-
-  _helper_fac_check_match_count "${FOUND_MATCH_COUNT:-0}" || return $?
-  _helper_fac_assert_found_id "${FOUND_DEVICE_ID:-}" || return 1
-
-  local device_count
-  device_count="$(_helper_change_device_count_from_id "$FOUND_DEVICE_ID")"
-  if [[ "$device_count" -eq 2 ]]; then
-    local change_choice=""
-    read_logged 'Was soll geändert werden? |(1) Feld|  |(2) Anzahl| ' change_choice || return $?
-    case "$change_choice" in
-      1)
-        change_device_main "$FOUND_DEVICE_ID"
-        ;;
-      2)
-        change_device_count "$FOUND_DEVICE_ID"
-        ;;
-      *)
-        error_logged "Ungültige Auswahl: '$change_choice'. Bitte 1 oder 2 eingeben."
-        return 2
-        ;;
-    esac
-  else
-    change_device_main "$FOUND_DEVICE_ID"
-  fi
+  geraet_suchen "$@"
 }
 
 geraet_suchen() {
@@ -246,6 +303,11 @@ geraet_suchen() {
   FOUND_MATCH_COUNT=0
 
   log_info "find_device_main gestartet mode='${mode-}' query='${query-}'"
+
+  if _helper_core_is_interactive; then
+    _helper_find_interactive_workflow "$mode" "$query"
+    return $?
+  fi
 
   mode="$(_helper_find_resolve_mode "$mode")" || return $?
 

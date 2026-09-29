@@ -207,9 +207,17 @@ geraet_suchen [suchmodus] [suchwert]
 - 2 (EXIT_USAGE_ERROR) — Missing arguments in non-interactive mode
 
 **Behavior:**
-- **Interactive:** Prompts for search criteria
-- **Non-interactive:** Both arguments required
+- **Interactive:** Searches, shows matching devices, and combines the former
+  search and search/change steps. For multiple matches, asks for another
+  criterion and restricts it to the current candidate list. If that refinement
+  finds nothing, keeps the prior candidate list and asks again. Once one
+  device remains, asks whether it should be changed; answering no ends without
+  editing, while yes starts the existing field or collection-count editor.
+- **Non-interactive:** With mode and value arguments, performs the search and
+  returns results without prompting for a change.
 - Performs case-insensitive substring matching
+- Interactive ID searches accept partial IDs; explicit non-interactive ID
+  searches retain the historical exact-match behavior.
 - Returns all matching device IDs and a preview of each
 
 **Search Modes:**
@@ -226,7 +234,7 @@ geraet_suchen [suchmodus] [suchwert]
 
 **Example:**
 ```bash
-# Interactive
+# Interactive; refine multiple hits and optionally change the unique result
 ./geraeteverwaltung.sh
 geraet_suchen
 
@@ -243,11 +251,14 @@ geraet_suchen "status" "active"
 
 ---
 
-### `geraet_suchen_und_aendern`
+### `geraet_suchen_und_aendern` (compatibility alias)
 
-Legacy alias: `find_and_change_main`.
+Legacy aliases: `find_and_change_main`, `geraet_suchen_und_aendern_menue`,
+and `find_and_change_menu_main`. They delegate to `geraet_suchen`; the
+interactive search now includes the optional change decision.
 
-**Description:** Find a device and modify it in one operation.
+**Description:** Compatibility entry point for the unified search and optional
+change workflow.
 
 **Signature:**
 ```bash
@@ -261,24 +272,18 @@ geraet_suchen_und_aendern [suchmodus] [suchwert] [feld] [neuer_wert]
 - `$4` (optional): New value
 
 **Returns:**
-- 0 (EXIT_OK) — Device found and changed
-- 1 (EXIT_ERROR) — Device not found, multiple matches, invalid field
-- 2 (EXIT_USAGE_ERROR) — Missing arguments
+- Same results as `geraet_suchen`; change selection and editor results are
+  propagated unchanged.
 
-**Behavior:**
-- First finds device matching search criteria
-- If exactly one match, modifies the specified field
-- If multiple or no matches, returns error (requires finding first)
-- Useful for quick find-then-modify workflows
+The interactive workflow asks whether to change the unique match and then
+prompts for the field/value. A non-interactive legacy four-argument call still
+performs an explicit search-and-change when exactly one device matches;
+ambiguous results return a usage error. Non-interactive scripts may also call
+`geraet_suchen` and then `geraet_aendern` or
+`bestand_fuer_geraet_aendern` explicitly.
 
-**Logs:**
-- INFO: `"find_and_change: found <id>, updating field=<field>"`
-- ERROR: `"found N devices; cannot auto-select"` (if not unique)
-
-**Example:**
 ```bash
-# Find devices with "active" status and set to "maintenance"
-geraet_suchen_und_aendern "status" "active" "Status" "maintenance"
+geraet_suchen_und_aendern "geraete_id" "800001" "Status" "wartung"
 ```
 
 ---
@@ -325,7 +330,7 @@ bestand_aendern [suchmodus] [suchwert]
 ```bash
 # Interactive
 ./geraeteverwaltung.sh
-# Choose "find and change", then select the count operation
+# Choose "Gerät suchen"; refine multiple hits, then choose whether to change
 bestand_aendern
 
 # Non-interactive
@@ -420,6 +425,13 @@ Use 'create' to add new device. (exit code: 1)
 ---
 
 ## Common Usage Patterns
+
+### List or refine devices interactively
+
+```bash
+# Search, refine only within each current result list, and optionally edit
+./geraeteverwaltung.sh
+```
 
 ### List All Devices
 

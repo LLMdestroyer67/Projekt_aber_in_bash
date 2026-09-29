@@ -89,6 +89,48 @@ _helper_find_file_matches_key_value() {
   printf '%s\n' "$line" | grep -qiF -- "$value"
 }
 
+_helper_find_filter_candidate_files() {
+  local mode="$1" value="$2" candidates_name="$3" matches_name="$4"
+  local exact_id="${5:-0}" file device_id key
+  local -n candidates_ref="$candidates_name" matches_ref="$matches_name"
+  matches_ref=()
+
+  if [[ "$mode" != "geraete_id" ]]; then
+    key="$(_helper_modes_get_file_key "$mode")" || return 2
+  fi
+
+  for file in "${candidates_ref[@]}"; do
+    if [[ "$mode" == "geraete_id" ]]; then
+      device_id="$(_helper_find_extract_id_from_file "$file")"
+      if (( exact_id )); then
+        [[ "${device_id,,}" == "${value,,}" ]] && matches_ref+=( "$file" )
+      else
+        [[ "${device_id,,}" == *"${value,,}"* ]] && matches_ref+=( "$file" )
+      fi
+    elif _helper_find_file_matches_key_value "$file" "$key" "$value"; then
+      matches_ref+=( "$file" )
+    fi
+  done
+  return 0
+}
+
+_helper_find_publish_results() {
+  local matches_name="$1" file
+  local -n matches_ref="$matches_name"
+  FOUND_MATCHES=( "${matches_ref[@]}" )
+  FOUND_MATCH_COUNT="${#matches_ref[@]}"
+  FOUND_DEVICE_ID=""
+
+  for file in "${matches_ref[@]}"; do
+    _helper_find_print_file_numbered "$file"
+  done
+
+  if (( ${#matches_ref[@]} == 1 )); then
+    FOUND_DEVICE_ID="$(_helper_find_extract_id_from_file "${matches_ref[0]}")"
+    echo_logged "Eindeutiges Gerät: $FOUND_DEVICE_ID"
+  fi
+}
+
 _helper_find_extract_id_from_file() {
   local match_file="$1"
   local filename="${match_file##*/}"
@@ -130,18 +172,15 @@ _find_by_key_contains() {
 
   value="$(_helper_find_resolve_search_value "$value" "$key")" || return $?
 
-  local files=()
+  local files=() matches=()
   _helper_find_collect_device_files files || return $?
 
-  local file
-  for file in "${files[@]}"; do
-    log_debug "Prüfe Datei '$file' für key='$key' value='$value'"
-    if _helper_find_file_matches_key_value "$file" "$key" "$value"; then
-      matches+=( "$file" )
-      log_info "Treffer in '$file'"
-      FOUND_MATCH_COUNT="${#matches[@]}"
-    fi
-  done
+  local mode
+  mode="$(_helper_modes_normalize "${key%=}")" || return 2
+  _helper_find_filter_candidate_files "$mode" "$value" files matches
+  FOUND_MATCHES=( "${matches[@]}" )
+  FOUND_MATCH_COUNT="${#matches[@]}"
+  FOUND_DEVICE_ID=""
 
   if (( ${#matches[@]} == 0 )); then
     error_logged "device with ${key%=} '$value' does not exist"
@@ -156,6 +195,7 @@ _find_by_key_contains() {
   fi
 
   _helper_find_handle_multi_match "${matches[@]}"
+  return 0
 }
 
 # Dynamic find_by_<mode> generation

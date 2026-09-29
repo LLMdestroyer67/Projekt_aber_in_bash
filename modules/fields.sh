@@ -120,7 +120,7 @@ _helper_modes_build_prompt() {
   done
   if [[ "$type" == "prompt" ]]; then
     local IFS=', '
-    printf 'Find device by %s: ' "${prompt_parts[*]}"
+    printf 'Gerät suchen nach %s: ' "${prompt_parts[*]}"
   else
     local IFS='/'
     printf '%s' "${error_parts[*]}"

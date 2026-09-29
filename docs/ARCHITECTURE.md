@@ -106,12 +106,11 @@ Verfallsdatum=2025-12-31
 
 ```
 1. geraeteverwaltung.sh starts in interactive mode
-2. Displays menu with 4 options:
+2. Displays menu with 3 options:
    - Gerät anlegen (geraet_anlegen)
    - Gerät ändern (geraet_aendern)
-   - Gerät suchen (geraet_suchen)
-   - Gerät suchen und ändern; für Sammeleinträge Feld- oder Bestandsänderung
-     after the device is found
+   - Gerät suchen, Mehrfachtreffer schrittweise aus der aktuellen Trefferliste
+     eingrenzen und nach einem eindeutigen Treffer optional ändern
 3. User selects option via numeric input
 4. Function prompts for parameters (device ID, field name, value)
 5. Operation executes, logs results
@@ -158,17 +157,22 @@ and `modules/count.sh`, then exposed through
 `geraeteverwaltung_funktionen.sh`. The English functions and
 `experimental.sh` library path remain compatibility aliases:
 
-- - `geraet_anlegen` — Add new device (`create_device_main` wrapper)
+- `geraet_anlegen` — Add new device (`create_device_main` wrapper)
 - `geraet_aendern` — Modify device field (`change_device_main` wrapper)
 - `geraet_anzeigen` — Display device (`read_device_main` wrapper)
 - `geraet_suchen` — Search devices (`find_device_main` wrapper)
-- `geraet_suchen_und_aendern` — Find then modify
-  (`find_and_change_main` wrapper)
+- `geraet_suchen_und_aendern` — Compatibility wrapper for the unified search
+  (`find_and_change_main`)
 - `bestand_aendern` — Change collection count (`change_count_main` wrapper)
-- `geraet_suchen_und_aendern_menue` — Interactive menu workflow that offers field
-  or count changes after finding a device
+- `geraet_suchen_und_aendern_menue` — Compatibility wrapper for unified search
+  (`find_and_change_menu_main`)
 
 All return exit codes: 0 (success), 1 (error), 2 (usage error).
+
+In interactive use, `geraet_suchen` keeps each result set as the candidate list
+for the next refinement; criteria can only narrow that list. A refinement with
+no matches preserves the previous candidates for retry. A unique result prompts
+whether to edit it. Non-interactive search calls remain search-only.
 
 ### Helper Functions (Internal)
 

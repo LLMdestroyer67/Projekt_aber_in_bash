@@ -62,17 +62,19 @@ ls -ld ./devices ./logs
 
 1. Gerät anlegen
 2. Gerät ändern
-3. Gerät suchen
-4. Gerät suchen und ändern (Feld oder Bestand)
+3. Gerät suchen, Treffer eingrenzen und optional ändern
 
-Auswahl (1-4) oder 'q' zum Beenden:
+Auswahl (1-3) oder 'q' zum Beenden:
 ```
 
 **Usage:**
-1. Enter a number (1-4) and press Enter
-2. Follow prompts for device ID, fields, values
-3. Results are displayed and logged
-4. Returns to menu for next operation
+1. Choose an action (1-3).
+2. Search by a field and value. If multiple devices match, add criteria to
+   narrow only the displayed candidate set; a refinement with no hits can be
+   retried without losing that set.
+3. When one device remains, choose whether to edit it. Collection items then
+   offer a field or stock-count change.
+4. Results are displayed and logged, then the menu returns.
 
 ### Non-Interactive Calls
 

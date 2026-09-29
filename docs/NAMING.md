@@ -65,6 +65,9 @@ field names.
 point. `runner.sh` forwards to it for existing callers.
 `geraeteverwaltung_funktionen.sh` is the canonical library to source;
 `experimental.sh` forwards to it for existing callers.
+Interactive `geraet_suchen` also offers an optional change after a unique
+result; the old search-and-change function names forward to this same flow.
+Scripted searches with explicit criteria remain search-only.
 The module, documentation, and test directories retain their established
 paths; moving those implementation paths would break existing source commands
 and documentation links without improving runtime compatibility. Existing

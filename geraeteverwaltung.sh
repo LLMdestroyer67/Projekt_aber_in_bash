@@ -4,7 +4,7 @@ set -euo pipefail
 # =============================================================================
 # geraeteverwaltung.sh – German-named device inventory entry point
 #
-# With command-line arguments, runner.sh dispatches one non-interactive
+# With command-line arguments, this script dispatches one non-interactive
 # operation through run_cli. With no arguments, it retains the interactive loop.
 # =============================================================================
 
@@ -42,7 +42,7 @@ run_once() {
   if _helper_core_is_interactive; then
     # Interactive example: ask what to do
     echo_logged ""
-    echo_logged "Aktion wählen: |(1) Gerät anlegen| |(2) Gerät ändern| |(3) Gerät suchen| |(4) Gerät suchen und ändern|  |(q) beenden|"
+    echo_logged "Aktion wählen: |(1) Gerät anlegen| |(2) Gerät ändern| |(3) Gerät suchen (Treffer eingrenzen/ändern)|  |(q) beenden|"
 
     local choice=""
     read_logged '> ' choice
@@ -75,22 +75,12 @@ run_once() {
         fi
         ;;
       3)
-        log_info "Running geraet_suchen (interactive)..."
+        log_info "Running unified search workflow..."
         if SCRIPT_NAME="geraet_suchen.sh" DEVICE_DIR="$DEVICE_DIR" geraet_suchen; then
           log_info "geraet_suchen erfolgreich"
         else
           rc=$?
           log_error "geraet_suchen fehlgeschlagen rc=$rc"
-          if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
-        fi
-        ;;
-      4)
-        log_info "Running geraet_suchen_und_aendern_menue (interactive)..."
-        if SCRIPT_NAME="geraet_suchen_und_aendern_menue.sh" DEVICE_DIR="$DEVICE_DIR" geraet_suchen_und_aendern_menue; then
-          log_info "geraet_suchen_und_aendern_menue erfolgreich"
-        else
-          rc=$?
-          log_error "geraet_suchen_und_aendern_menue fehlgeschlagen rc=$rc"
           if [[ "$rc" -eq 3 ]]; then shutdown=1; fi
         fi
         ;;
