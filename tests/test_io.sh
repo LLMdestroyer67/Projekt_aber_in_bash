@@ -46,4 +46,20 @@ else
   echo -e "${RED}✗${NC} FAIL: captured interactive resolver was misclassified"
 fi
 
+test_section "direct terminal prompts use the visible output stream"
+
+pty_prompt_output="$(
+  printf 'value\n' |
+    script -qefc \
+      "source '$REPO_ROOT/experimental.sh'; read_logged 'Visible prompt: ' answer 2>/dev/null; printf 'resolved=%s\\n' \"\$answer\"" \
+      /dev/null
+)"
+if [[ "$pty_prompt_output" == *"Visible prompt: "* && "$pty_prompt_output" == *"resolved=value"* ]]; then
+  TEST_PASS=$((TEST_PASS + 1))
+  echo -e "${GREEN}✓${NC} PASS: terminal prompt is visible when stderr is redirected"
+else
+  TEST_FAIL=$((TEST_FAIL + 1))
+  echo -e "${RED}✗${NC} FAIL: terminal prompt was not visible on stdout"
+fi
+
 test_summary

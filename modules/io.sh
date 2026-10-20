@@ -29,9 +29,13 @@ read_logged() {
   if [[ -n "$prompt" ]]; then
     # Prompts must not share stdout with values returned by command
     # substitutions (for example, device_id="$(read_logged ...)").
-    # stderr remains visible to interactive users and is not captured as the
-    # function's return value.
-    printf '%s' "$prompt" >&2
+    # Use stdout for direct terminal prompts; captured calls use stderr so the
+    # prompt cannot become part of the returned value.
+    if [[ -t 1 ]]; then
+      printf '%s' "$prompt"
+    else
+      printf '%s' "$prompt" >&2
+    fi
   fi
   local val
   READ_LOGGED_EOF=0

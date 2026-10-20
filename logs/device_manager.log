@@ -9833,3 +9833,174 @@
 2026-09-29T10:10:55Z [INFO] [geraeteverwaltung.sh] [pid=101764] [func=log_message:119] run_once erfolgreich abgeschlossen
 2026-09-29T10:10:55Z [INFO] [geraeteverwaltung.sh] [pid=101764] [func=log_message:119] Runner stopped
 2026-09-29T10:10:55Z [INFO] [geraeteverwaltung.sh] [pid=101764] [func=log_message:119] EXIT trap rc=0
+2026-09-30T11:34:56Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Logging initialisiert
+2026-09-30T11:34:56Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-09-30T11:34:56Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Logging-Traps installiert
+2026-09-30T11:34:56Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Runner gestartet (GERAETE_VERZEICHNIS=/workspaces/Projekt_aber_in_bash/devices, intervall=2s)
+2026-09-30T11:34:56Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] run_once gestartet
+2026-09-30T11:35:13Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Menüauswahl choice='2'
+2026-09-30T11:35:13Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Running geraet_aendern (interactive)...
+2026-09-30T11:35:13Z [INFO] [geraet_aendern.sh] [pid=887] [func=log_message:119] change_device_main gestartet device_id='' field='' new_value=''
+2026-09-30T11:35:18Z [INFO] [geraet_aendern.sh] [pid=887] [func=log_message:119] Verwende device_id='6851'
+2026-09-30T11:35:18Z [INFO] [geraet_aendern.sh] [pid=887] [func=log_message:119] device_file='/workspaces/Projekt_aber_in_bash/devices/6851.txt'
+2026-09-30T11:35:18Z [INFO] [geraet_aendern.sh] [pid=887] [func=log_message:119] Gerätedatei gefunden
+2026-09-30T11:35:18Z [INFO] [geraet_aendern.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/6851.txt'
+2026-09-30T11:35:18Z [DEBUG] [geraet_aendern.sh] [pid=887] [func=log_message:119] _helper_change_device_count_from_id id='6851'
+2026-09-30T11:35:18Z [INFO] [geraet_aendern.sh] [pid=887] [func=log_message:119] device_count='1'
+2026-09-30T11:35:25Z [INFO] [geraet_aendern.sh] [pid=887] [func=log_message:119] Verwende field='q'
+2026-09-30T11:35:25Z [ERROR] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] geraet_aendern fehlgeschlagen rc=1
+2026-09-30T11:35:25Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-09-30T11:35:25Z [DEBUG] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Sleep 2s
+2026-09-30T11:35:27Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] run_once gestartet
+2026-09-30T11:35:54Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Menüauswahl choice='3'
+2026-09-30T11:35:54Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Running unified search workflow...
+2026-09-30T11:35:54Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] find_device_main gestartet mode='' query=''
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/12131213.txt': 'Beschreibung=ACAB'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/12312.txt': 'Beschreibung=gerät abc'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/1231324.txt': 'Beschreibung=hallo'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/343434.txt': 'Beschreibung=Gerät Nr. 34'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Beschreibung=Dell Latitude 3440'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Beschreibung=LAN_KABEL_15M'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Beschreibung=LAN_KABEL_20M'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Beschreibung=LAN Kabel 2M'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Beschreibung=LAN_KABEL_3M'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt': 'Beschreibung=LAN_KABEL_50M'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan.txt': 'Beschreibung=LAN-Kabel'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Beschreibung=LAN-Kabel'
+2026-09-30T11:35:59Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt': 'Beschreibung=lan'
+2026-09-30T11:35:59Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt'
+2026-09-30T11:35:59Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-09-30T11:35:59Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt'
+2026-09-30T11:35:59Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt'
+2026-09-30T11:35:59Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt'
+2026-09-30T11:35:59Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan.txt'
+2026-09-30T11:36:00Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan2.txt'
+2026-09-30T11:36:00Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt'
+2026-09-30T11:36:35Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Kategorie=RJ45'
+2026-09-30T11:36:35Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Kategorie=RJ45'
+2026-09-30T11:36:35Z [DEBUG] [geraet_suchen.sh] [pid=887] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt': 'Kategorie=kabel'
+2026-09-30T11:36:35Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-09-30T11:36:35Z [INFO] [geraet_suchen.sh] [pid=887] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt'
+2026-09-30T11:36:47Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] geraet_suchen erfolgreich
+2026-09-30T11:36:47Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-09-30T11:36:47Z [DEBUG] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Sleep 2s
+2026-09-30T11:36:49Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] run_once gestartet
+2026-09-30T11:37:13Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Menüauswahl choice='q'
+2026-09-30T11:37:13Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Benutzer hat Quit gewählt
+2026-09-30T11:37:13Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-09-30T11:37:13Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] Runner stopped
+2026-09-30T11:37:13Z [INFO] [geraeteverwaltung.sh] [pid=887] [func=log_message:119] EXIT trap rc=0
+2026-10-02T14:19:08Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Logging initialisiert
+2026-10-02T14:19:08Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-10-02T14:19:08Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Logging-Traps installiert
+2026-10-02T14:19:08Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Runner gestartet (GERAETE_VERZEICHNIS=/workspaces/Projekt_aber_in_bash/devices, intervall=2s)
+2026-10-02T14:19:08Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] run_once gestartet
+2026-10-02T14:20:30Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Menüauswahl choice='3'
+2026-10-02T14:20:30Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Running unified search workflow...
+2026-10-02T14:20:30Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] find_device_main gestartet mode='' query=''
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/12131213.txt': 'Beschreibung=ACAB'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/12312.txt': 'Beschreibung=gerät abc'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/1231324.txt': 'Beschreibung=hallo'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/343434.txt': 'Beschreibung=Gerät Nr. 34'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/6851.txt': 'Beschreibung=Dell Latitude 3440'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Beschreibung=LAN_KABEL_15M'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Beschreibung=LAN_KABEL_20M'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Beschreibung=LAN Kabel 2M'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Beschreibung=LAN_KABEL_3M'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt': 'Beschreibung=LAN_KABEL_50M'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan.txt': 'Beschreibung=LAN-Kabel'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Beschreibung=LAN-Kabel'
+2026-10-02T14:20:43Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt': 'Beschreibung=lan'
+2026-10-02T14:20:43Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt'
+2026-10-02T14:20:43Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-10-02T14:20:43Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt'
+2026-10-02T14:20:44Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt'
+2026-10-02T14:20:44Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_50M.txt'
+2026-10-02T14:20:44Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan.txt'
+2026-10-02T14:20:44Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan2.txt'
+2026-10-02T14:20:44Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt'
+2026-10-02T14:21:15Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt': 'Standort=Technikraum'
+2026-10-02T14:21:15Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt': 'Standort=Technikraum'
+2026-10-02T14:21:15Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt': 'Standort=Technikraum'
+2026-10-02T14:21:15Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt': 'Standort=Technikraum'
+2026-10-02T14:21:15Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan2.txt': 'Standort=Technikraum'
+2026-10-02T14:21:15Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gefundene Zeile in '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt': 'Standort=technikraum'
+2026-10-02T14:21:15Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_15M.txt'
+2026-10-02T14:21:15Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_20M.txt'
+2026-10-02T14:21:15Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_2M.txt'
+2026-10-02T14:21:15Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/LAN_KABEL_3M.txt'
+2026-10-02T14:21:15Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan2.txt'
+2026-10-02T14:21:15Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt'
+2026-10-02T14:21:37Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt'
+2026-10-02T14:22:32Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] _helper_change_device_count_from_id id='lan_kabel_5km_lang'
+2026-10-02T14:22:34Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] change_device_count gestartet device_id='lan_kabel_5km_lang' field='' new_value=''
+2026-10-02T14:22:34Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Verwende device_id='lan_kabel_5km_lang'
+2026-10-02T14:22:34Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] device_file='/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt'
+2026-10-02T14:22:34Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Gerätedatei gefunden
+2026-10-02T14:22:34Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei nummeriert ausgegeben '/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt'
+2026-10-02T14:22:34Z [DEBUG] [geraet_suchen.sh] [pid=1114] [func=log_message:119] _helper_change_device_count_from_id id='lan_kabel_5km_lang'
+2026-10-02T14:22:34Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] device_count='2'
+2026-10-02T14:22:34Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Verwende field='Anzahl='
+2026-10-02T14:22:34Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] old_value='299'
+2026-10-02T14:22:37Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] count_more_or_less Auswahl='2'
+2026-10-02T14:22:37Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Anzahl wird verringert: old_value='299' new_value='298'
+2026-10-02T14:22:37Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Verwende new_value='298'
+2026-10-02T14:22:37Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] old_line='Anzahl=299' final_line='Anzahl=298'
+2026-10-02T14:22:37Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Temporäre Datei erzeugt tmp='/tmp/tmp.ynLjHrDwtl'
+2026-10-02T14:22:37Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] Datei erfolgreich umgeschrieben device_file='/workspaces/Projekt_aber_in_bash/devices/lan_kabel_5km_lang.txt'
+2026-10-02T14:22:37Z [INFO] [geraet_suchen.sh] [pid=1114] [func=log_message:119] change_device_main abgeschlossen DEVICE_ID='lan_kabel_5km_lang' DEVICE_count='2' CHANGE='Anzahl=' FINALCHANGE='Anzahl=298'
+2026-10-02T14:22:37Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] geraet_suchen erfolgreich
+2026-10-02T14:22:37Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-10-02T14:22:37Z [DEBUG] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Sleep 2s
+2026-10-02T14:22:39Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] run_once gestartet
+2026-10-02T14:25:52Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Menüauswahl choice='q'
+2026-10-02T14:25:52Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Benutzer hat Quit gewählt
+2026-10-02T14:25:52Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-10-02T14:25:52Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] Runner stopped
+2026-10-02T14:25:52Z [INFO] [geraeteverwaltung.sh] [pid=1114] [func=log_message:119] EXIT trap rc=0
+2026-10-20T10:20:52Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Logging initialisiert
+2026-10-20T10:20:52Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] LOG_FILE='logs/device_manager.log' TRACE_COMMANDS='0' args='' 
+2026-10-20T10:20:52Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Logging-Traps installiert
+2026-10-20T10:20:52Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Runner gestartet (GERAETE_VERZEICHNIS=/workspaces/Projekt_aber_in_bash/devices, intervall=2s)
+2026-10-20T10:20:52Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] run_once gestartet
+2026-10-20T10:21:03Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Menüauswahl choice='1'
+2026-10-20T10:21:03Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Running geraet_anlegen (interactive)...
+2026-10-20T10:21:03Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] create_device_main gestartet
+2026-10-20T10:21:04Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] DEVICE_DIR bereit: '/workspaces/Projekt_aber_in_bash/devices'
+2026-10-20T10:21:04Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Argument device_id=''
+2026-10-20T10:21:06Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Verwende device_id='1000001'
+2026-10-20T10:21:06Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] device_count='1'
+2026-10-20T10:21:06Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] device_file='/workspaces/Projekt_aber_in_bash/devices/1000001.txt'
+2026-10-20T10:21:06Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Leere Gerätedatei erzeugt: '/workspaces/Projekt_aber_in_bash/devices/1000001.txt'
+2026-10-20T10:21:06Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] complete_one_device gestartet device_file='/workspaces/Projekt_aber_in_bash/devices/1000001.txt'
+2026-10-20T10:21:08Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Beschreibung' wurde übersprungen (leer)
+2026-10-20T10:21:09Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Standort' wurde übersprungen (leer)
+2026-10-20T10:21:09Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Status' wurde übersprungen (leer)
+2026-10-20T10:21:09Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Kategorie' wurde übersprungen (leer)
+2026-10-20T10:21:09Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Besitzer' wurde übersprungen (leer)
+2026-10-20T10:21:09Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Seriennummer' wurde übersprungen (leer)
+2026-10-20T10:21:09Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'SAP-ID' wurde übersprungen (leer)
+2026-10-20T10:21:10Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Hersteller' wurde übersprungen (leer)
+2026-10-20T10:21:10Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Modell' wurde übersprungen (leer)
+2026-10-20T10:21:10Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Anschaffungsdatum' wurde übersprungen (leer)
+2026-10-20T10:21:10Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Ausmusterungsdatum' wurde übersprungen (leer)
+2026-10-20T10:21:10Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] Feld 'Einkaufswert' wurde übersprungen (leer)
+2026-10-20T10:21:10Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] complete_one_device abgeschlossen device_file='/workspaces/Projekt_aber_in_bash/devices/1000001.txt'
+2026-10-20T10:21:10Z [INFO] [geraet_anlegen.sh] [pid=14488] [func=log_message:119] create_device_main abgeschlossen DEVICE_ID='1000001' DEVICE_count='1'
+2026-10-20T10:21:10Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] geraet_anlegen erfolgreich
+2026-10-20T10:21:10Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-10-20T10:21:10Z [DEBUG] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Sleep 2s
+2026-10-20T10:21:12Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] run_once gestartet
+2026-10-20T10:21:12Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Menüauswahl choice=''
+2026-10-20T10:21:12Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-10-20T10:21:12Z [DEBUG] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Sleep 2s
+2026-10-20T10:21:14Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] run_once gestartet
+2026-10-20T10:21:14Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Menüauswahl choice=''
+2026-10-20T10:21:14Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-10-20T10:21:14Z [DEBUG] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Sleep 2s
+2026-10-20T10:21:16Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] run_once gestartet
+2026-10-20T10:21:16Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Menüauswahl choice='q'
+2026-10-20T10:21:16Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Benutzer hat Quit gewählt
+2026-10-20T10:21:16Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] run_once erfolgreich abgeschlossen
+2026-10-20T10:21:16Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] Runner stopped
+2026-10-20T10:21:16Z [INFO] [geraeteverwaltung.sh] [pid=14488] [func=log_message:119] EXIT trap rc=0
